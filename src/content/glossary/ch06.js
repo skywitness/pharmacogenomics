@@ -1,0 +1,23 @@
+// ch06 術語：經典案例，氯吡格雷、可待因與華法林
+export default [
+  { key: 'acs', zh: '急性冠心症', en: 'Acute coronary syndrome (ACS)', level: 2, aliases: ['ACS'], def: '供應心臟的冠狀動脈突然嚴重阻塞所引起的一組急症，包括心肌梗塞與不穩定型心絞痛。' },
+  { key: 'pci', zh: '經皮冠狀動脈介入', en: 'Percutaneous coronary intervention (PCI)', level: 2, aliases: ['PCI', '冠狀動脈支架手術'], def: '用導管把狹窄或阻塞的冠狀動脈撐開，常會放置支架的治療。術後需要抗血小板藥，避免支架處形成血栓。' },
+  { key: 'platelet', zh: '血小板', en: 'Platelet', level: 1, def: '血液中的小細胞碎片，受刺激時會黏在一起、堵住傷口。但在血管或支架內過度聚集，就會形成血栓。' },
+  { key: 'stent-thrombosis', zh: '支架血栓', en: 'Stent thrombosis', level: 3, aliases: ['血栓'], def: '冠狀動脈支架內形成血栓，是 PCI 後最危險的併發症之一，與抗血小板效果不足有關。' },
+  { key: 'active-metabolite', zh: '活性代謝物', en: 'Active metabolite', level: 2, def: '藥物在體內經酵素轉換後產生、真正發揮藥效的分子。前驅藥的療效，靠的就是它。' },
+  { key: 'p2y12', zh: 'P2Y12 受體', en: 'P2Y12 receptor', level: 3, aliases: ['P2Y12'], def: '血小板表面的一種受體，被啟動後會促使血小板聚集。氯吡格雷的活性代謝物會不可逆地結合它，讓血小板不易聚集。' },
+  { key: 'loss-of-function', zh: '功能喪失等位基因', en: 'Loss-of-function allele', level: 2, aliases: ['功能喪失', '無功能等位基因', 'LOF'], def: '使蛋白質幾乎沒有功能的等位基因，例如 CYP2C19*2 與 *3。CPIC 稱為「無功能」。' },
+  { key: 'cpic-strength', zh: 'CPIC 推薦強度', en: 'Strength of recommendation', level: 3, aliases: ['推薦強度'], def: '指引內對每一種代謝型的具體建議有多強：Strong（證據品質高、益處明顯大於風險）、Moderate、Optional（證據薄弱或益處風險接近），以及證據不足時的「無建議」。與 CPIC 等級（A/B/C/D）是兩套不同的分類。' },
+  { key: 'boxed-warning', zh: '黑框警語', en: 'Boxed warning', level: 2, aliases: ['框內警語', 'Boxed Warning', '黑框警告'], def: '美國 FDA 仿單上最嚴重等級的警語，因外框而得名，用來標示可能致命或造成嚴重傷害的風險。氯吡格雷的黑框警語與 CYP2C19 不良代謝者有關，可待因的則與兒童風險有關；黑框警語本身不一定要求先做基因檢測。' },
+  { key: 'morphine', zh: '嗎啡', en: 'Morphine', level: 2, def: '強效的鴉片類止痛藥。可待因要經 CYP2D6 轉成嗎啡才有主要的止痛作用，所以酵素活性高低會直接改變嗎啡的量。' },
+  { key: 'mu-opioid-receptor', zh: 'μ 鴉片受體', en: 'μ-opioid receptor', level: 3, aliases: ['μ鴉片受體', 'μ 受體', 'mu 鴉片受體'], def: '神經細胞上的一種受體，嗎啡等鴉片類藥物與它結合後產生止痛，同時也會抑制呼吸。' },
+  { key: 'respiratory-depression', zh: '呼吸抑制', en: 'Respiratory depression', level: 2, def: '呼吸變慢、變淺甚至停止，是鴉片類藥物過量最危險的後果。' },
+  { key: 'inr', zh: 'INR', en: 'International normalized ratio', level: 3, aliases: ['國際標準化比值'], def: '監測華法林抗凝血效果的血液指標。多數適應症的目標範圍是 2–3；太低血栓風險高，太高出血風險高。' },
+  { key: 'vkorc1', zh: 'VKORC1', en: 'Vitamin K epoxide reductase complex subunit 1', level: 3, def: '製造華法林（warfarin）作用標的「維生素 K 環氧化物還原酵素」的基因，這個蛋白質負責把維生素 K 還原再利用。啟動子的 −1639G>A 變異使表現量降低，病人對華法林更敏感。' },
+  { key: 'vitamin-k-cycle', zh: '維生素 K 循環', en: 'Vitamin K cycle', level: 3, aliases: ['維生素 K'], def: '維生素 K 在還原型與氧化型之間反覆轉換的循環，凝血因子的活化需要還原型。華法林抑制 VKORC1，使循環變慢、凝血因子活化受阻。' },
+  { key: 'slco1b1', zh: 'SLCO1B1', en: 'SLCO1B1 (OATP1B1)', level: 3, aliases: ['OATP1B1'], def: '編碼肝細胞膜上的攝取轉運蛋白 OATP1B1，負責把 statin 等藥物從血中送進肝臟。功能下降時血中藥物濃度升高，肌肉症狀風險增加。' },
+  { key: 'endoxifen', zh: 'endoxifen', en: 'Endoxifen', level: 3, def: 'tamoxifen 經 CYP3A4 與 CYP2D6 轉換後產生的主要活性代謝物，抗雌激素效力遠高於母藥。' },
+  { key: 'aromatase-inhibitor', zh: '芳香環轉化酶抑制劑', en: 'Aromatase inhibitor (AI)', level: 3, def: '降低雌激素合成的乳癌荷爾蒙藥物，不依賴 CYP2D6 活化，是 CYP2D6 功能減弱者的替代選擇。' },
+  { key: 'non-inferiority', zh: '非劣性', en: 'Non-inferiority', level: 4, aliases: ['非劣性試驗'], def: '試驗要證明的不是新做法比較好，而是「不比舊做法差超過一個事先設定的界線」。達到非劣性，不等於優越。' },
+  { key: 'hazard-ratio', zh: '風險比', en: 'Hazard ratio (HR)', level: 4, aliases: ['HR'], def: '比較兩組事件發生速度的指標。1 代表沒有差別，小於 1 表示該組事件較少；要連同信賴區間是否跨過 1 一起看。' },
+]

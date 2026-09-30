@@ -1,0 +1,1027 @@
+{
+  "topic": "population-frequencies",
+  "title": "族群差異：各族群與台灣的等位基因頻率",
+  "summary_zh": "本主題整理東亞、歐洲、非洲、中南亞等族群與台灣在藥物基因體關鍵變異上的頻率，主要依據 CPIC 頻率表(文獻加權平均，表現型以 Hardy-Weinberg 推估)、gnomAD v4.1 定序資料，以及台灣本土的 NTUH 全外顯子(n=3,562)、中國醫藥大學附設醫院陣列(n=172,854)與經典臨床研究。核心發現是：CYP2C19 無功能等位基因、NUDT15 R139C、VKORC1 -1639A、HLA-B*15:02、HLA-B*58:01 與 G6PD 缺乏在台灣(東亞)明顯高於歐洲，而 CYP2C19*17、CYP2D6*4、DPYD*2A/HapB3、TPMT*3A 則以歐洲較高、東亞近乎缺席，CYP2D6*10 在東亞約 43%。同時必須強調：東亞不等於台灣，台灣內部(漢人與原住民)與東亞內部(日本對泰國)也有大差異，每個數字都要標明是等位基因、攜帶者或表現型頻率，並註明來源與版本。依 2023 年美國國家科學院報告，種族不能取代個人基因型，臨床決策應看個人的基因檢測結果與遺傳祖源。找不到的數字(例如台灣本土 CYP2D6*10、UGT1A1*6/*28、SLCO1B1 c.521T>C 的實測值)已在內文誠實標示，未做推測。",
+  "facts": [
+    {
+      "id": "population-frequencies-01",
+      "claim_zh": "藥物基因體學相關基因變異的頻率在不同族群之間可以相差數十倍以上，因此檢測與用藥策略不能假設所有族群都一樣。",
+      "detail_zh": "Zhou 與 Lauschke(Human Genetics，2022)分析 CYP2D6、CYP2C19、DPYD、TPMT、NUDT15、HLA-A、HLA-B、G6PD 等基因，指出這些基因的多型性牽涉 141 種藥物或治療方案，且各族群的變異頻率與基因景觀複雜度差異明顯。舉例：CPIC 頻率表中 CYP2C19*3 在東亞為 7.25%、在歐洲僅 0.16%，約差 45 倍(倍數為本研究自行換算)。",
+      "level": "入門",
+      "critical": true,
+      "source_name": "Zhou Y, Lauschke VM. Population pharmacogenomics: an update on ethnogeographic differences and opportunities for precision public health. Hum Genet 2022 (PubMed 34652573)",
+      "source_url": "https://pubmed.ncbi.nlm.nih.gov/34652573/",
+      "confidence": "high",
+      "en_terms": [
+        "population pharmacogenomics",
+        "ethnogeographic differences",
+        "allele frequency"
+      ]
+    },
+    {
+      "id": "population-frequencies-02",
+      "claim_zh": "「等位基因頻率」、「攜帶者頻率」與「表現型(代謝者類型)頻率」是三種不同的數字，閱讀族群比較圖表前必須先分清楚。",
+      "detail_zh": "等位基因頻率是族群中所有染色體裡某個等位基因所占的比例；攜帶者頻率是至少帶一個該等位基因的人所占比例；表現型頻率是被預測為某種代謝者類型的人所占比例。在 Hardy-Weinberg 平衡下，攜帶者頻率約為 1-(1-p)²(本研究依公式自行換算)：例如 HLA-B*15:02 等位基因頻率 4.4% 約對應 8.6% 攜帶者，與台灣 WES 世代實測的 8.8% 陽性者相近。CPIC 表格中的二倍型與表現型頻率也是由等位基因頻率以 Hardy-Weinberg 公式推估，並非直接量測。",
+      "level": "入門",
+      "critical": true,
+      "source_name": "CPIC CYP2C19 frequency table (Methods and Caveats sheet)",
+      "source_url": "https://files.cpicpgx.org/data/report/current/frequency/CYP2C19_frequency_table.xlsx",
+      "confidence": "high",
+      "en_terms": [
+        "allele frequency",
+        "carrier frequency",
+        "phenotype frequency",
+        "Hardy-Weinberg equilibrium"
+      ]
+    },
+    {
+      "id": "population-frequencies-03",
+      "claim_zh": "CPIC 與 PharmGKB/ClinPGx 的頻率表使用 Huddart 等人 2019 年提出的 9 個標準化生物地理族群：7 個地理族群(American、Central/South Asian、East Asian、European、Near Eastern、Oceanian、Sub-Saharan African)加上 2 個混合族群(African American/Afro-Caribbean、Latino)。",
+      "detail_zh": "原文承認這種粗略分組是對人類多樣性的過度簡化，無法反映複雜的社會與文化身分，目的只是讓不同研究的頻率能用一致語言溝通。因此「東亞」是合併多個地區的類別，不等於台灣，也不等於任何單一國家。",
+      "level": "入門",
+      "critical": true,
+      "source_name": "Huddart R et al. Standardized biogeographic grouping system for annotating populations in pharmacogenetic research. Clin Pharmacol Ther 2019 (PubMed 30506572)",
+      "source_url": "https://pubmed.ncbi.nlm.nih.gov/30506572/",
+      "confidence": "high",
+      "en_terms": [
+        "biogeographic groups",
+        "East Asian",
+        "Central/South Asian",
+        "admixed populations"
+      ]
+    },
+    {
+      "id": "population-frequencies-04",
+      "claim_zh": "台灣漢人族群的遺傳背景主要屬於東亞族群，因此研究常拿台灣資料與 CPIC/PharmGKB 的「東亞」及「歐洲」數字比較，但「東亞」平均值並不等於台灣實測值。",
+      "detail_zh": "Lu 等人(Frontiers in Genetics，2022)寫明台灣漢人族群主要由東亞人組成，並使用 172,854 位個體的基因型陣列資料；他們發現多數 PGx 表現型頻率與東亞族群相近，但 UGT1A1 與 SLCO1B1 的單倍型分布與 PharmGKB 東亞資料不一致。後續 NTUH 全外顯子研究(2026)又發現台灣的 HLA-B*58:01 與 G6PD 缺乏高於 PharmGKB 的東亞數字，代表使用本土資料很重要。",
+      "level": "入門",
+      "critical": false,
+      "source_name": "Lu TP et al. Comprehensive characterization of pharmacogenes in a Taiwanese Han population. Front Genet 2022;13:948616",
+      "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9452738/",
+      "confidence": "high",
+      "en_terms": [
+        "Taiwanese Han",
+        "population-specific data",
+        "PharmGKB East Asian"
+      ]
+    },
+    {
+      "id": "population-frequencies-05",
+      "claim_zh": "依 CPIC 以 Hardy-Weinberg 推估的表現型頻率，CYP2C19 不良代謝者(PM)的比例在東亞約 13.0%，遠高於中南亞 8.2%、非裔美人/加勒比非裔 4.1%、撒哈拉以南非洲 3.7% 與歐洲 2.4%。",
+      "detail_zh": "同一張表中，中間代謝者(IM)為東亞 45.9%、中南亞 40.8%、非裔美人 31.4%、撒哈拉以南非洲 29.9%、歐洲 26.1%；快速加超快速代謝者(RM+UM)則是歐洲 31.8%、非裔美人 28.0%、撒哈拉以南非洲 24.1%、中南亞 21.5%、東亞僅 2.6%。這些是由基因型預測的表現型(四捨五入)，不是實測酶活性；撒哈拉以南非洲與非裔美人另有約 0.7%–4.3% 的「可能的 PM/IM」小類未列入。適合畫成 5 族群的堆疊長條圖。",
+      "level": "入門",
+      "critical": true,
+      "source_name": "CPIC CYP2C19 frequency table (Phenotype frequency sheet), 表格最新修訂 2022-03-11",
+      "source_url": "https://files.cpicpgx.org/data/report/current/frequency/CYP2C19_frequency_table.xlsx",
+      "confidence": "high",
+      "en_terms": [
+        "CYP2C19 poor metabolizer",
+        "intermediate metabolizer",
+        "rapid metabolizer",
+        "ultrarapid metabolizer"
+      ]
+    },
+    {
+      "id": "population-frequencies-06",
+      "claim_zh": "CPIC 頻率表(加權平均)顯示 CYP2C19*2(無功能等位基因，rs4244285)的等位基因頻率在東亞為 28.4%、中南亞 27.0%、非裔美人/加勒比非裔 18.1%、撒哈拉以南非洲 15.7%、歐洲 14.7%。",
+      "detail_zh": "CPIC 表列受試者數分別為東亞 32,510、中南亞 7,100、非裔美人 2,519、撒哈拉以南非洲 4,071、歐洲 71,782。單一研究範圍很大(東亞各研究 5.7%–49.4%)。大洋洲加權平均高達 61.0%(n=6,954，各研究 24%–78%)，屬於研究少且變異大的離群值，解讀時要小心。以 gnomAD v4.1(外顯子加基因體合計)對照：東亞 30.4%、南亞 32.0%、非洲 17.8%、非芬蘭歐洲 14.6%。以上皆為等位基因頻率。",
+      "level": "初階",
+      "critical": true,
+      "source_name": "CPIC CYP2C19 frequency table (Allele frequency sheet)；gnomAD v4.1 rs4244285",
+      "source_url": "https://files.cpicpgx.org/data/report/current/frequency/CYP2C19_frequency_table.xlsx",
+      "confidence": "high",
+      "en_terms": [
+        "CYP2C19*2",
+        "rs4244285",
+        "no-function allele",
+        "gnomAD"
+      ]
+    },
+    {
+      "id": "population-frequencies-07",
+      "claim_zh": "CYP2C19*3(無功能等位基因)在東亞頻率為 7.25%，但歐洲僅 0.16%、撒哈拉以南非洲 0.27%、非裔美人/加勒比非裔 0.28%、中南亞 1.57%，是東亞特別重要的變異。",
+      "detail_zh": "CPIC 東亞單一研究範圍 0%–20.7%；大洋洲 14.6%(n=6,954，範圍 1.7%–33%)。gnomAD v4.1 對照：東亞 8.87%、南亞 0.35%、非洲 0.05%、非芬蘭歐洲 0.01%。在歐洲與非洲，CYP2C19 無功能等位基因幾乎都是 *2；在東亞 *3 約占無功能等位基因的五分之一(7.25% 對 28.4%，比例為本研究換算)，只檢測 *2 的檢驗會漏掉這部分。",
+      "level": "初階",
+      "critical": true,
+      "source_name": "CPIC CYP2C19 frequency table (Allele frequency sheet)；gnomAD v4.1 rs4986893",
+      "source_url": "https://files.cpicpgx.org/data/report/current/frequency/CYP2C19_frequency_table.xlsx",
+      "confidence": "high",
+      "en_terms": [
+        "CYP2C19*3",
+        "rs4986893",
+        "East Asian-enriched allele"
+      ]
+    },
+    {
+      "id": "population-frequencies-08",
+      "claim_zh": "CYP2C19*17(增加功能等位基因)在歐洲頻率為 21.5%、非裔美人/加勒比非裔 20.7%、撒哈拉以南非洲 17.3%、中南亞 17.1%，但在東亞只有 2.05%。",
+      "detail_zh": "gnomAD v4.1 對照：非洲 22.1%、非芬蘭歐洲 22.0%、南亞 16.3%、東亞 0.95%(東亞僅約 5,174 條等位基因，樣本較小)。台灣 NTUH 全外顯子(n=3,562)的 *17 為 0.6%，同篇文章的歐洲比較值為 21.3%。因此快速與超快速代謝者在東亞很少見，在歐洲約占三成(RM+UM 31.8%，見前述表現型分布)。",
+      "level": "初階",
+      "critical": true,
+      "source_name": "CPIC CYP2C19 frequency table (Allele frequency sheet)；gnomAD v4.1 rs12248560；Lin et al. 2026",
+      "source_url": "https://files.cpicpgx.org/data/report/current/frequency/CYP2C19_frequency_table.xlsx",
+      "confidence": "high",
+      "en_terms": [
+        "CYP2C19*17",
+        "increased function",
+        "rapid metabolizer"
+      ]
+    },
+    {
+      "id": "population-frequencies-09",
+      "claim_zh": "台灣人 CYP2C19 無功能等位基因(*2 加 *3)合計約 37%，約六成(60.9%)被預測為中間或不良代謝者，其中不良代謝者約 14%。",
+      "detail_zh": "台大醫院(NTUH)全外顯子世代(n=3,562，2026)：IM 47.0%(1,673 人)、PM 13.9%(495 人)、合計 60.9%；無功能等位基因 37.6%(歐洲 14.3%)，*17 僅 0.6%(歐洲 21.3%)。CPIC 收錄的健康台灣人研究(Wang 2014，n=1,038)：*2 為 31.2%、*3 為 5.8%。中國醫藥大學附設醫院研究(Lu 2022)：clopidogrel 使用者中 61% 為 IM 或 PM(46% IM、14% PM)。三個獨立資料一致指向約六成。注意 NTUH 與 CMUH 都是醫院世代，並非隨機抽樣的一般民眾。",
+      "level": "初階",
+      "critical": true,
+      "source_name": "Lin et al. Pharmacogenomic calling from whole-exome sequencing in the Taiwanese population. Mol Genet Genomic Med 2026 (PMC12819042；DOI 10.1002/mgg3.70201)",
+      "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12819042/",
+      "confidence": "high",
+      "en_terms": [
+        "Taiwan CYP2C19",
+        "whole-exome sequencing",
+        "clopidogrel",
+        "NTUH"
+      ]
+    },
+    {
+      "id": "population-frequencies-10",
+      "claim_zh": "CYP2D6*10(降低功能等位基因)在東亞的加權平均頻率為 42.8%(CPIC，n=21,185)，遠高於中南亞 7.6%、近東 6.8%、大洋洲 5.7%、撒哈拉以南非洲 4.9%、非裔美人 3.8%、歐洲 1.6%。",
+      "detail_zh": "「東亞常超過 40%」的說法得到 CPIC 資料證實，但單一研究範圍很寬(8.6%–64.1%)，例如漢人 1,954 人的研究為 42.86%(Qian 2013，PMID 24192122)。CPIC 將 *10 的活性值定為 0.25(降低功能)，並說明其資料來自多項小型、非隨機取樣的文獻，因此宜視為範圍而非單一精確值。台灣本土的 CYP2D6*10 實測頻率在本次可取得的原始來源中沒有找到。",
+      "level": "初階",
+      "critical": true,
+      "source_name": "CPIC CYP2D6 frequency table (Allele frequency / References sheets)，表格最新修訂 2024-10-17",
+      "source_url": "https://files.cpicpgx.org/data/report/current/frequency/CYP2D6_frequency_table.xlsx",
+      "confidence": "high",
+      "en_terms": [
+        "CYP2D6*10",
+        "decreased function",
+        "activity value 0.25",
+        "East Asian"
+      ]
+    },
+    {
+      "id": "population-frequencies-11",
+      "claim_zh": "CYP2D6 其他重要等位基因的族群分布截然不同：*4(無功能)在歐洲 18.5%、東亞僅 0.53%；*17(降低功能)在撒哈拉以南非洲 19.4%、非裔美人 16.9%、東亞幾乎為 0；*41(降低功能)在近東 15.4%、中南亞 11.9%、歐洲 9.2%、東亞 2.3%。",
+      "detail_zh": "*5(整個基因缺失)在各族群約 1.6%–6.2%：撒哈拉以南非洲 6.22%、非裔美人 5.42%、東亞 4.82%、中南亞 4.18%、歐洲 2.95%、近東 1.82%。以上為 CPIC 加權平均，受試者數：東亞 21,185、歐洲 65,090、撒哈拉以南非洲 3,209、非裔美人 12,165、近東 3,254、中南亞 4,208。CYP2D6 為高度複雜基因(含拷貝數變異)，不同研究的基因分型完整度差異大。",
+      "level": "初階",
+      "critical": true,
+      "source_name": "CPIC CYP2D6 frequency table (Allele frequency sheet)",
+      "source_url": "https://files.cpicpgx.org/data/report/current/frequency/CYP2D6_frequency_table.xlsx",
+      "confidence": "high",
+      "en_terms": [
+        "CYP2D6*4",
+        "CYP2D6*5",
+        "CYP2D6*17",
+        "CYP2D6*41",
+        "gene deletion"
+      ]
+    },
+    {
+      "id": "population-frequencies-12",
+      "claim_zh": "CYP2C9*2 在歐洲 12.7%、近東 13.0%、中南亞 11.4%，但東亞僅 0.21%；*3 則以中南亞最高(11.0%)，歐洲 7.6%、東亞 3.8%、撒哈拉以南非洲 1.1%。",
+      "detail_zh": "CPIC 加權平均，受試者數：東亞 26,906、歐洲 1,387,026、中南亞 90,049、撒哈拉以南非洲 3,870、近東 72,975。CPIC 收錄的台灣研究中 *3 為 2.2%–5.3%(Hung 2012 健康對照 n=190：4.5%；Liou 2006 n=180：2.5%；Chern 2006 n=69：2.2%)，*2 在這些台灣研究皆為 0。gnomAD v4.1：*2 非芬蘭歐洲 13.2%、東亞 0.02%；*3 南亞 11.0%、歐洲 6.5%、東亞 3.0%、非洲 1.3%。",
+      "level": "初階",
+      "critical": true,
+      "source_name": "CPIC CYP2C9 frequency table；gnomAD v4.1 rs1799853 / rs1057910",
+      "source_url": "https://files.cpicpgx.org/data/report/current/frequency/CYP2C9_frequency_table.xlsx",
+      "confidence": "high",
+      "en_terms": [
+        "CYP2C9*2",
+        "CYP2C9*3",
+        "decreased function"
+      ]
+    },
+    {
+      "id": "population-frequencies-13",
+      "claim_zh": "VKORC1 啟動子變異 -1639G>A(rs9923231，以基因組正股表示為 C>T 的 T 等位基因)頻率在東亞為 86.6%、歐洲 41.3%、中南亞 15.6%、撒哈拉以南非洲 10.8%、非裔美人/加勒比非裔 10.1%。",
+      "detail_zh": "CPIC 受試者數：東亞 2,837、歐洲 4,175、中南亞 2,960、撒哈拉以南非洲 621、非裔美人 2,811。台灣：CPIC 收錄的 Lee 2009(台灣漢人，n=307)T 等位基因為 88.5%；Lu 2022 的 CMUH 陣列(n=172,854)為 0.89，約 80% 為 TT 基因型。gnomAD v4.1：東亞 89.2%、南亞 17.8%、非芬蘭歐洲 37.8%、非洲 10.0%。ClinPGx 變異頁面的同義詞證實 NC_000016.10:g.31096368C>T 等同 NM_024006.5:c.-1639G>A。以上是等位基因頻率，實際華法林劑量需用完整演算法。",
+      "level": "初階",
+      "critical": true,
+      "source_name": "CPIC VKORC1 frequency table；Lee MTM 2009 (PMID 19842934)；ClinPGx rs9923231 variant record",
+      "source_url": "https://files.cpicpgx.org/data/report/current/frequency/VKORC1_frequency_table.xlsx",
+      "confidence": "high",
+      "en_terms": [
+        "VKORC1",
+        "-1639G>A",
+        "rs9923231",
+        "warfarin sensitivity"
+      ]
+    },
+    {
+      "id": "population-frequencies-14",
+      "claim_zh": "CPIC 目前線上的 HLA-B 頻率表顯示 HLA-B*15:02 等位基因頻率在東亞為 4.56%、中南亞 2.59%、大洋洲 0.80%，歐洲僅 0.01%、拉丁美洲 0.03%、撒哈拉以南非洲為 0。",
+      "detail_zh": "受試者數：東亞 416,887、中南亞 191,941、歐洲 1,430,734、撒哈拉以南非洲 31,082；東亞各研究範圍 0%–35.8%。版本差異要注意：2017 年 CPIC 指引(2018 年於 CPT 發表)內文寫東亞 6.9%、大洋洲 5.4%、中南亞 4.6%，與 2026-09-29 取用的線上頻率表(最後修訂紀錄 2020-02-27)不同，引用時需標明版本。等位基因頻率不等於攜帶者頻率，東亞 4.56% 約對應 8.9% 攜帶者(本研究依 Hardy-Weinberg 換算)。",
+      "level": "初階",
+      "critical": true,
+      "source_name": "CPIC HLA-B frequency table；CPIC guideline for HLA genotype and carbamazepine/oxcarbazepine: 2017 update (Phillips et al. 2018)",
+      "source_url": "https://files.cpicpgx.org/data/report/current/frequency/HLA-B_frequency_table.xlsx",
+      "confidence": "high",
+      "en_terms": [
+        "HLA-B*15:02",
+        "allele frequency",
+        "carbamazepine",
+        "Stevens-Johnson syndrome"
+      ]
+    },
+    {
+      "id": "population-frequencies-15",
+      "claim_zh": "HLA-B*15:02 在亞洲內部差異極大：泰國 8.2%、馬來半島馬來人 12.3%、越南京族 13.5%、西爪哇 12.2%、香港華人 9.4%、台灣漢人 4.5%，但日本僅約 0.03%、韓國約 0.3%。",
+      "detail_zh": "數字為 CPIC 頻率表 References 所收錄研究的等位基因頻率，多數轉引自 Allele Frequency Net Database(González-Galarza 2015，PMID 25414323)：泰國 Puangpetch 2014(n=986)8.16%；馬來半島馬來人(n=951)12.25%；越南河內京族(n=170)13.5%；西爪哇(n=236)12.2%；香港華人骨髓庫(n=7,595)9.38%；台灣漢人(n=504)4.5%；新加坡華人(n=149)5.7%；北京/天津/石家莊漢人(n=618)2.4%；日本(n=18,604)0.03%；南韓(n=4,128)0.33%。單一小樣本研究的不確定性高，僅供比較趨勢。",
+      "level": "初階",
+      "critical": true,
+      "source_name": "CPIC HLA-B frequency table (References sheet; compiled from Allele Frequency Net Database)",
+      "source_url": "https://files.cpicpgx.org/data/report/current/frequency/HLA-B_frequency_table.xlsx",
+      "confidence": "high",
+      "en_terms": [
+        "HLA-B*15:02",
+        "Southeast Asia",
+        "Allele Frequency Net Database"
+      ]
+    },
+    {
+      "id": "population-frequencies-16",
+      "claim_zh": "美國 FDA 核准的 carbamazepine(Tegretol)仿單指出，HLA-B*1502 陽性者的比例在香港、泰國、馬來西亞與菲律賓部分地區超過 15%，台灣約 10%，中國北方約 4%，南亞(含印度)平均 2%–4%，日本與韓國低於 1%，非亞裔(白人、非裔美人、西班牙裔、美洲原住民)幾乎不存在。",
+      "detail_zh": "仿單用詞是「positive」與「prevalence」，指攜帶者(陽性)比例而非等位基因頻率，且為概略值，台灣的「約 10%」略高於本研究整理的實測攜帶者 7.7%–8.8%。仿單並建議祖源屬遺傳高風險族群者在開始用藥前先篩檢 HLA-B*1502，陽性者除非利大於弊不應使用。內容取自 DailyMed 頁面(2026-09-29 抓取)，不同版本仿單數字可能微調。",
+      "level": "初階",
+      "critical": true,
+      "source_name": "DailyMed: TEGRETOL (carbamazepine) prescribing information",
+      "source_url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=8d409411-aa9f-4f3a-a52c-fbcb0c3ec053",
+      "confidence": "high",
+      "en_terms": [
+        "HLA-B*1502",
+        "boxed warning",
+        "carrier prevalence",
+        "Tegretol"
+      ]
+    },
+    {
+      "id": "population-frequencies-17",
+      "claim_zh": "台灣 HLA-B*15:02 的等位基因頻率約 4.2%–6.0%(兩項近期大型研究皆為 4.4%)，對應攜帶者約 7.7%–8.8%。",
+      "detail_zh": "NTUH 全外顯子(n=3,562)：等位基因 4.4%、陽性者 8.8%(312 人)；CMUH 陣列推算(n=172,854，HLA 為 HIBAG 推算)：4.4%；Chen 2011 NEJM 前瞻性研究：4,877 位候選受試者中 7.7% 為陽性；CPIC 收錄的台灣族群研究：漢人 4.5%(n=504)、另兩項台灣族群研究 5.2%(n=364)與 6.0%(n=212)、慈濟臍帶血庫 4.2%(n=710)。與 FDA 仿單寫的台灣約 10% 相比，實測略低，屬概數差異。",
+      "level": "中階",
+      "critical": true,
+      "source_name": "Lin et al. 2026 (PMC12819042)；Lu et al. 2022 (PMC9452738)；Chen P et al. NEJM 2011",
+      "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12819042/",
+      "confidence": "high",
+      "en_terms": [
+        "HLA-B*15:02 Taiwan",
+        "carrier rate",
+        "HIBAG imputation"
+      ]
+    },
+    {
+      "id": "population-frequencies-18",
+      "claim_zh": "台灣 2011 年前瞻性研究(4,877 位候選受試者)中，HLA-B*1502 陰性且服用 carbamazepine 者沒有人發生 SJS/TEN，而依歷史發生率 0.23% 預期約有 10 例。",
+      "detail_zh": "研究涵蓋 23 家醫院，7.7% 受檢者為陽性並被建議避免 carbamazepine；輕微短暫皮疹發生於 4.3%，較廣泛皮疹 0.1%。CPIC 2017 指引引用漢人族群資料：HLA-B*15:02 對 carbamazepine SJS/TEN 的敏感度約 98%、特異度 97%、陽性預測值 7.7%、陰性預測值 100%，所以陽性不等於必然發病，陰性則幾乎可排除風險(限 carbamazepine)。",
+      "level": "中階",
+      "critical": true,
+      "source_name": "Chen P et al. Carbamazepine-induced toxic effects and HLA-B*1502 screening in Taiwan. N Engl J Med 2011 (PubMed 21428768)；CPIC 2017 update",
+      "source_url": "https://pubmed.ncbi.nlm.nih.gov/21428768/",
+      "confidence": "high",
+      "en_terms": [
+        "HLA-B*1502 screening",
+        "SJS/TEN",
+        "positive predictive value",
+        "negative predictive value"
+      ]
+    },
+    {
+      "id": "population-frequencies-19",
+      "claim_zh": "台灣衛生主管機關自 2007 年 9 月起要求含 carbamazepine 成分藥品仿單加刊 HLA-B*1502 檢測建議，且此基因檢測自 2010 年 6 月 1 日起納入全民健保給付。",
+      "detail_zh": "依衛福部(原衛生署食品藥物管理局)網頁(建檔日期 99-05-20)：「於96年9月要求所有該成分藥品仿單均加刊」、「自99年6月1日起納入全民健保給付項目」。給付的適應症與現行條件可能已調整，需以健保署現行規定為準，本研究未取得現行官方條文。",
+      "level": "中階",
+      "critical": true,
+      "source_name": "衛生福利部：含Carbamazepine成分藥品的臨床效益仍高於風險，高危險族群宜進行HLA-B＊1502基因檢測",
+      "source_url": "https://www.mohw.gov.tw/cp-3161-26506-1.html",
+      "confidence": "high",
+      "en_terms": [
+        "National Health Insurance",
+        "HLA-B*1502 test coverage",
+        "drug label"
+      ]
+    },
+    {
+      "id": "population-frequencies-20",
+      "claim_zh": "HLA-B*58:01 的等位基因頻率在台灣約 10%–11.4%，明顯高於 CPIC 的東亞平均 6.0% 與歐洲 0.77%，NTUH 全外顯子顯示約每 5 位台灣人就有 1 位(21.1%)是攜帶者。",
+      "detail_zh": "台灣資料：NTUH WES 等位基因 11.0%、陽性者 21.1%(750/3,562)；CMUH 陣列推算 11.4%(n=172,854)；CPIC 收錄的台灣漢人 10.6%(n=504)、10.0%(n=364)、10.1%(n=212)、臍帶血 9.8%(n=710)。CPIC 其他族群：撒哈拉以南非洲 4.35%、中南亞 4.19%、非裔美人 3.82%、近東 1.87%、拉丁美洲 1.35%。亞洲他處：泰國 8.6%、香港 8.9%、韓國約 6%–7%、越南京族 6.5%、馬來人 5.8%、日本約 0.6%–0.8%。Hung 2005(PNAS)：51 位別嘌呤醇嚴重皮膚不良反應的漢人病人 100% 帶 HLA-B*5801，耐受者為 15%(20/135)，一般健康漢人為 20%(19/93，攜帶者比例)。",
+      "level": "中階",
+      "critical": true,
+      "source_name": "Lin et al. 2026 (PMC12819042)；CPIC HLA-B frequency table；Hung SI et al. PNAS 2005 (PubMed 15743917)",
+      "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12819042/",
+      "confidence": "high",
+      "en_terms": [
+        "HLA-B*58:01",
+        "allopurinol",
+        "severe cutaneous adverse reactions",
+        "Taiwan"
+      ]
+    },
+    {
+      "id": "population-frequencies-21",
+      "claim_zh": "HLA-B*57:01 以中南亞最高(6.8%)，歐洲 3.6%、東亞 0.98%、撒哈拉以南非洲與非裔美人各約 0.61%，台灣漢人只有約 0.1%–0.7%。",
+      "detail_zh": "CPIC 加權平均受試者數：中南亞 191,941、歐洲 1,430,734、東亞 416,887。台灣：CMUH 陣列推算 0.2%(n=172,854)；CPIC 收錄的台灣族群研究 0.3%(n=504)、0.1%(n=364)、0.7%(n=212)、0.1%(n=710)。此等位基因與 abacavir 過敏反應相關(用藥建議見其他主題)。",
+      "level": "中階",
+      "critical": true,
+      "source_name": "CPIC HLA-B frequency table；Lu et al. 2022",
+      "source_url": "https://files.cpicpgx.org/data/report/current/frequency/HLA-B_frequency_table.xlsx",
+      "confidence": "high",
+      "en_terms": [
+        "HLA-B*57:01",
+        "abacavir hypersensitivity"
+      ]
+    },
+    {
+      "id": "population-frequencies-22",
+      "claim_zh": "CPIC 將無功能的 NUDT15*3(定義含 R139C 的 rs116855232 T 等位基因)與 *2 在東亞分別列為 6.05% 與 3.50%(合計 9.6%)，中南亞 *3 為 6.70%，歐洲只有 *3 的 0.20%、*2 為 0。",
+      "detail_zh": "CPIC 拉丁美洲為 *3 0.75%、*2 3.65%(受試者數：東亞 32,727、中南亞 69,438、歐洲 253,219)。gnomAD v4.1 直接量測 R139C(rs116855232 的 T 等位基因)可互相對照：東亞 10.3%、南亞 6.5%、美洲混合 5.1%、非芬蘭歐洲 0.26%、非洲 0.11%；東亞 10.3% 與 CPIC *2 加 *3 的 9.6% 相近(兩等位基因的精確定義請參閱 CPIC 等位基因定義表)。",
+      "level": "中階",
+      "critical": true,
+      "source_name": "CPIC NUDT15 frequency table；gnomAD v4.1 rs116855232",
+      "source_url": "https://files.cpicpgx.org/data/report/current/frequency/NUDT15_frequency_table.xlsx",
+      "confidence": "high",
+      "en_terms": [
+        "NUDT15 R139C",
+        "rs116855232",
+        "thiopurine",
+        "no-function allele"
+      ]
+    },
+    {
+      "id": "population-frequencies-23",
+      "claim_zh": "CPIC 推估 NUDT15 中間代謝者在東亞為 19.4%、不良代謝者 1.46%，歐洲分別僅 1.36% 與約 0.005%；台灣 NTUH 全外顯子為中間代謝者 18.6%、不良代謝者 0.9%。",
+      "detail_zh": "台灣 NUDT15 無功能等位基因(*2 與 *3)合計 10.5%，歐洲為 0.2%。CPIC 其他族群：中南亞 IM 12.9%、PM 0.49%；拉丁美洲 IM 11.9%、PM 0.40%。這解釋為何東亞的硫嘌呤(thiopurine)毒性要優先看 NUDT15，而非只看 TPMT(用藥建議見其他主題)。",
+      "level": "中階",
+      "critical": true,
+      "source_name": "CPIC NUDT15 frequency table (Phenotype frequency sheet)；Lin et al. 2026",
+      "source_url": "https://files.cpicpgx.org/data/report/current/frequency/NUDT15_frequency_table.xlsx",
+      "confidence": "high",
+      "en_terms": [
+        "NUDT15 intermediate metabolizer",
+        "NUDT15 poor metabolizer",
+        "thiopurine toxicity"
+      ]
+    },
+    {
+      "id": "population-frequencies-24",
+      "claim_zh": "TPMT 的主要無功能等位基因分布不同：*3A 以拉丁美洲(4.17%)與歐洲(3.38%)為主，東亞幾乎沒有(0.03%)；*3C 在撒哈拉以南非洲最高(5.29%)，東亞 1.64%、歐洲 0.49%。",
+      "detail_zh": "CPIC 推估的 TPMT 中間代謝者：撒哈拉以南非洲 10.4%、歐洲 8.7%、東亞 4.0%、中南亞 3.6%；不良代謝者僅 0.04%–0.30%。台灣：CPIC 收錄的研究 *3C 在漢人約 0.12%–0.6%(Lu HF 2006 n=117：0.12%；Chang 2002 n=249：0.6%)，原住民為 1.28%(n=409)；NTUH WES 的 TPMT 中間代謝者為 3.0%(107 人)。gnomAD v4.1 的 rs1142345(c.719A>G，*3A 與 *3C 共有)：東亞 1.31%、歐洲 4.67%、非洲 5.52%。",
+      "level": "中階",
+      "critical": true,
+      "source_name": "CPIC TPMT frequency table；Lin et al. 2026；gnomAD v4.1 rs1142345",
+      "source_url": "https://files.cpicpgx.org/data/report/current/frequency/TPMT_frequency_table.xlsx",
+      "confidence": "high",
+      "en_terms": [
+        "TPMT*3A",
+        "TPMT*3C",
+        "thiopurine methyltransferase"
+      ]
+    },
+    {
+      "id": "population-frequencies-25",
+      "claim_zh": "DPYD*2A(c.1905+1G>A)與 HapB3(c.1236G>A 相關)在東亞近乎不存在，CPIC 東亞頻率為 0，歐洲則分別為 0.79% 與 2.37%。",
+      "detail_zh": "CPIC 其他族群：*2A 中南亞 0.51%、非裔美人 0.31%、拉丁美洲 0.08%；HapB3 中南亞 1.97%、拉丁美洲 0.59%、非裔美人 0.31%；c.2846A>T 歐洲 0.37%。gnomAD v4.1 對照：*2A 非芬蘭歐洲 0.48%(芬蘭 2.33%)、南亞 0.40%、東亞 0.00%；c.1236G>A 非芬蘭歐洲 2.21%、南亞 1.73%、東亞 0.01%。兩資料源在歐洲的 *2A 數值不同(0.79% 對 0.48%)，宜視為範圍。台灣：Hsiao 2004(n=300)未檢出 *2A；日本團隊 1,364 位大腸癌病人 GWAS 中，四個反覆出現的 DPYD 變異(*2A、c.2846A>T、c.1679T>G、c.1236G>A)皆未出現，作者結論是 CPIC 收錄的 DPYD 基因型在亞洲族群角色有限。不代表東亞沒有 DPYD 相關風險，只是常見歐洲變異不適用。",
+      "level": "中階",
+      "critical": true,
+      "source_name": "CPIC DPYD frequency table；gnomAD v4.1；Hsiao HH 2004 (PMID 15132136)；Kanai M 2023 (PMID 36524458)",
+      "source_url": "https://files.cpicpgx.org/data/report/current/frequency/DPYD_frequency_table.xlsx",
+      "confidence": "medium",
+      "en_terms": [
+        "DPYD*2A",
+        "HapB3",
+        "fluoropyrimidine",
+        "dihydropyrimidine dehydrogenase"
+      ]
+    },
+    {
+      "id": "population-frequencies-26",
+      "claim_zh": "SLCO1B1 c.521T>C(rs4149056)在東亞並不比歐洲少：CPIC 表中攜帶 c.521C 的 *5 與 *15 合計(本研究自行加總)為東亞 12.6%、歐洲 17.1%、中南亞 7.0%、撒哈拉以南非洲 2.8%，gnomAD v4.1 直接量測為東亞 13.7%、非芬蘭歐洲 15.3%、南亞 4.7%、非洲 3.1%。",
+      "detail_zh": "CPIC 分開列出 *5(僅 c.521C)與 *15(c.521C 加 c.388G)：*15 東亞 12.45%、歐洲 15.02%，*5 東亞 0.10%、歐洲 2.04%；gnomAD v4.1 另有美洲混合 12.3%、中東 20.5%。CPIC 推估表現型：降低功能東亞 21.8%、歐洲 28.3%、中南亞 13.0%；不良功能東亞 1.6%、歐洲 2.9%。台灣 NTUH WES：降低功能 19.4%(690 人)、不良功能 1.1%(39 人)。",
+      "level": "中階",
+      "critical": true,
+      "source_name": "CPIC SLCO1B1 frequency table；gnomAD v4.1 rs4149056；Lin et al. 2026",
+      "source_url": "https://files.cpicpgx.org/data/report/current/frequency/SLCO1B1_frequency_table.xlsx",
+      "confidence": "high",
+      "en_terms": [
+        "SLCO1B1*5",
+        "SLCO1B1*15",
+        "rs4149056",
+        "statin myopathy"
+      ]
+    },
+    {
+      "id": "population-frequencies-27",
+      "claim_zh": "UGT1A1*28(TA 重複)在撒哈拉以南非洲 40.0%、中南亞 41.4%、非裔美人 37.3%、歐洲 31.6% 遠高於東亞 14.8%，而 UGT1A1*6 則相反，東亞 14.6%、歐洲僅 0.79%、撒哈拉以南非洲為 0。",
+      "detail_zh": "CPIC 受試者數偏小(東亞 1,467、歐洲 1,550、撒哈拉以南非洲 2,623)，不確定性較高。gnomAD v4.1 的 rs4148323(*6，p.Gly71Arg)：東亞 16.45%、南亞 1.92%、非芬蘭歐洲 0.08%、非洲 0.06%(*28 為重複序列，不在 gnomAD 單一核苷酸變異中)。台灣：NTUH WES 的 UGT1A1 不良代謝者 7.0%(250 人)；Lu 2022 的 *60 單倍型為 23%。台灣本土 *6 與 *28 的實測等位基因頻率在本次來源中沒有找到。",
+      "level": "中階",
+      "critical": true,
+      "source_name": "CPIC UGT1A1 frequency table；gnomAD v4.1 rs4148323；Lin et al. 2026",
+      "source_url": "https://files.cpicpgx.org/data/report/current/frequency/UGT1A1_frequency_table.xlsx",
+      "confidence": "medium",
+      "en_terms": [
+        "UGT1A1*28",
+        "UGT1A1*6",
+        "irinotecan",
+        "atazanavir"
+      ]
+    },
+    {
+      "id": "population-frequencies-28",
+      "claim_zh": "CYP3A5*3(不表現酵素的等位基因)在歐洲高達 92.4%，東亞 74.6%、中南亞 67.3%，而在非裔美人 31.6%、撒哈拉以南非洲 24.1%，因此有表現 CYP3A5 的人在非洲與東亞比歐洲多得多。",
+      "detail_zh": "CPIC 推估「表現者」(中間加正常代謝者)：撒哈拉以南非洲 72.9%、非裔美人 70.1%、中南亞 54.7%、東亞 44.3%、歐洲 14.3%。台灣：CPIC 收錄研究 *3 為 69.2%–72.6%；台灣人體生物資料庫 WGS(n=1,017)為 73.2%(Hsu 2024)；NTUH WES 表現者 48.7%(IM 40.2%＋NM 8.5%)，同篇的歐洲比較為 13.0%。gnomAD v4.1 對照：非芬蘭歐洲 93.3%、東亞 73.7%、南亞 72.8%、非洲 29.2%。",
+      "level": "中階",
+      "critical": true,
+      "source_name": "CPIC CYP3A5 frequency table；Lin et al. 2026；Hsu JS et al. J Adv Res 2024 (PMC11675050)",
+      "source_url": "https://files.cpicpgx.org/data/report/current/frequency/CYP3A5_frequency_table.xlsx",
+      "confidence": "high",
+      "en_terms": [
+        "CYP3A5*3",
+        "CYP3A5 expresser",
+        "tacrolimus",
+        "nonexpressor"
+      ]
+    },
+    {
+      "id": "population-frequencies-29",
+      "claim_zh": "台灣新生兒篩檢的 G6PD 缺乏症發生率約 1.8%，男嬰 2.81%、女嬰 0.70%；NTUH 全外顯子依基因型推估全體為 2.0%(男 3.64%、女 0.23%)，主要來自 Kaiping(1.1%)與 Taiwan-Hakka(1.6%)等區域性變異。",
+      "detail_zh": "Chien 2008：1996–2005 年台大醫院新生兒篩檢中心篩檢 1,211,632 名(占全台新生兒 45.41%)，確診 21,997 人(1.82%)，年發生率自 2002 年起由 1.94% 降至 1.61%。Lin 2026 的基因型推估未計入雜合子女性，若加上表現型可變的女性(6.8% 女性，約再增 0.7%)則女性總計約 0.9%，與新生兒酵素篩檢(引用 Chiang 1999：全體 2.1%、男 3.1%、女 0.9%)吻合。因此男女數字差異部分來自 X 染色體連鎖遺傳與測量方法不同。",
+      "level": "中階",
+      "critical": true,
+      "source_name": "Chien YH et al. Southeast Asian J Trop Med Public Health 2008 (PubMed 18567456)；Lin et al. 2026 (PMC12819042)",
+      "source_url": "https://pubmed.ncbi.nlm.nih.gov/18567456/",
+      "confidence": "high",
+      "en_terms": [
+        "G6PD deficiency",
+        "newborn screening",
+        "Kaiping",
+        "Taiwan-Hakka",
+        "X-linked"
+      ]
+    },
+    {
+      "id": "population-frequencies-30",
+      "claim_zh": "G6PD 缺乏是最常見的人類酵素缺陷之一，全球估計超過 4 億人(Cappellini 2008；Nkhoma 2009)，較新的估計約 5 億人(Luzzatto 2020)；瘧疾流行地區的預測等位基因頻率約 8.0%，在撒哈拉以南非洲與阿拉伯半島最高，預測盛行率最高達 32.5%。",
+      "detail_zh": "各地的變異種類不同：非洲以 G6PD A-(c.202G>A)為主，gnomAD v4.1 非洲 12.3%、東亞與歐洲約 0；中東/地中海以 Mediterranean(c.563C>T)為主，gnomAD 中東 4.2%、南亞 1.9%；東亞則為 Canton(c.1376G>T，gnomAD 東亞 0.38%；CPIC 東亞 1.06%)與 Kaiping(CPIC 東亞 0.70%)。G6PD 為 X 連鎖，男性半合子多為缺乏，女性雜合子表現可變；gnomAD 數字是等位基因頻率而非缺乏症盛行率。歐洲地中海地區實際盛行率在本次來源中未取得。",
+      "level": "中階",
+      "critical": true,
+      "source_name": "Howes RE et al. PLoS Med 2012 (PubMed 23152723)；Cappellini & Fiorelli, Lancet 2008；Luzzatto L et al. Blood 2020；gnomAD v4.1",
+      "source_url": "https://pubmed.ncbi.nlm.nih.gov/23152723/",
+      "confidence": "medium",
+      "en_terms": [
+        "G6PD A-",
+        "G6PD Mediterranean",
+        "G6PD Canton",
+        "malaria-endemic countries"
+      ]
+    },
+    {
+      "id": "population-frequencies-31",
+      "claim_zh": "依 CPIC 的活性分數(AS)與現行表現型切點換算，CYP2D6 不良代謝者(AS=0)在歐洲約 6.5%、東亞僅約 0.8%，但兩者的中間代謝者都約 38%，組成卻不同：AS 0.25–0.5 的人在東亞約 29.4%、歐洲僅約 9.5%。",
+      "detail_zh": "本研究以 CPIC gene_result 切點(PM=0；IM=0.25、0.5、0.75、1.0；NM=1.25–2.25；UM≥2.5)加總 CPIC CYP2D6 表現型頻率表而得(自行換算，非表中直接列出)：東亞 PM 0.8%/IM 38.5%/NM 53.2%/UM 0.9%(無法分類 6.7%)；歐洲 6.5%/38.3%/49.2%/2.3%(3.7%)；撒哈拉以南非洲 2.0%/38.1%/46.4%/4.5%(9.0%)；非裔美人 2.3%/35.9%/53.8%/4.1%(3.9%)；中南亞 2.4%/28.1%/58.1%/1.5%(10.0%)。東亞 AS 1.25(如 *1/*10)占 35.5% 被歸為正常代謝者；歐洲主要為 AS 1.0(28.5%)。",
+      "level": "中階",
+      "critical": true,
+      "source_name": "CPIC CYP2D6 frequency table (Phenotype frequency sheet)；CPIC gene_result API for CYP2D6",
+      "source_url": "https://files.cpicpgx.org/data/report/current/frequency/CYP2D6_frequency_table.xlsx",
+      "confidence": "medium",
+      "en_terms": [
+        "CYP2D6 activity score",
+        "CYP2D6 poor metabolizer",
+        "intermediate metabolizer",
+        "derived phenotype frequency"
+      ]
+    },
+    {
+      "id": "population-frequencies-32",
+      "claim_zh": "依 CPIC 的活性分數換算，CYP2C9 正常代謝者(AS=2.0)在東亞約 83.8%、歐洲 62.8%、中南亞 59.6%，中間代謝者(AS 1.0–1.5)東亞 15.2%、歐洲 34.5%、中南亞 36.2%。",
+      "detail_zh": "不良代謝者(AS 0–0.5)：中南亞 3.8%、歐洲 2.6%、東亞 0.6%、撒哈拉以南非洲 0.5%。撒哈拉以南非洲 NM 73.1%/IM 26.3%，非裔美人 NM 75.9%/IM 23.6%。此為本研究依 CPIC 活性分數表(PM=0–0.5、IM=1.0–1.5、NM=2.0，取自 CPIC allele/gene_result API)加總的換算值。台灣 NTUH WES：CYP2C9 中間代謝者(AS 1.0)為 6.1%(218 人)，此僅為 AS=1.0 一類，不能直接與上列 AS 1.0–1.5 合計值比較。",
+      "level": "中階",
+      "critical": true,
+      "source_name": "CPIC CYP2C9 frequency table (Phenotype frequency sheet)；Lin et al. 2026",
+      "source_url": "https://files.cpicpgx.org/data/report/current/frequency/CYP2C9_frequency_table.xlsx",
+      "confidence": "medium",
+      "en_terms": [
+        "CYP2C9 activity score",
+        "CYP2C9 intermediate metabolizer",
+        "derived phenotype frequency"
+      ]
+    },
+    {
+      "id": "population-frequencies-33",
+      "claim_zh": "HLA-A*31:01 是 carbamazepine 過敏反應(MPE、DRESS、SJS/TEN)的另一個風險等位基因，其頻率在歐洲(CPIC 2.64%)、東亞(3.45%)與拉丁美洲(4.52%)並不低，在 HLA-B*15:02 攜帶率低於 1% 的歐洲、非洲與日本人群中反而是主要風險因子。",
+      "detail_zh": "CPIC 2017 指引內文列出：日本人 8%、南韓 5%、拉丁美洲/南美 6%、白人 3%、中南亞 2%；在東南亞，HLA-B*15:02 的強關聯會蓋過 HLA-A*31:01。CPIC HLA-A*31:01 加權平均受試者數：東亞 416,769、歐洲 1,430,302。McCormack 2011(NEJM)在北歐裔中發現 HLA-A*3101 帶來的風險由 5.0% 升至 26.0%。換言之，該檢測哪個 HLA 基因取決於族群背景與證據，不能只用「亞洲對非亞洲」二分。",
+      "level": "中階",
+      "critical": true,
+      "source_name": "CPIC guideline for HLA genotype and carbamazepine/oxcarbazepine: 2017 update；CPIC HLA-A frequency data；McCormack M et al. NEJM 2011 (PubMed 21428769)",
+      "source_url": "https://files.cpicpgx.org/data/guideline/publication/carbamazepine/2017/CPIC_HLA_CBZ_OXC.pdf",
+      "confidence": "high",
+      "en_terms": [
+        "HLA-A*31:01",
+        "carbamazepine hypersensitivity",
+        "DRESS",
+        "maculopapular exanthema"
+      ]
+    },
+    {
+      "id": "population-frequencies-34",
+      "claim_zh": "台灣的大型資料顯示幾乎每個人都帶有至少一個可採取行動的藥物基因體表現型：陣列研究(n=172,854)有 99.9%，全外顯子研究(n=3,562)平均每人約 2.4 個(跨 14 個基因)。",
+      "detail_zh": "Lu 2022：99.9% 的個體至少帶有一個可採取行動的 PGx 表現型，其中 29% 已被處方到可能反應異常的藥物。Lin 2026：CYP2C19、CYP3A5、NUDT15、HLA-B*15:02 的可行動表現型頻率與東亞相近但高於歐洲，G6PD 缺乏(2%)與 HLA-B*58:01(21%)則高於東亞與歐洲。台灣精準醫療計畫(TPMI，Nature 2025)已招募 565,390 位參與者並使用漢人優化陣列，未來可提供更大規模的本土頻率。",
+      "level": "中階",
+      "critical": true,
+      "source_name": "Lu et al. 2022；Lin et al. 2026；Yang et al. Nature 2025 (PubMed 41092961)",
+      "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12819042/",
+      "confidence": "high",
+      "en_terms": [
+        "actionable phenotype",
+        "Taiwan Precision Medicine Initiative",
+        "TPMI",
+        "Taiwan Biobank"
+      ]
+    },
+    {
+      "id": "population-frequencies-35",
+      "claim_zh": "「東亞」內部也有很大差異：HLA-B*15:02 在日本約 0.03%、韓國約 0.3%，卻在泰國、馬來、越南達 8%–14%；CYP2D6*10 各研究範圍 8.6%–64.1%；台灣泰雅與布農原住民 HLA-B*15:02 為 0，TPMT*3C 原住民 1.28% 高於漢人 0.12%。",
+      "detail_zh": "CPIC 收錄的 Allele Frequency Net 資料：泰雅族(n=106)與布農族(n=101)的 HLA-B*15:02 皆為 0；Lu HF 2006 的 TPMT*3C：台灣原住民 1.28%(n=409)、漢人 0.12%(n=117)。Dorji 2019 系統性回顧 86 項東南亞與東亞研究，發現 CYP2C19 *1/*2 基因型為 21.5%–86.46%、*2/*2 為 3.4%–14.5%，範圍很寬；Nieh 2025 的敘述性回顧同樣主張需要拆分「亞洲」大類的資料。台灣人不等於東亞平均，台灣原住民與漢人也不同。",
+      "level": "中階",
+      "critical": true,
+      "source_name": "CPIC HLA-B / TPMT frequency tables；Dorji PW et al. J Clin Pharm Ther 2019 (PubMed 30980418)；Nieh HV, Roman YM. J Pers Med 2025 (PubMed 40710391)",
+      "source_url": "https://files.cpicpgx.org/data/report/current/frequency/HLA-B_frequency_table.xlsx",
+      "confidence": "high",
+      "en_terms": [
+        "within-group heterogeneity",
+        "Taiwan indigenous peoples",
+        "disaggregated data"
+      ]
+    },
+    {
+      "id": "population-frequencies-36",
+      "claim_zh": "台灣的 G6PD 缺乏症新生兒發生率隨時間變化：2002 年起由 1.94% 降至 1.61%，且 2000–2005 年間 15%–25% 的新生兒母親是新移入的女性，作者認為篩檢結果顯示台灣存在細微的基因流動。",
+      "detail_zh": "Chien 2008 的摘要提醒人口遷移帶來的醫療議題，這是遷徙(基因流動)如何實際改變族群頻率的本地例子。限制：摘要並未量化移民對發生率下降的貢獻，也未分別給出不同來源地母親所生嬰兒的個別頻率，故不宜斷言因果。",
+      "level": "中階",
+      "critical": true,
+      "source_name": "Chien YH et al. Changes in incidence and sex ratio of G6PD deficiency by population drift in Taiwan. Southeast Asian J Trop Med Public Health 2008 (PubMed 18567456)",
+      "source_url": "https://pubmed.ncbi.nlm.nih.gov/18567456/",
+      "confidence": "medium",
+      "en_terms": [
+        "gene flow",
+        "migration",
+        "G6PD deficiency",
+        "Taiwan newborn screening"
+      ]
+    },
+    {
+      "id": "population-frequencies-37",
+      "claim_zh": "族群間等位基因頻率差異的一般機制包括遺傳漂變(隨機波動，小族群影響大)、創始者效應(少數個體脫離大族群後變異度下降)、遷徙與天擇，但對大多數藥物基因體等位基因，究竟由哪一種機制造成尚無定論。",
+      "detail_zh": "NHGRI 詞彙表定義：創始者效應是「一小群個體與大族群分離時基因體變異度降低」；遺傳漂變是「族群中某等位基因頻率的隨機波動」，主要影響小型隔離族群。本研究在可取得的來源中，除 G6PD/瘧疾與 CYP3A5/緯度兩例外，沒有找到針對 CYP2C19*3、CYP2D6*10、HLA-B*15:02 等個別等位基因『為何』在東亞高頻的確定性證據，因此不宜對學習者斷言單一原因。",
+      "level": "進階",
+      "critical": false,
+      "source_name": "NHGRI Genetics Glossary: Founder Effect；Genetic Drift",
+      "source_url": "https://www.genome.gov/genetics-glossary/Founder-Effect",
+      "confidence": "medium",
+      "en_terms": [
+        "founder effect",
+        "genetic drift",
+        "gene flow",
+        "natural selection"
+      ]
+    },
+    {
+      "id": "population-frequencies-38",
+      "claim_zh": "G6PD 缺乏在地理分布上與過去和現今的瘧疾流行度高度相關，被認為是 X 連鎖人類多態性經由保護雜合子免於瘧疾死亡而維持的平衡多態性。",
+      "detail_zh": "Luzzatto、Ally 與 Notaro(Blood，2020)指出已知 G6PD 突變超過 200 種，約半數為常見的多態性變異，約 5 億人帶有這類突變且多數終身無症狀；Cappellini 與 Fiorelli(Lancet，2008)也指出其全球分布與瘧疾非常相似(瘧疾保護假說)。這說明有些藥物基因體頻率差異可能來自天擇，而不是隨機漂變。",
+      "level": "進階",
+      "critical": true,
+      "source_name": "Luzzatto L, Ally M, Notaro R. Glucose-6-phosphate dehydrogenase deficiency. Blood 2020 (PubMed 32702756)",
+      "source_url": "https://pubmed.ncbi.nlm.nih.gov/32702756/",
+      "confidence": "high",
+      "en_terms": [
+        "balanced polymorphism",
+        "malaria protection hypothesis",
+        "G6PD deficiency",
+        "heterozygote advantage"
+      ]
+    },
+    {
+      "id": "population-frequencies-39",
+      "claim_zh": "Thompson 等人 2004 年在 52 個族群、超過 1,000 人中發現 CYP3A5*3 的頻率與離赤道的距離顯著相關，並推論可能與鹽與水分平衡相關的共同選擇壓力有關。",
+      "detail_zh": "該研究同時發現非編碼調節基因 AGT 的 M235T 變異有類似的地理分布，並與 CYP3A5*1/*3 頻率相關；作者的結論是與環境變數(隨緯度變化)相關的共同選擇壓力所致。這屬於假說性推論而非定論。與 CPIC 頻率的趨勢一致：*3 在歐洲 92.4%、東亞 74.6%、撒哈拉以南非洲 24.1%。",
+      "level": "進階",
+      "critical": true,
+      "source_name": "Thompson EE et al. CYP3A variation and the evolution of salt-sensitivity variants. Am J Hum Genet 2004 (PubMed 15492926)",
+      "source_url": "https://pubmed.ncbi.nlm.nih.gov/15492926/",
+      "confidence": "medium",
+      "en_terms": [
+        "CYP3A5*3",
+        "latitude",
+        "salt sensitivity",
+        "selection"
+      ]
+    },
+    {
+      "id": "population-frequencies-40",
+      "claim_zh": "CPIC 頻率表是由文獻中多項小型、非隨機取樣研究加權平均而成，*1 頻率由 100% 扣除已知變異推算，二倍型與表現型頻率以 Hardy-Weinberg 推估，因此對研究少的族群(大洋洲、中南亞、拉丁美洲)誤差更大。",
+      "detail_zh": "CPIC 在 Methods and Caveats 表示：幾乎沒有研究用遺傳標記估計祖源、常以特定疾病或用藥者為樣本、大樣本與多研究平均通常較佳；族群被合併成大群體時誤差會增加。各表更新時間不同：CYP2C19 與 NUDT15 表最後修訂 2022-03-11，CYP2D6 表 2024-10-17，HLA-B 表 2020-02-27，VKORC1 表約 2019-10。使用時要註明取用日期與版本，並避免使用 *1 的推算值。",
+      "level": "進階",
+      "critical": true,
+      "source_name": "CPIC frequency tables: Methods and Caveats / Change log sheets",
+      "source_url": "https://files.cpicpgx.org/data/report/current/frequency/CYP2C19_frequency_table.xlsx",
+      "confidence": "high",
+      "en_terms": [
+        "weighted average",
+        "inferred *1 frequency",
+        "Hardy-Weinberg",
+        "sampling bias"
+      ]
+    },
+    {
+      "id": "population-frequencies-41",
+      "claim_zh": "不同資料來源給出的同一等位基因頻率會有差距，例如東亞 CYP2C19*3 為 CPIC 7.25%、gnomAD v4.1 8.87%、台灣健康成人 5.8%(Wang 2014，n=1,038)；CYP2C19*17 則為 2.05%、0.95%、台灣 0.6%。",
+      "detail_zh": "差距來自樣本組成與方法：CPIC 是文獻加權平均；gnomAD 的「東亞」是以遺傳祖源推定的群體(API 回傳的群組為 eas，沒有單獨的台灣群)，以定序資料為主；台灣研究是醫院世代或小型健康志願者。NUDT15、SLCO1B1 等也有類似差異。建議繪圖時把來源與樣本數標在圖上，而不是只畫單一數字。",
+      "level": "進階",
+      "critical": true,
+      "source_name": "CPIC CYP2C19 frequency table (含 Wang 2014 台灣研究列)；gnomAD v4.1 rs4986893 / rs12248560；Lin et al. 2026",
+      "source_url": "https://files.cpicpgx.org/data/report/current/frequency/CYP2C19_frequency_table.xlsx",
+      "confidence": "high",
+      "en_terms": [
+        "data source discrepancy",
+        "gnomAD genetic ancestry group",
+        "cohort bias"
+      ]
+    },
+    {
+      "id": "population-frequencies-42",
+      "claim_zh": "台灣大型陣列與全外顯子研究都因技術限制排除了 CYP2D6，因此本次來源中找不到台灣本土 CYP2D6*10 的可靠實測頻率。",
+      "detail_zh": "Lu 2022 說明基因分型陣列無法完整涵蓋高度多型且含拷貝數變異的 CYP2D6，故未報告其表現型頻率；Lin 2026 亦因與 WGS 一致性不佳或有 WES 未涵蓋的拷貝數變異，排除 CYP2D6、CYP2B6 與 VKORC1，並提到 CYP2D6*5(整個基因缺失)在中國研究約 5%(Sheng 2007)。因此網站上台灣的 CYP2D6 圖表暫以 CPIC 東亞 42.8% 與漢人研究(Qian 2013，n=1,954：42.86%)代替，並須清楚標示為「非台灣實測」。",
+      "level": "進階",
+      "critical": true,
+      "source_name": "Lu et al. 2022 (PMC9452738)；Lin et al. 2026 (PMC12819042)",
+      "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12819042/",
+      "confidence": "high",
+      "en_terms": [
+        "CYP2D6 copy number variation",
+        "structural variants",
+        "array limitation",
+        "data gap"
+      ]
+    },
+    {
+      "id": "population-frequencies-43",
+      "claim_zh": "2019 年 CPIC 與 DPWG 專家共識把 CYP2D6*10 的活性值定為 0.25，並將活性分數 1.0 歸為中間代謝者(IM)，這使東亞族群的 CYP2D6 表現型分布與舊分類不同。",
+      "detail_zh": "CPIC 資料庫現行對應：PM=AS 0；IM=AS 0.25、0.5、0.75、1.0；NM=AS 1.25–2.25；UM=AS 2.5 以上。*10 與 *41 的活性值為 0.25、*17 為 0.5、*4 與 *5 為 0。Caudle 等人(2020，Clin Transl Sci)以修正型 Delphi 法，37 位專家經 7 輪調查後有 82% 同意最終的基因型對表現型轉換方式。跨研究比較 CYP2D6 表現型頻率時，必須先確認用的是哪一版分類。",
+      "level": "進階",
+      "critical": true,
+      "source_name": "Caudle KE et al. Standardizing CYP2D6 genotype to phenotype translation. Clin Transl Sci 2020 (PubMed 31647186)；CPIC API gene_result / allele",
+      "source_url": "https://api.cpicpgx.org/v1/gene_result?genesymbol=eq.CYP2D6",
+      "confidence": "high",
+      "en_terms": [
+        "CYP2D6 activity score",
+        "CPIC-DPWG consensus",
+        "genotype-to-phenotype translation"
+      ]
+    },
+    {
+      "id": "population-frequencies-44",
+      "claim_zh": "美國國家科學院 2023 年報告的核心建議是「研究者不應把種族(race)當作人類遺傳變異的代理」，並主張以遺傳祖源等更精確的描述取代。",
+      "detail_zh": "報告定義：種族是社會政治建構的分類系統，遺傳祖源是「個人從特定祖先遺傳 DNA 的家族樹路徑」。對藥物基因體學的意義是：CPIC 的九個生物地理群體本身就是粗略分組(Huddart 2019)，臨床決策應看個人的基因型，而非種族或族裔標籤；台灣內部(漢人與原住民)與東亞內部(日本對泰國)的差異也顯示標籤的局限。",
+      "level": "進階",
+      "critical": true,
+      "source_name": "National Academies of Sciences, Engineering, and Medicine. Using Population Descriptors in Genetics and Genomics Research (2023)",
+      "source_url": "https://www.nationalacademies.org/read/26902/chapter/2",
+      "confidence": "high",
+      "en_terms": [
+        "race",
+        "ethnicity",
+        "genetic ancestry",
+        "population descriptors"
+      ]
+    },
+    {
+      "id": "population-frequencies-45",
+      "claim_zh": "CPIC 2017 指引明確寫道 carbamazepine 與 oxcarbazepine 的 HLA-B*15:02 建議「不分病人來自哪個地區或族群」都成立，並舉例：一群被認為是歐洲裔的 SJS/TEN 病人中 12 人有 4 人帶 HLA-B*15:02，後來發現他們有東南亞祖源。",
+      "detail_zh": "指引建議：HLA-B*15:02 陰性者可依標準方式使用 carbamazepine；未曾使用過的陽性者應避免使用 carbamazepine 與 oxcarbazepine(分類為 Strong)；連續使用超過 3 個月未出現皮膚反應者風險極低但不為零。這個例子說明用自述族裔判斷會漏掉隱藏的祖源，直接看基因型才可靠，是「祖源不等於種族標籤」的臨床證據。",
+      "level": "進階",
+      "critical": true,
+      "source_name": "Phillips EJ et al. CPIC guideline for HLA genotype and use of carbamazepine and oxcarbazepine: 2017 update. Clin Pharmacol Ther 2018",
+      "source_url": "https://files.cpicpgx.org/data/guideline/publication/carbamazepine/2017/CPIC_HLA_CBZ_OXC.pdf",
+      "confidence": "high",
+      "en_terms": [
+        "HLA-B*15:02",
+        "ancestry vs self-reported ethnicity",
+        "CPIC guideline",
+        "Strong recommendation"
+      ]
+    }
+  ],
+  "glossary": [
+    {
+      "term_zh": "等位基因頻率",
+      "term_en": "allele frequency",
+      "definition_zh": "在一個族群的所有染色體中，某個等位基因所占的比例，例如 CYP2C19*3 在東亞約 7%。",
+      "level": "入門"
+    },
+    {
+      "term_zh": "攜帶者頻率",
+      "term_en": "carrier frequency",
+      "definition_zh": "族群中至少帶有一個某等位基因的人所占的比例，數字比等位基因頻率大，約為 1-(1-p)²。",
+      "level": "入門"
+    },
+    {
+      "term_zh": "表現型頻率",
+      "term_en": "phenotype frequency",
+      "definition_zh": "族群中被預測為某種代謝者類型(例如不良代謝者)的人所占比例，通常由基因型推估，並非直接量測酶活性。",
+      "level": "入門"
+    },
+    {
+      "term_zh": "不良代謝者",
+      "term_en": "poor metabolizer (PM)",
+      "definition_zh": "兩條染色體上的酵素基因都是無功能或功能很低，使某些藥物代謝很慢或無法活化的人。",
+      "level": "入門"
+    },
+    {
+      "term_zh": "中間代謝者",
+      "term_en": "intermediate metabolizer (IM)",
+      "definition_zh": "酵素功能介於正常與不良之間，常見為帶有一個無功能等位基因的人。",
+      "level": "入門"
+    },
+    {
+      "term_zh": "生物地理族群",
+      "term_en": "biogeographic group",
+      "definition_zh": "CPIC 與 PharmGKB 為了統一比較頻率而定義的 9 個粗略族群分類，例如東亞、歐洲，並非個人身分或種族。",
+      "level": "初階"
+    },
+    {
+      "term_zh": "祖源與種族",
+      "term_en": "ancestry vs race",
+      "definition_zh": "祖源是個人家族血統的來源與 DNA 遺傳路徑，種族是社會建構的分類，兩者不同，不能用種族當作基因型的代理。",
+      "level": "初階"
+    },
+    {
+      "term_zh": "星號等位基因",
+      "term_en": "star (*) allele",
+      "definition_zh": "藥物代謝基因常用的命名系統，例如 CYP2C19*2，代表一組特定變異組合與其功能。",
+      "level": "初階"
+    },
+    {
+      "term_zh": "活性分數",
+      "term_en": "activity score (AS)",
+      "definition_zh": "CYP2D6、CYP2C9 等基因把每個等位基因給一個活性值(例如正常 1、降低 0.25 或 0.5、無功能 0)，兩個相加得到分數，用來分類代謝者。",
+      "level": "中階"
+    },
+    {
+      "term_zh": "哈溫平衡",
+      "term_en": "Hardy-Weinberg equilibrium",
+      "definition_zh": "在沒有選擇、遷徙、突變且隨機交配的理想族群中，基因型比例可由等位基因頻率算出(p²、2pq、q²)。",
+      "level": "中階"
+    },
+    {
+      "term_zh": "加權平均",
+      "term_en": "weighted average",
+      "definition_zh": "把多項研究的頻率依樣本數加權後平均，樣本越多的研究影響越大，CPIC 頻率表即採此法。",
+      "level": "中階"
+    },
+    {
+      "term_zh": "全外顯子定序",
+      "term_en": "whole-exome sequencing (WES)",
+      "definition_zh": "只定序基因中會製造蛋白質的外顯子區域，成本較低，但難以偵測拷貝數變異與非編碼區變異。",
+      "level": "中階"
+    },
+    {
+      "term_zh": "拷貝數變異",
+      "term_en": "copy number variation (CNV)",
+      "definition_zh": "基因整段缺失或多拷貝，例如 CYP2D6*5 為整個基因缺失，是陣列與 WES 難以判讀的原因之一。",
+      "level": "中階"
+    },
+    {
+      "term_zh": "半合子",
+      "term_en": "hemizygous",
+      "definition_zh": "男性只有一條 X 染色體，X 連鎖基因(如 G6PD)的變異只有一份，因此男性缺乏症比女性常見。",
+      "level": "中階"
+    },
+    {
+      "term_zh": "gnomAD",
+      "term_en": "Genome Aggregation Database",
+      "definition_zh": "彙整大量外顯子與基因體定序的公開族群變異資料庫，本文使用 v4.1，其族群分類為定序推定的遺傳祖源群組。",
+      "level": "中階"
+    },
+    {
+      "term_zh": "台灣精準醫療計畫",
+      "term_en": "Taiwan Precision Medicine Initiative (TPMI)",
+      "definition_zh": "中央研究院與 16 家醫學中心合作的世代，已招募 565,390 位參與者，使用漢人優化的基因型陣列並連結電子病歷。",
+      "level": "中階"
+    },
+    {
+      "term_zh": "創始者效應",
+      "term_en": "founder effect",
+      "definition_zh": "少數個體從大族群分離出去建立新族群時，新族群的變異度降低，某些等位基因可能因此偏高或消失。",
+      "level": "進階"
+    },
+    {
+      "term_zh": "遺傳漂變",
+      "term_en": "genetic drift",
+      "definition_zh": "等位基因頻率在世代間的隨機波動，在小型隔離族群中影響特別大。",
+      "level": "進階"
+    },
+    {
+      "term_zh": "基因流動",
+      "term_en": "gene flow / migration",
+      "definition_zh": "族群之間因遷徙與通婚而交換等位基因，會使各族群的頻率趨近或改變，如台灣新移民母親對新生兒 G6PD 發生率的討論。",
+      "level": "進階"
+    },
+    {
+      "term_zh": "平衡多態性",
+      "term_en": "balanced polymorphism",
+      "definition_zh": "天擇使兩種以上的等位基因同時在族群中維持，例如 G6PD 缺乏雜合子對瘧疾有保護作用。",
+      "level": "進階"
+    },
+    {
+      "term_zh": "陽性預測值與陰性預測值",
+      "term_en": "positive / negative predictive value (PPV / NPV)",
+      "definition_zh": "檢測陽性者實際會發病的比例與檢測陰性者不會發病的比例，例如漢人 HLA-B*15:02 對 carbamazepine SJS/TEN 的 PPV 約 7.7%、NPV 約 100%。",
+      "level": "進階"
+    }
+  ],
+  "sources": [
+    {
+      "name": "CPIC 頻率表 API (population_frequency_view)",
+      "url": "https://api.cpicpgx.org/v1/population_frequency_view?genesymbol=eq.CYP2C19",
+      "note_zh": "CPIC 以生物地理族群彙整的等位基因加權平均、最小與最大值及受試者數，可依 genesymbol 與 name 過濾，適合取得長條圖數值。"
+    },
+    {
+      "name": "CPIC CYP2C19 frequency table (xlsx)",
+      "url": "https://files.cpicpgx.org/data/report/current/frequency/CYP2C19_frequency_table.xlsx",
+      "note_zh": "含等位基因、二倍型、表現型頻率、逐篇文獻 References 與 Methods and Caveats；其他基因檔名格式相同(將 CYP2C19 換成基因名)。"
+    },
+    {
+      "name": "CPIC HLA-B frequency table (xlsx)",
+      "url": "https://files.cpicpgx.org/data/report/current/frequency/HLA-B_frequency_table.xlsx",
+      "note_zh": "HLA-B*15:02、*57:01、*58:01 的逐國家/族群研究頻率，含台灣漢人、泰國、馬來、越南、日本、韓國等。"
+    },
+    {
+      "name": "CPIC CYP2D6 frequency table (xlsx)",
+      "url": "https://files.cpicpgx.org/data/report/current/frequency/CYP2D6_frequency_table.xlsx",
+      "note_zh": "CYP2D6 等位基因與活性分數表現型分布，含逐篇東亞研究的 *10 頻率。"
+    },
+    {
+      "name": "CPIC gene_result API (CYP2D6)",
+      "url": "https://api.cpicpgx.org/v1/gene_result?genesymbol=eq.CYP2D6",
+      "note_zh": "CPIC 現行的活性分數對應表現型的切點，用於換算 CYP2D6 表現型頻率。"
+    },
+    {
+      "name": "CPIC 2017 update: HLA genotype and carbamazepine/oxcarbazepine",
+      "url": "https://files.cpicpgx.org/data/guideline/publication/carbamazepine/2017/CPIC_HLA_CBZ_OXC.pdf",
+      "note_zh": "HLA-B*15:02 與 HLA-A*31:01 的族群頻率、預測值與 Strong 等級建議，並強調不分族裔皆適用。"
+    },
+    {
+      "name": "gnomAD v4.1 (Genome Aggregation Database)",
+      "url": "https://gnomad.broadinstitute.org/",
+      "note_zh": "以定序資料估計單一變異在各遺傳祖源群組的頻率；本文用其 GraphQL API(dataset gnomad_r4)並加總外顯子與基因體資料，但沒有台灣獨立群組。"
+    },
+    {
+      "name": "Lin et al. 2026, Mol Genet Genomic Med (PMC12819042)",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12819042/",
+      "note_zh": "台大醫院 3,562 人全外顯子的台灣 PGx 表現型頻率(CYP2C19、CYP3A5、NUDT15、G6PD、HLA-B*15:02/*58:01 等)，並與東亞、歐洲比較。"
+    },
+    {
+      "name": "Lu et al. 2022, Front Genet (PMC9452738)",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9452738/",
+      "note_zh": "172,854 位台灣漢人陣列資料的 PGx 表現型、VKORC1 與 HLA 頻率，並排除 CYP2D6。"
+    },
+    {
+      "name": "Hsu et al. 2024, J Adv Res (PMC11675050)",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11675050/",
+      "note_zh": "台灣人體生物資料庫 1,496 人全基因體，報告 CYP3A5*3 73.2% 等 PGx 頻率。"
+    },
+    {
+      "name": "Yang et al. 2025, Nature: Taiwan Precision Medicine Initiative",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/41092961/",
+      "note_zh": "TPMI 世代(565,390 位參與者)介紹，說明漢人在遺傳研究中被低估。"
+    },
+    {
+      "name": "Chen et al. 2011, NEJM: HLA-B*1502 screening in Taiwan",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/21428768/",
+      "note_zh": "台灣 4,877 人前瞻性篩檢研究：陽性率 7.7%、篩檢後 SJS/TEN 幾乎消失。"
+    },
+    {
+      "name": "Hung et al. 2005, PNAS: HLA-B*5801 and allopurinol SCAR",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/15743917/",
+      "note_zh": "漢人 51 位嚴重皮膚不良反應病人全部帶 HLA-B*5801 的關聯研究。"
+    },
+    {
+      "name": "DailyMed: Tegretol label",
+      "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=8d409411-aa9f-4f3a-a52c-fbcb0c3ec053",
+      "note_zh": "FDA 核准仿單，含各地區 HLA-B*1502 陽性比例與篩檢建議。"
+    },
+    {
+      "name": "衛生福利部：含Carbamazepine成分藥品之HLA-B*1502基因檢測公告",
+      "url": "https://www.mohw.gov.tw/cp-3161-26506-1.html",
+      "note_zh": "台灣仿單加刊(2007 年 9 月)與健保給付(2010 年 6 月 1 日)的官方說明。"
+    },
+    {
+      "name": "Chien et al. 2008: G6PD deficiency incidence and sex ratio in Taiwan",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/18567456/",
+      "note_zh": "台灣新生兒 G6PD 篩檢發生率、性別差異與人口移動的討論。"
+    },
+    {
+      "name": "Howes et al. 2012, PLoS Med: G6PD deficiency prevalence map",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/23152723/",
+      "note_zh": "瘧疾流行國家 G6PD 缺乏的地理統計模型，等位基因頻率約 8.0%。"
+    },
+    {
+      "name": "Cappellini & Fiorelli 2008, Lancet: G6PD deficiency",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/18177777/",
+      "note_zh": "全球超過 4 億人、分布與瘧疾相似的經典綜論。"
+    },
+    {
+      "name": "Luzzatto et al. 2020, Blood: G6PD deficiency",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/32702756/",
+      "note_zh": "G6PD 缺乏作為平衡多態性的最新綜論。"
+    },
+    {
+      "name": "Nkhoma et al. 2009: global prevalence of G6PD deficiency",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/19233695/",
+      "note_zh": "系統性回顧與統合分析，估計全球約 4 億人，撒哈拉以南非洲最高。"
+    },
+    {
+      "name": "Thompson et al. 2004, AJHG: CYP3A variation and salt sensitivity",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/15492926/",
+      "note_zh": "CYP3A5*3 頻率與離赤道距離相關的演化研究。"
+    },
+    {
+      "name": "Zhou & Lauschke 2022, Hum Genet",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/34652573/",
+      "note_zh": "跨族群藥物基因體差異的綜論，涵蓋 CYP2D6、CYP2C19、DPYD、TPMT、NUDT15、HLA、G6PD。"
+    },
+    {
+      "name": "Huddart et al. 2019, CPT: standardized biogeographic groups",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/30506572/",
+      "note_zh": "CPIC 與 PharmGKB 使用的 9 個生物地理族群的定義與限制。"
+    },
+    {
+      "name": "Dorji et al. 2019: CYP polymorphisms in South-East and East Asia",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/30980418/",
+      "note_zh": "86 項東南亞與東亞研究的 CYP2C9、CYP2C19、CYP2D6、CYP3A5 基因型範圍。"
+    },
+    {
+      "name": "Nieh & Roman 2025: disaggregating Asian and European CYP2C9/CYP2C19 data",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/40710391/",
+      "note_zh": "說明『亞洲』大類內部差異需拆分資料的敘述性回顧。"
+    },
+    {
+      "name": "Hsiao et al. 2004: DPYD pharmacogenetics in Taiwanese",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/15132136/",
+      "note_zh": "300 位台灣人 11 個 DPYD 變異篩檢，未檢出 *2A。"
+    },
+    {
+      "name": "Kanai et al. 2023: DPYD genotype and toxicity in an Asian population",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/36524458/",
+      "note_zh": "1,364 位大腸癌病人 GWAS，CPIC 四個反覆變異皆未出現。"
+    },
+    {
+      "name": "Caudle et al. 2020: CYP2D6 genotype to phenotype consensus",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/31647186/",
+      "note_zh": "CPIC 與 DPWG 統一的 CYP2D6 表現型轉換共識。"
+    },
+    {
+      "name": "NASEM 2023: Using Population Descriptors in Genetics and Genomics Research",
+      "url": "https://www.nationalacademies.org/read/26902/chapter/2",
+      "note_zh": "『不要用種族代替遺傳變異』的核心建議與名詞定義。"
+    },
+    {
+      "name": "NHGRI Genetics Glossary: Founder Effect / Genetic Drift",
+      "url": "https://www.genome.gov/genetics-glossary/Founder-Effect",
+      "note_zh": "創始者效應與遺傳漂變的簡明定義(遺傳漂變頁為 https://www.genome.gov/genetics-glossary/Genetic-Drift)。"
+    },
+    {
+      "name": "ClinPGx variant record for rs9923231",
+      "url": "https://api.clinpgx.org/v1/data/variant/PA166155091?view=max",
+      "note_zh": "確認 rs9923231 的 C>T(正股)同義於 VKORC1 c.-1639G>A(基因股方向)。"
+    },
+    {
+      "name": "台灣藥物基因體學會 PGST",
+      "url": "https://www.pgst.org.tw/index.php",
+      "note_zh": "學會首頁與學術新知頁未見族群等位基因頻率或台灣族群資料，可作為指引與課程資源，不作為頻率來源。"
+    }
+  ],
+  "misconceptions_zh": [
+    "迷思：亞洲人的藥物基因都差不多。正解：亞洲內部差異很大。HLA-B*15:02 在日本約 0.03%、韓國約 0.3%，在台灣漢人約 4.5%，在泰國約 8.2%、馬來半島馬來人約 12.3%、越南京族約 13.5%(CPIC 收錄研究)；台灣原住民泰雅與布農為 0。",
+    "迷思：看族裔或長相就能判斷要不要做 HLA-B*15:02 檢測。正解：CPIC 指引指出建議不分地區或族群成立，且舉例被視為歐洲裔的病人其實有東南亞祖源而帶有此等位基因；應直接檢測基因型。",
+    "迷思：HLA-B*15:02 陽性就一定會發生 SJS/TEN。正解：漢人資料的陽性預測值約 7.7%，也就是多數陽性者不會發病；但陰性預測值接近 100%(限 carbamazepine)，所以主要用途是排除高風險。",
+    "迷思：東亞人 CYP2D6 慢代謝者特別多。正解：CPIC 換算的 CYP2D6 不良代謝者(AS=0)在東亞約 0.8%，低於歐洲的 6.5%；東亞的特色是 *10 等降低功能等位基因(約 43%)，使 AS 0.25–0.5 的中間代謝者變多(約 29%，歐洲約 9.5%)。",
+    "迷思：CYP2C19 不良代謝者 13% 代表 13% 的人吃 clopidogrel 完全無效。正解：這是由基因型預測的比例，且台灣另有約 47% 為中間代謝者，實際臨床影響依適應症而定，用藥選擇請依 CPIC 或藥品仿單建議。",
+    "迷思：SLCO1B1 的 c.521T>C 風險是白人專屬，亞洲人較少。正解：gnomAD v4.1 東亞 13.7%、非芬蘭歐洲 15.3%，兩者相近；南亞(4.7%)與非洲(3.1%)才明顯較低。",
+    "迷思：G6PD 缺乏症只有男生會有。正解：G6PD 是 X 連鎖，男性較常見，但台灣新生兒篩檢女嬰也有約 0.70%(1996–2005 台大篩檢中心資料)，雜合子女性表現可變。",
+    "迷思：CPIC 或 PharmGKB 的東亞數字就是台灣的數字。正解：台灣實測的 HLA-B*58:01(等位基因約 11%)與 G6PD 缺乏(約 2%)都高於 CPIC 的東亞平均(6.0% 與 0.2%)，需使用本土資料。",
+    "迷思：某一篇研究的頻率就是該族群的真實頻率。正解：CPIC 的東亞 CYP2D6*10 各研究從 8.6% 到 64.1%，CPIC 也說明資料多為小型非隨機取樣，應看範圍、樣本數與來源版本。",
+    "迷思：種族是基因的可靠代理，可以直接用來決定用藥。正解：美國國家科學院 2023 年報告建議不要把種族當作遺傳變異的代理；種族是社會建構，應以個人基因型與遺傳祖源為準。"
+  ],
+  "viz_ideas": [
+    "3D 旋轉地球儀：以 CPIC 九個生物地理族群為底(或以國家為底)，依下拉選單選擇基因與等位基因(如 CYP2C19*3、HLA-B*15:02)，在各區長出高度代表頻率的柱體，滑鼠懸停顯示數值、受試者數與最小到最大範圍；台灣以獨立標記顯示 NTUH/CMUH 實測值，並用虛線區分「CPIC 東亞平均」與「台灣實測」。",
+    "基因庫粒子盒：每個族群一個透明立方體，內含 1,000 顆代表染色體的小球，變異等位基因著色，比例等於該族群頻率(如 CYP2C19*3 東亞 7.25% 對歐洲 0.16%)；滑桿切換基因，按下「隨機配對」讓小球兩兩組成二倍型，動畫展示 p² / 2pq / q² 與攜帶者頻率的差別。",
+    "5 族群分組立體長條圖：每個基因一組柱體，柱高為頻率，柱底寬度或透明度代表 CPIC 受試者數(不確定性)，並在柱頂畫出各研究最小到最大的細線；切換「等位基因 / 攜帶者 / 表現型」三種模式，提醒三者不同。",
+    "HLA-B*15:02 東亞與東南亞地形圖：把日本 0.03%、韓國 0.33%、北京天津 2.4%、台灣 4.5%、香港 9.4%、泰國 8.2%、馬來 12.3%、越南 13.5% 擠出成 3D 山脈，並加上台灣原住民 0% 的凹陷，強調台灣內部與亞洲內部的差異。",
+    "遺傳漂變與創始者效應模擬器：Wright-Fisher 粒子動畫，使用者調整族群大小與初始頻率，同時跑 20 個平行族群，觀察小族群中頻率隨機上下或消失/固定；可加入「少數個體遷出建立新族群」的場景，並明確標示這是通用機制示範，不代表任何特定 PGx 等位基因的真實歷史。",
+    "G6PD 與瘧疾的紅血球場景：左側 3D 地球儀疊加 Howes 2012 的 G6PD 缺乏預測盛行率，右側顯示紅血球在氧化壓力(如 primaquine)下溶血的示意動畫；A-、Mediterranean、Canton/Kaiping 以不同顏色標記，說明各區變異種類不同，動畫為機制示意，不代表個人風險。",
+    "CYP2D6 活性分數堆疊柱：每個族群一根 3D 堆疊柱，依 AS 分層上色(PM、IM、NM、UM)，滑桿切換分類版本(舊版與 2019 共識)，可看到 AS=1.0 歸類改變如何移動 IM 比例；加上「基因型組合器」，拖曳兩個等位基因得到 AS 與表現型，並顯示該二倍型在各族群的 CPIC 頻率。",
+    "「一百人小鎮」象形圖：100 個 3D 人像排成小鎮，用顏色標出台灣(NTUH：CYP2C19 IM 47%、PM 14%)與歐洲(IM 26%、PM 2.4%)中不同代謝者類型的人數，切換 CYP3A5 表現者、NUDT15、HLA-B*58:01 攜帶者(21%)等，讓初學者直覺感受頻率。",
+    "台灣、東亞、歐洲可行動表現型雷達：多軸 3D 雷達圖，軸為 CYP2C19 IM+PM、CYP3A5 表現者、NUDT15 IM+PM、G6PD 缺乏、HLA-B*58:01 攜帶者、HLA-B*15:02 攜帶者、SLCO1B1 降低功能，比較台灣(Lin 2026)、東亞與歐洲三個多邊形；註明各軸資料來源與比較基準不同。",
+    "祖源對標籤的互動說明：用「病人卡片」情境，一位被登記為歐洲裔但有東南亞祖源的病人，使用者先憑外貌或登記族裔決定是否檢測，再翻牌顯示 HLA-B*15:02 基因型，說明為何要看基因型；另以連續色譜的抽象散點示意個體祖源，標明為示意圖、非真實資料，並附 NASEM 2023 的定義。"
+  ]
+}

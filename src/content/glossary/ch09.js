@@ -1,0 +1,20 @@
+// ch09 術語：臨床實務與倫理
+export default [
+  { key: 'informed-consent', zh: '知情同意', en: 'Informed consent', level: 2, aliases: ['同意書', '書面同意'], def: '在充分了解檢測目的、可能結果、風險、資料如何保存與使用之後，自願做出的同意。基因檢測的同意書，通常還要說明結果對親屬可能的影響，以及是否會告知附帶發現。' },
+  { key: 'LDT', zh: '實驗室開發檢測', en: 'Laboratory developed test (LDT)', level: 4, aliases: ['LDT', '實驗室自建檢測'], def: '由實驗室或醫療機構自行建立並使用的檢測。在台灣受《特定醫療技術檢查檢驗醫療儀器施行或使用管理辦法》規範：施行計畫須經核准，並由認證的實驗室執行。' },
+  { key: 'real-time-pcr', zh: '即時 PCR', en: 'Real-time PCR (TaqMan)', level: 3, aliases: ['TaqMan', '即時聚合酶連鎖反應', 'qPCR'], def: '一邊放大 DNA、一邊用帶螢光的探針偵測，判斷樣本在特定位點是哪一種鹼基。速度快、判讀直接，適合檢測少數已知變異，但看不到事先沒設計的變異。' },
+  { key: 'genotyping-array', zh: '基因晶片', en: 'Genotyping array', level: 3, aliases: ['基因陣列', '陣列', 'microarray'], def: '把許多探針排列在一張晶片上，一次讀取數十到數千個預先選定的變異位點（規模依產品而異）。通量高，但只能看到晶片上設計好的位點，對基因缺失、重複這類結構變異的判讀有限。' },
+  { key: 'ngs', zh: '次世代定序', en: 'Next-generation sequencing (NGS)', level: 3, aliases: ['NGS', '高通量定序'], def: '同時讀取大量 DNA 片段的定序技術，可讀取整段基因，有機會發現罕見變異。成本、時間與判讀複雜度通常較高，也可能帶出意義未明變異與附帶發現。' },
+  { key: 'structural-variant', zh: '結構變異', en: 'Structural variant', level: 4, def: '基因中較大段 DNA 的缺失、重複、倒位，或與鄰近基因融合成混合基因；其中使整段份數增減者，就是拷貝數變異（CNV）。CYP2D6 特別常見，是單點探針與 SNV 面板難以正確判讀的原因。' },
+  { key: 'cds', zh: '臨床決策支援', en: 'Clinical decision support (CDS)', level: 3, aliases: ['CDS', '決策支援'], def: '電子病歷中的提示系統：醫師開藥時，依病人的基因結果自動跳出警示或建議。它能讓「存在病歷裡的基因報告」在需要的那一刻被看見。' },
+  { key: 'reactive-testing', zh: '反應式檢測', en: 'Reactive testing', level: 3, aliases: ['reactive', '反應式'], def: '等到醫師要開某個特定藥物時，才針對相關的單一基因送檢。單次成本較低，但開藥當下要等結果，換藥時可能得再檢一次。' },
+  { key: 'preemptive-testing', zh: '前瞻式檢測', en: 'Pre-emptive testing', level: 3, aliases: ['預先檢測', 'pre-emptive', 'preemptive', '前瞻式'], def: '在需要用藥之前，就先一次分析多個藥物基因並把結果存入病歷，日後每次開藥都可直接查詢。主要論據是多數人在數年內都會用到相關藥物。' },
+  { key: 'dpwg', zh: '荷蘭藥物基因體學工作小組', en: 'Dutch Pharmacogenetics Working Group (DPWG)', level: 4, aliases: ['DPWG'], def: '荷蘭皇家藥師公會（KNMP）於 2005 年設立的專家組。除了依基因型提出用藥建議，還以「臨床意義評分」建議開藥前是否應先做基因檢測。' },
+  { key: 'companion-diagnostic', zh: '伴隨式診斷', en: 'Companion diagnostic', level: 4, aliases: ['伴同診斷', 'CDx', 'companion diagnostic'], def: '對某個藥物的安全有效使用不可或缺的檢測，例如確認腫瘤是否帶有特定突變才能使用標靶藥。FDA 表示列入其藥物基因關聯表，並不代表主張處方前必須檢測，除非該檢測是伴隨式診斷。' },
+  { key: 'clinpgx', zh: 'ClinPGx（原 PharmGKB）', en: 'ClinPGx / PharmGKB', level: 4, aliases: ['ClinPGx', 'PharmGKB', 'PGx level'], def: '整合藥物基因體知識的資料庫，CPIC 的內容現也在此提供。它自行為各國藥品仿單標註 PGx level（如 Testing required、Actionable PGx），這些等級不是 FDA 的官方分類。' },
+  { key: 'odds-ratio', zh: '勝算比', en: 'Odds ratio (OR)', level: 4, aliases: ['OR', 'odds ratio'], def: '比較兩組發生某事件的「勝算」（發生的機率 ÷ 沒發生的機率）。OR 0.70 表示一組的勝算是另一組的 0.7 倍，並不等於絕對風險下降 30%。' },
+  { key: 'sensitive-data', zh: '特種個資', en: 'Sensitive personal data', level: 3, aliases: ['sensitive personal data', '敏感個資'], def: '台灣《個人資料保護法》第 6 條列出的病歷、醫療、基因、性生活、健康檢查與犯罪前科等資料，原則上不得蒐集、處理或利用，僅在法律明文規定、當事人書面同意等例外情形下才可進行。' },
+  { key: 'de-identification', zh: '去連結', en: 'De-identification (unlinking)', level: 4, aliases: ['去識別化', '去連結化'], def: '台灣法規用語：將資料編碼或處理後，使它與可辨識個人的資料無法再連結或比對。已去連結的資料，在參與者退出研究或生物資料庫時，處理方式與未去連結者不同。' },
+  { key: 'gina', zh: '基因資訊平等法', en: 'Genetic Information Nondiscrimination Act (GINA)', level: 4, aliases: ['GINA', '基因歧視'], def: '美國 2008 年的法律，禁止健康保險公司與雇主使用基因資訊做歧視性決定。它不涵蓋人壽、失能與長照保險，也不適用於少於 15 名員工的雇主；本站查證範圍內未見台灣有等同的專法。' },
+  { key: 'secondary-findings', zh: '附帶發現', en: 'Secondary / incidental findings', level: 4, aliases: ['次要發現', '次要（附帶）發現', '意外發現'], def: '檢測過程中意外得到、與原本檢測目的無關的基因結果，例如與疾病風險有關的變異。需要事前規劃是否告知、如何告知，並確保病人有機會諮詢。' },
+]

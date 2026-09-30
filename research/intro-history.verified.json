@@ -1,0 +1,1267 @@
+{
+  "topic": "intro-history",
+  "title": "藥物基因體學是什麼：定義、歷史與個體差異",
+  "summary_zh": "藥物基因體學（pharmacogenomics）研究個人的 DNA／RNA 變異如何影響藥物的吸收、代謝、療效與不良反應；依 ICH E15（2007）的正式定義，pharmacogenetics（只看 DNA 序列變異）是 pharmacogenomics 的子集，日常則常互換使用。這個領域的思想源頭可追溯到 Garrod 的先天代謝異常（1908 年演講），Motulsky（1957）與 Vogel（1959）奠定並命名 pharmacogenetics，1950–1980 年代的 isoniazid、succinylcholine、G6PD、debrisoquine 與 TPMT 是經典案例，2000 年後隨人類基因體計畫、PharmGKB（2000/2001）、CPIC（2009）與 FDA 標籤而走向臨床。藥物反應的個體差異來自基因、年齡、肝腎功能、併用藥物、飲食與服藥遵從性等多重因素：常被引用的「遺傳可解釋 20%–95%」區間極寬且來源為二手引用，即使是最成功的 warfarin，基因加臨床變項也只解釋約 43% 的劑量變異。文獻顯示 91%–99.9% 的人至少帶有一個「可採取行動」的藥物基因變異（Van Driest 2014、Ji 2016、Lu 2022 台灣漢人等），但這與「每個處方都需要改藥」不同：PREPARE 試驗中約四分之一的病人對當次處方藥有可行動結果，且改藥後臨床相關 ADR 由 27.7% 降至 21.0%。Schork（Nature 2015）確實寫過「營收最高的十種藥只對 1/25 到 1/4 的服用者有幫助」，但那是一篇倡議 N-of-1 試驗的評論，並非藥物基因體學的系統性分析，且以 NNT 推論反應者比例的論證受到 Senn 等統計學者批評。本檔案未能取得 Schork 附圖逐藥數值、FDA 表格的確切藥物總數與台灣 PGx 檢測量，均如實標示未找到。",
+  "facts": [
+    {
+      "id": "intro-history-01",
+      "claim_zh": "藥物基因體學（pharmacogenomics，又稱 pharmacogenetics）是利用個人的基因體資訊，來協助選擇藥物與調整用藥的醫學領域。",
+      "detail_zh": "美國國家人類基因體研究所（NHGRI）的詞彙表把它定義為基因體醫學的一環，運用病人的基因體資訊來量身選擇其醫療處置所用的藥物，並把 pharmacogenomics 與 pharmacogenetics 視為可互換的名稱；較嚴格的區分見 ICH E15 的定義。",
+      "level": "入門",
+      "critical": false,
+      "source_name": "NHGRI Talking Glossary：Pharmacogenomics",
+      "source_url": "https://www.genome.gov/genetics-glossary/Pharmacogenomics",
+      "confidence": "high",
+      "en_terms": [
+        "pharmacogenomics",
+        "pharmacogenetics",
+        "genomic medicine"
+      ],
+      "verified": false
+    },
+    {
+      "id": "intro-history-02",
+      "claim_zh": "藥物代謝酵素、轉運蛋白、受體與其他藥物標靶蛋白的基因多型性（polymorphism），已被連結到許多藥物在療效與毒性上的個體差異。",
+      "detail_zh": "這是藥物基因體學的核心機制：基因變異會改變藥物在體內如何被處理（藥物動力學），或改變藥物作用的目標（藥效學），因此同一劑量在不同人身上可能產生不同結果。此句取自 Evans 與 Relling 1999 年 Science 論文的摘要。",
+      "level": "入門",
+      "critical": false,
+      "source_name": "Evans & Relling, Science 1999（PubMed）",
+      "source_url": "https://pubmed.ncbi.nlm.nih.gov/10521338/",
+      "confidence": "high",
+      "en_terms": [
+        "polymorphism",
+        "drug-metabolizing enzymes",
+        "transporters",
+        "drug targets",
+        "pharmacokinetics",
+        "pharmacodynamics"
+      ],
+      "verified": true,
+      "verified_by": [
+        "editor-textbook"
+      ],
+      "verification_note": "教科書級常識，由編輯判定（非查核員逐項查核）；內容與所引來源的通行說法一致。"
+    },
+    {
+      "id": "intro-history-03",
+      "claim_zh": "基因只是造成藥物反應差異的原因之一：服藥遵從性、年齡、糖尿病、肥胖、抽菸與併用的其他藥物都會影響療效與臨床決策，而基因型指引本身並不處理這些因素。",
+      "detail_zh": "CPIC 2022 年 clopidogrel 指引明文表示，指引不聚焦於服藥遵從性、年齡、糖尿病、肥胖、抽菸及併用藥物等變項。另一篇藥理學回顧指出，不規律服藥的頻率常被低估，是治療失敗常被忽略的原因（Blaschke 2012，https://pubmed.ncbi.nlm.nih.gov/21942628/）。",
+      "level": "入門",
+      "critical": false,
+      "source_name": "CPIC clopidogrel 指引 2022 更新（Lee et al.，PubMed）",
+      "source_url": "https://pubmed.ncbi.nlm.nih.gov/35034351/",
+      "confidence": "high",
+      "en_terms": [
+        "adherence",
+        "drug-drug interaction",
+        "clinical variables",
+        "CPIC"
+      ],
+      "verified": false
+    },
+    {
+      "id": "intro-history-04",
+      "claim_zh": "人類基因體中的單一核苷酸多型性（SNP）平均約每 1,000 個核苷酸就出現一次，一個人的基因體約帶有 400 萬到 500 萬個 SNP。",
+      "detail_zh": "SNP 是人與人之間最常見的基因變異類型，許多藥物基因體標記都屬於這一類，這也說明了為何每個人對藥物的反應底層設定略有不同。",
+      "level": "入門",
+      "critical": true,
+      "source_name": "MedlinePlus Genetics：What are single nucleotide polymorphisms (SNPs)?",
+      "source_url": "https://medlineplus.gov/genetics/understanding/genomicresearch/snp/",
+      "confidence": "high",
+      "en_terms": [
+        "SNP",
+        "single nucleotide polymorphism",
+        "genetic variation"
+      ],
+      "verified": true,
+      "verified_by": [
+        "editor-textbook"
+      ],
+      "verification_note": "教科書級常識，由編輯判定（非查核員逐項查核）；內容與所引來源的通行說法一致。"
+    },
+    {
+      "id": "intro-history-05",
+      "claim_zh": "abacavir 的 FDA 標籤指出，在未做 HLA-B*57:01 篩檢的臨床試驗中，約 8%（206／2,670 人）發生過敏反應，排除帶有 HLA-B*57:01 的受試者後，疑似過敏的發生率降為 1%。",
+      "detail_zh": "因此標籤要求用藥前篩檢 HLA-B*57:01，帶有者禁用。標籤同時提醒，沒有此等位基因的人仍可能發生過敏，診斷仍以臨床判斷為準。此數字來自 FDA 表格所收錄的 Ziagen 標籤（版本日期 2017-03-20）。",
+      "level": "入門",
+      "critical": true,
+      "source_name": "FDA Table of Pharmacogenomic Biomarkers in Drug Labeling（PDF，Last Updated 12/2025）",
+      "source_url": "https://www.fda.gov/media/124784/download",
+      "confidence": "high",
+      "en_terms": [
+        "abacavir",
+        "HLA-B*57:01",
+        "hypersensitivity",
+        "boxed warning"
+      ],
+      "verified": true,
+      "verified_by": [
+        "primary-source",
+        "independent-search"
+      ],
+      "verification_note": "兩位查核者皆對照 FDA 表格所收錄的 Ziagen 標籤與現行 DailyMed 標籤，數字（206/2,670=8%；排除帶有者後 1%）相符，且未被後續版本修訂。"
+    },
+    {
+      "id": "intro-history-06",
+      "claim_zh": "英國默西塞德郡（Merseyside，含利物浦與威勒爾）兩家大型綜合醫院的前瞻性研究（Pirmohamed 等，BMJ 2004），評估 6 個月內 18,820 名（年齡大於 16 歲）入院病人的入院原因，發現 6.5%（1,225 人）的入院與藥物不良反應（ADR）有關；其中 80% 為 ADR 直接導致入院。",
+      "detail_zh": "摘要載明研究場所為 Two large general hospitals in Merseyside, England（摘要未指名醫院，作者單位為利物浦大學）；設計為前瞻性觀察研究，評估的是入院原因，並非出院後追蹤。這些病人中位住院 8 天，約占醫院病床容量的 4%，推估英國 NHS 每年花費 4.66 億英鎊（2004 年的推估），整體致死率 0.15%（摘要用語 overall fatality；分母應為全部入院病人而非僅 ADR 入院者，待全文核對），多數反應被評為確定或可能可避免。最常涉及的藥物是低劑量阿斯匹靈、利尿劑、warfarin 與非阿斯匹靈類消炎止痛藥，最常見反應為腸胃道出血；這些多半不是單純由基因造成（此句為推論），提醒 ADR 只有一部分與基因相關。",
+      "level": "入門",
+      "critical": true,
+      "source_name": "Pirmohamed et al., BMJ 2004（PubMed）",
+      "source_url": "https://pubmed.ncbi.nlm.nih.gov/15231615/",
+      "confidence": "high",
+      "en_terms": [
+        "adverse drug reaction",
+        "ADR",
+        "hospital admission",
+        "avoidable ADR"
+      ],
+      "verified": true,
+      "was_corrected": true,
+      "verified_by": [
+        "primary-source",
+        "independent-search"
+      ],
+      "correction_note": "原文『英國利物浦兩家大型綜合醫院』『追蹤 18,820 名入院病人』有誤：摘要的 Setting 是 Merseyside（默西塞德郡）的兩家大型綜合醫院，不是兩家都在利物浦；研究是評估入院原因，並未追蹤病人。其餘數字（18,820、1,225、6.5%、80%、8 天、4%、4.66 億英鎊、0.15%）經兩位查核者與 Europe PMC 摘要核對皆相符。"
+    },
+    {
+      "id": "intro-history-07",
+      "claim_zh": "Lazarou 等人 1998 年發表於 JAMA 的統合分析（39 項美國醫院前瞻性研究）估計，住院病人中嚴重藥物不良反應的發生率為 6.7%（95% CI 5.2%–8.2%），致死性不良反應為 0.32%（95% CI 0.23%–0.41%）。",
+      "detail_zh": "作者推估 1994 年美國約有 2,216,000 名住院病人發生嚴重 ADR、106,000 人死亡，使 ADR 成為第四到第六大死因。作者自己也提醒研究間有異質性，結果須審慎解讀；這是 1994 年美國的估計，並非最新數字，也不代表這些事件都可避免或都與基因有關。",
+      "level": "初階",
+      "critical": true,
+      "source_name": "Lazarou, Pomeranz & Corey, JAMA 1998（PubMed）",
+      "source_url": "https://pubmed.ncbi.nlm.nih.gov/9555760/",
+      "confidence": "high",
+      "en_terms": [
+        "serious ADR",
+        "fatal ADR",
+        "meta-analysis",
+        "hospitalized patients"
+      ],
+      "verified": true,
+      "verified_by": [
+        "primary-source",
+        "independent-search"
+      ],
+      "verification_note": "兩位查核者對 6.7% 的範圍說法不一，編輯以 Europe PMC 摘要核對：作者是把『住院期間發生的 ADR』與『導致入院的 ADR』合併計算；嚴重 ADR 定義為需住院、永久失能或死亡；並排除用藥錯誤、不遵從、過量、濫用、治療失敗與『可能』ADR。因此不可說 6.7% 只是住院期間新發生的，也不可說它是『因 ADR 入院』的比例。"
+    },
+    {
+      "id": "intro-history-08",
+      "claim_zh": "英國醫師 Archibald Garrod 於 1908 年 6 月在皇家內科醫學院發表 Croonian 演講〈先天代謝異常（Inborn Errors of Metabolism）〉，這系列演講現被公認為醫學遺傳學的基礎，並於 1909 年集結成書。",
+      "detail_zh": "Clinical Medicine 2008 年的百年回顧指出，這些演講的重要性當時長期未被重視，後來才被公認。Kalow（2004）則寫道，Garrod 在其著作 Inborn Factors in Disease 中已預見藥物遺傳學的存在（原文列為 1931 年；https://pmc.ncbi.nlm.nih.gov/articles/PMC3525104）。1909 年出書的日期取自二手書目資料，未核對原書扉頁。",
+      "level": "初階",
+      "critical": true,
+      "source_name": "The centenary of Garrod's Croonian lectures, Clin Med 2008（PubMed）",
+      "source_url": "https://pubmed.ncbi.nlm.nih.gov/18624044/",
+      "confidence": "medium",
+      "en_terms": [
+        "Garrod",
+        "inborn errors of metabolism",
+        "Croonian lectures",
+        "chemical individuality"
+      ],
+      "verified": false
+    },
+    {
+      "id": "intro-history-09",
+      "claim_zh": "1956 年 Alving、Carson 等人在 Science 報告，服用抗瘧藥 primaquine 後發生溶血的人，其紅血球存在酵素缺陷，後續研究確認為葡萄糖-6-磷酸脫氫酶（G6PD）缺乏。",
+      "detail_zh": "G6PD 缺乏症是最常見的人類酵素缺乏症之一：已知逾 200 種突變、約 5 億人帶有，多數終身無症狀，但蠶豆、primaquine、rasburicase 等誘因可引發急性溶血；其地理分布與瘧疾流行區高度相關（Luzzatto 等，Blood 2020；https://pubmed.ncbi.nlm.nih.gov/32702756/）。這是藥物基因體學最經典的「藥物加食物觸發」例子。",
+      "level": "初階",
+      "critical": true,
+      "source_name": "Alving et al., Science 1956（PubMed）",
+      "source_url": "https://pubmed.ncbi.nlm.nih.gov/13360274/",
+      "confidence": "high",
+      "en_terms": [
+        "G6PD deficiency",
+        "primaquine",
+        "favism",
+        "hemolysis"
+      ],
+      "verified": false
+    },
+    {
+      "id": "intro-history-10",
+      "claim_zh": "Arno Motulsky 於 1957 年 10 月 19 日在 JAMA（165 卷 7 期 835–837 頁）發表〈Drug reactions, enzymes, and biochemical genetics〉，主張遺傳性的酵素差異可以解釋為何相同劑量下有人出現異常的藥物反應。",
+      "detail_zh": "文章開頭區分「免疫機制的藥物過敏」與「藥效過度或不足」兩類反應，並以 primaquine 敏感性（當時估計影響約 10% 的非裔美國人）等例子說明。一般認為這是藥物遺傳學作為一門學問的奠基文獻之一。",
+      "level": "初階",
+      "critical": true,
+      "source_name": "Motulsky, JAMA 1957（JAMA Network）",
+      "source_url": "https://jamanetwork.com/journals/jama/fullarticle/321669",
+      "confidence": "high",
+      "en_terms": [
+        "Motulsky",
+        "drug reactions",
+        "biochemical genetics",
+        "enzyme deficiency"
+      ],
+      "verified": false
+    },
+    {
+      "id": "intro-history-11",
+      "claim_zh": "1950 年代 Werner Kalow 等人發現，使用肌肉鬆弛劑 succinylcholine 後反應過久的病人常帶有遺傳性變異的血漿偽膽鹼酯酶（butyrylcholinesterase），並在 1957 年發表以 dibucaine number 偵測非典型酵素的方法。",
+      "detail_zh": "現今已知 BCHE 基因變異使酵素活性下降或喪失，會延長 succinylcholine 造成的神經肌肉阻斷與呼吸暫停；它是最早被確認的藥物與基因關聯之一，但 2025 年的回顧指出臨床上仍屬例外而非常規檢測。Kalow 與 Genest 1957 年的方法論文見 https://pubmed.ncbi.nlm.nih.gov/13437188/。",
+      "level": "初階",
+      "critical": true,
+      "source_name": "Hereditary Pseudocholinesterase Deficiency and Succinylcholine, Pharmacotherapy 2025（PubMed）",
+      "source_url": "https://pubmed.ncbi.nlm.nih.gov/40778538/",
+      "confidence": "high",
+      "en_terms": [
+        "succinylcholine",
+        "pseudocholinesterase",
+        "butyrylcholinesterase",
+        "BCHE",
+        "dibucaine number",
+        "prolonged apnea"
+      ],
+      "verified": false
+    },
+    {
+      "id": "intro-history-12",
+      "claim_zh": "抗結核藥 isoniazid 的代謝有快慢兩群人：1954 年 Hughes 等人已把其代謝與周邊神經炎的發生連結，1960 年 Evans、Manley 與 McKusick 在 BMJ 發表〈Genetic control of isoniazid metabolism in man〉，指出代謝速率受單一基因控制、慢代謝屬隱性遺傳。",
+      "detail_zh": "這是後來 NAT2（N-acetyltransferase 2）慢乙醯化者與快乙醯化者概念的起點，也是經典的藥物基因體案例。論文標題與出處已核對，但單一基因與隱性遺傳的細節取自次級文獻整理，未能逐字核對原文全文，因此信心度標為中等。",
+      "level": "初階",
+      "critical": true,
+      "source_name": "Evans, Manley & McKusick, BMJ 1960（PubMed）",
+      "source_url": "https://pubmed.ncbi.nlm.nih.gov/13820968/",
+      "confidence": "medium",
+      "en_terms": [
+        "isoniazid",
+        "acetylation",
+        "slow acetylator",
+        "NAT2",
+        "autosomal recessive"
+      ],
+      "verified": false
+    },
+    {
+      "id": "intro-history-13",
+      "claim_zh": "「pharmacogenetics」一詞由德國人類遺傳學家 Friedrich Vogel 於 1959 年提出，Werner Kalow 則在 1962 年出版同名專書《Pharmacogenetics: Heredity and the Response to Drugs》。",
+      "detail_zh": "Kalow 本人在 2004 年的回顧文章中寫道，1959 年 Vogel 發表了 pharmacogenetics 這個詞，而他自己的書在 1962 年問世。Vogel 原文常被引為 Ergebnisse der Inneren Medizin und Kinderheilkunde 1959 年第 12 卷 52–125 頁，此細節取自二手文獻，未直接核對原文。",
+      "level": "初階",
+      "critical": true,
+      "source_name": "Kalow, Human pharmacogenomics: the development of a science, Hum Genomics 2004",
+      "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3525104",
+      "confidence": "high",
+      "en_terms": [
+        "Vogel",
+        "Kalow",
+        "pharmacogenetics",
+        "term coined 1959"
+      ],
+      "verified": true,
+      "verified_by": [
+        "primary-source",
+        "independent-search"
+      ],
+      "verification_note": "Kalow 本人（2004）、Asiimwe & Pirmohamed 2022、Müller & Rizhanovsky 2020 皆採 1959 年 Vogel 之說。Vogel 原章（Ergeb Inn Med Kinderheilkd 1959;12:52–125）確實存在，但因付費牆未能直接確認該詞出現在其中；少數來源對年份有 1957/1958 的保留（未證實）。"
+    },
+    {
+      "id": "intro-history-14",
+      "claim_zh": "「pharmacogenomics」一詞在 1990 年代後期隨基因體學興起而流行，文獻常引用 Marshall A. 1997 年發表於 Nature Biotechnology 的〈Genset–Abbott deal heralds pharmacogenomics era〉作為該詞的早期出處。",
+      "detail_zh": "該篇為 Nature Biotechnology 1997 年 9 月號第 15 卷 829–830 頁的報導。此詞被用來暗示研究從單一候選基因擴展到全基因體。本次只能確認該篇文章存在並被廣泛當作出處，「誰是首創者」缺乏一手證據，因此信心度標為中等。",
+      "level": "初階",
+      "critical": true,
+      "source_name": "Marshall A., Nat Biotechnol 1997（PubMed）",
+      "source_url": "https://pubmed.ncbi.nlm.nih.gov/9306389/",
+      "confidence": "medium",
+      "en_terms": [
+        "pharmacogenomics",
+        "Marshall 1997",
+        "Genset",
+        "Abbott"
+      ],
+      "verified": true,
+      "verified_by": [
+        "primary-source",
+        "independent-search"
+      ],
+      "verification_note": "確認該篇存在（Nat Biotechnol 1997;15(9):829-30，PMID 9306389）且被多篇文獻當作早期出處；沒有證據顯示 Marshall 是造詞者，寫作時只能說『常被引為早期出處』，不可寫『首次使用』。"
+    },
+    {
+      "id": "intro-history-15",
+      "claim_zh": "人類基因體計畫於 1990 至 2003 年間進行，2003 年 4 月宣布產出實質完整的人類基因體序列，較原訂 2005 年提前兩年；完整無缺口的序列則要到 2022 年 3 月 31 日由 Telomere-to-Telomere（T2T）聯盟宣布。",
+      "detail_zh": "計畫原預估經費 30 億美元、歷時 15 年。基因體序列讓研究者能系統性地尋找與藥物反應相關的變異，藥物基因體學也自此從單一基因走向全基因體的視野。",
+      "level": "初階",
+      "critical": true,
+      "source_name": "NHGRI：Human Genome Project Fact Sheet 與 Completion FAQ",
+      "source_url": "https://www.genome.gov/human-genome-project/Completion-FAQ",
+      "confidence": "high",
+      "en_terms": [
+        "Human Genome Project",
+        "T2T",
+        "reference genome"
+      ],
+      "verified": true,
+      "verified_by": [
+        "editor-textbook"
+      ],
+      "verification_note": "教科書級常識，由編輯判定（非查核員逐項查核）；內容與所引來源的通行說法一致。"
+    },
+    {
+      "id": "intro-history-16",
+      "claim_zh": "依 2007 年 11 月定稿的 ICH E15，pharmacogenomics（PGx）定義為研究 DNA 與 RNA 特徵的變異與藥物反應之關係，pharmacogenetics（PGt）則是其子集，只研究 DNA 序列的變異與藥物反應之關係。",
+      "detail_zh": "E15 同時說明「藥物反應」涵蓋吸收與處置（藥物動力學）及藥物效應（藥效學、療效與不良反應）。因此在法規定義上 pharmacogenetics 是 pharmacogenomics 的一部分，日常使用中兩者常互換。",
+      "level": "初階",
+      "critical": true,
+      "source_name": "ICH E15 Definitions for genomic biomarkers, pharmacogenomics, pharmacogenetics...（Step 4，2007-11-01）",
+      "source_url": "https://database.ich.org/sites/default/files/E15_Guideline.pdf",
+      "confidence": "high",
+      "en_terms": [
+        "ICH E15",
+        "genomic biomarker",
+        "PGx",
+        "PGt",
+        "drug response"
+      ],
+      "verified": true,
+      "verified_by": [
+        "primary-source",
+        "independent-search"
+      ],
+      "verification_note": "兩位查核者皆讀過 ICH E15 PDF（Step 4，2007-11-01）並確認 PGx/PGt 定義與『藥物反應』範圍；EMA 頁面顯示生效日 2008-05-01，未見修訂版。"
+    },
+    {
+      "id": "intro-history-17",
+      "claim_zh": "美國國家研究委員會（NRC）2011 年報告《Toward Precision Medicine》認為「精準醫療（precision medicine）」比「個人化醫療（personalized medicine）」更適合，因為後者容易被誤解成為每個人設計獨一無二的治療。",
+      "detail_zh": "NRC 的說法是精準醫療是把病人分成在疾病易感性、疾病生物學或治療反應上不同的亞群，而不是為個人製造專屬藥物。NHGRI 則視 precision、personalized、individualized medicine 為大致同義，並強調運用個人的基因體、環境與生活型態資訊來引導醫療決策。2015 年 1 月 30 日美國總統歐巴馬宣布「精準醫療計畫」，2016 年預算要求 2.15 億美元，並規劃召集 100 萬名以上志願者的研究世代（https://obamawhitehouse.archives.gov/the-press-office/2015/01/30/fact-sheet-president-obama-s-precision-medicine-initiative）。",
+      "level": "初階",
+      "critical": true,
+      "source_name": "Nakanishi, Precision medicine, Braz J Otorhinolaryngol 2018（引述 NRC 2011）",
+      "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9449242/",
+      "confidence": "medium",
+      "en_terms": [
+        "precision medicine",
+        "personalized medicine",
+        "National Research Council",
+        "Precision Medicine Initiative"
+      ],
+      "verified": false
+    },
+    {
+      "id": "intro-history-18",
+      "claim_zh": "Schork 於 2015 年 4 月 29 日在 Nature 線上發表（4 月 30 日刊於第 520 卷第 7549 期，頁 609–611）的評論（Comment）寫道：美國營收最高的十種藥物「只對服用者中的 1/25 到 1/4 有幫助」，而像 statin 這類藥物「可能只有 1/50 的人受益」；換算即約 4% 到 25%。",
+      "detail_zh": "原文為「The top ten highest-grossing drugs in the United States help between 1 in 25 and 1 in 4 of the people who take them」（Nature 520:609–611），statin 的 1/50 引自 Mukherjee 與 Topol 2002。它是主張推動 N-of-1 試驗的評論，並非藥物基因體學的系統性分析，也沒有說差異全來自基因；原文附圖 Imprecision medicine 的逐藥數值本次未能取得。以 NNT 推論反應者比例的論證受到質疑，見 intro-history-24。 日期說明：nature.com 標示線上發表日為 2015-04-29，期刊期別日為 2015-04-30；引用時可寫『Nature 2015 年 4 月 30 日期』或『2015 年 4 月 29 日線上發表』，不要混用。",
+      "level": "初階",
+      "critical": true,
+      "source_name": "Schork NJ, Personalized medicine: Time for one-person trials, Nature 2015",
+      "source_url": "https://www.nature.com/articles/520609a",
+      "confidence": "high",
+      "en_terms": [
+        "Schork",
+        "N-of-1 trial",
+        "highest-grossing drugs",
+        "number needed to treat"
+      ],
+      "verified": true,
+      "was_corrected": true,
+      "verified_by": [
+        "primary-source",
+        "independent-search"
+      ],
+      "correction_note": "原文『2015 年 4 月 30 日發表』不精確：線上發表為 2015-04-29，4-30 是紙本期別日。引文（1 in 25 至 1 in 4；statin 約 1 in 50，引自 Mukherjee & Topol 2002）已由查核者在文章存檔版與多篇開放取用論文核對相符；該數字源自 NNT 推論，NNT 不等於反應者比例（見 intro-history-24）。"
+    },
+    {
+      "id": "intro-history-19",
+      "claim_zh": "台灣的前瞻性研究（Chen 等，NEJM 2011）在 23 家醫院招募 4,877 名尚未使用 carbamazepine 的受試者做 HLA-B*15:02 篩檢，其中 7.7% 陽性；篩檢陰性而使用 carbamazepine 者沒有任何人發生 SJS/TEN，而依歷史發生率 0.23% 推估本應有約 10 例。",
+      "detail_zh": "陽性者被建議避免 carbamazepine 並改用替代藥。此研究以歷史發生率當對照，並非隨機分派，證據等級不如隨機試驗，但效果幅度大且與機轉相符。另可粗略推算：若 0.23% 的病例全部發生在占 7.7% 的帶有者，帶有者的風險上限約 3%（0.23÷7.7，屬依摘要數字的推算），代表絕大多數陽性者其實不會發生 SJS/TEN，基因結果是機率而非宣判。",
+      "level": "初階",
+      "critical": true,
+      "source_name": "Chen et al., N Engl J Med 2011（PubMed）",
+      "source_url": "https://pubmed.ncbi.nlm.nih.gov/21428768/",
+      "confidence": "high",
+      "en_terms": [
+        "HLA-B*15:02",
+        "carbamazepine",
+        "Stevens-Johnson syndrome",
+        "toxic epidermal necrolysis",
+        "screening"
+      ],
+      "verified": true,
+      "verified_by": [
+        "primary-source",
+        "independent-search"
+      ],
+      "verification_note": "摘要數字皆相符。對照為歷史發生率（0.23%），非隨機分派；約 3% 的上限（0.23÷7.7）為編輯依摘要數字的粗略推算，假設所有歷史病例皆為帶有者，僅是上限而非研究測得的風險。"
+    },
+    {
+      "id": "intro-history-20",
+      "claim_zh": "當時的行政院衛生署（食品藥物管理局）於 2010 年 5 月 20 日發布新聞稿，指出自 2010 年（民國 99 年）6 月 1 日起，含 carbamazepine 藥品用藥前的 HLA-B*15:02 基因檢測納入全民健保給付；新聞稿並說明該藥品臨床效益仍高於風險，SJS/TEN 仍屬罕見（依 WHO 定義低於 0.1%）。",
+      "detail_zh": "新聞稿建議可能帶有 HLA-B*15:02 的高危險（亞洲）族群用藥前考慮檢測。某醫院的檢驗項目說明另載明給付適應症為癲癇、三叉神經痛、腎因性尿崩症與雙極性疾患初次使用，且每人限申報一次；給付條件可能變動，本檔案未核對健保署現行規定，實際請以健保署現行規定為準。當時主管機關為行政院衛生署，該新聞稿目前由衛福部網站以存檔方式保存。",
+      "level": "初階",
+      "critical": true,
+      "source_name": "衛生福利部網站（存檔）：含 Carbamazepine 成分藥品的臨床效益仍高於風險，高危險族群宜進行 HLA-B*1502 基因檢測（衛生署 2010-05-20 新聞稿）",
+      "source_url": "https://www.mohw.gov.tw/cp-3161-26506-1.html",
+      "confidence": "high",
+      "en_terms": [
+        "NHI",
+        "全民健保",
+        "HLA-B*15:02",
+        "reimbursement"
+      ],
+      "verified": true,
+      "was_corrected": true,
+      "verified_by": [
+        "primary-source",
+        "independent-search"
+      ],
+      "correction_note": "原文稱『公告』不精確：該頁是衛生署食品藥物管理局的焦點新聞（新聞稿，頁面日期 99-05-20），並非正式公告；衛福部網站僅存檔。日期、6 月 1 日起納入健保給付、臨床效益仍高於風險、SJS/TEN 低於 0.1% 皆核對相符；2018 年 Epilepsia 全國性研究也獨立記載自 2010 年 6 月起由健保給付。未核對健保署現行給付規則。"
+    },
+    {
+      "id": "intro-history-21",
+      "claim_zh": "FDA 核准的 Tegretol（carbamazepine）標籤以框標警語指出：SJS/TEN 在以白人為主的國家約每 1 萬名新使用者 1 到 6 例，在部分亞洲國家風險估計高約 10 倍，祖先屬高風險族群者用藥前應篩檢 HLA-B*1502。",
+      "detail_zh": "標籤同時載明篩檢陽性者除非利大於弊否則不應使用，而篩檢陰性者被認為 SJS/TEN 風險低（並非零）。標籤也列出 HLA-B*1502 的盛行率：香港、泰國、馬來西亞及菲律賓部分地區超過 15%，台灣約 10%，華北約 4%，日本不到 1%。此為 FDA 表格所收錄的標籤版本（2018-03-20）。",
+      "level": "初階",
+      "critical": true,
+      "source_name": "FDA Table of Pharmacogenomic Biomarkers in Drug Labeling（PDF，Tegretol 標籤）",
+      "source_url": "https://www.fda.gov/media/124784/download",
+      "confidence": "high",
+      "en_terms": [
+        "boxed warning",
+        "Tegretol",
+        "HLA-B*1502",
+        "allele frequency",
+        "ancestry"
+      ],
+      "verified": false
+    },
+    {
+      "id": "intro-history-22",
+      "claim_zh": "Vanderbilt 大學 PREDICT 計畫分析前 9,589 位接受預先（preemptive）多基因檢測者，針對 5 組已實施的藥物與基因配對，91% 帶有至少一個可採取行動（actionable）的變異，非裔美國人為 96%。",
+      "detail_zh": "五組配對為 clopidogrel/CYP2C19、simvastatin/SLCO1B1、warfarin/CYP2C9+VKORC1、thiopurines/TPMT、tacrolimus/CYP3A5；actionable 的定義是會讓臨床決策支援建議調整劑量或換藥。歐裔美國人（6,986 人）中 49% 帶有兩個以上可行動基因型；若改採開藥時才逐一檢測的反應式策略，理論上需 14,656 次檢測，而預先面板為 9,589 次。",
+      "level": "初階",
+      "critical": true,
+      "source_name": "Van Driest et al., Clin Pharmacol Ther 2014（PMC）",
+      "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3961508/",
+      "confidence": "high",
+      "en_terms": [
+        "preemptive genotyping",
+        "actionable variant",
+        "PREDICT",
+        "reactive testing",
+        "clinical decision support"
+      ],
+      "verified": true,
+      "verified_by": [
+        "primary-source",
+        "independent-search"
+      ],
+      "verification_note": "摘要與全文皆相符。五組藥物基因配對實際涉及 6 個基因（CYP2C19、SLCO1B1、CYP2C9、VKORC1、TPMT、CYP3A5），不宜稱『5 個基因』。49% 是目前這五組配對下歐裔美國人的數字（全文說再加 6 個基因會升到 74%）。"
+    },
+    {
+      "id": "intro-history-23",
+      "claim_zh": "常被引用的說法是「遺傳因素可占藥物反應個體差異的 20% 到 95%」，區間極寬，顯示遺傳貢獻因藥物而異，無法用單一比例概括。",
+      "detail_zh": "此數字常被歸於 Kalow、Tang 與 Endrenyi 1998 年提出以個人內與個人間變異比較來取代雙胞胎研究的論文（https://pubmed.ncbi.nlm.nih.gov/9731714/），但該論文摘要本身沒有寫出這個區間，是美國家庭醫師學會期刊 2008 年的回顧（Belle & Singh）引用時的說法，屬二手引用，因此信心度標為低。較穩健的講法是：多數常用藥物中基因只解釋一部分變異，見 warfarin 的實例（intro-history-35）。",
+      "level": "初階",
+      "critical": true,
+      "source_name": "Belle & Singh, Genetic Factors in Drug Metabolism, Am Fam Physician 2008（引述 Kalow 1998）",
+      "source_url": "https://www.aafp.org/afp/2008/0601/p1553",
+      "confidence": "low",
+      "en_terms": [
+        "heritability",
+        "interindividual variability",
+        "twin studies",
+        "Kalow"
+      ],
+      "verified": true,
+      "verified_by": [
+        "primary-source",
+        "independent-search"
+      ],
+      "verification_note": "查核結果只確認『AAFP 2008 確實這樣寫並引 Kalow 1998』，並未確認該區間出自 Kalow 1998（其摘要沒有此區間，全文未能閱讀）。它仍是二手的『專家估計』，只能標示為常見說法，信心度維持 low。"
+    },
+    {
+      "id": "intro-history-24",
+      "claim_zh": "統計學家 Stephen Senn 批評以需治療人數（NNT）推論反應者比例的論證：NNT 為 4 只代表平均要治療 4 人才比對照多 1 人達到反應，並不等於只有 1/4 的病人會受益。",
+      "detail_zh": "Senn 在 BMJ 2004 提醒，多數試驗假設病人的反應固定，若病人只是隨機地時而有效時而無效，尋找無反應者的遺傳基礎可能徒勞；2016 年 Statistics in Medicine 進一步指出，認為治療反應有強烈個人成分的常見信念缺乏穩固的統計證據；2018 年他在部落格寫到 Schork 的說法可能是錯的，且該論證本身不成立（https://errorstatistics.com/2018/07/11/s-senn-personal-perils-are-numbers-needed-to-treat-misleading-us-as-to-the-scope-for-personalised-medicine-guest-post/）。因此 Schork 的數字宜視為藥物平均效果有限的提示，而非有 75% 至 96% 的人確定無效。",
+      "level": "中階",
+      "critical": true,
+      "source_name": "Senn S., Mastering variation: variance components and personalised medicine, Stat Med 2016（PubMed）",
+      "source_url": "https://pubmed.ncbi.nlm.nih.gov/26415869/",
+      "confidence": "high",
+      "en_terms": [
+        "NNT",
+        "number needed to treat",
+        "responder analysis",
+        "personalised medicine",
+        "Senn"
+      ],
+      "verified": false
+    },
+    {
+      "id": "intro-history-25",
+      "claim_zh": "1977 年 Mahgoub 等人在 Lancet 報告，94 位志願者服用 debrisoquine 後其藥物與代謝物比值呈雙峰分布，家族研究支持 4-羥化作用由單一常染色體基因控制、缺陷為隱性；1979 年 Eichelbaum 等人發現 sparteine 也有類似的遺傳性缺陷，360 人中有 18 人（5%）幾乎無法代謝。",
+      "detail_zh": "這兩條獨立的線索奠定了「不良代謝者」概念，後來 debrisoquine 的多型性被追溯到 CYP2D6 基因（見下一則；Kalow 2004 亦將 1970 年代晚期 CYP2D6 變異的發現與 debrisoquine 連結）。sparteine 論文見 https://pubmed.ncbi.nlm.nih.gov/499318/。",
+      "level": "中階",
+      "critical": true,
+      "source_name": "Mahgoub et al., Lancet 1977（PubMed）",
+      "source_url": "https://pubmed.ncbi.nlm.nih.gov/71400/",
+      "confidence": "high",
+      "en_terms": [
+        "debrisoquine",
+        "sparteine",
+        "poor metabolizer",
+        "bimodal distribution",
+        "polymorphic hydroxylation"
+      ],
+      "verified": false
+    },
+    {
+      "id": "intro-history-26",
+      "claim_zh": "1988 年 Gonzalez 等人在 Nature 選殖出人類 CYP2D6（當時稱 P450db1）的 cDNA，證實 debrisoquine 不良代謝者幾乎沒有此酵素，並找到三種造成 mRNA 剪接異常的突變；論文指出不良代謝表現型在歐洲與北美白人約占 5% 至 10%，影響超過 20 種常用藥物。",
+      "detail_zh": "這是首度把藥物代謝差異從表現型追溯到分子層次基因缺陷的里程碑，也是基因型對應表現型分析的起點。摘要中還指出這類突變等位基因的頻率為 35% 至 43%。",
+      "level": "中階",
+      "critical": true,
+      "source_name": "Gonzalez et al., Nature 1988（PubMed）",
+      "source_url": "https://pubmed.ncbi.nlm.nih.gov/3123997/",
+      "confidence": "high",
+      "en_terms": [
+        "CYP2D6",
+        "P450db1",
+        "cDNA cloning",
+        "poor metabolizer",
+        "splicing defect"
+      ],
+      "verified": false
+    },
+    {
+      "id": "intro-history-27",
+      "claim_zh": "1980 年 Weinshilboum 與 Sladek 測量 298 位隨機受試者的紅血球 TPMT 活性，發現 88.6% 為高活性、11.1% 為中等活性、0.3% 測不到活性，符合單一基因座上兩個共顯性等位基因的遺傳模式。",
+      "detail_zh": "TPMT 催化 6-mercaptopurine 等硫嘌呤藥物的 S-甲基化。作者當時的結論是這個多型性可能是個體對硫嘌呤敏感度差異的因素之一，仍需進一步實驗，後來才發展為臨床的 TPMT 檢測與劑量調整。",
+      "level": "中階",
+      "critical": true,
+      "source_name": "Weinshilboum & Sladek, Am J Hum Genet 1980（PubMed）",
+      "source_url": "https://pubmed.ncbi.nlm.nih.gov/7191632/",
+      "confidence": "high",
+      "en_terms": [
+        "TPMT",
+        "thiopurine",
+        "6-mercaptopurine",
+        "codominant inheritance"
+      ],
+      "verified": false
+    },
+    {
+      "id": "intro-history-28",
+      "claim_zh": "PharmGKB（Pharmacogenetics Knowledge Base）計畫於 2000 年 4 月啟動，第一版知識庫在 2001 年 2 月上線。",
+      "detail_zh": "2002 年 Nucleic Acids Research 的論文描述當時的 PharmGKB 收錄超過 150 個研究中的基因、14 個 Coriell 族群與藥物遺傳學概念本體。PharmGKB 已於 2025 年併入 ClinPGx（見 intro-history-42）。",
+      "level": "中階",
+      "critical": true,
+      "source_name": "Hewett et al., PharmGKB: the Pharmacogenetics Knowledge Base, Nucleic Acids Res 2002（PubMed）",
+      "source_url": "https://pubmed.ncbi.nlm.nih.gov/11752281/",
+      "confidence": "high",
+      "en_terms": [
+        "PharmGKB",
+        "knowledge base",
+        "Pharmacogenetics Research Network"
+      ],
+      "verified": false
+    },
+    {
+      "id": "intro-history-29",
+      "claim_zh": "臨床藥物基因體學實施聯盟（CPIC）成立於 2009 年，是 PharmGKB 與美國 NIH 藥物基因體學研究網絡（PGRN）的共同計畫，目標是提供免費、經同儕審查且可更新的基因與藥物臨床指引。",
+      "detail_zh": "CPIC 要解決的障礙是拿到檢測結果後不知道如何調整用藥；創始論文為 Relling 與 Klein，Clin Pharmacol Ther 2011;89:464–467（https://pubmed.ncbi.nlm.nih.gov/21270786/）。到 2019 年 7 月，CPIC 已發表 23 份指引（其中 11 份已更新），涵蓋 19 個基因與 46 種藥物。",
+      "level": "中階",
+      "critical": true,
+      "source_name": "The Clinical Pharmacogenetics Implementation Consortium: 10 Years Later（PMC）",
+      "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6925644/",
+      "confidence": "high",
+      "en_terms": [
+        "CPIC",
+        "PGRN",
+        "clinical practice guideline",
+        "gene-drug pair"
+      ],
+      "verified": false
+    },
+    {
+      "id": "intro-history-30",
+      "claim_zh": "2007 年 8 月 16 日，FDA 核准更新 warfarin（Coumadin）仿單，加入 CYP2C9 與 VKORC1 基因變異會影響病人反應的資訊，並指出醫療人員可利用基因檢測改善初始劑量的估計。",
+      "detail_zh": "這是主管機關把藥物基因體資訊寫入常用藥物仿單的代表性事件；標籤用語是提供利用基因檢測的機會，而非強制檢測。NHGRI 2009 年的新聞稿亦記載 2007 年 FDA 與廠商修改 warfarin 標籤（https://www.genome.gov/27530277/2009-release-could-genetics-improve-warfarin-dosing）。確切日期取自轉載 FDA 新聞稿的媒體報導，因此信心度標為中等。",
+      "level": "中階",
+      "critical": true,
+      "source_name": "MedicalXpress 轉載：FDA approves warfarin labeling change（2007-08）",
+      "source_url": "https://medicalxpress.com/news/2007-08-fda-warfarin.html",
+      "confidence": "medium",
+      "en_terms": [
+        "warfarin",
+        "CYP2C9",
+        "VKORC1",
+        "FDA labeling",
+        "initial dose"
+      ],
+      "verified": false
+    },
+    {
+      "id": "intro-history-31",
+      "claim_zh": "FDA 於 2005 年發布首份藥物基因體資料送審指引；一項分析顯示，每年新藥核准中附有藥物基因體資訊的比例，從 2000 年的 10.3%（3 種）成長到 2019 年的 33.9%（20 種）與 2020 年 1–7 月的 28.2%（11 種）。",
+      "detail_zh": "該研究涵蓋 2000 年 1 月到 2020 年 7 月，694 項新藥核准中 178 項（25.6%）在初次核准的標籤就含有 PGx 生物標記資訊；逐年比例並非單調上升（2005 年最低 5.3%、2013 年最高 44.4%），其中需要基因檢測之生物標記與藥物配對有 75.5% 屬於癌症藥物。FDA 現行的藥物標籤藥物基因體生物標記表最近更新為 2025 年 12 月，涵蓋胚系與體細胞變異、基因表現差異與染色體異常等；表中確切的藥物總數本次未能取得。",
+      "level": "中階",
+      "critical": true,
+      "source_name": "Kim et al., Pharmacogenomic Biomarkers in US FDA-Approved Drug Labels (2000–2020), J Pers Med 2021（PMC）",
+      "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8000585/",
+      "confidence": "high",
+      "en_terms": [
+        "FDA drug labeling",
+        "pharmacogenomic biomarker",
+        "germline",
+        "somatic",
+        "oncology"
+      ],
+      "verified": false
+    },
+    {
+      "id": "intro-history-32",
+      "claim_zh": "FDA 於 2020 年 2 月首次公布「藥物基因體關聯表（Table of Pharmacogenetic Associations）」，依證據分成三節：有治療處置建議、對安全性或反應有潛在影響、僅影響藥物動力學；並聲明列入此表不必然代表 FDA 主張處方前要先做基因檢測（伴隨式診斷除外）。",
+      "detail_zh": "FDA 原文大意為：某個基因與藥物的交互作用被列入表中，並不必然表示 FDA 提倡在開立對應藥物前使用藥物基因檢測，但檢測若屬伴隨式診斷（companion diagnostic）則另當別論。網頁顯示該表初次發布於 2020 年 2 月，其更新紀錄最近一筆為 2026 年 9 月 10 日（已用網頁原始碼核對）。",
+      "level": "中階",
+      "critical": true,
+      "source_name": "FDA：Table of Pharmacogenetic Associations",
+      "source_url": "https://www.fda.gov/medical-devices/precision-medicine/table-pharmacogenetic-associations",
+      "confidence": "high",
+      "en_terms": [
+        "Table of Pharmacogenetic Associations",
+        "therapeutic management",
+        "FDA",
+        "pharmacokinetic only"
+      ],
+      "verified": false
+    },
+    {
+      "id": "intro-history-33",
+      "claim_zh": "系統性回顧顯示，因藥物不良反應而住院的比例隨族群與偵測方法而異：25 項前瞻性研究（106,586 名住院病人）的中位數為 5.3%（四分位距 2.7%–9.0%），其中高齡者達 10.7%；歐洲 2000–2014 年 22 項研究的中位數為 3.5%。",
+      "detail_zh": "歐洲回顧（Bouvy 等，Drug Saf 2015；https://pubmed.ncbi.nlm.nih.gov/25822400/）另指出，住院期間發生 ADR 的病人比例中位數為 10.1%（13 項研究）。不同研究數字差異大，與 ADR 定義及偵測方法（僅看病歷或加上病人訪談）有關，引用時應註明來源、地區與定義。",
+      "level": "中階",
+      "critical": true,
+      "source_name": "Kongkaew et al., Ann Pharmacother 2008（PubMed）",
+      "source_url": "https://pubmed.ncbi.nlm.nih.gov/18594048/",
+      "confidence": "high",
+      "en_terms": [
+        "ADR-related admission",
+        "systematic review",
+        "elderly",
+        "detection method"
+      ],
+      "verified": false
+    },
+    {
+      "id": "intro-history-34",
+      "claim_zh": "2001 年 JAMA 的系統性回顧發現，ADR 研究中常被提及的 27 種藥物裡，59% 被至少一種帶有導致不良代謝之變異等位基因的酵素所代謝；相對地，隨機抽樣藥物只有 7% 到 22% 屬於此類。",
+      "detail_zh": "這是藥物基因體學可能減少 ADR 的早期文獻證據，但它顯示的只是潛在關聯：藥物受多型酵素代謝並不代表這些不良反應就是基因造成，也不代表做了基因檢測就能避免。",
+      "level": "中階",
+      "critical": true,
+      "source_name": "Phillips et al., JAMA 2001（PubMed）",
+      "source_url": "https://pubmed.ncbi.nlm.nih.gov/11710893/",
+      "confidence": "high",
+      "en_terms": [
+        "polymorphic enzymes",
+        "poor metabolizer alleles",
+        "ADR",
+        "systematic review"
+      ],
+      "verified": false
+    },
+    {
+      "id": "intro-history-35",
+      "claim_zh": "國際 Warfarin 藥物基因體學聯盟（IWPC）2009 年 NEJM 研究顯示，在 1,009 人的驗證世代中，納入基因資訊的演算法可解釋 43% 的 warfarin 穩定劑量變異（R²），只用臨床變項的演算法為 26%，固定劑量為 0%。",
+      "detail_zh": "也就是說，即使是最成功的藥物基因體範例，加入基因後也只讓解釋力提高約 17 個百分點，仍有一半以上的變異來自其他或未知因素。在每週需 21 mg 以下或 49 mg 以上的極端劑量族群，基因演算法預測落在實際劑量 20% 範圍內的比例分別為 49.4% 對 33.3%、24.8% 對 7.2%（以基因加臨床演算法對純臨床演算法）。衍生世代為 4,043 人，R² 為 47% 對 27%。",
+      "level": "中階",
+      "critical": true,
+      "source_name": "IWPC, Estimation of the warfarin dose with clinical and pharmacogenetic data, N Engl J Med 2009（PMC）",
+      "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2722908/",
+      "confidence": "high",
+      "en_terms": [
+        "warfarin",
+        "dose algorithm",
+        "R-squared",
+        "explained variance",
+        "IWPC"
+      ],
+      "verified": false
+    },
+    {
+      "id": "intro-history-36",
+      "claim_zh": "一項以次世代定序分析 1,013 位受試者的預先檢測研究（Ji 等，2016）發現，把 SLCO1B1、CYP2C19、CYP2C9、VKORC1 與 CYP2D6 五個基因合併考量時，99% 的人至少在一個基因上帶有可採取行動的變異。",
+      "detail_zh": "各基因帶有可行動變異的比例從 SLCO1B1 的 30% 到 CYP2D6 的 79%。研究為美國 Right Drug, Right Dose, Right Time 先導計畫的一部分，變異被放進電子病歷並搭配臨床決策支援提醒。注意 99% 取決於納入哪些基因與如何定義 actionable，並不表示 99% 的人都會因此改變用藥。",
+      "level": "中階",
+      "critical": true,
+      "source_name": "Ji et al., J Mol Diagn 2016（PubMed）",
+      "source_url": "https://pubmed.ncbi.nlm.nih.gov/26947514/",
+      "confidence": "high",
+      "en_terms": [
+        "preemptive testing",
+        "next-generation sequencing",
+        "actionable PGx variant",
+        "CYP2D6 cascade"
+      ],
+      "verified": true,
+      "verified_by": [
+        "primary-source",
+        "independent-search"
+      ],
+      "verification_note": "摘要數字皆相符（30%–79%；五基因合併 99%）。99% 取決於基因集與 actionable 的定義，不等於 99% 的人會改變用藥。"
+    },
+    {
+      "id": "intro-history-37",
+      "claim_zh": "針對美國退伍軍人健康署（VHA）7,769,359 名藥局使用者的推估研究預測，約 99% 的人至少帶有 1 個可採取行動的藥物基因變異，且 54.8% 的人在研究期間至少領過一種 CPIC Level A 藥物。",
+      "detail_zh": "這是依已知變異頻率所做的推估（projected），並非替每位退伍軍人實際做基因定序。研究另指出 37.9% 曾被新開立 Level A 藥物；在這些新開立者中，24.7% 被新開立兩種、12.1% 被新開立三種以上 Level A 藥物，顯示多重用藥情境下預先檢測可被重複利用。",
+      "level": "中階",
+      "critical": true,
+      "source_name": "Chanfreau-Coffinier et al., JAMA Netw Open 2019",
+      "source_url": "https://jamanetwork.com/journals/jamanetworkopen/fullarticle/2735464",
+      "confidence": "high",
+      "en_terms": [
+        "projected prevalence",
+        "CPIC level A",
+        "Veterans Health Administration",
+        "polypharmacy"
+      ],
+      "verified": false
+    },
+    {
+      "id": "intro-history-38",
+      "claim_zh": "分析 172,854 位台灣漢人（來自中國醫藥大學附設醫院精準醫療計畫與台灣人體生物資料庫）14 個藥物基因（含 4 個 HLA 基因）的研究發現，99.9% 至少帶有 1 個可採取行動的藥物基因表現型，其中 29% 已被處方過可能出現非典型反應的藥物；在 clopidogrel 使用者中，約 61%（6,414 人）屬於依 FDA 建議需調整治療的 CYP2C19 表現型，其中中間代謝者約占全部使用者的 46%、不良代謝者約占 14%。",
+      "detail_zh": "研究（Lu 等，Frontiers in Genetics 2022）指出表現型頻率與東亞族群相近；14 個基因為 CYP2B6、CYP2C19、CYP2C9、CYP3A5、CYP4F2、DPYD、NUDT15、SLCO1B1、TPMT、VKORC1、HLA-A、HLA-B、HLA-DQA1、HLA-DRB1。clopidogrel 使用者中約 61%（6,414 人）的 CYP2C19 表現型需依 FDA 建議調整治療，其中中間代謝者約占全部使用者的 46%、不良代謝者約占 14%（46% + 14% 約等於 61%，所以是占全部 clopidogrel 使用者的比例，不是 61% 這一群內部的比例；論文文字本身有些含糊）。比例會隨納入基因數與 actionable 的定義而改變；G6PD 未納入此研究的分析。",
+      "level": "中階",
+      "critical": true,
+      "source_name": "Lu et al., Comprehensive characterization of pharmacogenes in a Taiwanese Han population, Front Genet 2022（PMC）",
+      "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9452738/",
+      "confidence": "high",
+      "en_terms": [
+        "Taiwan Biobank",
+        "Taiwanese Han",
+        "actionable phenotype",
+        "CYP2C19 poor metabolizer"
+      ],
+      "verified": true,
+      "was_corrected": true,
+      "verified_by": [
+        "primary-source",
+        "independent-search"
+      ],
+      "correction_note": "原文『需調整者中 CYP2C19 中間代謝者占 46%、不良代謝者占 14%』的分母有誤：46% + 14% 約等於 61%，可知這兩個百分比是占全部 clopidogrel 使用者，而非占『需調整的 61%』；已刪去『within those needing adjustment』式的說法。172,854 人、99.9%、29%、資料來源與 14 個基因（含 4 個 HLA 基因、無 G6PD）皆核對相符。",
+      "verification_note": "獨立查核者另指出：處方分析只使用中國醫藥大學附設醫院（CMUH）電子病歷且限於部分藥物（約 12 種），因此 29% 應視為以該院資料為基礎的下限；此點僅單一查核者提出，寫作時宜保守標示『在該院處方紀錄中』。"
+    },
+    {
+      "id": "intro-history-39",
+      "claim_zh": "CPIC 指引的定位是協助臨床醫師運用已取得的基因檢測結果來優化用藥，而不是建議哪些人應該接受藥物基因檢測。",
+      "detail_zh": "CPIC 2022 年 clopidogrel 指引寫道：指引旨在幫助臨床醫師了解現有的基因檢測結果如何用來優化藥物治療，而非建議應在誰身上做藥物基因檢測；最終是否套用由醫師與病人共同決定。這是理解 PGx 能做與不能做的關鍵：指引解決的是有結果後怎麼用，是否值得檢測還牽涉成本效益、法規與給付。",
+      "level": "中階",
+      "critical": true,
+      "source_name": "CPIC clopidogrel 指引 2022 更新（Lee et al.，PubMed）",
+      "source_url": "https://pubmed.ncbi.nlm.nih.gov/35034351/",
+      "confidence": "high",
+      "en_terms": [
+        "CPIC guideline",
+        "genotype-guided therapy",
+        "testing recommendation",
+        "scope"
+      ],
+      "verified": false
+    },
+    {
+      "id": "intro-history-40",
+      "claim_zh": "表現型轉換（phenoconversion）的系統性回顧（27 項研究，其中 14 項在特定基因型群中觀察到轉換）指出，併用 CYP450 抑制劑、年齡增加、癌症與發炎會使代謝能力低於基因預測，而併用誘導劑與吸菸則使其高於預測。",
+      "detail_zh": "酒精、懷孕與維生素 D 也有研究提示可能影響，但對臨床療效與毒性的實際影響仍不明確。這說明只看基因型可能誤判一個人此刻的實際代謝能力，基因與環境必須一起考慮。",
+      "level": "進階",
+      "critical": true,
+      "source_name": "Klomp et al., Phenoconversion of Cytochrome P450 Metabolism: A Systematic Review, J Clin Med 2020（PubMed）",
+      "source_url": "https://pubmed.ncbi.nlm.nih.gov/32906709/",
+      "confidence": "high",
+      "en_terms": [
+        "phenoconversion",
+        "CYP450 inhibitors",
+        "CYP450 inducers",
+        "genotype-phenotype discordance"
+      ],
+      "verified": false
+    },
+    {
+      "id": "intro-history-41",
+      "claim_zh": "CPIC 與荷蘭藥物基因體工作小組（DPWG）以修正式德爾菲法（37 位國際專家、7 輪問卷、82% 同意最終方案）就 CYP2D6 基因型轉譯為表現型的方法達成統一共識，並於 2020 年發表在 Clinical and Translational Science。",
+      "detail_zh": "在此之前，不同檢測實驗室與指引對同一個 CYP2D6 基因型可能判成不同的代謝者類別，導致建議不一致，令病人與臨床人員困惑。這個例子也說明：基因型是終身不變的，但其解讀規則會隨證據與共識而更新。",
+      "level": "進階",
+      "critical": true,
+      "source_name": "Caudle et al., Standardizing CYP2D6 Genotype to Phenotype Translation, Clin Transl Sci 2020（PubMed）",
+      "source_url": "https://pubmed.ncbi.nlm.nih.gov/31647186/",
+      "confidence": "high",
+      "en_terms": [
+        "CYP2D6",
+        "genotype-to-phenotype translation",
+        "modified Delphi",
+        "DPWG",
+        "activity score"
+      ],
+      "verified": false
+    },
+    {
+      "id": "intro-history-42",
+      "claim_zh": "PharmGKB 已改名並整合為 ClinPGx：2025 年 7 月 29 日發布公告，自 2025 年 7 月 30 日起所有 PharmGKB 連結會自動導向 ClinPGx 的對應頁面。",
+      "detail_zh": "ClinPGx 結合 PharmGKB、CPIC 指引與 PharmCAT 等工具；原 DDRx 工具改名為 PharmDOG，並新增 CYP2D6 表現型轉換等功能。cpicpgx.org 目前會導向 clinpgx.org/cpic，但指引仍以 CPIC 名義發布。",
+      "level": "進階",
+      "critical": true,
+      "source_name": "ClinPGx Blog：Announcing ClinPGx",
+      "source_url": "https://blog.clinpgx.org/pharmgkb-is-now-clinpgx/",
+      "confidence": "high",
+      "en_terms": [
+        "ClinPGx",
+        "PharmGKB",
+        "PharmCAT",
+        "PharmDOG",
+        "CPIC"
+      ],
+      "verified": false
+    },
+    {
+      "id": "intro-history-43",
+      "claim_zh": "依 CPIC 團隊 2025 年的回顧，CPIC 指引涵蓋 34 個基因與 164 種藥物，目前有 28 份有效指引。",
+      "detail_zh": "該文並指出 85% 的 PubMed 收錄之藥物基因體實施研究引用 CPIC 指引，128 個醫療機構與 40 家商業實驗室回報使用 CPIC 內容，CPIC API 每月逾 80,000 次查詢；成員調查顯示，障礙已從科學證據疑慮轉向臨床人員教育、給付與電子病歷整合等實務問題。",
+      "level": "進階",
+      "critical": true,
+      "source_name": "Caudle et al., Advancing Clinical Pharmacogenomics Worldwide Through CPIC, Clin Pharmacol Ther 2025（PubMed）",
+      "source_url": "https://pubmed.ncbi.nlm.nih.gov/40678821/",
+      "confidence": "high",
+      "en_terms": [
+        "CPIC",
+        "guideline count",
+        "implementation barriers",
+        "EHR integration"
+      ],
+      "verified": false
+    },
+    {
+      "id": "intro-history-44",
+      "claim_zh": "2023 年 Lancet 的 PREPARE 研究（7 個歐洲國家、6,944 名新開藥病人的群集隨機交叉試驗）顯示，依 12 基因面板結果調整用藥可降低臨床相關 ADR：在有可行動結果者中為 21.0% 對 27.7%（OR 0.70，95% CI 0.54–0.91）。",
+      "detail_zh": "全體病人分析為 21.5% 對 28.6%（OR 0.70，95% CI 0.61–0.79）。但依摘要數字推算，對本次處方藥有可行動結果的病人為 1,558 人，占分析人數 6,193 人的約 25%（屬推算值），也就是約四分之三的人並不需要因基因而改變該次處方。研究為開放標示，可行動結果依 DPWG 指引定義。",
+      "level": "進階",
+      "critical": true,
+      "source_name": "Swen et al., A 12-gene pharmacogenetic panel to prevent adverse drug reactions, Lancet 2023（PubMed）",
+      "source_url": "https://pubmed.ncbi.nlm.nih.gov/36739136/",
+      "confidence": "high",
+      "en_terms": [
+        "PREPARE",
+        "12-gene panel",
+        "cluster-randomised crossover",
+        "odds ratio",
+        "DPWG"
+      ],
+      "verified": true,
+      "verified_by": [
+        "primary-source",
+        "independent-search"
+      ],
+      "verification_note": "摘要數字皆相符。6,944 為納入人數，分析人數約 6,193（2,923+3,270）；『約 25%』為 1,558/6,193 的推算值。OR 0.70 不等於風險降低 30%；研究為開放標示的群集隨機交叉試驗，可行動結果依 DPWG 定義。Lancet 2023 年 8 月的更正只涉及聯盟名單，不影響數字。"
+    },
+    {
+      "id": "intro-history-45",
+      "claim_zh": "兩項 2013 年 NEJM 隨機試驗對 warfarin 基因導向劑量給出看似矛盾的結果：COAG（1,015 人）中基因導向與僅用臨床變項的演算法在治療範圍內時間（TTR）幾乎相同（45.2% 對 45.4%）；EU-PACT（455 人）中基因導向組 TTR 為 67.4%，高於標準劑量組的 60.3%。",
+      "detail_zh": "差異的關鍵之一是對照組：COAG 比較的是含臨床變項的演算法且觀察 4 週，EU-PACT 比較的是標準（3 天負荷）給藥且觀察 12 週；COAG 還出現與種族的交互作用（黑人病人在基因導向組表現較差）。因此 PGx 有沒有用，要看與什麼比較、用什麼療效指標。EU-PACT 見 https://pubmed.ncbi.nlm.nih.gov/24251363/。",
+      "level": "進階",
+      "critical": true,
+      "source_name": "Kimmel et al., COAG, N Engl J Med 2013（PubMed）",
+      "source_url": "https://pubmed.ncbi.nlm.nih.gov/24251361/",
+      "confidence": "high",
+      "en_terms": [
+        "COAG",
+        "EU-PACT",
+        "time in therapeutic range",
+        "TTR",
+        "comparator",
+        "genotype-guided dosing"
+      ],
+      "verified": false
+    }
+  ],
+  "glossary": [
+    {
+      "term_zh": "藥物基因體學",
+      "term_en": "pharmacogenomics",
+      "definition_zh": "研究個人 DNA 與 RNA 特徵的變異如何影響藥物反應（吸收、代謝、療效、不良反應）的學問。",
+      "level": "入門"
+    },
+    {
+      "term_zh": "藥物遺傳學",
+      "term_en": "pharmacogenetics",
+      "definition_zh": "研究 DNA 序列變異與藥物反應關係的學問；依 ICH E15 是藥物基因體學的子集，日常常與之互換使用。",
+      "level": "入門"
+    },
+    {
+      "term_zh": "精準醫療",
+      "term_en": "precision medicine",
+      "definition_zh": "利用個人的基因體、環境與生活型態資訊來引導預防與治療決策的醫療方式；藥物基因體學是其中一個落地的應用。",
+      "level": "入門"
+    },
+    {
+      "term_zh": "基因型",
+      "term_en": "genotype",
+      "definition_zh": "一個人在某個基因上實際帶有的等位基因組合，例如 CYP2C19*1/*2。",
+      "level": "入門"
+    },
+    {
+      "term_zh": "表現型",
+      "term_en": "phenotype",
+      "definition_zh": "基因型（加上環境因素）所表現出來的可觀察特徵，例如代謝者類型：不良代謝者、中間代謝者、正常代謝者、快速代謝者、超快速代謝者。",
+      "level": "入門"
+    },
+    {
+      "term_zh": "等位基因",
+      "term_en": "allele",
+      "definition_zh": "同一基因座上的不同版本；每個人從父母各得一份。",
+      "level": "入門"
+    },
+    {
+      "term_zh": "單一核苷酸多型性",
+      "term_en": "single nucleotide polymorphism (SNP)",
+      "definition_zh": "基因體上單一個鹼基位置的變異，是人與人之間最常見的基因變異類型。",
+      "level": "入門"
+    },
+    {
+      "term_zh": "多型性",
+      "term_en": "polymorphism",
+      "definition_zh": "在族群中以一定頻率（傳統上約 1% 以上）出現的基因變異。",
+      "level": "初階"
+    },
+    {
+      "term_zh": "星號等位基因",
+      "term_en": "star (*) allele",
+      "definition_zh": "藥物代謝基因常用的命名方式，如 CYP2D6*4，每個星號代表一種特定變異或變異組合（單套型），*1 通常指參考的正常功能型。",
+      "level": "初階"
+    },
+    {
+      "term_zh": "藥物動力學",
+      "term_en": "pharmacokinetics (PK)",
+      "definition_zh": "藥物在體內的吸收、分布、代謝與排除過程，也就是身體如何處理藥物。",
+      "level": "入門"
+    },
+    {
+      "term_zh": "藥效學",
+      "term_en": "pharmacodynamics (PD)",
+      "definition_zh": "藥物對身體產生的作用與機轉，包含療效與不良反應，也就是藥物如何影響身體。",
+      "level": "入門"
+    },
+    {
+      "term_zh": "藥物不良反應",
+      "term_en": "adverse drug reaction (ADR)",
+      "definition_zh": "在正常用法用量下，藥物造成的有害且非預期的反應；有些與基因有關，多數與劑量、併用藥物、年齡與器官功能等有關。",
+      "level": "入門"
+    },
+    {
+      "term_zh": "不良代謝者",
+      "term_en": "poor metabolizer (PM)",
+      "definition_zh": "某代謝酵素活性極低或缺乏的人，藥物（或其活性形式）的血中濃度會與一般人明顯不同。",
+      "level": "初階"
+    },
+    {
+      "term_zh": "中間代謝者",
+      "term_en": "intermediate metabolizer (IM)",
+      "definition_zh": "酵素活性介於正常與不良之間的人。",
+      "level": "初階"
+    },
+    {
+      "term_zh": "正常代謝者",
+      "term_en": "normal metabolizer (NM)",
+      "definition_zh": "酵素活性在典型範圍內的人。",
+      "level": "初階"
+    },
+    {
+      "term_zh": "快速代謝者與超快速代謝者",
+      "term_en": "rapid metabolizer (RM) / ultrarapid metabolizer (UM)",
+      "definition_zh": "酵素活性高於正常的人，可能使藥物太快被清除而療效不足，或使前驅藥物過度活化。",
+      "level": "初階"
+    },
+    {
+      "term_zh": "可採取行動的變異",
+      "term_en": "actionable variant",
+      "definition_zh": "檢測結果足以讓臨床決策支援或指引建議改變用藥選擇或劑量的變異；定義會因研究與指引而異，因此各研究的比例不能直接比較。",
+      "level": "初階"
+    },
+    {
+      "term_zh": "預先檢測與反應式檢測",
+      "term_en": "preemptive vs reactive testing",
+      "definition_zh": "預先檢測是在需要用藥前先做多基因面板並存入病歷以便日後重複利用；反應式檢測則是在開特定藥物時才針對單一基因檢測。",
+      "level": "初階"
+    },
+    {
+      "term_zh": "臨床決策支援",
+      "term_en": "clinical decision support (CDS)",
+      "definition_zh": "電子病歷中依病人資料（如基因結果）在開立處方時自動提示或提醒的系統。",
+      "level": "中階"
+    },
+    {
+      "term_zh": "需治療人數",
+      "term_en": "number needed to treat (NNT)",
+      "definition_zh": "平均需要治療多少位病人，才會比對照組多一位達到某個療效；它不等於有效病人的比例。",
+      "level": "中階"
+    },
+    {
+      "term_zh": "表現型轉換",
+      "term_en": "phenoconversion",
+      "definition_zh": "因併用藥物、年齡、疾病、吸菸等非遺傳因素，使實際代謝能力偏離基因型預測的現象。",
+      "level": "進階"
+    },
+    {
+      "term_zh": "胚系變異與體細胞變異",
+      "term_en": "germline vs somatic variant",
+      "definition_zh": "胚系變異是遺傳自父母、存在於全身細胞的變異（如 CYP2D6、HLA-B）；體細胞變異是後天發生在腫瘤等組織的變異（如 EGFR、KRAS）。兩者都出現在 FDA 藥物標籤生物標記表中。",
+      "level": "中階"
+    },
+    {
+      "term_zh": "先天代謝異常",
+      "term_en": "inborn errors of metabolism",
+      "definition_zh": "由基因缺陷導致某個代謝步驟出問題的疾病；Garrod 1908 年的演講提出此概念，被視為醫學遺傳學的基礎。",
+      "level": "初階"
+    },
+    {
+      "term_zh": "乙醯化者",
+      "term_en": "acetylator",
+      "definition_zh": "依 NAT2 基因決定代謝 isoniazid 等藥物速度的類別，分為慢、中間與快乙醯化者。",
+      "level": "初階"
+    },
+    {
+      "term_zh": "G6PD 缺乏症（蠶豆症）",
+      "term_en": "G6PD deficiency (favism)",
+      "definition_zh": "葡萄糖-6-磷酸脫氫酶缺乏的 X 連鎖遺傳性酵素病，紅血球易受氧化傷害，接觸蠶豆或某些藥物時可能急性溶血。",
+      "level": "初階"
+    },
+    {
+      "term_zh": "框標警語",
+      "term_en": "boxed warning",
+      "definition_zh": "藥品仿單上最嚴重等級的警示，用框線標示於最前面。",
+      "level": "初階"
+    },
+    {
+      "term_zh": "藥物基因對",
+      "term_en": "gene-drug pair",
+      "definition_zh": "一個基因與一種藥物的組合，如 CYP2C19 與 clopidogrel，是指引與標籤整理證據的基本單位。",
+      "level": "初階"
+    },
+    {
+      "term_zh": "CPIC 與 DPWG",
+      "term_en": "CPIC / DPWG",
+      "definition_zh": "CPIC 是臨床藥物基因體學實施聯盟；DPWG 是荷蘭皇家藥學會（KNMP）下的藥物基因體工作小組；兩者都提供依基因型調整用藥的指引。",
+      "level": "中階"
+    },
+    {
+      "term_zh": "統合分析",
+      "term_en": "meta-analysis",
+      "definition_zh": "系統性地蒐集多項研究並合併統計分析的方法，用來估計整體效應；結果會受研究間異質性影響。",
+      "level": "中階"
+    }
+  ],
+  "sources": [
+    {
+      "name": "NHGRI Talking Glossary：Pharmacogenomics",
+      "url": "https://www.genome.gov/genetics-glossary/Pharmacogenomics",
+      "note_zh": "美國國家人類基因體研究所對藥物基因體學的簡明定義。"
+    },
+    {
+      "name": "NHGRI Talking Glossary：Precision Medicine",
+      "url": "https://www.genome.gov/genetics-glossary/Precision-Medicine",
+      "note_zh": "精準醫療的定義，並說明與個人化醫療大致同義。"
+    },
+    {
+      "name": "MedlinePlus Genetics：SNPs",
+      "url": "https://medlineplus.gov/genetics/understanding/genomicresearch/snp/",
+      "note_zh": "SNP 的定義與頻率（約每 1,000 個核苷酸一次、每人 400 萬至 500 萬個）。"
+    },
+    {
+      "name": "NHGRI：Human Genome Project Completion FAQ",
+      "url": "https://www.genome.gov/human-genome-project/Completion-FAQ",
+      "note_zh": "人類基因體計畫時程、2003 年完成與 2022 年 T2T 的官方說明。"
+    },
+    {
+      "name": "ICH E15 Definitions for genomic biomarkers, pharmacogenomics, pharmacogenetics",
+      "url": "https://database.ich.org/sites/default/files/E15_Guideline.pdf",
+      "note_zh": "pharmacogenomics 與 pharmacogenetics 的法規定義（2007-11-01 Step 4）。"
+    },
+    {
+      "name": "FDA：Table of Pharmacogenomic Biomarkers in Drug Labeling（PDF）",
+      "url": "https://www.fda.gov/media/124784/download",
+      "note_zh": "含 abacavir、carbamazepine 等標籤原文；最近更新 2025 年 12 月。"
+    },
+    {
+      "name": "FDA：Table of Pharmacogenetic Associations",
+      "url": "https://www.fda.gov/medical-devices/precision-medicine/table-pharmacogenetic-associations",
+      "note_zh": "2020 年首次發布的三節式藥物基因關聯表與免責說明。"
+    },
+    {
+      "name": "CPIC（cpicpgx.org，現導向 clinpgx.org/cpic）",
+      "url": "https://cpicpgx.org/",
+      "note_zh": "臨床藥物基因體學實施聯盟的指引入口。"
+    },
+    {
+      "name": "ClinPGx Blog：Announcing ClinPGx",
+      "url": "https://blog.clinpgx.org/pharmgkb-is-now-clinpgx/",
+      "note_zh": "PharmGKB 改名整合為 ClinPGx 的官方公告（2025-07-29）。"
+    },
+    {
+      "name": "Hewett et al., PharmGKB: the Pharmacogenetics Knowledge Base（NAR 2002）",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/11752281/",
+      "note_zh": "PharmGKB 2000 年 4 月啟動、2001 年 2 月上線的記載。"
+    },
+    {
+      "name": "The Clinical Pharmacogenetics Implementation Consortium: 10 Years Later",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6925644/",
+      "note_zh": "CPIC 2009 年成立與 2019 年指引數量。"
+    },
+    {
+      "name": "Caudle et al., CPIC 2025 回顧（PubMed）",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/40678821/",
+      "note_zh": "CPIC 34 個基因、164 種藥物、28 份有效指引與採用情形。"
+    },
+    {
+      "name": "Lee et al., CPIC clopidogrel 2022 更新（PubMed）",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/35034351/",
+      "note_zh": "CPIC 指引範圍聲明與 CYP2C19 更新。"
+    },
+    {
+      "name": "Kalow, Human pharmacogenomics: the development of a science（Hum Genomics 2004）",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3525104",
+      "note_zh": "Kalow 本人整理的藥物遺傳學早期歷史（Vogel 1959、Kalow 1962）。"
+    },
+    {
+      "name": "JAMA：Motulsky 1957",
+      "url": "https://jamanetwork.com/journals/jama/fullarticle/321669",
+      "note_zh": "藥物遺傳學奠基文獻的開頭摘要。"
+    },
+    {
+      "name": "Schork, Nature 2015（原文頁面）",
+      "url": "https://www.nature.com/articles/520609a",
+      "note_zh": "1/25 到 1/4 說法的原始出處（PubMed 25925459）。"
+    },
+    {
+      "name": "Senn, Stat Med 2016 / BMJ 2004（PubMed）",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/26415869/",
+      "note_zh": "對以 NNT 推論反應者比例的統計批評。"
+    },
+    {
+      "name": "Van Driest et al., Clin Pharmacol Ther 2014（PMC）",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3961508/",
+      "note_zh": "91% 至少一個可行動變異、預先與反應式檢測比較。"
+    },
+    {
+      "name": "Ji et al., J Mol Diagn 2016（PubMed）",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/26947514/",
+      "note_zh": "1,013 人、五基因、99% 帶有可行動變異。"
+    },
+    {
+      "name": "Chanfreau-Coffinier et al., JAMA Netw Open 2019",
+      "url": "https://jamanetwork.com/journals/jamanetworkopen/fullarticle/2735464",
+      "note_zh": "退伍軍人健康署推估研究。"
+    },
+    {
+      "name": "Lu et al., Front Genet 2022（PMC）",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9452738/",
+      "note_zh": "17 萬餘台灣漢人的藥物基因表現型分布。"
+    },
+    {
+      "name": "Swen et al., PREPARE, Lancet 2023（PubMed）",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/36739136/",
+      "note_zh": "12 基因面板降低 ADR 的群集隨機試驗。"
+    },
+    {
+      "name": "Lazarou et al., JAMA 1998（PubMed）",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/9555760/",
+      "note_zh": "美國住院病人 ADR 統合分析。"
+    },
+    {
+      "name": "Pirmohamed et al., BMJ 2004（PubMed）",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/15231615/",
+      "note_zh": "英國默西塞德郡兩家醫院 18,820 人 ADR 入院前瞻性研究。"
+    },
+    {
+      "name": "Chen et al., NEJM 2011（PubMed）",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/21428768/",
+      "note_zh": "台灣 HLA-B*15:02 篩檢與 carbamazepine SJS/TEN。"
+    },
+    {
+      "name": "衛生福利部（存檔）：含 Carbamazepine 成分藥品臨床效益仍高於風險（衛生署 2010-05-20 新聞稿）",
+      "url": "https://www.mohw.gov.tw/cp-3161-26506-1.html",
+      "note_zh": "2010 年 HLA-B*1502 檢測納入健保給付的官方說明（新聞稿，非正式公告）。"
+    },
+    {
+      "name": "台灣藥物基因體學會 PGST（The Pharmacogenomics Society of Taiwan）",
+      "url": "https://www.pgst.org.tw/index.php",
+      "note_zh": "學會網站；理事長的話（about.php）記載內政部於 2021 年 COVID-19 疫情期間通過學會成立，另有最新消息、學術新知與文件下載，可做台灣脈絡的延伸閱讀。"
+    },
+    {
+      "name": "EMA：DPD 檢測建議（2020-04-30）",
+      "url": "https://www.ema.europa.eu/en/news/ema-recommendations-dpd-testing-prior-treatment-fluorouracil-capecitabine-tegafur-flucytosine",
+      "note_zh": "歐洲藥品管理局建議 fluorouracil 類藥物用藥前做 DPD 檢測（本檔案未列為事實，可供 DPYD 主題延伸）。"
+    }
+  ],
+  "misconceptions_zh": [
+    "迷思：基因檢測可以確定某個藥對我一定有效或一定有副作用。正確理解：藥物基因體學給的是機率與劑量或選藥建議。以 HLA-B*15:02 為例，台灣研究中 7.7% 的人為陽性，但 carbamazepine 相關 SJS/TEN 的歷史發生率只有 0.23%，所以絕大多數陽性者其實不會發病；而 FDA 標籤也只說陰性者風險被認為低，並非零。",
+    "迷思：Schork（Nature 2015）證明了『暢銷藥 75% 到 96% 的人無效，所以要靠基因檢測』。正確理解：原文說的是營收最高的十種藥『help between 1 in 25 and 1 in 4』，出自一篇倡議 N-of-1 試驗的評論，並非藥物基因體學的分析，也沒有說差異都來自基因；且以 NNT 推論反應者比例的論證受到 Senn 等統計學者批評，NNT 不等於有效者比例。",
+    "迷思：91%–99.9% 的人都帶有可行動變異，所以幾乎每個人都該因此換藥。正確理解：這個比例取決於納入多少基因與如何定義 actionable，且是『至少一個基因』的累計；PREPARE 試驗中，對當次處方藥有可行動結果的病人只有約四分之一（1,558／6,193，推算值）。",
+    "迷思：藥物基因體學就是把整個基因體定序。正確理解：多數臨床藥物基因檢測只針對特定基因與變異（如 CYP2C19、HLA-B*15:02）；且它只是精準醫療的一部分，精準醫療還納入環境與生活型態資訊。",
+    "迷思：藥物反應是由基因決定的。正確理解：即使是最成功的 warfarin 範例，納入基因與臨床變項的演算法也只解釋約 43% 的劑量變異（臨床變項單獨為 26%）；年齡、體重、器官功能、併用藥物（表現型轉換）、吸菸與服藥遵從性都會影響結果。常見的『遺傳占 20%–95%』說法來源為二手引用且範圍極寬，不宜當作單一比例。",
+    "迷思：所有藥物不良反應都是基因造成的，做了基因檢測就能避免。正確理解：英國研究中最常導致入院的藥物是低劑量阿斯匹靈、利尿劑、warfarin 與非阿斯匹靈類消炎止痛藥，主要反應為腸胃出血，許多與劑量、併用藥物和病人狀況有關；Phillips 2001 顯示常見於 ADR 研究的藥物有 59% 受多型酵素代謝，這只是潛在關聯，不等於因果。",
+    "迷思：pharmacogenetics 和 pharmacogenomics 是兩個完全不同的領域。正確理解：ICH E15 把 pharmacogenetics 定義為 pharmacogenomics 的子集（前者只看 DNA 序列變異，後者還包括 RNA 特徵），實務與文獻中常互換使用。",
+    "迷思：基因型一生不變，所以檢測結果永遠有同樣的解讀。正確理解：基因型確實終身不變，但指引與解讀規則會更新，例如 CPIC 與 DPWG 在 2020 年統一了 CYP2D6 基因型轉譯表現型的方法，CPIC 2022 年 clopidogrel 更新也提高了對 CYP2C19 中間代謝者的建議強度，因此舊報告需要重新解讀。",
+    "迷思：Lazarou 1998 說每年有十萬人死於藥物不良反應，所以這是現在的確切數字。正確理解：那是對 1994 年美國住院病人的統合估計（106,000 人，95% CI 76,000–137,000），作者自己提醒研究異質性，之後的系統性回顧（如 Kongkaew 2008、Bouvy 2015）得到的比例因定義與地區而異，引用時須註明年份與範圍。",
+    "迷思：藥物基因體學是近年才出現的新科學。正確理解：其思想可追溯到 1908 年 Garrod 的先天代謝異常，1957 年 Motulsky 與 1959 年 Vogel 已提出並命名 pharmacogenetics，1950–1980 年代的 isoniazid、G6PD、debrisoquine、TPMT 等發現已奠定基礎；近二十年的變化主要是基因體技術、知識庫與臨床指引的成熟。"
+  ],
+  "viz_ideas": [
+    "同一顆藥、不同的人：在三維肝臟切面中放 5 位虛擬病人並排，同一批藥物顆粒（instanced 粒子）進入血流；每人的 CYP2D6 以不同數量的酵素分子表示（超快速、正常、中間、不良代謝者），旁邊即時繪製 3D 血中濃度曲線。使用者可切換『併用抑制劑』開關，讓正常代謝者的酵素數量下降，直觀展示 phenoconversion（基因＋環境）。",
+    "歷史螺旋隧道：以 DNA 雙股螺旋作為時間軸，相機沿軸前進，依序停在 1908 Garrod、1956 G6PD、1957 Motulsky、1959 Vogel、1960 isoniazid、1977 debrisoquine、1980 TPMT、1988 CYP2D6 選殖、2000/2001 PharmGKB、2003 人類基因體計畫、2009 CPIC、2020 FDA 關聯表、2025 ClinPGx；節點卡片顯示事實與來源，並可依入門到進階分層篩選。",
+    "百人與一萬人：用 instanced mesh 畫出 10,000 個人形點，滑桿控制納入的基因數（1、5、14），高亮『至少一個可行動變異』的比例（5 基因約 91%–99%、14 基因 99.9%）；再切換到『對本次處方藥有可行動結果』模式，比例降到約 25%，讓使用者體會 actionable 的定義如何改變數字。",
+    "NNT 不等於反應者比例：畫兩組各 100 個人形。情境甲是固定 25 人每次都有效，情境乙是每個人每次都有 25% 機率有效；連續按下重複給藥，會看到兩者的平均 NNT 相同，但個別人的結果穩定度不同，用來說明 Senn 對 Schork 論證的批評。",
+    "HLA-B*15:02 篩檢劇場：以 4,877 個點組成的 3D 點雲，其中 7.7% 標紅為陽性；點擊『篩檢』後紅點被分流換藥，陰性者服用 carbamazepine。畫面顯示歷史預期約 10 例 SJS/TEN 與觀察到 0 例，並清楚標註這是歷史對照而非隨機試驗。另配一個 3D 地圖切換各地盛行率（香港、泰國、馬來西亞、菲律賓部分地區超過 15%，台灣約 10%，華北約 4%，日本不到 1%）。",
+    "基因型到表現型的彈珠機：兩條染色體各投下一顆等位基因球（正常功能、功能下降、無功能、功能增加），落入漏斗組成基因型，輸出活性分數並點亮代謝者類別燈號；使用者可自由組合，看出同一基因型在不同指引版本下的轉譯差異（對應 CYP2D6 2020 年統一共識）。",
+    "warfarin 劑量解釋力圓環：3D 甜甜圈圖分三段，臨床變項 26%、基因增加約 17 個百分點（合計 43%）、其餘約 57% 未解釋，可旋轉並懸停顯示 IWPC 來源；旁邊再放 COAG 與 EU-PACT 的 TTR 直條，說明對照組不同導致結論不同。",
+    "ADR 冰山：以 3D 冰山表示住院病人的藥物不良反應，水面上是 ADR 導致入院的比例（英國 6.5%、系統性回顧中位數 5.3%、歐洲中位數 3.5%），水面下依定義與偵測方法展開；再用可選顏色標出『與多型酵素代謝有關的藥物占 59%』與『其餘』，強調潛在而非必然的基因貢獻。",
+    "預先與反應式檢測積木牆：左側 9,589 塊積木代表一次性預先面板，右側 14,656 塊代表逐一藥物的反應式檢測，動畫顯示累積檢測次數隨時間增加的差異，並提示這是理論比較。"
+  ],
+  "dropped_facts": [],
+  "must_not_say_zh": [
+    "不可說 Pirmohamed 2004 是『利物浦兩家醫院』的研究，也不可說它『追蹤』病人：正確是英格蘭默西塞德郡（含利物浦與威勒爾）兩家大型綜合醫院，評估 18,820 名入院病人的入院原因。",
+    "不可說 Pirmohamed 的 6.5% 是『基因造成的 ADR 入院』：該研究沒有評估基因原因，最常涉及的是低劑量阿斯匹靈、利尿劑、warfarin 與非阿斯匹靈類消炎止痛藥，最常見反應是腸胃道出血。",
+    "不可把 Pirmohamed 的 0.15% 說成『ADR 入院病人的死亡率』：摘要只寫 overall fatality 0.15%，分母應為全部入院病人（待全文核對）；4.66 億英鎊是 2004 年對英國 NHS 的推估，不是現在的花費。",
+    "不可說 Lazarou 1998 顯示『現在每年有十萬人死於藥物不良反應』：那是 1994 年美國住院病人的統合估計（106,000 人，95% CI 76,000–137,000），作者自己提醒研究間有異質性。",
+    "不可說 Lazarou 的 6.7% 只是住院期間新發生的 ADR，也不可說它是『因 ADR 入院』的比例：作者把住院期間發生的 ADR 與導致入院的 ADR 合併計算，嚴重 ADR 定義為需住院、永久失能或死亡。",
+    "不可說 Lazarou 或 Pirmohamed 的 ADR 都『與基因有關』：兩者都不是基因研究；Lazarou 摘要並未主張這些 ADR 可避免，Pirmohamed 只說多數為確定或可能可避免。",
+    "不可說『遺傳因素占藥物反應差異的 20%–95%』是既定事實：這是 AAFP 2008 回顧引用 Kalow 1998 的二手『專家估計』，Kalow 1998 的摘要並沒有此區間，只能標示為常見說法且區間極寬。",
+    "不可說已直接核對 Vogel 1959 原文，或斷言『pharmacogenetics 一詞只可能出自 Vogel』：1959 年 Vogel 是 Kalow 本人與多篇文獻的通行說法，但原章因付費牆未能確認詞句，少數來源對年份有 1957/1958 的保留。",
+    "不可說 Marshall 1997 『創造』或『首次使用』pharmacogenomics 一詞：只能說該篇（Genset–Abbott 報導）常被引為早期出處。",
+    "不可說 pharmacogenetics 與 pharmacogenomics 是兩個不同的領域：依 ICH E15（2007），前者是後者的子集（只看 DNA 序列變異 vs. 含 RNA 特徵），實務上常互換使用。",
+    "不可說 Schork（Nature 2015）『證明』暢銷藥 75%–96% 的人無效、或這些差異都來自基因、或應以基因檢測解決：那是一篇倡議 N-of-1 試驗的評論，並非藥物基因體學的系統性分析。",
+    "不可說 NNT 為 4 就等於『只有 1/4 的人受益』：NNT 是平均要治療多少人才多 1 人達到療效，不等於反應者比例（Senn 的批評）；Schork 的 1/25 至 1/4 只能當作『藥物平均效果有限』的提示。",
+    "不可說 Schork 文章是『2015 年 4 月 30 日發表』而不加說明：線上發表為 2015-04-29，4-30 是紙本期別日。",
+    "不可說 HLA-B*15:02 陽性者『會得』SJS/TEN，或陰性者『零風險』：陽性者絕大多數不會發病（風險上限約 3% 是編輯的粗略推算，並非研究測得的數字），FDA 標籤只說陰性者風險被認為低，並非零。",
+    "不可說 Chen 2011 NEJM 是隨機對照試驗，或『篩檢使 SJS/TEN 從 10 例降到 0 例』是隨機證明：它以歷史發生率（0.23%）當對照，觀察到篩檢陰性者 0 例，預期約 10 例，證據等級不如隨機試驗。",
+    "不可說 abacavir 的 HLA-B*57:01 篩檢能保證不會過敏：標籤說排除帶有者後疑似過敏仍有 1%，沒有此等位基因的人仍可能發生過敏，診斷仍以臨床判斷為準。",
+    "不可說台灣 2010 年 6 月起的 HLA-B*15:02 健保給付是『衛福部公告』或『今日仍是同樣條件』：它是當時衛生署（食品藥物管理局）的新聞稿，現行給付條件（適應症、限申報次數）本檔案未核對，須以健保署現行規定為準。",
+    "不可說 91%–99.9% 的人『都需要因基因改用藥』：該比例是『至少一個基因帶有可行動變異』的累計，取決於納入的基因數與 actionable 定義；PREPARE 中對當次處方藥有可行動結果者僅約 25%（1,558/6,193，推算值）。",
+    "不可直接比較 Van Driest 91%、Ji 99%、Lu 99.9%、VHA 99% 這些數字：基因集、族群、actionable 定義與是否為推估皆不同；VHA 為依已知變異頻率的推估（projected），不是實際定序。",
+    "不可說 Van Driest 2014 是『5 個基因』的研究：它是 5 組已實施的藥物基因配對，涉及 6 個基因；91% 與 96%（非裔美國人）也不可互換成所有族群的數字。",
+    "不可說 Lu 2022 中『61% 需調整的 clopidogrel 使用者裡有 46% 中間代謝者與 14% 不良代謝者』：46% 與 14% 是占全部 clopidogrel 使用者，兩者相加約等於那 61%。",
+    "不可說 Lu 2022 的 29% 代表『29% 的台灣人已因藥物基因體學改變用藥』：它是已被處方過可能出現非典型反應之藥物的比例，處方資料僅來自單一醫院（CMUH）；也不可說該研究納入 G6PD，它沒有。",
+    "不可說 PREPARE 顯示『全體病人做基因檢測後 ADR 風險降低 30%』：OR 0.70 是勝算比，不等於風險降低 30%；較大的差別（21.0% 對 27.7%）出現在對當次處方藥有可行動結果的子群，且研究為開放標示的群集隨機交叉試驗，不是盲性試驗。",
+    "不可把 PREPARE 的 6,944 說成分析人數：6,944 為納入人數，分析約 6,193 人（2,923 + 3,270）。",
+    "不可說 warfarin 基因導向劑量『已證實』改善臨床結果，或基因『決定』劑量：IWPC 中基因加臨床變項僅解釋約 43% 的劑量變異（臨床單獨 26%），COAG 與 EU-PACT 的結論不同，取決於對照組與觀察期。",
+    "不可說 CPIC 指引建議誰該接受基因檢測：CPIC 指引的定位是協助臨床醫師運用已取得的結果，而非建議應在誰身上做檢測。",
+    "不可說 FDA 藥物基因體關聯表或標籤表『列入即代表 FDA 要求處方前必須基因檢測』：FDA 明文聲明列入不必然代表主張處方前先檢測（伴隨式診斷除外）。",
+    "不可說『基因型會隨環境改變』：基因型終身不變；phenoconversion 是表現型（實際代謝能力）因併用藥物、年齡、疾病、吸菸等而偏離基因型預測，而指引的解讀規則會更新（如 CYP2D6 2020 共識）。",
+    "不可說藥物基因體學是近年才出現的新科學，也不可說 Garrod 1908 的演講直接處理藥物反應：思想可追溯到 Garrod 的先天代謝異常，但 pharmacogenetics 作為名稱與學問要到 1950 年代末（Motulsky 1957、Vogel 1959）；Garrod 演講成書於 1909 的日期取自二手書目，未核對扉頁。",
+    "不可說 Motulsky 1957 是『第一篇』藥物遺傳學文獻：只能說一般認為它是奠基文獻之一。",
+    "不可說 Evans 1960 已找出 NAT2 基因：當時只指出 isoniazid 代謝速率受單一基因控制、慢代謝為隱性；單一基因與隱性遺傳的細節取自次級文獻，NAT2 之名是後來的發展。"
+  ],
+  "open_issues": [
+    "intro-history-07：兩位查核者對 6.7% 的範圍說法相左（一說含導致入院的 ADR，一說僅住院期間發生者）；編輯已用 Europe PMC 摘要裁定為『兩者合併』，第二位查核者的說法不採用。",
+    "intro-history-06：摘要用語 overall fatality 0.15% 的分母（全部入院病人或 ADR 入院者）未在查核中明確核對，已在 detail 中標為待全文核對；醫院名稱摘要未指名（作者單位為利物浦大學），內文請避免點名。",
+    "intro-history-13：Vogel 1959 原文（Ergeb Inn Med Kinderheilkd 12:52–125）因付費牆未能確認詞句出現；1959 為通行說法，少數來源對年份有 1957/1958 的保留，未取得原文可證。",
+    "intro-history-14：仍無一手證據說明誰首創 pharmacogenomics 一詞；信心度維持 medium，寫作只能用『常被引為早期出處』。",
+    "intro-history-23：20%–95% 區間仍是二手引用，Kalow 1998 全文未能閱讀確認；信心度維持 low，建議僅在『常見說法』脈絡使用或改用 warfarin 43% 之類的實例。",
+    "intro-history-20：健保署現行的 HLA-B*15:02 給付規則（適應症、限申報一次）未核對；detail 中『某醫院檢驗項目說明』的給付細節只有單一非官方來源。",
+    "intro-history-38：Lu 2022 的 29% 之分母與範圍（只用 CMUH 電子病歷、部分藥物）僅單一查核者提出，論文本身用字含糊；clopidogrel 的 61%/46%/14% 已按算術一致性改為占全部使用者，但論文措辭本身有歧義。",
+    "intro-history-44：6,944（納入）與 6,193（分析）的差異，以及 1,558 的可行動亞群是子群分析，寫作時應明確標示；『約 25%』為推算值。",
+    "intro-history-18 / 24：Schork 附圖 Imprecision medicine 的逐藥數值未取得；Senn 對 NNT 的批評未在本輪查核中被檢查（intro-history-24 為 verified false）。",
+    "intro-history-16：兩位查核者皆查過 ICH 與 EMA 頁面，未見 E15 修訂版；編輯本輪因搜尋額度用完，未另做獨立搜尋確認，若日後 ICH 發布 E15 修訂，定義需重新核對。",
+    "尚未經查核員檢驗（verified: false）的 critical 事實：intro-history-08、09、10、11、12、17、21、24、25、26、27、28、29、30、31、32、33、34、35、37、39、40、41、42、43、45。其中信心度為 medium 的是 08（Garrod，1909 出書日期取自二手）、12（isoniazid，單一基因與隱性細節取自次級文獻）、17（NRC 2011 引自二手）、30（warfarin 標籤確切日期取自轉載新聞稿）。這些在內容中使用時，應依其原有信心度加保守措辭。",
+    "非 critical 事實 intro-history-01、03 未經查核（verified: false），內容為一般說明，風險低。",
+    "viz_ideas 第 3 項把 Van Driest 的『5 組藥物基因配對（實為 6 個基因）91%』與 Ji 的『5 個基因 99%』合寫成『5 基因約 91%–99%』，兩者基因集與定義不同，動畫實作前應分開標示。",
+    "misconceptions_zh 第 8 項『CPIC 2022 年 clopidogrel 更新提高了對 CYP2C19 中間代謝者的建議強度』本輪未被查核，使用前需以 Lee 等 2022 指引核對。",
+    "summary_zh 中的其他數字與歷史敘述（Garrod、Motulsky、PharmGKB、CPIC 年份等）多來自未查核事實，本檔未逐句重寫；僅涉及被更正的事實時才需同步修改（目前 summary_zh 不含被更正的細節）。"
+  ]
+}

@@ -1,0 +1,1548 @@
+{
+  "topic": "frontiers",
+  "title": "進階前沿:腫瘤藥物基因體、多基因、AI 與未來",
+  "summary_zh": "藥物基因體學不只看「遺傳來的」生殖細胞變異(germline),癌症治療更常看腫瘤裡「後天長出來的」體細胞變異(somatic),例如 EGFR、ALK、BRAF、HER2、BRCA 與 KRAS G12C,且多半靠伴同診斷(companion diagnostic)選藥。台灣肺腺癌病人 EGFR 突變率約 50% 以上(1,772 人前瞻性研究為 55.7%),遠高於常被引用的西方約 10–20%,因此台灣的肺癌基因檢測特別有意義,但各研究數字差異很大,不能當成個人機率。多數藥物反應不是單一基因決定:華法林的常見基因變異加非遺傳因素約只解釋 50% 的劑量差異,clopidogrel 反應的遺傳度雖高達 0.73,單一變異 CYP2C19*2 卻只解釋約 12%;因此需要多基因面板、罕見變異與結構變異(如 CYP2D6 融合基因)、併用藥物造成的表型轉換(phenoconversion),甚至表觀遺傳與腸道菌等因素的補充,但後兩者的證據成熟度目前仍低。AI 與變異功能預測(如 AlphaMissense、深度突變掃描)能協助解讀意義未明的變異,但獨立分析顯示通用型預測在藥物基因上有明顯限制,仍需針對特定藥物與受質的功能實驗。人類遺傳證據可使藥物標的的臨床成功機率提高約 2 至 2.6 倍(Nelson 2015、Minikel 2024,均為觀察性分析),基因編輯(如 Casgevy)則是直接改寫基因型;而 GWAS 參與者仍約 88% 為歐洲血統,台灣精準醫療計畫(TPMI,565,390 人)等在地大型資料庫是補足族群代表性的關鍵。",
+  "facts": [
+    {
+      "id": "frontiers-01",
+      "claim_zh": "藥物基因體學(pharmacogenomics)是利用個人的基因資訊來協助挑選藥物與調整治療,而不是「一種藥適用所有人」。",
+      "detail_zh": "美國國家人類基因體研究所(NHGRI)將它定義為基因體醫學的一部分,目的是依病人獨特的基因組成量身選藥。本主題的「進階前沿」進一步談它如何延伸到腫瘤、多基因、AI 與基因治療。",
+      "level": "入門",
+      "critical": false,
+      "source_name": "NHGRI Talking Glossary:Pharmacogenomics",
+      "source_url": "https://www.genome.gov/genetics-glossary/Pharmacogenomics",
+      "confidence": "high",
+      "verified": true,
+      "verification_note": "教科書級定義,已對照 NHGRI Talking Glossary:『a component of genomic medicine that involves using a patient's genomic information to tailor the selection of drugs used in their medical management』,與本條一致。",
+      "en_terms": [
+        "pharmacogenomics",
+        "precision medicine",
+        "genomic medicine"
+      ]
+    },
+    {
+      "id": "frontiers-02",
+      "claim_zh": "「生殖細胞(germline)變異」是遺傳而來、存在於身體幾乎每個細胞的變異;「體細胞(somatic)變異」是出生後才發生、只存在於部分細胞,且無法傳給下一代。",
+      "detail_zh": "傳統藥物基因體學(如 CYP2D6、HLA-B)以 germline 變異為主;癌症標靶治療(如 EGFR)則多半看腫瘤裡的 somatic 變異。美國 FDA 的藥物標示生物標記表同時涵蓋 germline 與 somatic 變異,NCI 也說明腫瘤細胞內的基因改變不會傳給子女。",
+      "level": "入門",
+      "critical": false,
+      "source_name": "MedlinePlus Genetics(NIH):Inherited vs. acquired variants",
+      "source_url": "https://medlineplus.gov/genetics/understanding/mutationsanddisorders/genemutation/",
+      "confidence": "high",
+      "verified": true,
+      "verification_note": "教科書級定義,已對照 MedlinePlus Genetics(遺傳變異『present throughout a person's life in virtually every cell』;後天變異『present only in certain cells』且『cannot be passed to the next generation』)與 FDA 藥物標示生物標記表導言(涵蓋『germline or somatic gene variants』)。detail 中 NCI 的敘述屬標準常識,未另行逐字核對。",
+      "en_terms": [
+        "germline variant",
+        "somatic variant",
+        "inherited",
+        "acquired"
+      ]
+    },
+    {
+      "id": "frontiers-03",
+      "claim_zh": "以華法林(warfarin)為例,CYP2C9、VKORC1、CYP4F2 與 CYP2C 基因叢集(如 rs12777823)的常見變異,加上已知的非遺傳因素,合計只能解釋約 50% 的劑量變異。",
+      "detail_zh": "這是 CPIC 2017 年更新版指引的說法:基因只是拼圖的一部分,年齡、體重、併用藥物等也很重要。該指引同時指出證據並非一面倒:EU-PACT 試驗顯示基因型導引劑量有益,COAG 試驗整體未顯示差異,GIFT 試驗的複合終點降低 27%。",
+      "level": "入門",
+      "critical": true,
+      "source_name": "CPIC Guideline for Pharmacogenetics-Guided Warfarin Dosing: 2017 Update(Johnson et al., Clin Pharmacol Ther 2017)",
+      "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5546947/",
+      "confidence": "high",
+      "verified": true,
+      "verification_note": "兩位查核者皆確認。CPIC 2017 更新版(PMC5546947)逐字寫明『Common genetic variants in CYP2C9, VKORC1, CYP4F2 and the CYP2C cluster (e.g., rs12777823), plus known non-genetic factors, account for ~50% of warfarin dose variability』;EU-PACT 有益、COAG 整體無差異、GIFT 複合終點降 27%(10.8% 對 14.7%,RR 0.73)也已核對。注意:各基因解釋的變異比例因族裔而異(歐洲族群 CYP2C9/VKORC1/CYP4F2 最多約 18%/30%/11%,其他族裔較低),50% 是『基因加非遺傳因素合計』。",
+      "en_terms": [
+        "warfarin",
+        "CYP2C9",
+        "VKORC1",
+        "CYP4F2",
+        "dose variability",
+        "CPIC"
+      ]
+    },
+    {
+      "id": "frontiers-04",
+      "claim_zh": "在阿米胥人(Amish)研究中,clopidogrel 的血小板反應遺傳度高達 0.73,但單一變異 CYP2C19*2 只解釋約 12% 的反應差異。",
+      "detail_zh": "這是「高遺傳度不等於一個基因就能預測」的經典例子:其餘差異可能來自其他基因、非遺傳因素與測量誤差。該研究在 429 名健康阿米胥人身上測量,並在 227 名接受冠狀動脈介入的病人中發現 CYP2C19*2 攜帶者的心血管事件或死亡較多(20.9% 對 10.0%,HR 2.42);受試者為特定族群,推論到其他族群需要謹慎。",
+      "level": "入門",
+      "critical": true,
+      "source_name": "Shuldiner AR et al., JAMA 2009",
+      "source_url": "https://pubmed.ncbi.nlm.nih.gov/19706858/",
+      "confidence": "high",
+      "verified": false,
+      "en_terms": [
+        "clopidogrel",
+        "CYP2C19*2",
+        "heritability",
+        "platelet aggregation",
+        "missing heritability"
+      ]
+    },
+    {
+      "id": "frontiers-05",
+      "claim_zh": "台灣人體生物資料庫(Taiwan Biobank)以客製化 SNP 晶片分析 103,106 名漢人,發現約 87.3% 的人帶有會影響藥物反應的已知功能性變異。",
+      "detail_zh": "同一研究另對 1,492 人做了高覆蓋度全基因體定序。這個比例代表幾乎人人都帶有某些藥物基因變異,但「帶有」不等於「臨床上需要調整處方」,且比例受晶片內容與「影響藥物反應」的定義所左右。",
+      "level": "初階",
+      "critical": true,
+      "source_name": "Wei CY et al., npj Genomic Medicine 2021",
+      "source_url": "https://pubmed.ncbi.nlm.nih.gov/33574314/",
+      "confidence": "high",
+      "verified": false,
+      "en_terms": [
+        "Taiwan Biobank",
+        "Han Chinese",
+        "SNP array",
+        "pharmacogenetic variants"
+      ]
+    },
+    {
+      "id": "frontiers-06",
+      "claim_zh": "台灣一項涵蓋 11,678 名肺腺癌病人的全國資料庫研究顯示,女性病人中 91.8%、男性病人中 33.3% 從不吸菸。",
+      "detail_zh": "這解釋了為何不吸菸的肺腺癌在台灣特別值得做 EGFR 等基因檢測;研究也發現抽菸量越多、開始抽菸越早,EGFR 突變率越低(趨勢檢定 P < 0.001)。資料來自 2011–2014 年國家肺癌資料庫的回溯性分析。",
+      "level": "初階",
+      "critical": true,
+      "source_name": "Tseng CH et al., Oncotarget 2017",
+      "source_url": "https://pubmed.ncbi.nlm.nih.gov/29228697/",
+      "confidence": "high",
+      "verified": false,
+      "en_terms": [
+        "lung adenocarcinoma",
+        "never smoker",
+        "EGFR mutation",
+        "Taiwan"
+      ]
+    },
+    {
+      "id": "frontiers-07",
+      "claim_zh": "2004 年兩個團隊各自發現,對 gefitinib 有反應的肺癌腫瘤常帶有 EGFR 酪胺酸激酶區的體細胞突變:Lynch 等人在 9 名有反應者中找到 8 人帶突變、7 名無反應者則 0 人;Paez 等人在未篩選的腫瘤中發現日本 15/58 對美國 1/61 帶 EGFR 突變。",
+      "detail_zh": "這是「逆向轉譯」的經典:先看到少數病人對藥反應特別好,再回頭找出腫瘤基因原因。Paez 等人的資料也是最早暗示東亞與西方 EGFR 突變率不同的證據之一(Science 2004:https://pubmed.ncbi.nlm.nih.gov/15118125/)。",
+      "level": "初階",
+      "critical": true,
+      "source_name": "Lynch TJ et al., NEJM 2004(併見 Paez JG et al., Science 2004)",
+      "source_url": "https://pubmed.ncbi.nlm.nih.gov/15118073/",
+      "confidence": "high",
+      "verified": false,
+      "en_terms": [
+        "EGFR",
+        "gefitinib",
+        "somatic mutation",
+        "reverse translation"
+      ]
+    },
+    {
+      "id": "frontiers-08",
+      "claim_zh": "台灣一項多中心前瞻性研究(2011 年 8 月至 2013 年 11 月,1,772 名未曾治療的肺腺癌病人)發現 EGFR 突變率為 55.7%(987 人)。",
+      "detail_zh": "同一研究的 KRAS 突變為 5.2%、HER2 為 2.0%、BRAF 為 0.7%(皆以 MALDI-TOF 質譜檢測);另在 295 名 EGFR 野生型病人中,9.8%(29 人)帶有 EML4-ALK 融合。EGFR 突變在女性與不吸菸者較常見。",
+      "level": "初階",
+      "critical": true,
+      "source_name": "Hsu KH et al., PLoS ONE 2015",
+      "source_url": "https://pubmed.ncbi.nlm.nih.gov/25789627/",
+      "confidence": "high",
+      "verified": true,
+      "verification_note": "兩位查核者皆確認。PubMed 摘要所有數字吻合(1,772 人;EGFR 987 人 55.7%;KRAS 5.2%;HER2 2.0%;BRAF 0.7%;EML4-ALK 29/295 = 9.8%)。EGFR/KRAS/HER2/BRAF 以 MALDI-TOF MS 檢測,EML4-ALK 則以 Ventana 法檢測(非 MALDI-TOF)。",
+      "en_terms": [
+        "EGFR",
+        "lung adenocarcinoma",
+        "Taiwan",
+        "KRAS",
+        "HER2",
+        "EML4-ALK"
+      ]
+    },
+    {
+      "id": "frontiers-09",
+      "claim_zh": "PIONEER 研究在 7 個亞洲地區 1,450 名可評估的晚期肺腺癌病人中,EGFR 突變率為 51.4%(746 人);印度為 22.2%,其餘地區介於 47.2–64.2%。",
+      "detail_zh": "女性 61.1% 對男性 44.0%,從不吸菸者最高(60.7%);調整吸菸狀態後性別已無顯著差異,顯示「女性較高」有一部分其實是吸菸造成的。作者建議亞洲晚期腺癌病人都應考慮檢測,連男性與有吸菸史者也不例外。",
+      "level": "初階",
+      "critical": true,
+      "source_name": "Shi Y et al., J Thorac Oncol 2014(PIONEER)",
+      "source_url": "https://pubmed.ncbi.nlm.nih.gov/24419411/",
+      "confidence": "high",
+      "verified": true,
+      "verification_note": "兩位查核者皆確認。摘要數字吻合。細節提醒:摘要原文建議『even males and regular smokers』也應考慮檢測,範圍略窄於本條『有吸菸史者』;研究由 AstraZeneca 贊助,兩位作者為該公司員工。",
+      "en_terms": [
+        "PIONEER",
+        "EGFR mutation frequency",
+        "Asian",
+        "adenocarcinoma",
+        "smoking status"
+      ]
+    },
+    {
+      "id": "frontiers-10",
+      "claim_zh": "一篇涵蓋 151 項研究、33,162 名肺腺癌/非小細胞肺癌病人的系統性回顧發現,亞太地區 EGFR 突變率為 47%(各研究範圍 20–76%),為各區最高,大洋洲最低,為 12%。",
+      "detail_zh": "各研究間差異很大,所以「亞洲約一半有 EGFR 突變」只是族群層級的平均,不是個人機率。常被引用的「白種人約 10–20%」出自 2025 年台灣研究(Lin et al., Thoracic Cancer)的討論段落(https://pmc.ncbi.nlm.nih.gov/articles/PMC12287865/,該研究 223 例南台灣病例 EGFR 為 48.88%);我們未逐一取得其引用的西方原始研究,故此東西比較的信心為中等。",
+      "level": "初階",
+      "critical": true,
+      "source_name": "Midha A et al., Am J Cancer Res 2015(mutMapII)",
+      "source_url": "https://pubmed.ncbi.nlm.nih.gov/26609494/",
+      "confidence": "medium",
+      "verified": true,
+      "verification_note": "兩位查核者皆確認摘要數字(151 項研究、33,162 人、亞太 47%〔範圍 20–76%〕、大洋洲 12%),摘要本身也提醒跨區比較受樣本數不均與研究間差異所限。『西方 10–20%』僅見於 Lin et al. 2025 的討論段落,其引用的西方原始研究未逐一查核,故本條維持 medium 信心。",
+      "en_terms": [
+        "EGFR mutation incidence",
+        "systematic review",
+        "ethnicity",
+        "Asia-Pacific",
+        "Oceania"
+      ]
+    },
+    {
+      "id": "frontiers-11",
+      "claim_zh": "FDA 將伴同診斷(companion diagnostic)定義為可為體外診斷(IVD)或影像工具、提供「安全且有效使用對應治療產品所必需資訊」的醫療器材;其官方清單(內容更新至 2026-09-28)主表共 232 列,肺癌(NSCLC)約 75 列居首,乳癌約 40 列。EGFR「突變」檢測的首批伴同診斷遲至 2013 年才核准,距 2004 年發現 EGFR 突變約 9 年;HER2 檢測則早在 1997–1998 年。",
+      "detail_zh": "列數為「檢測 × 適應症 × 藥品」層級,不等於檢測數量(列數與檢測名稱數皆為我們自行計數,約 75–80 種檢測名稱,因廠商名稱拼寫不一而有些微誤差)。EGFR 突變檢測的日期:依 FDA PMA 資料庫,cobas EGFR Mutation Test(對 erlotinib,P120019)原始核准日為 2013-05-14,therascreen EGFR RGQ PCR Kit(對 afatinib,P120022)為 2013-07-12;FDA 伴同診斷清單則把 cobas 列為 2013-07-15,與 PMA 資料庫不一致(該清單另有明顯打字錯誤,如『08/22/0218』),引用時建議只說『2013 年』或註明日期出處。另有檢測 EGFR「蛋白表現」的 Dako EGFR pharmDx(大腸直腸癌 cetuximab,P030044)早在 2004-02-12 核准,但那不是突變檢測,所以不能說「所有 EGFR 相關檢測都遲至 2013 年」。HER2 檢測:INFORM HER-2/neu 為 1997-12-30,HercepTest 為 1998-09-25。",
+      "level": "初階",
+      "critical": true,
+      "source_name": "FDA:List of FDA-Authorized Companion Diagnostic Devices(In Vitro and Imaging Tools)",
+      "source_url": "https://www.fda.gov/medical-devices/in-vitro-diagnostics/list-fda-authorized-companion-diagnostic-devices-in-vitro-and-imaging-tools",
+      "confidence": "high",
+      "verified": true,
+      "was_corrected": true,
+      "correction_note": "查核者 1 判定 corrected,查核者 2 判定 confirmed(僅核對清單上的日期)。我們自行查詢 openFDA PMA 資料庫證實:P120019(cobas EGFR Mutation Test)原始決定日為 2013-05-14、P120022(therascreen EGFR RGQ)為 2013-07-12、P030044(Dako EGFR pharmDx)為 2004-02-12。更正重點:(1) cobas 的日期在 FDA 清單(2013-07-15)與 PMA 資料庫(2013-05-14)不一致;原文順序把 therascreen(07-12)列在 cobas(07-15)之前,但依 PMA 資料庫 cobas 才是最早的 EGFR 突變 CDx;(2)『EGFR 首批 CDx』只適用於突變檢測,不含 2004 年核准的 EGFR 蛋白 IHC 檢測。定義文字、232 列、NSCLC 約 75 列、乳癌約 40 列、HER2 兩個日期經核對無誤。",
+      "correction_evidence_urls": [
+        "https://api.fda.gov/device/pma.json?search=pma_number:P120019",
+        "https://api.fda.gov/device/pma.json?search=pma_number:P120022",
+        "https://api.fda.gov/device/pma.json?search=pma_number:P030044"
+      ],
+      "en_terms": [
+        "companion diagnostic",
+        "CDx",
+        "FDA",
+        "PMA",
+        "in vitro diagnostic"
+      ]
+    },
+    {
+      "id": "frontiers-12",
+      "claim_zh": "一篇系統性回顧(27 項研究,其中 14 項顯示出表型轉換)指出,併用 CYP 抑制劑、年紀增加、癌症與發炎會使代謝能力低於基因預測,而 CYP 誘導劑與吸菸則使代謝能力偏高。",
+      "detail_zh": "表型轉換(phenoconversion)是指基因型預測與實際代謝能力不符。作者也強調,這些落差對療效與毒性的臨床影響仍不明確,需要更多研究,因此病人的用藥清單與疾病狀態與基因同樣重要。",
+      "level": "初階",
+      "critical": true,
+      "source_name": "Klomp SD et al., J Clin Med 2020",
+      "source_url": "https://pubmed.ncbi.nlm.nih.gov/32906709/",
+      "confidence": "high",
+      "verified": false,
+      "en_terms": [
+        "phenoconversion",
+        "CYP450",
+        "drug-drug-gene interaction",
+        "genotype-phenotype discrepancy"
+      ]
+    },
+    {
+      "id": "frontiers-13",
+      "claim_zh": "IPASS 試驗(東亞不吸菸或輕度吸菸的晚期肺腺癌,共 1,217 人)中,gefitinib 相對於化療的惡化或死亡風險比,在 EGFR 突變陽性者(261 人)為 0.48,在突變陰性者(176 人)卻是 2.85。",
+      "detail_zh": "整體風險比為 0.74(12 個月無惡化存活率 24.9% 對 6.7%)。同一顆藥對有突變者遠優於化療、對沒有突變者反而較差,這是「依生物標記篩選受試者(trial enrichment)」的經典教訓;後續如 FLAURA 便只收 EGFR 突變陽性者。",
+      "level": "中階",
+      "critical": true,
+      "source_name": "Mok TS et al., NEJM 2009(IPASS)",
+      "source_url": "https://pubmed.ncbi.nlm.nih.gov/19692680/",
+      "confidence": "high",
+      "verified": true,
+      "verification_note": "兩位查核者皆確認 IPASS 數字(609 對 608 人;12 個月 PFS 24.9% 對 6.7%;整體 HR 0.74;突變陽性 n=261 HR 0.48〔0.36–0.64〕;陰性 n=176 HR 2.85〔2.05–3.98〕)。措辭提醒:收案條件為『不吸菸或曾輕度吸菸(former light smoker)』,『輕度吸菸』不宜被讀成目前仍在吸菸。",
+      "en_terms": [
+        "IPASS",
+        "gefitinib",
+        "EGFR mutation",
+        "hazard ratio",
+        "trial enrichment"
+      ]
+    },
+    {
+      "id": "frontiers-14",
+      "claim_zh": "FLAURA 試驗(556 名未曾治療、EGFR 突變陽性的晚期非小細胞肺癌)中,osimertinib 的中位無惡化存活期為 18.9 個月,對照的 gefitinib/erlotinib 為 10.2 個月(HR 0.46);最終分析中位總存活期為 38.6 對 31.8 個月(HR 0.80)。",
+      "detail_zh": "總存活的風險比 95.05% 信賴區間為 0.64–1.00(P = 0.046),邊界接近;3 年時仍在使用試驗藥物者為 28% 對 9%。總存活結果出自後續發表的最終分析(https://pubmed.ncbi.nlm.nih.gov/31751012/)。",
+      "level": "中階",
+      "critical": true,
+      "source_name": "Soria JC et al., NEJM 2018(FLAURA);Ramalingam SS et al., NEJM 2020",
+      "source_url": "https://pubmed.ncbi.nlm.nih.gov/29151359/",
+      "confidence": "high",
+      "verified": true,
+      "verification_note": "兩位查核者皆確認。FLAURA(NEJM 2018)與最終總存活分析(NEJM 2020;PMID 31751012)數字吻合:PFS 18.9 對 10.2 個月、HR 0.46;OS 38.6 對 31.8 個月、HR 0.80(95.05% CI 0.64–1.00,P = 0.046);3 年仍在使用試驗藥物 28% 對 9%。兩項試驗皆由 AstraZeneca 資助。",
+      "en_terms": [
+        "FLAURA",
+        "osimertinib",
+        "EGFR-TKI",
+        "progression-free survival",
+        "overall survival"
+      ]
+    },
+    {
+      "id": "frontiers-15",
+      "claim_zh": "在 155 名對 erlotinib 或 gefitinib 產生後天抗藥性並再次切片的 EGFR 突變肺癌病人中,63%(98 人)出現第二個 EGFR 突變 T790M。",
+      "detail_zh": "其他機轉包括 MET 擴增(75 人可評估中的 5%)、HER2 擴增(24 人可評估中的 13%)與小細胞轉型(3%)。腫瘤會演化,所以體細胞檢測不是一次性的;osimertinib 之所以被設計,正是因為它能抑制 EGFR 的敏感型突變與 T790M 抗藥突變。",
+      "level": "中階",
+      "critical": true,
+      "source_name": "Yu HA et al., Clin Cancer Res 2013",
+      "source_url": "https://pubmed.ncbi.nlm.nih.gov/23470965/",
+      "confidence": "high",
+      "verified": false,
+      "en_terms": [
+        "T790M",
+        "acquired resistance",
+        "rebiopsy",
+        "EGFR-TKI"
+      ]
+    },
+    {
+      "id": "frontiers-16",
+      "claim_zh": "在 347 名曾接受化療的 ALK 陽性晚期肺癌病人中,crizotinib 的中位無惡化存活期為 7.7 個月,化療為 3.0 個月(HR 0.49),反應率 65% 對 20%。",
+      "detail_zh": "但總存活的期中分析沒有顯著差異(HR 1.02),且化療組惡化後允許交叉換藥,可能影響總存活的比較。ALK 融合基因於 2007 年被發現(Soda 等人:75 名肺癌病人中 5 人,6.7%,且與 EGFR 突變不重疊);台灣研究中,EGFR 野生型的肺腺癌有 9.8% 帶 EML4-ALK(來自另一個 295 人的子群,不是全部肺腺癌)。",
+      "level": "中階",
+      "critical": true,
+      "source_name": "Shaw AT et al., NEJM 2013(PROFILE 1007)",
+      "source_url": "https://pubmed.ncbi.nlm.nih.gov/23724913/",
+      "confidence": "high",
+      "verified": false,
+      "en_terms": [
+        "ALK",
+        "EML4-ALK",
+        "crizotinib",
+        "gene fusion",
+        "PROFILE 1007"
+      ]
+    },
+    {
+      "id": "frontiers-17",
+      "claim_zh": "在 BRAF V600E 突變的轉移性黑色素瘤(BRIM-3 試驗,675 人)中,vemurafenib 相較於 dacarbazine,6 個月總存活率為 84% 對 64%,反應率為 48% 對 5%。",
+      "detail_zh": "死亡風險降低 63%,惡化或死亡風險降低 74%。FDA 伴同診斷清單顯示 cobas 4800 BRAF V600 突變檢測於 2011-08-17 核准,與 vemurafenib 搭配。台灣肺腺癌中的 BRAF 突變(不限 V600E)僅 0.7%(12/1,772),提醒同一基因在不同癌別的頻率差很多。",
+      "level": "中階",
+      "critical": true,
+      "source_name": "Chapman PB et al., NEJM 2011(BRIM-3)",
+      "source_url": "https://pubmed.ncbi.nlm.nih.gov/21639808/",
+      "confidence": "high",
+      "verified": false,
+      "en_terms": [
+        "BRAF V600E",
+        "vemurafenib",
+        "melanoma",
+        "BRIM-3"
+      ]
+    },
+    {
+      "id": "frontiers-18",
+      "claim_zh": "在 HER2 過度表現的轉移性乳癌中,化療加 trastuzumab 使中位存活期由 20.3 個月延長為 25.1 個月(P = 0.01),疾病惡化時間由 4.6 個月延長為 7.4 個月。",
+      "detail_zh": "HER2 也說明生物標記是「光譜」而非二分:DESTINY-Breast04 顯示 HER2-low(IHC 1+ 或 IHC 2+ 且原位雜交陰性)的病人使用 trastuzumab deruxtecan,全體病人中位無惡化存活 9.9 對 5.1 個月、總存活 23.4 對 16.8 個月(https://pubmed.ncbi.nlm.nih.gov/35665782/)。trastuzumab 併用 anthracycline 時心臟功能異常(NYHA III/IV)達 27%,需監測。",
+      "level": "中階",
+      "critical": true,
+      "source_name": "Slamon DJ et al., NEJM 2001",
+      "source_url": "https://pubmed.ncbi.nlm.nih.gov/11248153/",
+      "confidence": "high",
+      "verified": false,
+      "en_terms": [
+        "HER2",
+        "trastuzumab",
+        "HER2-low",
+        "trastuzumab deruxtecan",
+        "companion diagnostic"
+      ]
+    },
+    {
+      "id": "frontiers-19",
+      "claim_zh": "SOLO1 試驗的 391 名新診斷晚期卵巢癌病人中,388 人為經確認的生殖細胞 BRCA1/2 突變,olaparib 維持治療使惡化或死亡風險降低 70%(HR 0.30),3 年無惡化率為 60% 對 27%。",
+      "detail_zh": "BRCA 橫跨 germline 與 somatic:FDA 清單同時列有以全血檢測的 BRACAnalysis CDx(卵巢癌/olaparib,2014-12-19)與以腫瘤組織檢測 BRCA1/2 變異的 FoundationOne CDx(卵巢癌/olaparib,2019-07-01)。機轉是合成致死:BRCA 缺陷的細胞在 PARP 被抑制時無法修復 DNA(Farmer et al., Nature 2005:https://pubmed.ncbi.nlm.nih.gov/15829967/)。",
+      "level": "中階",
+      "critical": true,
+      "source_name": "Moore K et al., NEJM 2018(SOLO1)",
+      "source_url": "https://pubmed.ncbi.nlm.nih.gov/30345884/",
+      "confidence": "high",
+      "verified": false,
+      "en_terms": [
+        "BRCA1",
+        "BRCA2",
+        "PARP inhibitor",
+        "olaparib",
+        "synthetic lethality",
+        "germline"
+      ]
+    },
+    {
+      "id": "frontiers-20",
+      "claim_zh": "sotorasib 於 2021 年 5 月 28 日獲 FDA 核准用於 KRAS G12C 突變非小細胞肺癌;CodeBreaK 100 試驗的 124 名可評估病人客觀反應率為 37.1%、中位無惡化存活期 6.8 個月、中位總存活期 12.5 個月。",
+      "detail_zh": "這是曾接受過治療病人的單臂第 2 期試驗(試驗劑量為口服 960 mg 每日一次,僅描述試驗,不是用藥建議),並非隨機對照。核准日期與伴同診斷出自 FDA 清單(https://www.fda.gov/medical-devices/in-vitro-diagnostics/list-fda-authorized-companion-diagnostic-devices-in-vitro-and-imaging-tools):同日(2021-05-28)核准 therascreen KRAS RGQ PCR(組織)與 Guardant360 CDx(血漿)為 sotorasib 的伴同診斷。KRAS 長期被認為極難以藥物針對。",
+      "level": "中階",
+      "critical": true,
+      "source_name": "Skoulidis F et al., NEJM 2021(CodeBreaK 100)",
+      "source_url": "https://pubmed.ncbi.nlm.nih.gov/34096690/",
+      "confidence": "high",
+      "verified": false,
+      "en_terms": [
+        "KRAS G12C",
+        "sotorasib",
+        "CodeBreaK 100",
+        "accelerated approval",
+        "companion diagnostic"
+      ]
+    },
+    {
+      "id": "frontiers-21",
+      "claim_zh": "西方肺腺癌約三分之一有 KRAS 突變、KRAS G12C 約占 12–14%,而印度、中國、伊朗族群的 KRAS 突變僅約 5–10%;台灣 1,772 名肺腺癌病人中 KRAS 突變為 5.2%。",
+      "detail_zh": "因此 KRAS G12C 抑制劑能惠及的台灣肺腺癌比例預期低於西方,但我們沒有找到大型的台灣 G12C 盛行率資料,不宜逕自推算。南台灣 223 例小型研究中 KRAS 為 6.28%,其中 G12C 占 42.86%(約 6/14 例,樣本很小,僅供參考)。",
+      "level": "中階",
+      "critical": true,
+      "source_name": "Burns TF et al., J Clin Oncol 2020(回顧,PMC 全文);Hsu KH et al., PLoS ONE 2015(台灣資料)",
+      "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7723684/",
+      "confidence": "medium",
+      "verified": false,
+      "en_terms": [
+        "KRAS",
+        "KRAS G12C",
+        "prevalence",
+        "Asian population",
+        "lung adenocarcinoma"
+      ]
+    },
+    {
+      "id": "frontiers-22",
+      "claim_zh": "一項 1,053 名瑞典病人的華法林劑量 GWAS 確認 VKORC1(先前估計解釋約 30% 的劑量變異)與 CYP2C9(約 12%)為主要決定因子,並在調整已知因素後發現 CYP4F2(rs2108622,p = 8.3×10^-10)。",
+      "detail_zh": "其他位點都未達全基因體顯著,呈現「少數大效應基因加上許多微小效應」的圖像;30% 與 12% 是先前研究的估計,不是本研究新算出。這也說明 GWAS 只有在樣本夠大時才能偵測微小效應的基因(如 CYP4F2)。",
+      "level": "中階",
+      "critical": true,
+      "source_name": "Takeuchi F et al., PLoS Genetics 2009",
+      "source_url": "https://pubmed.ncbi.nlm.nih.gov/19300499/",
+      "confidence": "high",
+      "verified": false,
+      "en_terms": [
+        "GWAS",
+        "warfarin",
+        "VKORC1",
+        "CYP2C9",
+        "CYP4F2",
+        "variance explained"
+      ]
+    },
+    {
+      "id": "frontiers-23",
+      "claim_zh": "一項僅 85 名肌病病例與 90 名對照(皆服用 80 mg simvastatin)的 GWAS,就以 P = 4×10^-9 找到 SLCO1B1;rs4149056 的 C 對偶基因每多一個,肌病勝算比為 4.5(95% CI 2.6–7.7),CC 基因型為 16.9(4.7–61.1)。",
+      "detail_zh": "GWAS 標記 rs4363657 與 rs4149056 幾乎完全連鎖(r²=0.97);該試驗族群的 C 對偶基因盛行率為 15%,超過 60% 的肌病病例可歸因於此變異。大效應變異用小樣本就能偵測,與需要數萬人的多基因性狀形成對比:例如他汀 LDL 降幅反應的 GWAS 統合分析用了最多 18,596 人並以 22,318 人驗證,才找出 SORT1/CELSR2/PSRC1 與 SLCO1B1 等位點(Postmus et al. 2014:https://pubmed.ncbi.nlm.nih.gov/25350695/)。",
+      "level": "中階",
+      "critical": true,
+      "source_name": "SEARCH Collaborative Group, NEJM 2008",
+      "source_url": "https://pubmed.ncbi.nlm.nih.gov/18650507/",
+      "confidence": "high",
+      "verified": true,
+      "verification_note": "兩位查核者皆確認。SEARCH 摘要與 Postmus 2014 數字吻合。細節:P = 4×10^-9 屬於標記 SNP rs4363657(與 rs4149056 r² = 0.97);OR 4.5〔2.6–7.7〕為每個 C 對偶基因,CC 對 TT 為 16.9〔4.7–61.1〕。",
+      "en_terms": [
+        "SLCO1B1",
+        "rs4149056",
+        "statin myopathy",
+        "odds ratio",
+        "GWAS",
+        "simvastatin"
+      ]
+    },
+    {
+      "id": "frontiers-24",
+      "claim_zh": "對 2,799 名接受抗憂鬱藥治療的重度憂鬱症病人做全基因體分析估計,常見基因變異合計可解釋約 42% 的療效個體差異(標準誤 0.180),但這是由大量效應微小的變異共同造成。",
+      "detail_zh": "標準誤很大,代表估計非常不精確;且這是族群層級的遺傳度估計,不等於能拿來預測個人。這也解釋了為何很難用單一基因預測抗憂鬱藥的療效。",
+      "level": "中階",
+      "critical": true,
+      "source_name": "Tansey KE et al., Biol Psychiatry 2013",
+      "source_url": "https://pubmed.ncbi.nlm.nih.gov/23237317/",
+      "confidence": "medium",
+      "verified": false,
+      "en_terms": [
+        "antidepressant response",
+        "GCTA",
+        "polygenic",
+        "common variants",
+        "small effect"
+      ]
+    },
+    {
+      "id": "frontiers-25",
+      "claim_zh": "PREPARE 研究(歐洲 7 國、6,944 名病人,97.7% 自述為歐洲/地中海/中東族裔)以 12 個基因、50 個變異的面板導引用藥,臨床上有意義的藥物不良反應發生率為 21.5%,對照組為 28.6%(OR 0.70,95% CI 0.61–0.79)。",
+      "detail_zh": "這是叢集隨機交叉的實施研究;OR 0.70 不等於「風險降低 30%」,絕對差約 7 個百分點。在有可介入結果的 1,558 人中為 21.0% 對 27.7%(OR 0.70,0.54–0.91)。受試者幾乎都不是東亞族裔,能否直接類推到台灣需要在地資料。",
+      "level": "中階",
+      "critical": true,
+      "source_name": "Swen JJ et al., Lancet 2023(PREPARE)",
+      "source_url": "https://pubmed.ncbi.nlm.nih.gov/36739136/",
+      "confidence": "high",
+      "verified": true,
+      "verification_note": "兩位查核者皆確認 Lancet 2023 摘要數字(6,944 人、97.7% 自述歐洲/地中海/中東族裔、12 基因 50 變異、21.5% 對 28.6%、OR 0.70〔0.61–0.79〕;1,558 人 21.0% 對 27.7%)。細節:全體病人的比較實際分析約 6,193 人(2,923 + 3,270),並非全部 6,944 名收案者;主要檢定採階層式,以有可介入變異者為關鍵子群。2023 年勘誤僅更正作者名單。",
+      "en_terms": [
+        "PREPARE",
+        "pharmacogenetic panel",
+        "pre-emptive testing",
+        "adverse drug reaction",
+        "DPWG"
+      ]
+    },
+    {
+      "id": "frontiers-26",
+      "claim_zh": "多篇 2023–2026 年的回顧一致認為,藥物基因體的多基因風險分數(PRS)尚未準備好用於常規臨床,原因包括效應量小、GWAS 以歐洲族裔為主,以及藥物暴露族群樣本小(一篇回顧指出常僅約 1,000 至 10,000 名服藥者)。",
+      "detail_zh": "Singh 等人(2024)指出多數 PGx-PRS 是從疾病 GWAS 外推,且表型定義不一致、樣本少;Simona 等人(2023)指出 PRS 能解釋的變異仍低(https://pmc.ncbi.nlm.nih.gov/articles/PMC10311496/);Mathey 等人(2026)則稱其「尚未充分驗證、不足以用於常規照護」(https://pmc.ncbi.nlm.nih.gov/articles/PMC13340549/)。其中心血管(他汀)領域的證據相對較強,但仍屬早期。",
+      "level": "中階",
+      "critical": true,
+      "source_name": "Singh S et al., Clin Transl Sci 2024(併見 2023、2026 年回顧)",
+      "source_url": "https://pubmed.ncbi.nlm.nih.gov/39078255/",
+      "confidence": "medium",
+      "verified": false,
+      "en_terms": [
+        "polygenic risk score",
+        "PRS-PGx",
+        "portability",
+        "ancestry bias",
+        "effect size"
+      ]
+    },
+    {
+      "id": "frontiers-27",
+      "claim_zh": "在只收 G551D-CFTR 突變的囊性纖維化病人(約 167 人)的隨機試驗中,ivacaftor 使肺功能(FEV1 預測值百分比)比安慰劑多進步 10.6 個百分點,肺部惡化風險降低 55%。",
+      "detail_zh": "這是「以基因型作為收案條件(enrichment)」的典型:受試者一開始就依基因型篩選,因此小樣本就能看出大效應。它同時提醒,這類效應大的例子(單一基因、明確機轉)與抗憂鬱藥那種多基因小效應的情況差異極大。",
+      "level": "中階",
+      "critical": true,
+      "source_name": "Ramsey BW et al., NEJM 2011",
+      "source_url": "https://pubmed.ncbi.nlm.nih.gov/22047557/",
+      "confidence": "high",
+      "verified": false,
+      "en_terms": [
+        "ivacaftor",
+        "CFTR G551D",
+        "trial enrichment",
+        "genotype-selected trial"
+      ]
+    },
+    {
+      "id": "frontiers-28",
+      "claim_zh": "分析 60,706 人外顯子定序、208 個藥物基因後發現,每個人平均帶有 40.6 個推測有功能影響的變異,其中約 10.8% 是罕見變異;超過一半的藥物基因,其全部遺傳變異性都來自罕見變異。",
+      "detail_zh": "罕見變異的貢獻因基因與藥物而異;作者以 warfarin、simvastatin、voriconazole、olanzapine、irinotecan 為例,推論罕見變異可能解釋一部分「未被解釋」的個體差異。這是電腦預測功能後的推估,尚非臨床驗證,故定序式基因分型才可能捕捉到晶片看不到的變異。",
+      "level": "進階",
+      "critical": true,
+      "source_name": "Ingelman-Sundberg M et al., Human Genomics 2018",
+      "source_url": "https://pubmed.ncbi.nlm.nih.gov/29793534/",
+      "confidence": "medium",
+      "verified": false,
+      "en_terms": [
+        "rare variants",
+        "pharmacogenes",
+        "exome sequencing",
+        "missing heritability",
+        "computational prediction"
+      ]
+    },
+    {
+      "id": "frontiers-29",
+      "claim_zh": "在美國 104,509 個檢體中,CYP2D6 結構變異(如整段基因缺失、重複或融合)見於 13.1% 的人,且約 30% 的不良代謝者(poor metabolizer)是因結構變異造成。",
+      "detail_zh": "共辨識出 37 種 CYP2D6 對偶基因,其中 73% 的結構變異為功能降低或喪失型。這是美國資料,台灣與東亞的分布會不同,需要在地資料;結構變異若被漏掉,基因型推定的表型就可能錯。",
+      "level": "進階",
+      "critical": true,
+      "source_name": "Del Tredici AL et al., Front Pharmacol 2018",
+      "source_url": "https://pubmed.ncbi.nlm.nih.gov/29674966/",
+      "confidence": "high",
+      "verified": false,
+      "en_terms": [
+        "CYP2D6",
+        "structural variant",
+        "poor metabolizer",
+        "gene deletion",
+        "gene duplication"
+      ]
+    },
+    {
+      "id": "frontiers-30",
+      "claim_zh": "CYP2D6 與鄰近假基因 CYP2D7 高度相似且常出現 CYP2D6–CYP2D7 融合(hybrid)對偶基因,是最難基因分型的藥物基因之一;長讀長(nanopore Cas9)定序能解出多數現有檢測看不到的融合與結構變異。",
+      "detail_zh": "Charnaud 等人(2022)的方法證實參考樣本 NA12878 的 CYP2D6 基因型應更新為含 *68 融合對偶基因。PharmVar 於 2023 年發表結構變異檢測與報告的教學建議(Turner et al.,https://ascpt.onlinelibrary.wiley.com/doi/10.1002/cpt.3044);另一項比較 3 種 star-allele 判讀軟體的研究(4,618 次模擬加 75 個全基因體)發現 Aldy 與 Astrolabe 優於 Stargazer,提醒不同軟體結果可能不一致(https://pubmed.ncbi.nlm.nih.gov/32789024/)。",
+      "level": "進階",
+      "critical": true,
+      "source_name": "Charnaud S et al., PLoS Genetics 2022",
+      "source_url": "https://pubmed.ncbi.nlm.nih.gov/36149915/",
+      "confidence": "high",
+      "verified": false,
+      "en_terms": [
+        "CYP2D6-CYP2D7 hybrid",
+        "long-read sequencing",
+        "nanopore",
+        "PharmVar",
+        "star allele calling"
+      ]
+    },
+    {
+      "id": "frontiers-31",
+      "claim_zh": "在 CYP2D6 表型轉換的實務上,CPIC 參照 Borges 等人的方法:併用強效 CYP2D6 抑制劑時,活性分數(activity score)視為 0(臨床上等同不良代謝者);併用中效抑制劑時,活性分數乘以 0.5;較新的 CPIC 指引(如 2021 年鴉片類、2024 年 β 阻斷劑指引)對弱效抑制劑不建議調整活性分數。",
+      "detail_zh": "較早期的作法(含 Borges 原始方法,以及 Cicali 等人 2021 對 CPIC 早期指引的描述)曾把弱效與中效抑制劑一併乘以 0.5,現已過時。Cicali 等人(2021)的教學文章指出,不同單位採用的乘數與抑制劑分類並不一致,且活性分數法可能過度簡化;2023 年 CPIC SSRI 指引更指出,抑制劑/誘導劑造成的表型轉換調整目前尚無共識。因此這是目前常用的簡化規則,不是精確定律,也不應單憑此自行調整劑量,須由臨床藥事人員與醫師判斷。",
+      "level": "進階",
+      "critical": true,
+      "source_name": "Cicali EJ et al., Clin Pharmacol Ther 2021(CYP2D6 phenoconversion tutorial)",
+      "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8404400/",
+      "confidence": "medium",
+      "verified": true,
+      "was_corrected": true,
+      "correction_note": "兩位查核者皆判定 corrected。原文『弱效或中效抑制劑則乘以 0.5』已過時:CPIC 2021 鴉片類指引(PMC8249478)與 2024 β 阻斷劑指引(PMC11502236,已自行核對原文:『assume a CYP2D6 activity score of zero … strong CYP2D6 inhibitor … reduce the predicted activity score by half … moderate inhibitor. No activity score adjustment is suggested for weak inhibitors.』)皆不調整弱效抑制劑;Cicali 2021 本身也寫明 CPIC 新版指引已排除弱效抑制劑。另刪除原文『哪一種最能預測臨床結果尚無定論』——那是撰稿者的轉述,並非 Cicali 原話。強效 → 0、中效 → ×0.5 的部分經核對無誤。",
+      "correction_evidence_urls": [
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC8249478/",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC11502236/",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC8404400/"
+      ],
+      "en_terms": [
+        "CYP2D6 activity score",
+        "strong inhibitor",
+        "paroxetine",
+        "fluoxetine",
+        "phenoconversion",
+        "Borges method"
+      ]
+    },
+    {
+      "id": "frontiers-32",
+      "claim_zh": "腫瘤的表觀遺傳標記已有臨床證據:膠質母細胞瘤中 MGMT 啟動子甲基化者(占 206 個可評估病例的 45%)接受 temozolomide 加放療的中位存活為 21.7 個月,僅放療者為 15.3 個月;無甲基化者的差異較小且不顯著。",
+      "detail_zh": "這是少數證據較成熟的表觀遺傳藥物反應標記,且屬腫瘤層次。至於 CYP 基因等的 DNA 甲基化如何影響藥物反應,2010 年的回顧就說「才剛開始被認識」(Ingelman-Sundberg & Gomez,https://pubmed.ncbi.nlm.nih.gov/20415549/);本次查閱的來源中,我們未見已成為臨床常規檢測的生殖細胞層次表觀遺傳藥物基因體標記,證據成熟度低。",
+      "level": "進階",
+      "critical": true,
+      "source_name": "Hegi ME et al., NEJM 2005",
+      "source_url": "https://pubmed.ncbi.nlm.nih.gov/15758010/",
+      "confidence": "medium",
+      "verified": false,
+      "en_terms": [
+        "MGMT promoter methylation",
+        "temozolomide",
+        "glioblastoma",
+        "epigenetics",
+        "pharmacoepigenomics"
+      ]
+    },
+    {
+      "id": "frontiers-33",
+      "claim_zh": "在實驗中,76 種人類腸道細菌對 271 種口服藥物的測試顯示,許多藥物會被腸道細菌化學修飾,且這些微生物酵素在小鼠中能顯著影響腸道與全身的藥物代謝。",
+      "detail_zh": "代表例:Eggerthella lenta 能使強心配醣體 digoxin 失活,相關的細胞色素操縱組受 digoxin 誘導、受精胺酸抑制(Haiser 等人 2013:https://pubmed.ncbi.nlm.nih.gov/23869020/);irinotecan 經細菌 β-glucuronidase 再活化也常被引用。但這些證據多為機轉與前臨床,2026 年的回顧仍把以微生物組導向的用藥策略列為「新興」(https://pubmed.ncbi.nlm.nih.gov/42101126/),我們未確認有標準化的臨床檢測。",
+      "level": "進階",
+      "critical": true,
+      "source_name": "Zimmermann M et al., Nature 2019",
+      "source_url": "https://pubmed.ncbi.nlm.nih.gov/31158845/",
+      "confidence": "medium",
+      "verified": false,
+      "en_terms": [
+        "gut microbiome",
+        "pharmacomicrobiomics",
+        "digoxin",
+        "Eggerthella lenta",
+        "beta-glucuronidase",
+        "irinotecan"
+      ]
+    },
+    {
+      "id": "frontiers-34",
+      "claim_zh": "NUDT15 的多重功能分析在 3,097 個可能的錯義變異中測量了 2,922 個的蛋白質豐度,鑑定出 1,152 個有害變異,且其功能分數預測 thiopurine 毒性風險等位基因的靈敏度與特異度遠優於電腦預測演算法。",
+      "detail_zh": "論文並未宣稱完美預測(不是 100%)。NUDT15 缺陷已被用於預先減量 thiopurine。更早的 VAMP-seq 首次應用則量測 PTEN 與 TPMT 共 7,801 個變異,找出 777 個低豐度 TPMT 變異(Matreyek et al., Nat Genet 2018:https://pmc.ncbi.nlm.nih.gov/articles/PMC5980760/)。",
+      "level": "進階",
+      "critical": true,
+      "source_name": "Suiter CC et al., PNAS 2020",
+      "source_url": "https://pubmed.ncbi.nlm.nih.gov/32094176/",
+      "confidence": "high",
+      "verified": false,
+      "en_terms": [
+        "NUDT15",
+        "VAMP-seq",
+        "TPMT",
+        "deep mutational scanning",
+        "thiopurine",
+        "variant of uncertain significance"
+      ]
+    },
+    {
+      "id": "frontiers-35",
+      "claim_zh": "對 CYP2C9 的多重分析(click-seq 測活性 6,142 個、VAMP-seq 測豐度 6,370 個錯義變異)發現近三分之二的變異活性降低,且蛋白質豐度可解釋約一半的功能變異。",
+      "detail_zh": "另為 319 個先前無註解的人類變異提供活性分數。同團隊對 CYP2C19 以 VAMP-seq 量測 7,660 個錯義變異,並為 gnomAD 中 368 個無註解變異評分,其中 43% 豐度下降,但該 CYP2C19 研究為預印本、尚未經同儕審查(https://www.biorxiv.org/content/10.1101/2023.10.06.561250v1.full)。2022 年回顧指出,至當時多重分析共涵蓋約 25,000 個變異、8 個藥物基因(https://pubmed.ncbi.nlm.nih.gov/34516287/)。",
+      "level": "進階",
+      "critical": true,
+      "source_name": "Amorosi CJ et al., Am J Hum Genet 2021",
+      "source_url": "https://pubmed.ncbi.nlm.nih.gov/34314704/",
+      "confidence": "high",
+      "verified": false,
+      "en_terms": [
+        "CYP2C9",
+        "CYP2C19",
+        "click-seq",
+        "VAMP-seq",
+        "deep mutational scanning",
+        "protein abundance"
+      ]
+    },
+    {
+      "id": "frontiers-36",
+      "claim_zh": "AlphaMissense(Google DeepMind,Science 2023)提供所有人類單一胺基酸替換的預測,並將 89% 的錯義變異分類為「可能良性」或「可能致病」,但它預測的是臨床致病性,而非特定藥物的代謝功能。",
+      "detail_zh": "2026 年的獨立分析指出它在藥物基因上有限制:一篇預印本發現 AlphaMissense 在 CYP 基因把近兩倍比例的變異歸為「不確定」,該類別分數與 CYP2C9 實驗活性幾乎不相關(Spearman ρ=0.069)(https://pmc.ncbi.nlm.nih.gov/articles/PMC13484531/);另一篇 G3 期刊論文分析 26,198 個 CYP2C9/CYP2C19/NUDT15 變異,發現 CYP2C9 有 28% 的變異其活性與豐度脫鉤,且 195 個「穩定但無活性」的 CYP2C9 變異中有 38 個被判為可能良性(https://academic.oup.com/g3journal/advance-article/doi/10.1093/g3journal/jkag248/8776100)。這兩篇皆為近期單一團隊結果,尚待更多獨立驗證,故只能視為初篩工具。",
+      "level": "進階",
+      "critical": true,
+      "source_name": "Cheng J et al., Science 2023;Xu H et al., bioRxiv 2026;Kırboğa KK, G3 2026",
+      "source_url": "https://pubmed.ncbi.nlm.nih.gov/37733863/",
+      "confidence": "medium",
+      "verified": false,
+      "en_terms": [
+        "AlphaMissense",
+        "variant effect predictor",
+        "pathogenicity",
+        "CYP2C9",
+        "deep mutational scanning",
+        "AlphaFold"
+      ]
+    },
+    {
+      "id": "frontiers-37",
+      "claim_zh": "一篇系統性回顧(23 項研究)指出,非線性機器學習模型預測華法林劑量並未明確優於傳統 IWPC 線性迴歸,且這些研究全都有高偏誤風險(87% 缺失值處理不佳、65% 樣本數不足)。",
+      "detail_zh": "作者的結論是現有研究「仍無法判定哪種演算法較好」,且缺乏外部驗證與臨床終點。這提醒:AI 不會自動比簡單的公式更準,要用嚴謹的外部驗證與臨床結果來證明價值。",
+      "level": "進階",
+      "critical": true,
+      "source_name": "Zhang F et al., J Pers Med 2022",
+      "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9147332/",
+      "confidence": "high",
+      "verified": false,
+      "en_terms": [
+        "machine learning",
+        "warfarin dose prediction",
+        "IWPC algorithm",
+        "risk of bias",
+        "external validation"
+      ]
+    },
+    {
+      "id": "frontiers-38",
+      "claim_zh": "Nelson 等人(2015)發現有直接人類遺傳證據的藥物機轉比例,從臨床前的 2.0% 升至已核准藥物的 8.2%,並估計選擇有遺傳支持的標的可使臨床開發成功率「加倍」;King 等人(2019)重新分析後確認,當致病基因明確時(孟德爾疾病與連結編碼變異的 GWAS),核准率提高超過 2 倍。",
+      "detail_zh": "King 等人指出兩倍以上的提升出現在致病基因明確時,且只有孟德爾證據在前瞻性檢驗中仍成立;候選新分子實體在早期試驗中最終獲核准的僅約 10%(King 2019:https://pubmed.ncbi.nlm.nih.gov/31830040/)。Nelson 的主要作者任職於 GSK、King 等人皆為 AbbVie 員工,且兩者皆為觀察性分析,「有遺傳支持較易成功」不等於因果保證。",
+      "level": "進階",
+      "critical": true,
+      "source_name": "Nelson MR et al., Nat Genet 2015;King EA et al., PLoS Genet 2019",
+      "source_url": "https://pubmed.ncbi.nlm.nih.gov/26121088/",
+      "confidence": "high",
+      "verified": true,
+      "verification_note": "兩位查核者皆確認。Nelson 2015 摘要(2.0% → 8.2%、『could double the success rate』)與 King 2019 摘要(『greater than two-fold』、僅孟德爾關聯在前瞻性檢驗成立、約 10% 早期候選新分子實體最終核准)吻合。利益衝突:Nelson 主要作者任職 GSK,King 等人皆為 AbbVie 員工。",
+      "en_terms": [
+        "human genetic evidence",
+        "drug target",
+        "probability of success",
+        "OMIM",
+        "GWAS"
+      ]
+    },
+    {
+      "id": "frontiers-39",
+      "claim_zh": "Minikel 等人(2024,Nature)分析 29,476 個標的–適應症配對,估計有遺傳支持的藥物機轉,其臨床成功機率是沒有支持者的 2.6 倍(相對成功 RS = 2.6)。",
+      "detail_zh": "OMIM 孟德爾證據 RS = 3.7;腫瘤的體細胞證據(IntOGen)RS = 2.3;血液、代謝、呼吸與內分泌領域 RS > 3。RS 與遺傳效應大小(P = 0.90 與 0.57)或對偶基因頻率(P = 0.26)無顯著關聯,但對「變異到基因」對應信心越高,RS 越高。論文摘要也指出整體僅約 10% 的臨床計畫最終獲核准,所以 2.6 倍是相對而非保證;作者中有人為藥廠或投資公司的員工/顧問(依利益衝突聲明)。",
+      "level": "進階",
+      "critical": true,
+      "source_name": "Minikel EV et al., Nature 2024",
+      "source_url": "https://pubmed.ncbi.nlm.nih.gov/38632401/",
+      "confidence": "high",
+      "verified": true,
+      "verification_note": "兩位查核者皆確認。Minikel 2024 摘要與全文(PMC11096124)數字吻合:29,476 個標的–適應症配對(其中僅 2,166〔7.3%〕有遺傳證據)、RS 2.6、OMIM 3.7、IntOGen 2.3、與效應大小(P = 0.90、0.57)及 MAF(P = 0.26)無顯著關聯。利益衝突:作者含 Deerfield/Genscience(投資機構)員工或顧問,另有 GSK 隸屬者。",
+      "en_terms": [
+        "relative success",
+        "genetic support",
+        "Open Targets",
+        "OMIM",
+        "IntOGen",
+        "clinical success"
+      ]
+    },
+    {
+      "id": "frontiers-40",
+      "claim_zh": "FDA 於 2023 年 12 月 8 日核准 Casgevy(exa-cel),這是第一個獲核准的 CRISPR/Cas9 基因編輯療法,用於 12 歲以上、有復發性血管阻塞危象的鐮刀型貧血。",
+      "detail_zh": "FDA 新聞稿指出 44 人接受治療、可評估的 31 人中 29 人(93.5%)至少連續 12 個月無嚴重血管阻塞危象;NEJM 發表的分析為 30 人中 29 人(97%),兩者因資料截止與納入人數不同(https://pubmed.ncbi.nlm.nih.gov/38661449/)。它編輯 BCL11A 的紅血球特異性增強子以重新啟動胎兒血紅素,是「直接改寫基因型」,與「依基因型選藥」是不同層次的精準醫療,且需骨髓清除預處理(busulfan)。",
+      "level": "進階",
+      "critical": true,
+      "source_name": "FDA 新聞稿(2023-12-08);Frangoul H et al., NEJM 2024",
+      "source_url": "https://www.fda.gov/news-events/press-announcements/fda-approves-first-gene-therapies-treat-patients-sickle-cell-disease",
+      "confidence": "high",
+      "verified": false,
+      "en_terms": [
+        "CRISPR-Cas9",
+        "Casgevy",
+        "exagamglogene autotemcel",
+        "BCL11A",
+        "sickle cell disease",
+        "gene therapy"
+      ]
+    },
+    {
+      "id": "frontiers-41",
+      "claim_zh": "2025 年 NEJM 報告了為單一病人客製化的體內鹼基編輯療法:一名患嚴重 CPS1 缺乏症(估計嬰兒期死亡率約 50%)的新生兒,在約 7 與 8 個月大時接受兩次輸注,7 週追蹤期內可增加飲食蛋白量並將排氮藥物減半,且無嚴重不良事件。",
+      "detail_zh": "這僅是 1 位病人、追蹤時間短,療效與安全仍待更長期觀察。它展示「為個人量身打造的基因療法」的可能性,同時帶出為單一病人取得核准的法規挑戰。",
+      "level": "進階",
+      "critical": true,
+      "source_name": "Musunuru K et al., NEJM 2025",
+      "source_url": "https://pubmed.ncbi.nlm.nih.gov/40373211/",
+      "confidence": "high",
+      "verified": false,
+      "en_terms": [
+        "base editing",
+        "CPS1 deficiency",
+        "lipid nanoparticle",
+        "personalized gene editing",
+        "n-of-1"
+      ]
+    },
+    {
+      "id": "frontiers-42",
+      "claim_zh": "GWAS Diversity Monitor 最近一次更新(2026-09-16,以探索階段參與者計)顯示,歐洲血統占 88.18%、亞洲 6.17%、非裔美國人/加勒比非裔 2.75%、非洲 0.28%、西語/拉丁美洲 1.28%、其他/混合 1.33%。",
+      "detail_zh": "不同來源與定義的數字略有差異:GWAS Catalog 2021 年 6 月為歐洲 86.3%、東亞 5.9%、非洲 1.1%(Fatumo et al. 2022:https://pmc.ncbi.nlm.nih.gov/articles/PMC7614889/);2026 年 Frontiers 論文引用同一監測站,稱 2025 年中歐洲為 90.53%。Martin 等人(2019)指出目前多基因分數在歐洲血統者身上準確度高出數倍(https://pubmed.ncbi.nlm.nih.gov/30926966/);我們未找到專門針對藥物基因體研究的族裔比例統計。",
+      "level": "進階",
+      "critical": true,
+      "source_name": "GWAS Diversity Monitor(Mills & Rahal, Nat Genet 2020)",
+      "source_url": "https://www.gwasdiversitymonitor.com/",
+      "confidence": "medium",
+      "verified": true,
+      "verification_note": "兩位查核者皆確認即時頁面數字(歐洲 88.18%、亞洲 6.17%、非裔美國人/加勒比非裔 2.75%、西語/拉丁美洲 1.28%、其他/混合 1.33%、非洲 0.28%)。措辭提醒:頁面寫的是『Last check for data: 2026-09-16』(資料檢查日),未必等於資料最後更新日;這是即時儀表板,數字會隨時間漂移,引用時須標註查閱日期。2026 年 Frontiers 論文所稱 2025 年中歐洲 90.53% 未查核。",
+      "en_terms": [
+        "GWAS Diversity Monitor",
+        "ancestry bias",
+        "European ancestry",
+        "genomic equity",
+        "GWAS Catalog"
+      ]
+    },
+    {
+      "id": "frontiers-43",
+      "claim_zh": "台灣精準醫療計畫(TPMI)由中央研究院與 16 家醫學中心合作,已招募 565,390 名參與者,使用針對漢人族群優化的 SNP 晶片,並可連結電子病歷以研究疾病風險與藥物反應。",
+      "detail_zh": "論文指出漢人約占全球人口近 20%,卻在遺傳研究中代表性不足;參與者同意被再聯繫並接收個人化風險報告。發表於 Nature 2025;是驗證多基因模型與藥物基因體學在東亞族群適用性的關鍵資源。",
+      "level": "進階",
+      "critical": true,
+      "source_name": "Yang HC, Kwok PY 等,Nature 2025(Taiwan Precision Medicine Initiative)",
+      "source_url": "https://pubmed.ncbi.nlm.nih.gov/41092961/",
+      "confidence": "high",
+      "verified": false,
+      "en_terms": [
+        "Taiwan Precision Medicine Initiative",
+        "TPMI",
+        "Academia Sinica",
+        "Han Chinese",
+        "electronic medical records"
+      ]
+    },
+    {
+      "id": "frontiers-44",
+      "claim_zh": "美國 All of Us 計畫於 2024 年釋出 245,388 名參與者的臨床等級全基因體序列,其中 77% 來自歷史上在生醫研究中代表性不足的群體、46% 為種族或族裔少數;英國生物資料庫(UK Biobank)約有 50 萬名 40–69 歲參與者。",
+      "detail_zh": "All of Us 找出超過 10 億個變異,其中逾 2.75 億個為先前未報告,並承諾回傳包含藥物基因(pharmacogenetics)在內的個人結果。UK Biobank 參與者則以歐洲血統為主(Bycroft et al., Nature 2018:https://pubmed.ncbi.nlm.nih.gov/30305743/;族群組成依 Fatumo et al. 2022 的描述)。",
+      "level": "進階",
+      "critical": true,
+      "source_name": "All of Us Research Program Genomics Investigators, Nature 2024",
+      "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10937371/",
+      "confidence": "high",
+      "verified": false,
+      "en_terms": [
+        "All of Us",
+        "UK Biobank",
+        "whole-genome sequencing",
+        "underrepresented populations",
+        "novel variants"
+      ]
+    },
+    {
+      "id": "frontiers-45",
+      "claim_zh": "台灣食藥署(TFDA)自 2022 年 7 月 1 日起受理「精準醫療分子檢測實驗室」認證申請,2026 年 4 月廢止舊的列冊登錄管理要點,並公告升級改版後的線上認證管理系統(ldtsl.fda.gov.tw)自 2026-08-10 起啟用。",
+      "detail_zh": "以上出自台灣藥物基因體學會(PGST)網站轉知的食藥署公文,法源為《特定醫療技術檢查檢驗醫療儀器施行或使用管理辦法》第 37 條第 2 項(醫療機構施行實驗室開發檢測,實驗室須向中央主管機關申請認證)。PGST 亦於 2025 年底出版《健保伴隨式基因檢測抗癌藥物指引》,涵蓋 13 個癌症標靶基因/蛋白(含 ALK、EGFR、BRCA、RAS),並整理 2024 年健保次世代定序給付條件(https://www.pgst.org.tw/events_detail?id=400);我們未取得健保署原始公告,實際給付規定請以健保署公告為準。",
+      "level": "進階",
+      "critical": true,
+      "source_name": "台灣藥物基因體學會(PGST)轉知:衛福部食藥署公文(2026-08-10)",
+      "source_url": "https://www.pgst.org.tw/news_detail?id=708",
+      "confidence": "medium",
+      "verified": true,
+      "verification_note": "兩位查核者皆確認,但各細節分散在不同 PGST 頁面:news_detail?id=708(2026-08-10)僅支持『新版認證管理系統 ldtsl.fda.gov.tw 自 2026-08-10 起啟用』與法源(特管辦法第 37 條第 2 項);『2022-07-01 起受理申請』見 news_detail?id=611(2026-04-02);『列冊登錄管理要點於 2026-04-21 廢止(FDA品字第1151101125號)』見 news_detail?id=634;《健保伴隨式基因檢測抗癌藥物指引》見 events_detail?id=400。TFDA 與健保署原始公文未直接取得。",
+      "en_terms": [
+        "TFDA",
+        "laboratory-developed test",
+        "LDT",
+        "PGST",
+        "National Health Insurance",
+        "NGS reimbursement"
+      ]
+    }
+  ],
+  "glossary": [
+    {
+      "term_zh": "藥物基因體學",
+      "term_en": "pharmacogenomics",
+      "definition_zh": "研究個人基因變異如何影響藥物療效與副作用,並用來挑選藥物與劑量的學問。",
+      "level": "入門"
+    },
+    {
+      "term_zh": "生殖細胞變異",
+      "term_en": "germline variant",
+      "definition_zh": "遺傳自父母、存在於身體幾乎所有細胞的基因變異,可以傳給下一代。",
+      "level": "入門"
+    },
+    {
+      "term_zh": "體細胞變異",
+      "term_en": "somatic variant",
+      "definition_zh": "出生後才在部分細胞(例如腫瘤細胞)發生的基因變異,不會遺傳給子女。",
+      "level": "入門"
+    },
+    {
+      "term_zh": "星號對偶基因",
+      "term_en": "star (*) allele",
+      "definition_zh": "藥物基因對偶基因的命名法,例如 CYP2C19*2 代表一種功能喪失的版本;由 PharmVar 等資料庫維護。",
+      "level": "初階"
+    },
+    {
+      "term_zh": "生物資料庫",
+      "term_en": "biobank",
+      "definition_zh": "收集大量參與者的檢體、基因與健康資料供研究使用的資源,例如台灣人體生物資料庫、UK Biobank、All of Us。",
+      "level": "初階"
+    },
+    {
+      "term_zh": "標靶治療",
+      "term_en": "targeted therapy",
+      "definition_zh": "針對特定分子(如突變的 EGFR 蛋白)設計的藥物,通常需先確認腫瘤具有該分子特徵才適用。",
+      "level": "初階"
+    },
+    {
+      "term_zh": "驅動突變",
+      "term_en": "driver mutation",
+      "definition_zh": "能推動癌細胞生長與存活的突變;找出驅動突變常能對應到標靶藥物。",
+      "level": "初階"
+    },
+    {
+      "term_zh": "酪胺酸激酶抑制劑",
+      "term_en": "tyrosine kinase inhibitor (TKI)",
+      "definition_zh": "阻斷酪胺酸激酶(如 EGFR、ALK)活性的小分子藥物,例如 gefitinib、osimertinib、crizotinib。",
+      "level": "初階"
+    },
+    {
+      "term_zh": "伴同診斷",
+      "term_en": "companion diagnostic (CDx)",
+      "definition_zh": "提供安全且有效使用某項治療所必需資訊的檢測(FDA 定義),通常與特定藥物一起核准。",
+      "level": "初階"
+    },
+    {
+      "term_zh": "表型轉換",
+      "term_en": "phenoconversion",
+      "definition_zh": "因併用藥物、年紀、疾病或吸菸等非遺傳因素,使實際的藥物代謝能力與基因型預測不符。",
+      "level": "初階"
+    },
+    {
+      "term_zh": "融合基因",
+      "term_en": "gene fusion",
+      "definition_zh": "兩個基因的片段接在一起形成新的異常基因,例如肺癌的 EML4-ALK。",
+      "level": "中階"
+    },
+    {
+      "term_zh": "合成致死",
+      "term_en": "synthetic lethality",
+      "definition_zh": "兩條機制單獨失效時細胞尚可存活、同時失效才會死亡;PARP 抑制劑對 BRCA 缺陷的癌細胞就利用了這個原理。",
+      "level": "中階"
+    },
+    {
+      "term_zh": "後天抗藥性",
+      "term_en": "acquired resistance",
+      "definition_zh": "原本有效的藥物因腫瘤演化出新突變(如 EGFR T790M)而逐漸失效。",
+      "level": "中階"
+    },
+    {
+      "term_zh": "試驗富集",
+      "term_en": "trial enrichment",
+      "definition_zh": "只收有特定生物標記的受試者,讓試驗更容易看出真實效果,也避免讓不會受益的人白吃藥。",
+      "level": "中階"
+    },
+    {
+      "term_zh": "全基因體關聯分析",
+      "term_en": "genome-wide association study (GWAS)",
+      "definition_zh": "掃描全基因體上數十萬至數百萬個變異,尋找與某性狀或藥物反應相關的位點。",
+      "level": "中階"
+    },
+    {
+      "term_zh": "遺傳度",
+      "term_en": "heritability",
+      "definition_zh": "族群中某性狀的差異有多少比例可歸因於基因差異;高遺傳度不代表單一基因就能預測個人。",
+      "level": "中階"
+    },
+    {
+      "term_zh": "效應量與勝算比",
+      "term_en": "effect size / odds ratio (OR)",
+      "definition_zh": "效應量是變異對結果影響的大小;勝算比大於 1 代表該事件較容易發生,但不等於風險等比例增加。",
+      "level": "中階"
+    },
+    {
+      "term_zh": "多基因風險分數",
+      "term_en": "polygenic risk score (PRS)",
+      "definition_zh": "把許多微小效應的變異加權加總成一個分數,用來估計某性狀或藥物反應的傾向。",
+      "level": "中階"
+    },
+    {
+      "term_zh": "活性分數",
+      "term_en": "activity score",
+      "definition_zh": "把兩條對偶基因各自的功能值相加,估計酵素(如 CYP2D6)整體活性的方式。",
+      "level": "中階"
+    },
+    {
+      "term_zh": "缺失遺傳度",
+      "term_en": "missing heritability",
+      "definition_zh": "遺傳度估計高於已找到的變異所能解釋的部分,例如 clopidogrel 反應遺傳度 0.73 而 CYP2C19*2 只解釋約 12%。",
+      "level": "進階"
+    },
+    {
+      "term_zh": "罕見變異",
+      "term_en": "rare variant",
+      "definition_zh": "在族群中頻率極低(常指低於 1%)的變異,單一晶片常偵測不到,但合計可能貢獻可觀的個體差異。",
+      "level": "進階"
+    },
+    {
+      "term_zh": "結構變異",
+      "term_en": "structural variant",
+      "definition_zh": "大片段的缺失、重複、倒位或融合;CYP2D6 特別常見,會直接改變酵素的基因拷貝數。",
+      "level": "進階"
+    },
+    {
+      "term_zh": "融合(雜交)對偶基因",
+      "term_en": "hybrid allele (CYP2D6–CYP2D7)",
+      "definition_zh": "CYP2D6 與鄰近假基因 CYP2D7 的片段重組而成的對偶基因,功能常改變,且很難用短讀長或晶片判讀。",
+      "level": "進階"
+    },
+    {
+      "term_zh": "長讀長定序",
+      "term_en": "long-read sequencing",
+      "definition_zh": "一次讀取數千至數萬個鹼基的定序技術,較能完整解出重複序列、假基因與結構變異。",
+      "level": "進階"
+    },
+    {
+      "term_zh": "藥物-藥物-基因交互作用",
+      "term_en": "drug-drug-gene interaction (DDGI)",
+      "definition_zh": "基因變異與併用藥物同時影響同一代謝酵素,使實際效果比單看基因或單看藥物更複雜。",
+      "level": "進階"
+    },
+    {
+      "term_zh": "液態切片",
+      "term_en": "liquid biopsy / ctDNA",
+      "definition_zh": "從血液中的循環腫瘤 DNA 偵測腫瘤突變,可補充或取代組織切片;FDA 伴同診斷清單已有血漿檢測。",
+      "level": "進階"
+    },
+    {
+      "term_zh": "表觀遺傳學",
+      "term_en": "epigenetics",
+      "definition_zh": "不改變 DNA 序列、但影響基因表現的機制,例如 DNA 甲基化;膠質母細胞瘤的 MGMT 甲基化是已有臨床證據的例子。",
+      "level": "進階"
+    },
+    {
+      "term_zh": "腸道微生物組",
+      "term_en": "gut microbiome",
+      "definition_zh": "腸道中的微生物群及其基因;部分細菌酵素可以活化或失活藥物,但臨床應用證據仍屬新興。",
+      "level": "進階"
+    },
+    {
+      "term_zh": "多重功能分析",
+      "term_en": "multiplexed assay of variant effect (MAVE) / deep mutational scanning / VAMP-seq",
+      "definition_zh": "一次量測數千個變異功能(如蛋白質豐度或活性)的實驗,用來解讀意義未明的變異。",
+      "level": "進階"
+    },
+    {
+      "term_zh": "意義未明變異",
+      "term_en": "variant of uncertain significance (VUS)",
+      "definition_zh": "已被偵測到,但目前證據不足以判斷其功能或臨床意義的變異。",
+      "level": "進階"
+    },
+    {
+      "term_zh": "變異效應預測器",
+      "term_en": "variant effect predictor (e.g., AlphaMissense)",
+      "definition_zh": "用序列、演化與結構資訊預測錯義變異可能有害程度的電腦模型;預測的是通用致病性,不等於特定藥物的代謝功能。",
+      "level": "進階"
+    },
+    {
+      "term_zh": "相對成功率",
+      "term_en": "relative success (RS)",
+      "definition_zh": "有遺傳支持的藥物標的與無支持者的臨床成功機率之比;Minikel 等人(2024)估計為 2.6。",
+      "level": "進階"
+    },
+    {
+      "term_zh": "基因編輯",
+      "term_en": "CRISPR-Cas9 genome editing",
+      "definition_zh": "用可程式化的核酸酶在指定位置切割並改寫 DNA;Casgevy 是首個獲 FDA 核准的 CRISPR/Cas9 療法。",
+      "level": "進階"
+    },
+    {
+      "term_zh": "祖先偏誤",
+      "term_en": "ancestry bias",
+      "definition_zh": "研究資料以某些族群(多為歐洲血統)為主,使結論與預測模型在其他族群的準確度較低。",
+      "level": "進階"
+    }
+  ],
+  "sources": [
+    {
+      "name": "NHGRI Talking Glossary:Pharmacogenomics",
+      "url": "https://www.genome.gov/genetics-glossary/Pharmacogenomics",
+      "note_zh": "藥物基因體學的官方簡明定義。"
+    },
+    {
+      "name": "MedlinePlus Genetics:遺傳與後天變異",
+      "url": "https://medlineplus.gov/genetics/understanding/mutationsanddisorders/genemutation/",
+      "note_zh": "germline 與 somatic 變異的入門定義。"
+    },
+    {
+      "name": "NCI:Genetics of cancer",
+      "url": "https://www.cancer.gov/about-cancer/causes-prevention/genetics",
+      "note_zh": "說明遺傳性與後天基因改變、腫瘤內的改變不會傳給子女。"
+    },
+    {
+      "name": "CPIC 華法林指引 2017",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5546947/",
+      "note_zh": "華法林基因型導引劑量的臨床指引,含 EU-PACT、COAG、GIFT 證據討論。"
+    },
+    {
+      "name": "Shuldiner et al., JAMA 2009",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/19706858/",
+      "note_zh": "clopidogrel 反應遺傳度與 CYP2C19*2 解釋比例。"
+    },
+    {
+      "name": "Wei et al., npj Genom Med 2021(Taiwan Biobank)",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/33574314/",
+      "note_zh": "台灣人體生物資料庫 103,106 人的基因輪廓與藥物反應變異比例。"
+    },
+    {
+      "name": "Tseng et al., Oncotarget 2017",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/29228697/",
+      "note_zh": "台灣肺腺癌病人吸菸狀態與 EGFR 突變。"
+    },
+    {
+      "name": "Lynch et al., NEJM 2004",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/15118073/",
+      "note_zh": "EGFR 突變與 gefitinib 反應的發現。"
+    },
+    {
+      "name": "Paez et al., Science 2004",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/15118125/",
+      "note_zh": "同年獨立發現,並比較日本與美國的 EGFR 突變率。"
+    },
+    {
+      "name": "Hsu et al., PLoS ONE 2015",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/25789627/",
+      "note_zh": "台灣 1,772 名肺腺癌病人的 EGFR、KRAS、HER2、BRAF、EML4-ALK 頻率。"
+    },
+    {
+      "name": "Shi et al., J Thorac Oncol 2014(PIONEER)",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/24419411/",
+      "note_zh": "亞洲晚期肺腺癌 EGFR 突變盛行率與亞群。"
+    },
+    {
+      "name": "Midha et al., Am J Cancer Res 2015",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/26609494/",
+      "note_zh": "EGFR 突變盛行率的全球系統性回顧,顯示各研究間差異。"
+    },
+    {
+      "name": "Lin et al., Thoracic Cancer 2025(南台灣)",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12287865/",
+      "note_zh": "南台灣 223 例七個驅動基因頻率,並引述東亞對白種人的 EGFR 比較。"
+    },
+    {
+      "name": "FDA 伴同診斷清單",
+      "url": "https://www.fda.gov/medical-devices/in-vitro-diagnostics/list-fda-authorized-companion-diagnostic-devices-in-vitro-and-imaging-tools",
+      "note_zh": "查詢各藥物的伴同診斷、核准日期與檢體類型(血液、組織、血漿)。"
+    },
+    {
+      "name": "FDA:Companion Diagnostics",
+      "url": "https://www.fda.gov/medical-devices/in-vitro-diagnostics/companion-diagnostics",
+      "note_zh": "伴同診斷的官方定義與法規背景。"
+    },
+    {
+      "name": "FDA:Table of Pharmacogenomic Biomarkers in Drug Labeling",
+      "url": "https://www.fda.gov/drugs/science-and-research-drugs/table-pharmacogenomic-biomarkers-drug-labeling",
+      "note_zh": "藥品仿單中含藥物基因體生物標記的官方清單,涵蓋 germline 與 somatic 變異。"
+    },
+    {
+      "name": "Klomp et al., J Clin Med 2020",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/32906709/",
+      "note_zh": "表型轉換的系統性回顧。"
+    },
+    {
+      "name": "Mok et al., NEJM 2009(IPASS)",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/19692680/",
+      "note_zh": "EGFR 突變狀態決定 gefitinib 優於或劣於化療的關鍵試驗。"
+    },
+    {
+      "name": "Soria et al., NEJM 2018(FLAURA)",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/29151359/",
+      "note_zh": "osimertinib 第一線治療 EGFR 突變肺癌的無惡化存活結果。"
+    },
+    {
+      "name": "Ramalingam et al., NEJM 2020(FLAURA 總存活)",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/31751012/",
+      "note_zh": "FLAURA 最終總存活分析。"
+    },
+    {
+      "name": "Yu et al., Clin Cancer Res 2013",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/23470965/",
+      "note_zh": "EGFR-TKI 後天抗藥性機轉(T790M 等)頻率。"
+    },
+    {
+      "name": "Soda et al., Nature 2007",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/17625570/",
+      "note_zh": "EML4-ALK 融合基因的發現。"
+    },
+    {
+      "name": "Shaw et al., NEJM 2013(PROFILE 1007)",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/23724913/",
+      "note_zh": "crizotinib 對 ALK 陽性肺癌的隨機試驗。"
+    },
+    {
+      "name": "Chapman et al., NEJM 2011(BRIM-3)",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/21639808/",
+      "note_zh": "BRAF V600E 黑色素瘤使用 vemurafenib 的關鍵試驗。"
+    },
+    {
+      "name": "Slamon et al., NEJM 2001",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/11248153/",
+      "note_zh": "HER2 過度表現乳癌使用 trastuzumab 的關鍵試驗。"
+    },
+    {
+      "name": "Modi et al., NEJM 2022(DESTINY-Breast04)",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/35665782/",
+      "note_zh": "HER2-low 乳癌與 trastuzumab deruxtecan。"
+    },
+    {
+      "name": "Moore et al., NEJM 2018(SOLO1)",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/30345884/",
+      "note_zh": "BRCA 突變卵巢癌使用 olaparib 維持治療。"
+    },
+    {
+      "name": "Farmer et al., Nature 2005",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/15829967/",
+      "note_zh": "BRCA 缺陷細胞對 PARP 抑制的敏感性(合成致死)。"
+    },
+    {
+      "name": "Skoulidis et al., NEJM 2021(CodeBreaK 100)",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/34096690/",
+      "note_zh": "sotorasib 對 KRAS G12C 肺癌的第 2 期結果。"
+    },
+    {
+      "name": "Burns et al., J Clin Oncol 2020(KRAS 回顧)",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7723684/",
+      "note_zh": "KRAS 與 KRAS G12C 在西方與亞洲族群的盛行率。"
+    },
+    {
+      "name": "Takeuchi et al., PLoS Genet 2009",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/19300499/",
+      "note_zh": "華法林劑量 GWAS(VKORC1、CYP2C9、CYP4F2)。"
+    },
+    {
+      "name": "SEARCH Collaborative Group, NEJM 2008",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/18650507/",
+      "note_zh": "SLCO1B1 與他汀肌病的 GWAS。"
+    },
+    {
+      "name": "Postmus et al., Nat Commun 2014",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/25350695/",
+      "note_zh": "他汀降 LDL 反應的 GWAS 統合分析。"
+    },
+    {
+      "name": "Tansey et al., Biol Psychiatry 2013",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/23237317/",
+      "note_zh": "抗憂鬱藥療效的常見變異貢獻估計。"
+    },
+    {
+      "name": "Swen et al., Lancet 2023(PREPARE)",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/36739136/",
+      "note_zh": "12 基因面板預先檢測的隨機實施研究。"
+    },
+    {
+      "name": "Singh et al., Clin Transl Sci 2024",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/39078255/",
+      "note_zh": "藥物基因體 PRS 是否準備好臨床使用的回顧。"
+    },
+    {
+      "name": "Simona et al., Front Genet 2023",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10311496/",
+      "note_zh": "PRS 在藥物基因體學的機會與挑戰。"
+    },
+    {
+      "name": "Mathey et al., Med Genet 2026",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13340549/",
+      "note_zh": "PGx-PRS 的方法學挑戰與臨床實施展望。"
+    },
+    {
+      "name": "Ramsey et al., NEJM 2011(ivacaftor)",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/22047557/",
+      "note_zh": "以基因型為收案條件的試驗範例。"
+    },
+    {
+      "name": "Ingelman-Sundberg et al., Hum Genomics 2018",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/29793534/",
+      "note_zh": "罕見變異對藥物基因的貢獻。"
+    },
+    {
+      "name": "Del Tredici et al., Front Pharmacol 2018",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/29674966/",
+      "note_zh": "美國 104,509 人的 CYP2D6 對偶基因與結構變異頻率。"
+    },
+    {
+      "name": "Charnaud et al., PLoS Genet 2022",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/36149915/",
+      "note_zh": "CYP2D6–CYP2D7 融合對偶基因的長讀長定序方法。"
+    },
+    {
+      "name": "Twesigomwe et al., npj Genom Med 2020",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/32789024/",
+      "note_zh": "星號對偶基因判讀軟體的系統性比較。"
+    },
+    {
+      "name": "Turner et al., Clin Pharmacol Ther 2023(PharmVar CYP2D6 教學)",
+      "url": "https://ascpt.onlinelibrary.wiley.com/doi/10.1002/cpt.3044",
+      "note_zh": "CYP2D6 結構變異檢測與報告建議。"
+    },
+    {
+      "name": "Cicali et al., Clin Pharmacol Ther 2021",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8404400/",
+      "note_zh": "如何將 CYP2D6 表型轉換整合進臨床藥物基因體學。"
+    },
+    {
+      "name": "Hegi et al., NEJM 2005",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/15758010/",
+      "note_zh": "MGMT 啟動子甲基化與 temozolomide 療效。"
+    },
+    {
+      "name": "Ingelman-Sundberg & Gomez, Pharmacogenomics 2010",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/20415549/",
+      "note_zh": "藥物表觀遺傳學的回顧與成熟度描述。"
+    },
+    {
+      "name": "Zimmermann et al., Nature 2019",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/31158845/",
+      "note_zh": "腸道細菌代謝藥物的系統性圖譜。"
+    },
+    {
+      "name": "Haiser et al., Science 2013",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/23869020/",
+      "note_zh": "Eggerthella lenta 使 digoxin 失活。"
+    },
+    {
+      "name": "Drug Metab Rev 2026:Pharmacomicrobiomics",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42101126/",
+      "note_zh": "藥物微生物組學的近期回顧,說明成熟度。"
+    },
+    {
+      "name": "Suiter et al., PNAS 2020",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/32094176/",
+      "note_zh": "NUDT15 變異的多重功能分析。"
+    },
+    {
+      "name": "Matreyek et al., Nat Genet 2018(VAMP-seq)",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5980760/",
+      "note_zh": "VAMP-seq 方法與 PTEN、TPMT 應用。"
+    },
+    {
+      "name": "Amorosi et al., Am J Hum Genet 2021",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/34314704/",
+      "note_zh": "CYP2C9 變異活性與豐度的多重分析。"
+    },
+    {
+      "name": "Boyle et al., bioRxiv 2023(CYP2C19 預印本)",
+      "url": "https://www.biorxiv.org/content/10.1101/2023.10.06.561250v1.full",
+      "note_zh": "CYP2C19 深度突變掃描(未經同儕審查)。"
+    },
+    {
+      "name": "Annu Rev Pharmacol Toxicol 2022:多重分析回顧",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/34516287/",
+      "note_zh": "藥物基因變異多重功能分析的概況與挑戰。"
+    },
+    {
+      "name": "Annu Rev Pharmacol Toxicol 2024:Beyond single common variants",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/37506333/",
+      "note_zh": "超越單一常見變異的藥物基因體學展望(缺失遺傳度、多基因模型)。"
+    },
+    {
+      "name": "Cheng et al., Science 2023(AlphaMissense)",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/37733863/",
+      "note_zh": "AlphaMissense 論文摘要。"
+    },
+    {
+      "name": "Xu et al., bioRxiv 2026(預印本)",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13484531/",
+      "note_zh": "同源性預測器在 CYP 藥物基因的限制(預印本)。"
+    },
+    {
+      "name": "Kırboğa, G3 2026",
+      "url": "https://academic.oup.com/g3journal/advance-article/doi/10.1093/g3journal/jkag248/8776100",
+      "note_zh": "CYP2C9/CYP2C19/NUDT15 深度突變掃描與 AlphaMissense 的比較。"
+    },
+    {
+      "name": "Zhang et al., J Pers Med 2022",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9147332/",
+      "note_zh": "非線性機器學習預測華法林劑量的系統性回顧。"
+    },
+    {
+      "name": "Nelson et al., Nat Genet 2015",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/26121088/",
+      "note_zh": "人類遺傳證據與藥物核准的關聯(可使成功率加倍的估計)。"
+    },
+    {
+      "name": "King et al., PLoS Genet 2019",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/31830040/",
+      "note_zh": "重新估計遺傳支持對核准機率的影響。"
+    },
+    {
+      "name": "Minikel et al., Nature 2024",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/38632401/",
+      "note_zh": "遺傳證據使成功機率提高 2.6 倍的最新估計(PMC 全文:PMC11096124)。"
+    },
+    {
+      "name": "FDA 新聞稿:首批鐮刀型貧血基因療法核准",
+      "url": "https://www.fda.gov/news-events/press-announcements/fda-approves-first-gene-therapies-treat-patients-sickle-cell-disease",
+      "note_zh": "Casgevy 核准日期與試驗結果。"
+    },
+    {
+      "name": "Frangoul et al., NEJM 2024",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/38661449/",
+      "note_zh": "exa-cel 治療鐮刀型貧血的第 3 期結果。"
+    },
+    {
+      "name": "Musunuru et al., NEJM 2025",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/40373211/",
+      "note_zh": "針對單一病人的客製化鹼基編輯。"
+    },
+    {
+      "name": "GWAS Diversity Monitor",
+      "url": "https://www.gwasdiversitymonitor.com/",
+      "note_zh": "GWAS 參與者族群比例的即時監測。"
+    },
+    {
+      "name": "Fatumo et al., Nat Med 2022",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7614889/",
+      "note_zh": "基因體研究多樣性路線圖與 GWAS Catalog 族群比例。"
+    },
+    {
+      "name": "Pomales-Matos et al., Front Genet 2026",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12844564/",
+      "note_zh": "引述 GWAS Diversity Monitor 2025 年中歐洲血統 90.53%。"
+    },
+    {
+      "name": "Martin et al., Nat Genet 2019",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/30926966/",
+      "note_zh": "多基因分數的族群準確度差異與健康不平等。"
+    },
+    {
+      "name": "Taiwan Precision Medicine Initiative, Nature 2025",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/41092961/",
+      "note_zh": "TPMI 世代的規模與設計。"
+    },
+    {
+      "name": "All of Us Research Program, Nature 2024",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10937371/",
+      "note_zh": "All of Us 基因體資料釋出與多樣性。"
+    },
+    {
+      "name": "Bycroft et al., Nature 2018(UK Biobank)",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/30305743/",
+      "note_zh": "UK Biobank 約 50 萬人的基因與表型資源。"
+    },
+    {
+      "name": "台灣藥物基因體學會(PGST)首頁",
+      "url": "https://www.pgst.org.tw/index.php",
+      "note_zh": "台灣藥物基因體學會的最新消息、指引與健保公文轉知。"
+    },
+    {
+      "name": "PGST:健保伴隨式基因檢測抗癌藥物指引",
+      "url": "https://www.pgst.org.tw/events_detail?id=400",
+      "note_zh": "學會出版品介紹,涵蓋 13 個癌症標靶基因/蛋白與 2024 年健保 NGS 給付條件。"
+    },
+    {
+      "name": "PGST 轉知:食藥署精準醫療分子檢測實驗室認證管理系統(2026-08-10)",
+      "url": "https://www.pgst.org.tw/news_detail?id=708",
+      "note_zh": "實驗室開發檢測(LDT)認證的法源與線上系統。"
+    },
+    {
+      "name": "PGST 轉知:食藥署廢止列冊登錄管理要點(2026-04-21)",
+      "url": "https://www.pgst.org.tw/news_detail?id=634",
+      "note_zh": "舊制度廢止的公文。"
+    },
+    {
+      "name": "PGST 轉知:食藥署廢止列冊登錄申請須知(2026-04-02)",
+      "url": "https://www.pgst.org.tw/news_detail?id=611",
+      "note_zh": "說明自 2022-07-01 起已受理認證申請。"
+    },
+    {
+      "name": "CPIC 鴉片類指引 2021(含 CYP2D6 抑制劑與表型轉換建議)",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8249478/",
+      "note_zh": "強效抑制劑活性分數視為 0、中效乘以 0.5、弱效不調整(引用 Borges 2010)。"
+    },
+    {
+      "name": "CPIC β 阻斷劑指引 2024",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11502236/",
+      "note_zh": "明確寫明『弱效抑制劑不建議調整活性分數』。"
+    }
+  ],
+  "misconceptions_zh": [
+    "迷思:「亞洲人一半以上都有 EGFR 突變」。正解:約 50–56% 是台灣與亞洲「晚期或未治療的肺腺癌」在特定研究中的數字(台灣 55.7%、PIONEER 51.4%);整體肺癌較低,亞太各研究範圍從 20% 到 76%,而且 EGFR 突變是腫瘤的體細胞突變,不會遺傳給子女。",
+    "迷思:「腫瘤基因檢測就是遺傳基因檢測」。正解:腫瘤檢測多看體細胞突變,結果只反映該腫瘤;BRCA1/2 是特別的橋接案例,同時有 germline(血液)與 somatic(腫瘤組織)兩種檢測,SOLO1 的受試者幾乎都是生殖細胞 BRCA 突變者。",
+    "迷思:「檢測了基因就能精準預測我的藥效或劑量」。正解:華法林的常見基因加非遺傳因素合計約只解釋 50% 的劑量變異;clopidogrel 反應遺傳度 0.73,但 CYP2C19*2 只解釋約 12%。基因是重要的一塊拼圖,不是全部。",
+    "迷思:「PREPARE 顯示 12 基因面板讓不良反應降低 30%」。正解:OR 0.70 是勝算比,不等於風險降低 30%(絕對率為 21.5% 對 28.6%);而且受試者 97.7% 為歐洲/地中海/中東族裔,是否適用東亞需要在地驗證。",
+    "迷思:「有人類遺傳證據的藥物標的一定會成功」。正解:相對成功率約 2.6 倍(Minikel 2024)是觀察性的相對比較;整體仍只有約 10% 的臨床開發計畫最終獲得核准,且研究者多來自藥廠或投資機構。",
+    "迷思:「AI(如 AlphaMissense)可以取代功能實驗」。正解:AlphaMissense 預測的是通用致病性;近期獨立分析顯示在 CYP2C9、NUDT15 等藥物基因上,預測與特定藥物或測定的功能可能脫鉤,仍需針對藥物與受質的功能實驗。機器學習預測華法林劑量也未被證明優於簡單線性公式。",
+    "迷思:「多基因風險分數(PRS)已經可以用來決定用藥」。正解:回顧文獻一致認為 PGx-PRS 尚未充分驗證,主要受限於效應量小、歐洲族裔偏誤、藥物暴露族群樣本小(常僅 1,000 至 10,000 人)。",
+    "迷思:「基因型一輩子不變,所以代謝表型也永遠不變」。正解:併用強效 CYP2D6 抑制劑(如 paroxetine、fluoxetine)、疾病、發炎、吸菸與年紀都可能造成表型轉換;目前常用的簡化規則(強效抑制劑活性分數視為 0)只是實務近似,細節與最佳做法仍在爭論。",
+    "迷思:「表觀遺傳與腸道菌已能常規用來調整藥物劑量」。正解:除了腫瘤的 MGMT 甲基化這類少數例外,生殖細胞層次的表觀遺傳與微生物組導向用藥目前多屬機轉與前臨床證據,成熟度低。",
+    "迷思:「CRISPR 基因編輯就是藥物基因體學」。正解:藥物基因體學是依基因型選藥與調整;Casgevy 這類基因編輯是直接改寫細胞的基因型,兩者互補但層次不同,而且 Casgevy 需要骨髓清除預處理等有風險的步驟。",
+    "迷思:「歐美的研究結果一定不適用台灣」。正解:不能一概而論,有些關聯跨族群一致(CPIC 華法林指引註明資料在歐洲與東亞族群最強),但頻率與效應可能不同,GWAS 參與者又約 88% 為歐洲血統,因此像 TPMI 這樣的在地資料需要用來驗證。"
+  ],
+  "viz_ideas": [
+    "「生殖細胞 vs 體細胞」互動人體:從全身縮放到肺部組織,每個細胞內有 3D DNA 雙螺旋;點選腫瘤細胞時 EGFR 位點亮起紅色(體細胞突變,僅腫瘤克隆有),點選血球細胞則沒有;另有「生殖細胞 BRCA」情境,所有細胞的 BRCA 位點都帶有標記。旁邊時間軸可播放腫瘤演化,並在接受 EGFR-TKI 後出現 T790M 子克隆(標註 63% 為文獻數值,示意用)。",
+    "「為什麼一個基因說不完」堆疊柱:以 3D 柱狀圖呈現華法林劑量變異的分解(VKORC1 約 30%、CYP2C9 約 12%、CYP4F2 等其他變異,以及 CPIC 說的基因加非遺傳因素合計約 50%,其餘未解釋);旁邊放 clopidogrel 的「遺傳度 0.73 對 CYP2C19*2 僅 12%」對比柱。滑桿改變年齡、體重、併用藥、基因型時只顯示定性變化,並清楚標示「教學示意,非劑量計算器」。",
+    "3D 曼哈頓圖(GWAS):每個點是一個變異,高度為 -log10(p);情境 A(單基因大效應)顯示 SLCO1B1(p=4×10^-9,OR 4.5)在小樣本就出現的高峰;情境 B(多基因小效應,如抗憂鬱藥反應)則需拉大樣本數滑桿,才看到許多低矮的峰逐漸浮現。用來說明效應量與統計檢定力的關係,數值僅供示意。",
+    "EGFR 突變地圖與試驗對比:地球儀上以柱高顯示亞太 47%、大洋洲 12%、台灣 55.7%、PIONEER 51.4%(並標示各研究範圍 20–76%,提醒平均值不是個人機率);另一面板以動畫呈現 IPASS 的 HR 0.48(突變陽性)與 2.85(突變陰性),說明 trial enrichment。",
+    "「伴同診斷時間軸」:橫向時間軸標示 INFORM HER-2/neu(1997-12-30)、HercepTest(1998-09-25)、cobas 4800 BRAF(2011-08-17)、Vysis ALK FISH(2011-08-26)、EGFR 首批檢測(2013-07)、BRACAnalysis CDx(2014-12-19)、KRAS G12C(2021-05-28)等清單日期;滑鼠移過每個節點顯示檢體類型(組織、血液、血漿)與對應藥物。",
+    "CYP2D6 基因座 3D 軌道:把 CYP2D6、CYP2D7、CYP2D8 畫成三段高度相似的彩色片段,使用者可拖曳重組出缺失(*5)、重複(xN)與 CYP2D6–CYP2D7 融合(如 *68);切換「晶片/短讀長」視角時 CYP2D6 與 CYP2D7 顏色被混淆而無法區分,切換「長讀長」視角則整段連續顯示,呈現為何結構變異容易被漏判。",
+    "藥物-藥物-基因「代謝工廠」:傳送帶上有藥物分子進入 CYP2D6 酵素;左側選基因型(活性分數 0、1、2…),右側加入 paroxetine 或 fluoxetine 抑制劑後活性分數乘以 0(標註這是 CPIC 參照 Borges 法的簡化規則、仍有爭議),酵素動畫停擺,藥物濃度曲線上升。",
+    "深度突變掃描地形圖:以 NUDT15 或 CYP2C9 的胺基酸位置為橫軸、20 種替換為縱軸、高度為蛋白質豐度或活性;可切換疊加 AlphaMissense 分數,並用高亮標出兩者不一致的點(例如活性與豐度脫鉤),說明為什麼通用預測不能取代藥物特異的功能實驗。資料需從公開資料庫下載後再視覺化,未取得前只能用示意資料並清楚標示。",
+    "「遺傳支持」藥物開發漏斗:粒子代表候選藥物標的,通過 Phase I、II、III 到核准的 3D 管道;有遺傳支持的粒子通過機率乘以可調的 RS(1 至 3.7,預設 2.6),沒有支持的粒子則通過機率較低,並在畫面固定標示「整體約 10% 的計畫最終核准」,避免讓人誤以為 RS 是保證。",
+    "資料庫多樣性地球儀:以柱高顯示 GWAS 參與者族群比例(歐洲 88.18%、亞洲 6.17%、非洲 0.28% 等),可切換 TPMI(565,390 人,聚焦台灣)、All of Us(245,388 人基因體)與 UK Biobank(約 50 萬人),並標示各資料庫的更新日期與定義差異。",
+    "基因編輯示意:CRISPR-Cas9 剪刀在 BCL11A 紅血球特異性增強子處切割的分子動畫,連到胎兒血紅素重新啟動與紅血球形狀從鐮刀型轉為圓盤形的過程;旁邊以對照面板標明「依基因型選藥」與「直接改寫基因型」是不同層次,並列出 FDA 與 NEJM 的療效數字(93.5% 與 97% 為不同分析集)。"
+  ],
+  "dropped_facts": [],
+  "must_not_say_zh": [
+    "不可說「亞洲人(或台灣人)有一半以上帶有 EGFR 突變」:55.7%(Hsu 2015)與 51.4%(PIONEER)是「晚期或未曾治療的肺腺癌病人」在特定研究中的比例,不是一般人口比例,也不是個人機率;亞太各研究範圍 20–76%,PIONEER 中印度僅 22.2%。",
+    "不可說「白種人 EGFR 突變率是 10–20%」已被本計畫證實:該數字只見於 Lin et al. 2025(Thorac Cancer)的討論段落,其引用的西方原始研究未逐一查核;只能說「常被引用的西方約 10–20%,本計畫未逐一驗證」。Midha 2015 的全球回顧摘要本身也提醒跨區比較受限。",
+    "不可說 EGFR 突變在女性較高是「性別本身」造成:PIONEER 調整吸菸狀態後,性別已無顯著差異。",
+    "不可把 PIONEER 作者的建議寫成硬性規範或擴大解讀:原文建議晚期腺癌『even males and regular smokers』也應考慮檢測;該研究由 AstraZeneca 贊助。",
+    "不可說「EGFR 相關的伴同診斷全都遲至 2013 年才核准」:只有 EGFR「突變」檢測是 2013 年;檢測 EGFR 蛋白表現的 Dako EGFR pharmDx(大腸直腸癌 cetuximab)早在 2004-02-12 核准。",
+    "不可說「therascreen EGFR RGQ(2013-07-12)是第一個 EGFR 突變伴同診斷」,也不可把 cobas EGFR 的核准日寫成 2013-07-15 卻不加註:依 FDA PMA 資料庫,cobas EGFR Mutation Test 原始核准日是 2013-05-14,FDA 清單則列 2013-07-15;兩個來源不一致時只說「2013 年」。",
+    "不可把 FDA 清單的 232 列說成「232 種檢測」或「232 種伴同診斷」:列數是「檢測 × 適應症 × 藥品」層級,檢測名稱約 75–80 種且為我們自行計數。",
+    "不可說華法林的基因檢測可解釋「50%」的劑量差異(基因單獨)或「基因決定劑量」:50% 是 CYP2C9、VKORC1、CYP4F2、CYP2C 基因叢集『加上』已知非遺傳因素的合計;各基因解釋比例因族裔而異(歐洲人較高、其他族裔較低)。",
+    "不可說「基因導引華法林劑量已被所有臨床試驗證實有益」:EU-PACT 有益、COAG 整體無差異、GIFT 複合終點降 27%(10.8% 對 14.7%),證據並非一面倒。",
+    "不可說「gefitinib 對肺癌(或對亞洲人)比化療好」:IPASS 整體 HR 0.74 是被突變陽性者(HR 0.48)拉出來的;突變陰性者(HR 2.85)化療反而較好。也不可說受試者是「目前仍輕度吸菸者」,實際為不吸菸或曾輕度吸菸者。",
+    "不可說 osimertinib 使總存活「顯著且大幅」延長或「治癒」:FLAURA 最終 OS 的 HR 0.80,95.05% CI 為 0.64–1.00(P = 0.046),邊界接近;28% 對 9% 是 3 年時「仍在使用試驗藥物」的比例,不是 3 年存活率;FLAURA 與後續分析皆由 AstraZeneca 資助。",
+    "不可說「PREPARE 顯示 12 基因面板讓不良反應風險降低 30%」:OR 0.70 是勝算比,絕對率為 21.5% 對 28.6%(差約 7 個百分點);受試者 97.7% 為歐洲/地中海/中東族裔,不可直接類推到台灣;全體病人的比較實際分析約 6,193 人而非 6,944 人,主要檢定以有可介入變異者(1,558 人)為關鍵子群。",
+    "不可說「CPIC 對弱效與中效 CYP2D6 抑制劑一律將活性分數乘以 0.5」:較新的 CPIC 指引(2021 鴉片類、2024 β 阻斷劑)只對強效(→ 0)與中效(× 0.5)調整,弱效不調整;也不可把此規則說成已有共識的精確定律(2023 CPIC SSRI 指引指出調整方式尚無共識),更不可教人依此自行調整劑量。",
+    "不可說「有人類遺傳證據的藥物標的成功機率一定高 2.6 倍」或「保證加倍」:RS 2.6 是觀察性的相對比較;整體僅約 10% 的臨床計畫最終核准;King 2019 的兩倍以上提升僅在致病基因明確時出現,且前瞻性檢驗只有孟德爾證據成立;Nelson(GSK)、King(AbbVie)、Minikel(含 Deerfield/Genscience 投資機構隸屬者)皆有產業關聯。",
+    "不可說「遺傳效應越大的標的越容易成功」:Minikel 2024 發現 RS 與效應大小(P = 0.90、0.57)及對偶基因頻率(P = 0.26)無顯著關聯,而是與「變異到基因對應」的信心有關。",
+    "不可把 GWAS Diversity Monitor 的百分比說成「藥物基因體研究」的族群組成(我們未找到 PGx 專屬統計),也不可不標日期就引用:它是即時儀表板(頁面寫『Last check for data: 2026-09-16』,是資料檢查日,不一定是最後更新日),數字會漂移;2025 年中歐洲 90.53% 的說法(Pomales-Matos 2026 引述)本計畫未查核。",
+    "不可說 TFDA 的認證制度或健保給付規定「以本網站為準」:資料來自 PGST 轉知的食藥署公文,TFDA 與健保署原始公告未直接取得;news_detail?id=708 只支持 2026-08-10 上線與法源,2022-07-01 起受理見 id=611,2026-04 廢止見 id=634;實際給付規定請以健保署公告為準。",
+    "不可說「AlphaMissense 能取代功能實驗」或「AlphaMissense 在藥物基因上無用」:它預測的是通用臨床致病性;2026 年兩篇獨立分析(bioRxiv 預印本與 G3 單一團隊)指出在 CYP2C9 等藥物基因上與特定活性/豐度脫鉤,結論尚待更多獨立驗證。",
+    "不可說「機器學習已證實優於(或劣於)IWPC 線性公式預測華法林劑量」:系統性回顧(23 項研究,全部高偏誤風險)結論是仍無法判定哪種演算法較好。",
+    "不可說「多基因風險分數(PRS)已可用來決定用藥」:多篇 2023–2026 回顧一致認為 PGx-PRS 尚未充分驗證、不足以用於常規照護。",
+    "不可說「表觀遺傳或腸道菌檢測已是常規調整藥物的工具」:MGMT 啟動子甲基化是腫瘤層次的少數例外;生殖細胞層次的表觀遺傳與微生物組導向用藥多屬機轉與前臨床證據。",
+    "不可說「CRISPR 基因編輯就是藥物基因體學」:藥物基因體學是依基因型選藥與調整,Casgevy 是直接改寫基因型,層次不同;FDA 新聞稿的 93.5%(29/31)與 NEJM 的 97%(29/30)是不同資料截止與納入人數的分析集,不可混用或當成同一個數字。",
+    "不可說 Taiwan Biobank「87.3% 的人需要調整處方」:87.3% 是帶有『已知功能性藥物反應變異』的比例,「帶有」不等於臨床上需要調整;比例受晶片內容與定義左右。",
+    "不可說「clopidogrel 反應遺傳度 0.73,所以 CYP2C19*2 能預測 73%」,也不可把 Amish 族群的估計直接套用到其他族群:遺傳度是族群層級的估計,CYP2C19*2 只解釋約 12%。",
+    "不可說「crizotinib 延長 ALK 陽性肺癌病人的總存活」:PROFILE 1007 的無惡化存活有顯著差異(7.7 對 3.0 個月),但期中總存活 HR 1.02 無顯著差異,且化療組可交叉換藥。",
+    "不可把台灣 BRAF 突變 0.7% 說成 BRAF V600E 的比例(該研究不限 V600E),也不可從 5.2% 的 KRAS 突變逕自推算台灣 KRAS G12C 盛行率(未找到大型台灣 G12C 資料;南台灣 223 例小研究中 G12C 僅約 6/14 例,樣本很小)。",
+    "不可把 sotorasib 的 CodeBreaK 100(單臂第 2 期)說成隨機對照試驗,也不可把 960 mg 每日一次寫成用藥建議。",
+    "不可把美國 104,509 個檢體的 CYP2D6 結構變異比例(13.1%)與不良代謝者比例(約 30% 由結構變異造成)直接當作台灣或東亞的數字。"
+  ],
+  "open_issues": [
+    "[frontiers-10 / summary_zh] 「西方約 10–20%」的東西方 EGFR 比較僅出自 Lin 2025 討論段落,其引用的西方原始研究未逐一取得,信心維持 medium;summary_zh 中『遠高於常被引用的西方約 10–20%』須保留「常被引用、未逐一驗證」的措辭。",
+    "[frontiers-11 / viz_ideas] cobas EGFR 的日期在 FDA 清單(2013-07-15)與 PMA 資料庫(2013-05-14)不一致,本檔已改採 PMA 日期並註明差異;viz_ideas 第 5 項(伴同診斷時間軸)仍寫『EGFR 首批檢測(2013-07)』,製作時須改為『EGFR 突變首批檢測:cobas 2013-05-14(PMA)/ therascreen 2013-07-12』並註明資料來源,且不應暗示 2004 年的 EGFR 蛋白 IHC 檢測不存在。",
+    "[frontiers-11] 本次日期核對用 openFDA PMA 資料庫的『原始核准(supplement 000)決定日』;FDA 清單日期與 PMA 決定日不一致的原因未查明,也不排除清單本身的登錄或打字錯誤(清單中另有『08/22/0218』)。",
+    "[frontiers-31 / misconceptions_zh #8 / viz_ideas #7] 已更正弱效抑制劑的說法;其餘文字(強效活性分數視為 0)無需改動。若網站要顯示『中效抑制劑 × 0.5』互動,須註明 2023 CPIC SSRI 指引指出調整方式尚無共識,並保留『不是劑量計算器』的標示。",
+    "[frontiers-03 / frontiers-22 / viz_ideas #2] CPIC 2017 說歐洲族群中 CYP2C9、VKORC1、CYP4F2 最多分別解釋約 18%、30%、11% 的劑量變異;frontiers-22(Takeuchi 2009 引述的先前估計:VKORC1 約 30%、CYP2C9 約 12%)與 viz_ideas 第 2 項堆疊柱的數字與 CPIC 的 18% 不完全一致,frontiers-22 本輪未查核,製作前須確認要採用哪一組數字並標明來源與族裔。",
+    "[frontiers-25] 全體病人的比較實際分析約 6,193 人(不是 6,944 收案者),且主要檢定為階層式(以有可介入變異者為關鍵子群);文案若寫 6,944 人須明說是「收案人數」。",
+    "[frontiers-42] 2026 年 Frontiers 論文引用的『2025 年中歐洲 90.53%』未查核;即時儀表板數字會隨時間漂移,網站需標示查閱日期(2026-09-16 的『資料檢查日』)。頁面用語為『Last check for data』,現有 claim_zh 寫『最近一次更新』略不精確。",
+    "[frontiers-45] TFDA 與健保署的原始公告/公報無法直接開啟,全部依賴 PGST 網站轉知;且 news_detail?id=708 單獨只支持 2026-08-10 上線與法源,引用時應分別附上 id=611、id=634 與 events_detail?id=400。所有法規與給付內容需以官方公告為準,並保留 medium 信心與『轉知』字樣。",
+    "[frontiers-09 / 13 / 14] 措辭精準度小問題(未改動 claim_zh):PIONEER 摘要原文為 regular smokers(本條寫『有吸菸史者』);IPASS 為不吸菸或『曾』輕度吸菸者;PIONEER、FLAURA 皆由 AstraZeneca 資助/作者為員工,呈現時宜揭露。",
+    "[未查核] 本輪只核對 14 個事實(其中 12 個確認、2 個更正、0 個被駁斥、0 個無法查證);另有 29 個 critical 事實未經獨立查核,仍為 verified: false,沿用原信心:frontiers-04、05、06、07、12、15、16、17、18、19、20、21、22、24、26、27、28、29、30、32、33、34、35、36、37、40、41、43、44。其中 21、24、26、28、32、33、36 原信心為 medium,寫入網站時必須保留保守措辭。",
+    "[frontiers-01 / 02] 已標為 verified: true,但僅以教科書級定義加上對 NHGRI、MedlinePlus 與 FDA 生物標記表導言的快速核對為依據;frontiers-02 中『NCI 也說明…』的敘述未另行逐字核對。",
+    "[計數口徑] 已在 reconciliation_summary 中說明:kept(確認且原文不變)12、corrected 2、dropped 0;verified 為 true 的事實共 16 個(14 個查核 + frontiers-01、02),facts 陣列仍保有全部 45 個事實。"
+  ],
+  "reconciliation_summary": {
+    "date": "2026-09-29",
+    "checked_facts": 14,
+    "confirmed_kept_unchanged": 12,
+    "corrected": 2,
+    "corrected_ids": [
+      "frontiers-11",
+      "frontiers-31"
+    ],
+    "refuted_dropped": 0,
+    "unverifiable_hedged": 0,
+    "textbook_marked_verified": [
+      "frontiers-01",
+      "frontiers-02"
+    ],
+    "total_facts_remaining": 45,
+    "verified_true_count": 16,
+    "verified_false_count": 29,
+    "low_confidence_count": 0,
+    "note_zh": "來源檔 frontiers.json 45 個事實;兩位查核者(primary-source、independent-search)共核對 14 個;frontiers-11 的日期爭議另以 openFDA PMA 資料庫自行複查,frontiers-31 的 CPIC 2024 引文自行核對原文。"
+  }
+}

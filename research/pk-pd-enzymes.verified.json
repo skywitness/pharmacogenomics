@@ -1,0 +1,1376 @@
+{
+  "topic": "pk-pd-enzymes",
+  "title": "藥物在體內的旅程：PK/PD、CYP450、轉運蛋白與代謝型",
+  "summary_zh": "本主題說明藥物在體內的旅程：藥動學（ADME）與藥效學的差異、治療窗、半衰期與 AUC/Cmax 等入門概念，再帶到第一相（CYP450）與第二相（UGT、TPMT、NAT2、SULT）代謝。CYP 家族雖有 57 個功能基因，但約十來個酵素負責 70–80% 的藥物代謝；我們對各種常被引用的百分比（Zanger 2008 的 CYP3A4/5 37%、2C9 17%、2D6 15%、2C19 10%…；Ingelman-Sundberg 2004；Guengerich 2024 的約 80%）逐一標明來源與限制，並誠實說明 Evans & Relling 1999 圓餅圖的具體數字無法核實。接著以前驅藥（codeine、clopidogrel、tamoxifen）與被酵素失活的活性藥（warfarin、PPI、metoprolol）說明不良代謝者與超快速代謝者的意義相反，並介紹 CPIC 標準用語、CYP2D6 活性分數（AS>2.25、1.25–2.25、0<AS<1.25、0 的界線，以及 2023 年 *9 與 *41 下修至 0.25）與 CYP2C19 雙倍型對應，還有轉運蛋白（SLCO1B1、ABCG2、ABCB1）與標靶（VKORC1、ADRB1）的證據強弱差異、表現型轉換與抑制劑／誘導劑（rifampin、葡萄柚、bupropion 等）。內容納入台灣漢人資料（Lu 等 2022，clopidogrel 使用者約 61% 需調整治療）與東亞／歐洲族群頻率對照；台灣本地仿單、健保給付與台灣人 CYP2D6 實測頻率本次未能取得，已在相關條目中標明。",
+  "facts": [
+    {
+      "id": "pk-pd-enzymes-01",
+      "claim_zh": "藥物動力學（pharmacokinetics, PK）研究身體如何處理藥物，涵蓋吸收、分布、代謝、排除（ADME）；藥效學（pharmacodynamics, PD）則研究藥物如何作用於身體。",
+      "detail_zh": "PK 決定藥物在血液與組織中的濃度如何隨時間變化，PD 描述這個濃度如何轉換成療效或不良反應。兩者合起來，才能解釋同一劑量在不同人身上為何結果不同。",
+      "level": "入門",
+      "critical": false,
+      "source_name": "StatPearls：Pharmacodynamics（Marino、Jamal、Zito，2023）",
+      "source_url": "https://pubmed.ncbi.nlm.nih.gov/29939568/",
+      "confidence": "high",
+      "en_terms": [
+        "pharmacokinetics",
+        "pharmacodynamics",
+        "ADME"
+      ],
+      "verified": true,
+      "verification_note": "編輯者判定為教科書級定義（PK＝身體如何處理藥物、PD＝藥物如何作用於身體），未經查核者查核。"
+    },
+    {
+      "id": "pk-pd-enzymes-02",
+      "claim_zh": "1999 年 Evans 與 Relling 在《Science》指出，藥物代謝酵素、轉運蛋白、受體與其他藥物標靶的基因多型性，都與藥物療效與毒性的個體差異有關。",
+      "detail_zh": "這奠定了藥物基因體學的兩大版圖：影響藥物在體內濃度的 PK 基因（如 CYP2D6、SLCO1B1），以及影響藥物作用位置的 PD 基因（如 VKORC1、ADRB1）。本網站據此把『酵素、轉運蛋白、標靶』放在同一張地圖上教學。",
+      "level": "入門",
+      "critical": true,
+      "source_name": "Evans WE, Relling MV. Science 1999;286:487-491（PubMed 摘要）",
+      "source_url": "https://pubmed.ncbi.nlm.nih.gov/10521338/",
+      "confidence": "high",
+      "en_terms": [
+        "drug-metabolizing enzymes",
+        "transporters",
+        "receptors",
+        "drug targets"
+      ],
+      "verified": false
+    },
+    {
+      "id": "pk-pd-enzymes-03",
+      "claim_zh": "美國 FDA 將窄治療指數（narrow therapeutic index, NTI）藥物定義為：劑量或血中濃度的小差異就可能造成嚴重的治療失敗，或造成危及生命、持續或顯著失能的不良反應。",
+      "detail_zh": "治療窗（therapeutic window）指療效與毒性之間的血中濃度範圍；窗口越窄，酵素活性的個體差異越容易讓病人掉出窗口。FDA 統計到 2024 年 1 月 5 日，共有 33 個藥品（14 種活性成分）在其學名藥開發的藥品特定指引中被列為 NTI 藥物。",
+      "level": "入門",
+      "critical": true,
+      "source_name": "Donnelly M 等，Clin Pharmacol Ther 2025;117:116-129（FDA NTI 經驗與作法）",
+      "source_url": "https://pubmed.ncbi.nlm.nih.gov/39529254/",
+      "confidence": "high",
+      "en_terms": [
+        "narrow therapeutic index",
+        "therapeutic window",
+        "NTI drugs"
+      ],
+      "verified": false
+    },
+    {
+      "id": "pk-pd-enzymes-04",
+      "claim_zh": "多數藥物遵循一階（first-order）排除，半衰期是血中濃度降為一半所需的時間；經過 4 到 5 個半衰期，約 94% 到 97% 的藥物已被排除（重複給藥後也約需 4 到 5 個半衰期才接近穩定狀態）。",
+      "detail_zh": "數學上 1−(1/2)^4 = 93.75%、1−(1/2)^5 ≈ 96.9%。代謝酵素活性下降（例如不良代謝者）會延長半衰期，使穩定狀態濃度與到達穩定狀態的時間都改變；乙醇等少數藥物屬零階排除，不適用這條經驗法則。",
+      "level": "入門",
+      "critical": true,
+      "source_name": "StatPearls：Elimination Half-Life of Drugs（Hallare、Gerriets，2025）；94–97% 為 StatPearls 敘述並經算式驗算",
+      "source_url": "https://pubmed.ncbi.nlm.nih.gov/32119385/",
+      "confidence": "medium",
+      "en_terms": [
+        "half-life",
+        "first-order elimination",
+        "steady state",
+        "zero-order elimination"
+      ],
+      "verified": true,
+      "verification_note": "編輯者判定為教科書經驗法則並驗算：1−(1/2)^4＝93.75%（約 94%）、1−(1/2)^5＝96.875%（約 97%）；一階排除為前提，零階排除藥物（如乙醇）不適用。未經查核者查核。"
+    },
+    {
+      "id": "pk-pd-enzymes-05",
+      "claim_zh": "口服藥物即使完全被吸收，仍可能因腸道與肝臟的首渡代謝而只有少部分到達全身循環：felodipine 幾乎 100% 被腸道吸收，但口服生體可用率只有約 15%。",
+      "detail_zh": "腸道與肝臟中的 CYP3A4 是造成此現象的主要原因，因此抑制或誘導腸道 CYP3A4（如葡萄柚、rifampin）會大幅改變全身暴露量。Tacrolimus 的口服生體可用率也只有約 20%（見 CPIC 2015 tacrolimus 指引）。",
+      "level": "入門",
+      "critical": true,
+      "source_name": "Bailey DG, Dresser G, Arnold JM. CMAJ 2013;185:309-316",
+      "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3589309/",
+      "confidence": "high",
+      "en_terms": [
+        "bioavailability",
+        "first-pass metabolism",
+        "felodipine",
+        "CYP3A4"
+      ],
+      "verified": false
+    },
+    {
+      "id": "pk-pd-enzymes-06",
+      "claim_zh": "藥物代謝分為第一相（phase I，以 CYP450 的氧化反應為主）與第二相（phase II，由轉移酶進行接合反應，如 UGT、SULT、NAT、GST、TPMT、COMT），目的通常是讓藥物更親水、易於排除。",
+      "detail_zh": "第二相酵素多為轉移酶，把葡萄糖醛酸、硫酸、乙醯基或甲基等基團接到藥物或其代謝物上；Guengerich（2024）指出 UGT 在藥物代謝的貢獻僅次於 P450。但第二相並非一律『解毒』，例如 morphine 的葡萄糖醛酸接合物仍具藥理活性。",
+      "level": "入門",
+      "critical": false,
+      "source_name": "Jancova P 等，Biomed Pap 2010;154:103-116（Phase II drug metabolizing enzymes）",
+      "source_url": "https://pubmed.ncbi.nlm.nih.gov/20668491/",
+      "confidence": "high",
+      "en_terms": [
+        "phase I metabolism",
+        "phase II metabolism",
+        "UGT",
+        "SULT",
+        "NAT2",
+        "TPMT",
+        "conjugation"
+      ],
+      "verified": false
+    },
+    {
+      "id": "pk-pd-enzymes-07",
+      "claim_zh": "判斷『不良代謝者』或『超快速代謝者』是好是壞，要先問這個藥是前驅藥（prodrug，需酵素活化）還是被酵素失活的活性藥：前驅藥的不良代謝者活性成分不足、療效不彰，超快速代謝者活性成分過多、毒性風險上升；活性藥則相反。",
+      "detail_zh": "例如 codeine（CYP2D6 活化為 morphine）與 clopidogrel（CYP2C19 活化）是前驅藥；omeprazole 等質子幫浦抑制劑（CYP2C19 代謝成無活性產物）與 metoprolol（CYP2D6 代謝成大多無活性的產物）屬活性藥，不良代謝者暴露量上升，超快速代謝者暴露量下降而可能治療失敗。也有母藥與代謝物都有活性的混合型（如 tramadol），需個別判讀。",
+      "level": "入門",
+      "critical": false,
+      "source_name": "CPIC PPI 指引（Lima 等，2021）與 CPIC 鴉片類指引（Crews 等，2021）的機轉描述",
+      "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7868475/",
+      "confidence": "high",
+      "en_terms": [
+        "prodrug",
+        "active drug",
+        "poor metabolizer",
+        "ultrarapid metabolizer"
+      ],
+      "verified": false
+    },
+    {
+      "id": "pk-pd-enzymes-08",
+      "claim_zh": "人類基因組有 57 個具功能的 CYP450 基因，但負責大部分藥物代謝的只有 CYP1、CYP2、CYP3 三個家族中約十來個酵素。",
+      "detail_zh": "Zanger 與 Schwab（2013）估計這些酵素負責臨床使用藥物的 70–80%。57 個 CYP 中至少 38 個（約三分之二）曾被報告能催化某些藥物的氧化，但肝臟中真正的主力是 CYP1A2、2C9、2C19、2D6、3A4（Guengerich 2024）。",
+      "level": "初階",
+      "critical": true,
+      "source_name": "Zanger UM, Schwab M. Pharmacol Ther 2013;138:103-141",
+      "source_url": "https://pubmed.ncbi.nlm.nih.gov/23333322/",
+      "confidence": "high",
+      "en_terms": [
+        "CYP450",
+        "cytochrome P450",
+        "CYP1",
+        "CYP2",
+        "CYP3"
+      ],
+      "verified": false
+    },
+    {
+      "id": "pk-pd-enzymes-09",
+      "claim_zh": "近年綜述估計，約 80% 的小分子藥物代謝是由 P450 酵素催化，UDP-葡萄糖醛酸轉移酶（UGT）遠遠居次。",
+      "detail_zh": "Guengerich（2024，Pharmacological Reviews）以 2015–2020 年 FDA 核准的 245 個新小分子藥物（引用 Bhutani 等，2021 的整理）繪製此比例；較早的 Zanger 與 Schwab（2013）則說 70–80%。這些數字是『參與代謝的比例』，不同資料集、不同定義會有差異，引用時要標明來源。",
+      "level": "初階",
+      "critical": true,
+      "source_name": "Guengerich FP. Pharmacol Rev 2024;76:1104-1132（PMC11549934）",
+      "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11549934/",
+      "confidence": "high",
+      "en_terms": [
+        "P450",
+        "UGT",
+        "small-molecule drugs",
+        "drug metabolism"
+      ],
+      "verified": true,
+      "verification_note": "兩位查核者皆確認 Guengerich 2024 全文逐字寫『roughly 80% of the metabolism of small-molecule drugs is catalyzed by P450 enzymes』，圖 2 為 2015–2020 年 FDA 核准的 245 個新小分子藥物（引 Bhutani 2021）；Zanger & Schwab 2013 摘要為『70–80% of all drugs in clinical use』。"
+    },
+    {
+      "id": "pk-pd-enzymes-10",
+      "claim_zh": "Zanger 等（2008）分析美國處方量最高的 200 種藥物：在經肝臟清除的藥物中，78% 經 CYP1、2、3 家族氧化；各酵素涉及的藥物比例為 CYP3A4/5 37%、CYP2C9 17%、CYP2D6 15%、CYP2C19 10%、CYP1A2 9%、CYP2C8 6%、CYP2B6 4%；三個臨床上確立的多型性 CYP（2C9、2C19、2D6）合計涉及約一半這些藥物。",
+      "detail_zh": "這些百分比加總（98%）超過 78%，推測是因為一個藥物可由多個 CYP 代謝而被重複計算（摘要未明說分母，此為合理推論而非論文原文）；且樣本是該論文當時的美國處方前 200 名，不是台灣用藥，也不是『代謝劑量的比例』。CYP2C9 主要與 NSAID、CYP2C19 與質子幫浦抑制劑、CYP2D6 與 β 阻斷劑及多種抗精神病與抗憂鬱藥有關。",
+      "level": "初階",
+      "critical": true,
+      "source_name": "Zanger UM, Turpeinen M, Klein K, Schwab M. Anal Bioanal Chem 2008;392:1093-1108",
+      "source_url": "https://pubmed.ncbi.nlm.nih.gov/18695978/",
+      "confidence": "high",
+      "en_terms": [
+        "CYP3A4",
+        "CYP2C9",
+        "CYP2D6",
+        "CYP2C19",
+        "CYP1A2",
+        "CYP2C8",
+        "CYP2B6",
+        "top 200 drugs"
+      ],
+      "verified": true,
+      "verification_note": "兩位查核者皆確認：摘要數字（78%；3A4/5 37%、2C9 17%、2D6 15%、2C19 10%、1A2 9%、2C8 6%、2B6 4%；三個多型性 CYP 約涉及一半）與原文一致。保留提醒：摘要未寫明分母與取樣年份，『加總 98% 大於 78% 是重複計算』屬合理推論而非論文原文，已在 detail_zh 加註；全文未能取得。"
+    },
+    {
+      "id": "pk-pd-enzymes-11",
+      "claim_zh": "文獻中『各 CYP 酵素代謝多少比例藥物』的數字因資料集與定義而異：Ingelman-Sundberg（2004）稱 P450 負責約 75% 的第一相代謝、其中約 40% 由多型性酵素催化；2021 年一篇綜述稱 CYP2D6 涉及近 25% 的臨床藥物、CYP3A 逾 30%，而 Zanger 等（2008）在前 200 名處方藥中得到 CYP2D6 為 15%。",
+      "detail_zh": "常被引用的 Evans 與 Relling（1999）圓餅圖之具體百分比，我們在公開摘要中找不到，未能核實，建議網站不要直接引用未查證的舊圖數字。教學上較穩妥的說法是：『CYP3A4/5 涉及最多藥物；CYP2D6、CYP2C19、CYP2C9 雖各涉及較少比例的藥物，卻因高度多型性而在藥物基因體學上特別重要』。",
+      "level": "初階",
+      "critical": true,
+      "source_name": "Ingelman-Sundberg M. Naunyn-Schmiedebergs Arch Pharmacol 2004;369:89-104（摘要）；另參 Zhao 等 2021 綜述 PMC8657965",
+      "source_url": "https://link.springer.com/article/10.1007/s00210-003-0819-z",
+      "confidence": "medium",
+      "en_terms": [
+        "polymorphic enzymes",
+        "CYP2D6 25%",
+        "Evans and Relling 1999"
+      ],
+      "verified": false
+    },
+    {
+      "id": "pk-pd-enzymes-12",
+      "claim_zh": "在 60 個人類肝臟檢體（30 位日本人、30 位白種人）中，CYP3A 約占肝臟 P450 總量的 30%、CYP2C 約 20%、CYP1A2 約 13%、CYP2E1 約 7%、CYP2A6 約 4%、CYP2D6 僅約 2%、CYP2B6 不到 1%。",
+      "detail_zh": "CYP2D6 含量很低，卻參與許多常用藥物的代謝且多型性極高，顯示『酵素豐度』與『臨床重要性』不是同一件事。這是 1994 年的免疫化學定量結果，且以上僅涵蓋約 70% 的肝臟 P450；現代蛋白質體學數值可能略有不同。",
+      "level": "初階",
+      "critical": true,
+      "source_name": "Shimada T 等，J Pharmacol Exp Ther 1994;270:414-423",
+      "source_url": "https://pubmed.ncbi.nlm.nih.gov/8035341/",
+      "confidence": "high",
+      "en_terms": [
+        "hepatic P450 content",
+        "CYP3A",
+        "CYP2C",
+        "CYP2D6",
+        "immunoquantification"
+      ],
+      "verified": false
+    },
+    {
+      "id": "pk-pd-enzymes-13",
+      "claim_zh": "Clopidogrel 是需肝臟活化的前驅藥：CPIC 2022 更新指出僅約 15% 進入活化途徑（其餘約 85% 被 CES1 水解）；對 ACS 或 PCI 病人，CYP2C19 中間與不良代謝者建議避免標準劑量 clopidogrel，改用 prasugrel 或 ticagrelor（建議強度 Strong）。",
+      "detail_zh": "這版指引把中間代謝者的建議強度由 moderate 升為 strong。非 ACS/PCI 的心血管適應症證據較少（中間代謝者無建議、不良代謝者 Moderate）；神經血管（中風/TIA）適應症對中間與不良代謝者為 Moderate，且 prasugrel 在有中風或 TIA 病史者禁用。",
+      "level": "初階",
+      "critical": true,
+      "source_name": "Lee CR 等，CPIC CYP2C19 與 clopidogrel 指引 2022 更新，Clin Pharmacol Ther 2022;112:959-967",
+      "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9287492/",
+      "confidence": "high",
+      "en_terms": [
+        "clopidogrel",
+        "prodrug",
+        "CYP2C19",
+        "CES1",
+        "prasugrel",
+        "ticagrelor"
+      ],
+      "verified": true,
+      "verification_note": "兩位查核者皆確認 CPIC 2022 更新：僅 15% 進入活化途徑、85% 被 CES1 水解；ACS/PCI 的 IM 與 PM 皆 Strong（IM 由 moderate 升為 strong）；非 ACS/PCI 為 IM 無建議、PM Moderate；神經血管 Moderate；中風/TIA 病史禁用 prasugrel。措辭細節：PM 為『避免 clopidogrel』，IM 為『避免標準劑量（75 mg）』。"
+    },
+    {
+      "id": "pk-pd-enzymes-14",
+      "claim_zh": "Codeine 是 CYP2D6 活化為 morphine 的前驅藥：CPIC 2021 引用的藥動學研究顯示，不良代謝者的血清 morphine AUC 平均低 96%、Cmax 低 95%（相較正常與中間代謝者），超快速代謝者的 morphine AUC 中位數高約 45%；指引對超快速與不良代謝者都建議避免使用 codeine（Strong）。",
+      "detail_zh": "中間代謝者（活性分數 0.25–1）建議依仿單劑量，若無反應且需要鴉片類藥物，考慮非 tramadol 的替代品（Moderate）。指引指出證據不足以支持在不良代謝者提高 codeine 劑量，且即使同為正常代謝者，個體間 morphine 生成量仍有很大變異。",
+      "level": "初階",
+      "critical": true,
+      "source_name": "Crews KR 等，CPIC CYP2D6、OPRM1、COMT 與鴉片類指引，Clin Pharmacol Ther 2021;110:888-896",
+      "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8249478/",
+      "confidence": "high",
+      "en_terms": [
+        "codeine",
+        "morphine",
+        "CYP2D6",
+        "ultrarapid metabolizer",
+        "poor metabolizer",
+        "AUC",
+        "Cmax"
+      ],
+      "verified": true,
+      "verification_note": "兩位查核者皆確認 CPIC 2021 原文：PM 的 mean serum morphine AUC 低 96%、Cmax 低 95%（相較 NM 與 IM），UM 的 median plasma morphine AUC 高 45%；UM 與 PM 避免 codeine（Strong），IM 依仿單劑量（Moderate），且證據不足以建議 PM 提高劑量。"
+    },
+    {
+      "id": "pk-pd-enzymes-15",
+      "claim_zh": "美國核准的 codeine 仿單（Lannett codeine sulfate tablets，DailyMed SPL 第 29 版，2026-02-05 於 DailyMed 發布，標示修訂 01/2026）的加框警語指出：未滿 12 歲兒童，以及未滿 18 歲接受扁桃腺或腺樣體切除術後的兒童禁用；12 至 18 歲有其他風險因子者應避免使用。許多死亡案例的兒童有 CYP2D6 超快速代謝的證據；仿單估計超快速代謝者盛行率為白人約 1–10%、非裔約 3–4%、東亞人（華人、日本人、韓國人）約 1–2%。",
+      "detail_zh": "這是把藥物基因體學寫進法規標示的經典案例。CPIC 指出 FDA 早在 2013 年就對扁桃腺切除術後兒童使用 codeine 發出黑框警語（當時未提及 CYP2D6 的極端功能）。母乳哺育嬰兒中毒的致死個案，後續回顧對其因果性有所質疑。超快速代謝者盛行率數字位於仿單 5.6 節（警告與注意事項），而非加框警語本文。此處為美國仿單，台灣仿單請以 TFDA 核准內容為準（本次未查證）。",
+      "level": "初階",
+      "critical": true,
+      "source_name": "DailyMed：Codeine Sulfate Tablets 仿單（Lannett，SPL 第 29 版，DailyMed 發布 2026-02-05，標示修訂 01/2026）；CPIC 2021 鴉片類指引",
+      "source_url": "https://dailymed.nlm.nih.gov/dailymed/services/v2/spls/5819bdf7-300e-45b8-8f3a-447b53656293.xml",
+      "confidence": "high",
+      "en_terms": [
+        "codeine",
+        "boxed warning",
+        "ultra-rapid metabolizer",
+        "tonsillectomy",
+        "CYP2D6 duplication"
+      ],
+      "verified": true,
+      "was_corrected": true,
+      "correction_note": "校正（primary-source 查核者提出，獨立查核者確認原文內容）：(1) 『12 歲以下／18 歲以下』改為『未滿 12 歲／未滿 18 歲』，並補上 12–18 歲有其他風險因子者為『應避免』而非禁忌；(2) 仿單版本註明為 DailyMed SPL 第 29 版（DailyMed 發布 2026-02-05，標示修訂 01/2026，effective 2026-01-16）。",
+      "verification_note": "更正：(1) 仿單原文為『younger than 12 years』與『younger than 18 years following tonsillectomy and/or adenoidectomy』，應譯為『未滿』而非『以下』（不含 12、18 歲）；12–18 歲有其他風險因子者是『應避免』而非禁忌。(2) DailyMed 5819bdf7 為 Lannett codeine sulfate tablets，SPL 第 29 版：DailyMed 發布日 2026-02-05，標示修訂 2026-01（effective 2026-01-16）。獨立查核者另指出盛行率數字位於 5.6 節而非加框警語本文；台灣仿單未查。"
+    },
+    {
+      "id": "pk-pd-enzymes-16",
+      "claim_zh": "Warfarin 是『被酵素失活的活性藥』，同時標靶基因也有變異：效力約為 R-warfarin 3–5 倍的 S-warfarin 主要由 CYP2C9 代謝；藥物標靶 VKORC1（維生素 K 環氧化物還原酶）啟動子變異 c.-1639G>A（rs9923231）使病人對 warfarin 更敏感、需要較低劑量。",
+      "detail_zh": "CPIC 2017 指出 CYP2C9*2 與 *3 分別使 S-warfarin 代謝降低約 30–40% 與 80–90%，帶有這些對偶基因者出血風險較高、需較低劑量且較久才達穩定 INR。這是同一個藥同時有 PK 基因（CYP2C9）與 PD 基因（VKORC1）影響的好例子。",
+      "level": "初階",
+      "critical": true,
+      "source_name": "Johnson JA 等，CPIC warfarin 指引 2017 更新，Clin Pharmacol Ther 2017;102:397-404",
+      "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5546947/",
+      "confidence": "high",
+      "en_terms": [
+        "warfarin",
+        "S-warfarin",
+        "CYP2C9",
+        "VKORC1",
+        "rs9923231",
+        "INR"
+      ],
+      "verified": true,
+      "verification_note": "兩位查核者皆確認 CPIC 2017 warfarin 指引：S-warfarin 效力為 R-warfarin 的 3–5 倍且主要經 CYP2C9 代謝；*2 與 *3 使 S-warfarin 代謝降低約 30–40% 與 80–90%；VKORC1 c.-1639G>A（rs9923231）與敏感性、低劑量相關；未見更新版。"
+    },
+    {
+      "id": "pk-pd-enzymes-17",
+      "claim_zh": "大部分質子幫浦抑制劑（PPI，如 omeprazole、lansoprazole、pantoprazole）主要由 CYP2C19 代謝成無活性產物；CPIC 2021 指出服用標準劑量第一代 PPI 時，CYP2C19 中間與不良代謝者的 AUC 比正常代謝者高 3–14 倍、Cmax 高 2–6 倍。",
+      "detail_zh": "指引建議：超快速代謝者起始每日劑量增加 100%（Optional）；中間與不良代謝者在慢性治療（>12 週）且療效已達成時可考慮減量 50%（中間 Optional、不良 Moderate）。這些多屬『可選擇』層級，並非人人都需要基因檢測。",
+      "level": "初階",
+      "critical": true,
+      "source_name": "Lima JJ 等，CPIC CYP2C19 與 PPI 指引，Clin Pharmacol Ther 2021;109:1417-1423",
+      "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7868475/",
+      "confidence": "high",
+      "en_terms": [
+        "proton pump inhibitor",
+        "omeprazole",
+        "CYP2C19",
+        "AUC",
+        "Cmax"
+      ],
+      "verified": false
+    },
+    {
+      "id": "pk-pd-enzymes-18",
+      "claim_zh": "CPIC 於 2017 年以 Delphi 法（58 位專家、共識門檻 >70%）訂出標準用語：酵素代謝型分為超快速（ultrarapid）、快速（rapid）、正常（normal）、中間（intermediate）、不良（poor）代謝者；傳統的『extensive metabolizer』因易混淆而不再使用，改稱『normal metabolizer』。",
+      "detail_zh": "最終各組用語獲 91.7%–100% 的專家同意。對偶基因功能用增加、正常、降低、無功能（另有不確定、未知）描述；轉運蛋白表現型用 increased、normal、decreased、poor function。現行 CPIC 資料庫另有 Likely Intermediate、Likely Poor（推定）與 Indeterminate（無法判定）等類別。",
+      "level": "初階",
+      "critical": true,
+      "source_name": "Caudle KE 等，Genet Med 2017;19:215-223（CPIC 標準用語共識）",
+      "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5253119/",
+      "confidence": "high",
+      "en_terms": [
+        "ultrarapid metabolizer",
+        "rapid metabolizer",
+        "normal metabolizer",
+        "intermediate metabolizer",
+        "poor metabolizer",
+        "Delphi"
+      ],
+      "verified": false
+    },
+    {
+      "id": "pk-pd-enzymes-19",
+      "claim_zh": "依 CPIC 定義，CYP2C19 的 *1 為正常功能、*2 與 *3 為無功能、*17 為增加功能；因此 *1/*1 是正常代謝者、*1/*17 是快速代謝者、*17/*17 是超快速代謝者、*1/*2 與 *2/*17 是中間代謝者、*2/*2、*2/*3、*3/*3 是不良代謝者。",
+      "detail_zh": "CYP2C19 不使用活性分數，而是直接由『兩個對偶基因的功能類別』決定表現型。CYP2C19 有快速代謝者這一類，CYP2D6 則沒有（專家認為證據不足以區分）。",
+      "level": "初階",
+      "critical": true,
+      "source_name": "CPIC 資料庫 API：CYP2C19 diplotype 與 allele 表（2026-09 擷取）",
+      "source_url": "https://api.cpicpgx.org/v1/diplotype?genesymbol=eq.CYP2C19",
+      "confidence": "high",
+      "en_terms": [
+        "CYP2C19*2",
+        "CYP2C19*3",
+        "CYP2C19*17",
+        "diplotype",
+        "rapid metabolizer"
+      ],
+      "verified": false
+    },
+    {
+      "id": "pk-pd-enzymes-20",
+      "claim_zh": "依 CPIC 以文獻對偶基因頻率估算，CYP2C19 不良代謝者在東亞人約 12.98%、歐洲人約 2.39%；中間代謝者東亞約 45.93%、歐洲約 26.11%；快速加超快速代謝者東亞約 2.6%、歐洲約 31.8%。",
+      "detail_zh": "主因是無功能的 *2（東亞 28.35% vs 歐洲 14.69%）與 *3（7.25% vs 0.16%）在東亞較常見，而增加功能的 *17 在歐洲較常見（21.54% vs 東亞 2.05%）。這是 CPIC 由 Hardy-Weinberg 推算的族群層級估計，不是台灣人的實測值；實測例：He 等（2020）在 3,099 位中國漢人中 PM 為 13.42%、IM 為 45.62%。",
+      "level": "初階",
+      "critical": true,
+      "source_name": "CPIC 資料庫 API：CYP2C19 gene_result 頻率（2026-09 擷取）；He L 等，Clin Exp Pharmacol Physiol 2020",
+      "source_url": "https://api.cpicpgx.org/v1/gene_result?genesymbol=eq.CYP2C19",
+      "confidence": "high",
+      "en_terms": [
+        "CYP2C19 poor metabolizer",
+        "allele frequency",
+        "East Asian",
+        "Hardy-Weinberg"
+      ],
+      "verified": true,
+      "verification_note": "兩位查核者皆確認 CPIC gene_result API 數字（PM 12.979%／2.388%；IM 45.928%／26.109%；RM+UM 2.58%／31.76%；*2、*3、*17 頻率）與 Hardy-Weinberg 推估方法；數字為現行資料庫快照，可能隨更新改變。"
+    },
+    {
+      "id": "pk-pd-enzymes-21",
+      "claim_zh": "在 172,854 位台灣漢人的基因型資料分析中，中國醫藥大學附設醫院病歷中有 clopidogrel 處方紀錄的病人裡，有 6,414 人（61%）的 CYP2C19 表現型屬於依 FDA 建議應調整治療者；依加總推算，約 46% 為中間代謝者、14% 為不良代謝者，皆為占全部 clopidogrel 處方者的比例。",
+      "detail_zh": "該研究以基因晶片推估表現型，並與 Taiwan Biobank 全基因體定序在 1,462 人中比對（CYP2C19 一致率 100%）；也發現 99.9% 受試者至少帶有一個可採取行動的藥物基因體表現型。原文寫 'Among them, 46% IM、14% PM' 語意含糊，但 46%+14% 約等於 61%，且與東亞族群 IM 約 46%、PM 約 13% 的頻率相近，因此應理解為占全部 clopidogrel 處方者的比例（此為算術推論，非原文明示）。資料來自病歷處方紀錄（每種藥物只計第一次處方），不代表確認實際服用。研究未報告 CYP2D6 表現型，因為晶片難以涵蓋其結構變異。屬單一醫療體系資料，推論到全台需保守。",
+      "level": "初階",
+      "critical": true,
+      "source_name": "Lu HF 等，Front Genet 2022;13:948616（Taiwanese Han 藥物基因特徵）",
+      "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9452738/",
+      "confidence": "medium",
+      "en_terms": [
+        "Taiwanese Han",
+        "clopidogrel",
+        "CYP2C19",
+        "genotyping array",
+        "Taiwan Biobank"
+      ],
+      "verified": true,
+      "was_corrected": true,
+      "correction_note": "校正（兩位查核者一致）：46%／14% 為占全部 clopidogrel 處方者的比例（46+14≈60≈61，非占 61% 的子集）；『服用』改為『處方紀錄』，因資料來自病歷處方紀錄。此讀法為算術推論，原文 'Among them' 語意含糊。",
+      "verification_note": "兩位查核者皆確認數字（172,854 人；6,414 人＝61%；1,462 人比對一致率 100%），並皆要求改寫語意含糊處。更正：(1) 46% 與 14% 相加約 60–61%，應為占全部 clopidogrel 處方者的比例（依算術與東亞族群頻率推論，原文 'Among them' 語意含糊）；(2) 資料來自病歷處方紀錄（每種藥物只計第一次處方），『服用』過度推論，改為『處方紀錄』。"
+    },
+    {
+      "id": "pk-pd-enzymes-22",
+      "claim_zh": "Tamoxifen 是需 CYP2D6 活化的前驅藥：其代謝物 4-hydroxytamoxifen 與 endoxifen 的抗雌激素效力約為母藥的 100 倍；CPIC 2018 指出 CYP2D6 基因型可解釋 endoxifen 濃度變異的 34–52%，並建議 CYP2D6 不良代謝者改用芳香環轉化酶抑制劑等替代療法（Strong）。",
+      "detail_zh": "但基因型與乳癌復發等臨床結果的證據並不一致（指引評為弱）；若無法使用芳香環轉化酶抑制劑，可考慮 tamoxifen 40 mg/天（提高但未使 endoxifen 正常化）。此指引發表於 2019–2020 年活性分數共識之前，對 AS=1.0 的處理與現行分類不同，並建議避免併用中效以上的 CYP2D6 抑制劑。",
+      "level": "中階",
+      "critical": true,
+      "source_name": "Goetz MP 等，CPIC CYP2D6 與 tamoxifen 指引，Clin Pharmacol Ther 2018;103:770-777",
+      "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5931215/",
+      "confidence": "high",
+      "en_terms": [
+        "tamoxifen",
+        "endoxifen",
+        "4-hydroxytamoxifen",
+        "CYP2D6",
+        "aromatase inhibitor"
+      ],
+      "verified": true,
+      "verification_note": "兩位查核者皆確認 CPIC 2018 tamoxifen 指引：4HT 與 endoxifen 抗雌激素效力約 100 倍；基因型解釋 endoxifen 濃度變異 34–52%；PM 建議芳香環轉化酶抑制劑（Strong）；無法使用時可考慮 40 mg/天；臨床結局研究互相衝突。該指引早於 2019–2020 年活性分數共識，且未見更新版。"
+    },
+    {
+      "id": "pk-pd-enzymes-23",
+      "claim_zh": "活性分數（activity score, AS）系統為每個對偶基因指派活性值（無功能 0、降低 0.5 或 0.25、正常 1），兩個對偶基因的值相加即為個體的 AS；CYP2D6 若有基因複製，則將該對偶基因的活性值乘以拷貝數（×2、×3…）。",
+      "detail_zh": "AS 再依規則轉換成代謝者表現型。這種『加總』模型假設兩個對偶基因的效果可相加，是臨床可用的簡化，並不等於直接測得的酵素活性；專家在共識過程中也因缺乏各對偶基因的精確活性資料，才選擇沿用 AS 而非百分比活性系統。",
+      "level": "中階",
+      "critical": true,
+      "source_name": "Caudle KE 等，CPIC/DPWG CYP2D6 基因型轉表現型共識，Clin Transl Sci 2020;13:116-124",
+      "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6951851/",
+      "confidence": "high",
+      "en_terms": [
+        "activity score",
+        "allele activity value",
+        "gene copy number",
+        "CYP2D6"
+      ],
+      "verified": false
+    },
+    {
+      "id": "pk-pd-enzymes-24",
+      "claim_zh": "CPIC 在 2019–2020 年共識中將 CYP2D6*10 的活性值由 0.5 降為 0.25；2023 年 3 月 20 日的等位基因功能表更新又將 *9 與 *41 由 0.5 降為 0.25（*17、*29 維持 0.5；*1、*2 為 1；*3、*4、*5、*6 為 0）。",
+      "detail_zh": "這代表同樣的基因型在不同年份的指引或檢驗報告中，活性分數可能不同（例如 *1/*41 由 1.5 變為 1.25），網站或應用程式引用時必須標示版本與日期。該次更新後，功能已指派到約 *163 號對偶基因。",
+      "level": "中階",
+      "critical": true,
+      "source_name": "ClinPGx 部落格：CYP2D6 allele function update（2023-03-20）；CPIC 資料庫 allele 表",
+      "source_url": "https://blog.clinpgx.org/cyp2d6-allele-function-update/",
+      "confidence": "high",
+      "en_terms": [
+        "CYP2D6*10",
+        "CYP2D6*41",
+        "CYP2D6*9",
+        "activity value",
+        "allele functionality table"
+      ],
+      "verified": true,
+      "verification_note": "兩位查核者皆確認：共識論文當時只將 *10 由 0.5 降為 0.25；ClinPGx 公告日 2023-03-20 將 *9、*41 降為 0.25；CPIC API 現行 allele 表與主張一致。2023-03-20 是 ClinPGx 公告日期。"
+    },
+    {
+      "id": "pk-pd-enzymes-25",
+      "claim_zh": "2019–2020 年 CPIC 與 DPWG 專家共識訂定 CYP2D6 活性分數對應：AS>2.25 為超快速代謝者，1.25≤AS≤2.25 為正常代謝者，0<AS<1.25 為中間代謝者，AS=0 為不良代謝者。",
+      "detail_zh": "與舊 CPIC 制相比：AS=1.0 由正常改為中間代謝者、AS=2.25 由超快速改為正常代謝者（舊 DPWG 制原本就以 0.5–1 為中間、1.5–2.5 為正常、>2.5 為超快速，故這兩項變動主要是相對於舊 CPIC 制）；CYP2D6 不設快速代謝者類別。共識過程為 37 位專家、7 輪調查、82% 同意。這會改變已用舊制報告的病人分類，因此各院所與網站必須說明使用的是哪一版。",
+      "level": "中階",
+      "critical": true,
+      "source_name": "Caudle KE 等，Clin Transl Sci 2020;13:116-124；CPIC 2019-03 共識文件",
+      "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6951851/",
+      "confidence": "high",
+      "en_terms": [
+        "activity score",
+        "CYP2D6 phenotype",
+        "CPIC",
+        "DPWG",
+        "consensus"
+      ],
+      "verified": true,
+      "verification_note": "兩位查核者皆確認界線（UM AS>2.25；NM 1.25≤AS≤2.25；IM 0<AS<1.25；PM AS=0）與 37 位專家、7 輪調查、82% 同意。細節修正：『AS=1.0 由正常改為中間、AS=2.25 由超快速改為正常』相對於舊 CPIC 制；舊 DPWG 制原本就以 0.5–1 為中間、>2.5 為超快速，已在 detail_zh 註明。"
+    },
+    {
+      "id": "pk-pd-enzymes-26",
+      "claim_zh": "依 CPIC 現行資料庫：CYP2D6 *1/*1 = AS 2.0（正常）、*1/*4 = 1.0（中間）、*4/*4 = 0（不良）、*10/*10 = 0.5（中間）、*4/*10 = 0.25（中間）、*1/*10 與 *1/*41 = 1.25（正常，但接近中間的邊界）。",
+      "detail_zh": "若帶有基因複製，例如 *1/*1x2（共 3 份 *1），依乘以拷貝數的規則 AS = 3.0，屬超快速代謝者。數值對應 2023 年更新後的功能表；早於 2023 年的論文範例（如 *1/*41 = 1.5）已不同。",
+      "level": "中階",
+      "critical": true,
+      "source_name": "CPIC 資料庫 API：CYP2D6 diplotype 表（2026-09 擷取）",
+      "source_url": "https://api.cpicpgx.org/v1/diplotype?genesymbol=eq.CYP2D6",
+      "confidence": "high",
+      "en_terms": [
+        "CYP2D6 diplotype",
+        "activity score 1.25",
+        "*1/*10",
+        "*1/*41",
+        "copy number"
+      ],
+      "verified": false
+    },
+    {
+      "id": "pk-pd-enzymes-27",
+      "claim_zh": "CYP2D6 在東亞的特色是降低功能的 *10：CPIC 彙整的東亞人 *10 頻率約 42.84%（歐洲約 1.57%），而無功能的 *4 在東亞僅約 0.53%（歐洲約 18.48%）。",
+      "detail_zh": "因此 CPIC 估計的不良代謝者東亞約 0.81%、歐洲約 6.5%；但東亞人有約 35.5% 屬 AS=1.25（如 *1/*10，歸類為正常卻接近中間邊界），CPIC 估計的中間代謝者東亞約 38.5%、歐洲約 38.3%，組成卻完全不同。不同研究因翻譯系統與檢測平台不同，報告的比例差異很大：He 等（2020）在 3,931 位中國漢人報告 CYP2D6 為 NM 95.43%、IM 3.35%、PM 0.52%。",
+      "level": "中階",
+      "critical": true,
+      "source_name": "CPIC 資料庫 API：CYP2D6 gene_result 與 allele 頻率（2026-09 擷取）；He L 等，Clin Exp Pharmacol Physiol 2020",
+      "source_url": "https://api.cpicpgx.org/v1/gene_result?genesymbol=eq.CYP2D6",
+      "confidence": "medium",
+      "en_terms": [
+        "CYP2D6*10",
+        "CYP2D6*4",
+        "East Asian",
+        "activity score 1.25",
+        "intermediate metabolizer"
+      ],
+      "verified": false
+    },
+    {
+      "id": "pk-pd-enzymes-28",
+      "claim_zh": "CYP2C9 也使用活性分數：無功能 0、降低 0.5、正常 1；AS 2 為正常代謝者，1–1.5 為中間代謝者，0–0.5 為不良代謝者（如 *2/*3 = 0.5、*3/*3 = 0）。",
+      "detail_zh": "CPIC 估計 CYP2C9 中間加不良代謝者在歐洲約 37%、東亞約 16%（CPIC 資料庫）。CYP2C9 的受質包括 warfarin、phenytoin 與多種 NSAID；CPIC 資料庫中 CYP2C9 與 warfarin、celecoxib、phenytoin 等配對為 A 級。",
+      "level": "中階",
+      "critical": true,
+      "source_name": "Cooper-DeHoff RM 等，CPIC SLCO1B1、ABCG2、CYP2C9 與 statin 指引，Clin Pharmacol Ther 2022;111:1007-1021",
+      "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9035072/",
+      "confidence": "high",
+      "en_terms": [
+        "CYP2C9",
+        "activity score",
+        "CYP2C9*2",
+        "CYP2C9*3",
+        "NSAID"
+      ],
+      "verified": false
+    },
+    {
+      "id": "pk-pd-enzymes-29",
+      "claim_zh": "SLCO1B1（OATP1B1）是肝細胞的攝入型轉運蛋白，負責 statin 進入肝臟；常見變異 c.521T>C（rs4149056，p.V174A，位於 *5 與 *15）降低轉運功能，使 statin 血中暴露量上升，CPIC 2022 依 SLCO1B1 表現型（正常/降低/不良功能）調整 statin 選擇與劑量，對 simvastatin 為 Strong 建議。",
+      "detail_zh": "例如降低或不良功能者，simvastatin 建議改用其他 statin（若必須使用需限制低劑量）；pitavastatin 不良功能者起始劑量 ≤1 mg；atorvastatin 降低功能者起始 ≤40 mg、不良功能者 ≤20 mg。CPIC 估計東亞人 SLCO1B1 降低功能約 21.8%、不良功能約 1.6%（歐洲約 28.3% 與 2.9%）。",
+      "level": "中階",
+      "critical": true,
+      "source_name": "Cooper-DeHoff RM 等，Clin Pharmacol Ther 2022;111:1007-1021；頻率取自 CPIC 資料庫",
+      "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9035072/",
+      "confidence": "high",
+      "en_terms": [
+        "SLCO1B1",
+        "OATP1B1",
+        "rs4149056",
+        "simvastatin",
+        "statin myopathy",
+        "uptake transporter"
+      ],
+      "verified": false
+    },
+    {
+      "id": "pk-pd-enzymes-30",
+      "claim_zh": "ABCG2（BCRP）是外排型轉運蛋白；rs2231142（c.421C>A）為降低功能對偶基因，CPIC 2022 指出 c.421AA 者 rosuvastatin 暴露量（AUC）比 c.421CC 高 144%，故 ABCG2 不良功能者 rosuvastatin 起始劑量建議 ≤20 mg，需要更高劑量時考慮替代 statin 或合併療法。",
+      "detail_zh": "CPIC 估計東亞人 ABCG2 降低功能約 42.6%、不良功能約 9.4%，歐洲人僅約 18.6% 與 1.1%，顯示此基因對台灣族群相對重要；但該建議主要根據藥動學資料，肌肉症狀風險本身未知。",
+      "level": "中階",
+      "critical": true,
+      "source_name": "Cooper-DeHoff RM 等，Clin Pharmacol Ther 2022;111:1007-1021；頻率取自 CPIC 資料庫",
+      "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9035072/",
+      "confidence": "high",
+      "en_terms": [
+        "ABCG2",
+        "BCRP",
+        "rs2231142",
+        "rosuvastatin",
+        "efflux transporter"
+      ],
+      "verified": false
+    },
+    {
+      "id": "pk-pd-enzymes-31",
+      "claim_zh": "TPMT 是使 thiopurine 甲基化失活的第二相酵素，NUDT15 是 Nudix 水解酶，會把具細胞毒性的 thioguanine 三磷酸核苷（TGTP）去磷酸化為無活性的 TGMP；CPIC 2025 更新（Clin Pharmacol Ther 2026 年 4 月刊出，另有 2026-04-28 的更正聲明）建議 TPMT 及/或 NUDT15 不良代謝者將 mercaptopurine 起始劑量減為 1/10 並改為每週三次（如 10 mg/m²/天、每週 3 天），非惡性疾病則考慮改用非 thiopurine 免疫抑制劑（Strong）。頻率：歐洲人 TPMT 不良代謝者約 0.2%（指引正文引用 0.19%，目前 CPIC 線上頻率表為 0.21%）；東亞人 NUDT15 不良代謝者，CPIC 資料庫為 1.46%（中間代謝者 19.38%），指引正文概稱約每 100 人 1 位。",
+      "detail_zh": "頻率的兩個出處略有差異：指引正文寫歐洲人 TPMT 不良代謝者約 0.19%，目前 CPIC 線上頻率表／API 為 0.21%（0.2096%）；東亞人 NUDT15 不良代謝者 1.46%、中間代謝者 19.38%（CPIC 資料庫），指引正文概稱約每 100 人 1 位。亞洲人 thiopurine 嚴重骨髓抑制多與 NUDT15 相關一說，本次未逐項查核。此指引已有 2026-04-28 的更正聲明（Clin Pharmacol Ther 2026;119(6):1671-1672），但更正內容本次未能取得（付費牆），引用劑量時請以更正版為準。",
+      "level": "中階",
+      "critical": true,
+      "source_name": "Maillard M 等，CPIC thiopurine 指引 2025 更新，Clin Pharmacol Ther 2026;119(4):916-927（線上 2026-01-31；更正聲明 2026;119(6):1671-1672）",
+      "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12997511/",
+      "confidence": "medium",
+      "en_terms": [
+        "TPMT",
+        "NUDT15",
+        "mercaptopurine",
+        "azathioprine",
+        "myelosuppression",
+        "phase II"
+      ],
+      "verified": true,
+      "was_corrected": true,
+      "correction_note": "校正（primary-source 查核者提出，獨立查核者確認劑量與 API 相符）：補足 NUDT15 機轉、劑量措辭（減為 1/10、每週三次）與頻率出處差異（0.19% vs 0.21%）。CPIC 指引另有 2026-04-28 更正聲明（Clin Pharmacol Ther 2026;119(6):1671-1672, doi 10.1002/cpt.70298），更正內容無法取得，故信心由 high 降為 medium，劑量文字與 CPIC API 現行建議一致但需人工核對更正版。",
+      "verification_note": "更正：(1) 補上 NUDT15 機轉（將具細胞毒性的 TGTP 去磷酸化為無活性的 TGMP）；(2) 建議劑量改為『減為 1/10 並改為每週三次』並註明非惡性疾病選項與 Strong；(3) 頻率補充出處差異（指引正文歐洲 TPMT PM 0.19%，CPIC 現行頻率表 0.21%；NUDT15 東亞 PM 1.46%、IM 19.38%）；(4) 指引另有 2026-04-28 更正聲明（Clin Pharmacol Ther 2026;119(6):1671-1672），更正內容兩位查核者與編輯者皆無法取得。劑量文字與 CPIC API 現行建議相符。"
+    },
+    {
+      "id": "pk-pd-enzymes-32",
+      "claim_zh": "UGT1A1 是使膽紅素與多種藥物葡萄糖醛酸化的第二相酵素；啟動子 TA 重複多型 UGT1A1*28（TA7）降低表現，約 3–9% 的歐洲裔人有 Gilbert 症候群；CPIC 2016 指引指出 atazanavir 會抑制 UGT1A1，帶有兩個降低功能對偶基因（*28 或 *37）者因高膽紅素血症而停藥的風險最高。",
+      "detail_zh": "東亞人另有 UGT1A1*6 較常見（歐洲與非洲族群缺乏）。台灣漢人晶片資料中 UGT1A1*60 頻率約 23%（Lu 等，2022），但 CPIC 指出 *60 單獨並無降低功能的證據，兩者不宜混為一談。",
+      "level": "中階",
+      "critical": true,
+      "source_name": "Gammal RS 等，CPIC UGT1A1 與 atazanavir 指引，Clin Pharmacol Ther 2016;99:363-369",
+      "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4785051/",
+      "confidence": "high",
+      "en_terms": [
+        "UGT1A1",
+        "UGT1A1*28",
+        "Gilbert syndrome",
+        "atazanavir",
+        "glucuronidation",
+        "bilirubin"
+      ],
+      "verified": false
+    },
+    {
+      "id": "pk-pd-enzymes-33",
+      "claim_zh": "CYP3A5 是少數『功能正常反而是少數』的基因：依 CPIC 估計，CYP3A5 不表現者（不良代謝者，*3/*3 等）在歐洲人約 85.7%、東亞人約 55.7%、非裔美國人約 29.9%；CPIC 2015 指引建議 CYP3A5 表現者（*1 攜帶者）tacrolimus 起始劑量為建議劑量的 1.5–2 倍（總量不超過 0.3 mg/kg/天），並以血中濃度監測調整（Strong）。",
+      "detail_zh": "超過 50 項研究發現 *1 攜帶者的劑量校正谷濃度顯著較低；tacrolimus 口服生體可用率僅約 20%，且屬窄治療指數藥物。該指引沿用舊詞『extensive metabolizer』，現行 CPIC 用語為 normal metabolizer。",
+      "level": "中階",
+      "critical": true,
+      "source_name": "Birdwell KA 等，CPIC CYP3A5 與 tacrolimus 指引，Clin Pharmacol Ther 2015;98:19-24；頻率取自 CPIC 資料庫",
+      "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4481158/",
+      "confidence": "high",
+      "en_terms": [
+        "CYP3A5",
+        "tacrolimus",
+        "CYP3A5*3",
+        "expresser",
+        "non-expresser",
+        "therapeutic drug monitoring"
+      ],
+      "verified": false
+    },
+    {
+      "id": "pk-pd-enzymes-34",
+      "claim_zh": "在 Lu 等（2022）的台灣漢人研究中，VKORC1 rs9923231 的 TT 基因型約占近 80%，T 對偶基因頻率為 0.89（東亞參考族群 0.87），此基因型與 warfarin 敏感性增加有關。",
+      "detail_zh": "rs9923231 在 CPIC warfarin 指引中命名為 c.-1639G>A，是 VKORC1 的主要敏感型變異。另一方面，CPIC 估計東亞人 CYP2C9 正常代謝者（AS=2）約 83.8%，高於歐洲人約 62.8%。這是單一醫療體系的晶片推估資料，非全台人口調查。",
+      "level": "中階",
+      "critical": true,
+      "source_name": "Lu HF 等，Front Genet 2022;13:948616",
+      "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9452738/",
+      "confidence": "medium",
+      "en_terms": [
+        "VKORC1",
+        "rs9923231",
+        "warfarin sensitivity",
+        "Taiwanese Han",
+        "pharmacodynamic gene"
+      ],
+      "verified": false
+    },
+    {
+      "id": "pk-pd-enzymes-35",
+      "claim_zh": "ABCB1 編碼 P-醣蛋白（P-gp/MDR1），是位於腸道、肝膽管、腎小管與血腦障壁等處的外排幫浦，但其常見變異與臨床表現型的關聯多不一致，PharmGKB 的 VIP 摘要指出目前沒有針對 ABCB1 序列變異建議調整人類用藥劑量；CPIC 資料庫中 ABCB1 與 digoxin、simvastatin 等配對皆為 C 級（無處方行動建議）。",
+      "detail_zh": "P-gp 在藥物交互作用上很重要（FDA 把使 digoxin AUC 增加 ≥1.25 倍者視為 P-gp 抑制劑），但『轉運蛋白很重要』不等於『基因檢測有臨床行動價值』。此 VIP 摘要為 2011 年文獻，CPIC 分級則取自現行資料庫。",
+      "level": "進階",
+      "critical": true,
+      "source_name": "Hodges LM 等，Pharmacogenet Genomics 2011;21:152-161（PharmGKB VIP：ABCB1）；CPIC pair 資料庫",
+      "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3098758/",
+      "confidence": "medium",
+      "en_terms": [
+        "ABCB1",
+        "P-glycoprotein",
+        "MDR1",
+        "efflux pump",
+        "CPIC level C"
+      ],
+      "verified": false
+    },
+    {
+      "id": "pk-pd-enzymes-36",
+      "claim_zh": "CPIC 2024 β 阻斷劑指引示範了 PK 基因與 PD 基因的證據落差：CYP2D6 與 metoprolol 的證據等級高（不良代謝者暴露量大增、心率下降更多，建議以最低起始劑量並密切監測心搏過緩，Moderate），而 ADRB1、ADRB2、ADRA2C、GRK4、GRK5 與 β 阻斷劑反應的證據不足，屬 CPIC level C（不提供建議）。",
+      "detail_zh": "Metoprolol 經 CYP2D6 代謝為大多無活性的產物，不良代謝者消除半衰期延長超過 2 倍，心率約多降 3–8 次/分、收縮壓約多降 3–6 mmHg。ADRB1 的 Ser49Gly 與 Gly389Arg 在體外顯示功能差異，但臨床證據不一致，因此不能據以調整用藥。",
+      "level": "進階",
+      "critical": true,
+      "source_name": "Duarte JD 等，CPIC β 阻斷劑指引，Clin Pharmacol Ther 2024;116:939-947",
+      "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11502236/",
+      "confidence": "high",
+      "en_terms": [
+        "metoprolol",
+        "ADRB1",
+        "CYP2D6",
+        "pharmacodynamic gene",
+        "beta-blocker",
+        "CPIC level C"
+      ],
+      "verified": false
+    },
+    {
+      "id": "pk-pd-enzymes-37",
+      "claim_zh": "NAT2（N-乙醯基轉移酶 2）是催化 isoniazid、hydralazine、procainamide 等藥物乙醯化的第二相酵素，乙醯化能力有明顯族群差異（CPIC 資料庫估計不良乙醯化者東亞人約 22.4%、歐洲人約 59.5%），但 NAT2 與 isoniazid 的配對在 CPIC 僅為 C 級（無處方行動建議）。",
+      "detail_zh": "Khan 等（2019）對 12 項研究（933 名結核病人、3,613 名對照）的 meta 分析發現 NAT2 481C>T、590G>A、857G>A 的變異對偶基因與 isoniazid 肝毒性風險上升有關（OR 約 1.28–1.42），但作者指出先前個別研究結果不一致；NAT2 基因檢測用於預測肝毒性仍屬探索層級。此處證據較薄，宜標示為進階補充。",
+      "level": "進階",
+      "critical": true,
+      "source_name": "CPIC pair 資料庫 NAT2 配對與 gene_result 頻率；Khan S 等，Biosci Rep 2019;39:BSR20180845",
+      "source_url": "https://api.cpicpgx.org/v1/pair_view?genesymbol=eq.NAT2",
+      "confidence": "low",
+      "en_terms": [
+        "NAT2",
+        "acetylator",
+        "isoniazid",
+        "hepatotoxicity",
+        "slow acetylator"
+      ],
+      "verified": false
+    },
+    {
+      "id": "pk-pd-enzymes-38",
+      "claim_zh": "CPIC 將基因—藥物配對分級：只有 A、B 級證據足以支持至少一項處方行動，C、D 級則不建議因基因型改變處方；在同時有 FDA 標示與 CPIC 分級的 66 組 ADME 基因—藥物配對中，約 74%（49 組）屬 FDA『可採取行動』、15%（10 組）為『資訊性』、9%（6 組）為『建議檢測』、2%（1 組）為『要求檢測』。",
+      "detail_zh": "該研究從 CPIC 資料庫 442 組配對出發，CYP2D6 是 FDA 標示中最常出現的 ADME 基因；許多 CPIC 配對（尤其 C 級）沒有對應的 FDA 分類。『基因有變異』與『有處方行動』是兩回事，教學網站應同時標示證據等級。",
+      "level": "進階",
+      "critical": true,
+      "source_name": "Deb S 等，Medicines（Basel）2024;11:6",
+      "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10972161/",
+      "confidence": "high",
+      "en_terms": [
+        "CPIC level",
+        "FDA pharmacogenomic labeling",
+        "actionable",
+        "testing recommended",
+        "testing required"
+      ],
+      "verified": false
+    },
+    {
+      "id": "pk-pd-enzymes-39",
+      "claim_zh": "FDA 以對敏感指標受質 AUC 的影響定義抑制劑強度：強抑制劑使 AUC 增加 ≥5 倍，中度抑制劑增加 ≥2 至 <5 倍；其臨床指標抑制劑包括 CYP2D6 的 fluoxetine 與 paroxetine（強）、CYP1A2 與 CYP2C19 的 fluvoxamine（強）、CYP3A 的 clarithromycin 與 itraconazole（強）；rifampin 為 CYP3A 與 CYP2C19 的強誘導劑（對 CYP2B6、2C8、2C9 為中度）。",
+      "detail_zh": "這是供藥物交互作用試驗使用的『指標藥物』表，並非完整清單（頁面內容標示更新至 2023-06-05）；表中另有 carbamazepine、phenytoin 為 CYP3A 強誘導劑，fluoxetine 同時是 CYP2C19 強抑制劑。",
+      "level": "進階",
+      "critical": true,
+      "source_name": "FDA：Drug Development and Drug Interactions | Table of Substrates, Inhibitors and Inducers",
+      "source_url": "https://www.fda.gov/drugs/drug-interactions-labeling/drug-development-and-drug-interactions-table-substrates-inhibitors-and-inducers",
+      "confidence": "high",
+      "en_terms": [
+        "strong inhibitor",
+        "moderate inhibitor",
+        "index inhibitor",
+        "inducer",
+        "fluoxetine",
+        "paroxetine",
+        "rifampin"
+      ],
+      "verified": false
+    },
+    {
+      "id": "pk-pd-enzymes-40",
+      "claim_zh": "Bupropion 及其代謝物會抑制 CYP2D6：美國核准仿單載明，15 位 CYP2D6 廣泛代謝者先服用 bupropion 150 mg 每日兩次後，desipramine 的 Cmax、AUC 與半衰期平均分別增加約 2、5、2 倍，且效應在停用 bupropion 後至少持續 7 天。",
+      "detail_zh": "仿單也指出，需要 CYP2D6 活化的藥物（如 tamoxifen）理論上可能在併用時療效下降。這說明基因型為正常代謝者的人，加上抑制劑後就等於暫時的不良代謝者（表現型轉換）。",
+      "level": "進階",
+      "critical": true,
+      "source_name": "DailyMed：Wellbutrin XL 仿單（Bausch Health，2026-02-06 版）",
+      "source_url": "https://dailymed.nlm.nih.gov/dailymed/services/v2/spls/a435da9d-f6e8-4ddc-897d-8cd2bf777b21.xml",
+      "confidence": "high",
+      "en_terms": [
+        "bupropion",
+        "CYP2D6 inhibition",
+        "desipramine",
+        "drug-drug interaction",
+        "phenoconversion"
+      ],
+      "verified": false
+    },
+    {
+      "id": "pk-pd-enzymes-41",
+      "claim_zh": "葡萄柚中的呋喃香豆素（furanocoumarins）經 CYP3A4 轉成反應性中間物，與酵素活性位點共價結合，造成腸道 CYP3A4 的不可逆（機轉型）失活；僅 200–250 mL 果汁或一整顆葡萄柚就足以使 felodipine 的平均全身濃度約為喝水時的 3 倍，連續 6 天每天 3 次可達約 5 倍。",
+      "detail_zh": "個體差異極大（felodipine 濃度可為水對照的 0 到 8 倍）；效應隨間隔遞減：10 小時後約為最大效應的 50%，24 小時後約 25%。Bailey 等估計超過 85 種藥物可能與葡萄柚交互作用，其中 43 種可導致嚴重不良反應；Seville 橘、萊姆、柚子也有此作用，一般甜橙則不含呋喃香豆素。",
+      "level": "進階",
+      "critical": true,
+      "source_name": "Bailey DG, Dresser G, Arnold JM. CMAJ 2013;185:309-316",
+      "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3589309/",
+      "confidence": "high",
+      "en_terms": [
+        "grapefruit juice",
+        "furanocoumarin",
+        "mechanism-based inhibition",
+        "intestinal CYP3A4",
+        "felodipine"
+      ],
+      "verified": true,
+      "verification_note": "兩位查核者皆確認 Bailey 2013：呋喃香豆素經 CYP3A4 轉成反應性中間物共價結合、機轉型不可逆失活；200–250 mL 果汁或一整顆使 felodipine 平均濃度為水對照的 3 倍，250 mL 每日 3 次 6 天可達 5 倍；個體差異 0–8 倍；10 小時剩 50%、24 小時剩 25%；『超過 85 種藥物、43 種可致嚴重不良反應』為 2013 年統計。"
+    },
+    {
+      "id": "pk-pd-enzymes-42",
+      "claim_zh": "Rifampin（rifampicin）透過活化核受體 PXR 誘導 CYP3A4、CYP2C 與 P-醣蛋白等；完全誘導約需 1 週，停藥後約 2 週消退，因此開始與停止 rifampin 時，其他藥物濃度會分別下降與回升。",
+      "detail_zh": "口服 midazolam、triazolam、simvastatin、verapamil 在 rifampin 治療期間幾乎無效；與 indinavir、nelfinavir、saquinavir 併用被列為禁忌；也會降低 methadone（出現戒斷症狀）與 (S)-warfarin 的濃度。誘導是『增加酵素數量』，與抑制的『立即阻擋活性』機轉與時程都不同。",
+      "level": "進階",
+      "critical": true,
+      "source_name": "Niemi M 等，Clin Pharmacokinet 2003;42:819-850；PXR 機轉見 Chen J, Raymond K. Ann Clin Microbiol Antimicrob 2006",
+      "source_url": "https://pubmed.ncbi.nlm.nih.gov/12882588/",
+      "confidence": "high",
+      "en_terms": [
+        "rifampin",
+        "enzyme induction",
+        "PXR",
+        "CYP3A4",
+        "P-glycoprotein",
+        "drug-drug interaction"
+      ],
+      "verified": false
+    },
+    {
+      "id": "pk-pd-enzymes-43",
+      "claim_zh": "表現型轉換（phenoconversion）指基因型預測的代謝能力與實際代謝能力因非遺傳因素而不符；Klomp 等（2020）系統性回顧 27 項研究（其中 14 項顯示特定基因型組有表現型轉換）發現：併用 CYP 抑制劑、年齡增加、癌症與發炎會使人轉向較低代謝者，而 CYP 誘導劑與吸菸會轉向較高代謝者，酒精、懷孕與維生素 D 也有跡象。",
+      "detail_zh": "但作者指出這些轉換對療效與毒性的臨床影響尚不清楚，機轉與程度也未充分探討。教學上要強調：基因檢測結果是『基線』，實際用藥時要再疊加藥物與生理狀態。",
+      "level": "進階",
+      "critical": true,
+      "source_name": "Klomp SD, Manson ML, Guchelaar HJ, Swen JJ. J Clin Med 2020;9:2890",
+      "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7565093/",
+      "confidence": "high",
+      "en_terms": [
+        "phenoconversion",
+        "CYP inhibitors",
+        "CYP inducers",
+        "smoking",
+        "inflammation"
+      ],
+      "verified": false
+    },
+    {
+      "id": "pk-pd-enzymes-44",
+      "claim_zh": "CPIC 2021 鴉片類指引的處理方式：服用強效 CYP2D6 抑制劑時，將 CYP2D6 活性分數調整為 0（視為不良代謝者）；服用中效抑制劑時，活性分數乘以 0.5 後再轉換表現型；且目前沒有證據顯示藥物會對 CYP2D6 產生臨床上有意義的誘導（懷孕時 CYP2D6 活性可能上升，證據有限）。",
+      "detail_zh": "抑制劑強度依 FDA 分類。例如 AS=2.0 的正常代謝者併用 paroxetine（強抑制劑）→ 視為 AS 0 的不良代謝者；併用中效抑制劑 → AS 1.0 → 中間代謝者。這是 CPIC 在該指引中的實務規則，並非所有指引都採同一做法（例如 tamoxifen 指引以『避免併用抑制劑』為主）。",
+      "level": "進階",
+      "critical": true,
+      "source_name": "Crews KR 等，Clin Pharmacol Ther 2021;110:888-896",
+      "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8249478/",
+      "confidence": "high",
+      "en_terms": [
+        "phenoconversion",
+        "strong CYP2D6 inhibitor",
+        "moderate inhibitor",
+        "activity score adjustment",
+        "drug-drug-gene interaction"
+      ],
+      "verified": true,
+      "verification_note": "兩位查核者皆確認 CPIC 2021 鴉片類指引『Other considerations』：強效抑制劑 AS 歸 0、中效抑制劑 AS×0.5、抑制劑強度依 FDA 分類、無具臨床意義的 CYP2D6 誘導（懷孕時活性上升證據有限）。"
+    },
+    {
+      "id": "pk-pd-enzymes-45",
+      "claim_zh": "Plavix（clopidogrel）美國仿單以加框警語指出，帶有兩個 CYP2C19 功能喪失對偶基因的不良代謝者抗血小板療效降低，應考慮改用其他 P2Y12 抑制劑；仿單並建議避免併用 omeprazole 或 esomeprazole，因為它們抑制 CYP2C19 而顯著降低 clopidogrel 的抗血小板作用。",
+      "detail_zh": "這是『藥物—藥物—基因』交互作用的例子：即使基因型是正常代謝者，併用 CYP2C19 抑制劑也可能造成類似不良代謝者的暴露；而 omeprazole 本身又是 CYP2C19 的受質（見 CPIC PPI 指引）。此處為美國仿單，台灣仿單請以 TFDA 核准內容為準（本次未查證）。",
+      "level": "進階",
+      "critical": true,
+      "source_name": "DailyMed：Plavix 仿單（Sanofi-Aventis，2025-06-11 版）",
+      "source_url": "https://dailymed.nlm.nih.gov/dailymed/services/v2/spls/de8b0b67-eb25-4684-83b5-7ad785314227.xml",
+      "confidence": "high",
+      "en_terms": [
+        "clopidogrel",
+        "boxed warning",
+        "omeprazole",
+        "CYP2C19 inhibition",
+        "drug-drug-gene interaction"
+      ],
+      "verified": false
+    }
+  ],
+  "glossary": [
+    {
+      "term_zh": "藥物動力學",
+      "term_en": "Pharmacokinetics (PK)",
+      "definition_zh": "研究藥物進入身體後，濃度如何隨時間改變的學問，包含吸收、分布、代謝與排除。",
+      "level": "入門"
+    },
+    {
+      "term_zh": "藥效學",
+      "term_en": "Pharmacodynamics (PD)",
+      "definition_zh": "研究藥物如何在身體內作用（與受體、酵素等標靶結合）並產生療效或副作用的學問。",
+      "level": "入門"
+    },
+    {
+      "term_zh": "ADME",
+      "term_en": "ADME",
+      "definition_zh": "吸收（Absorption）、分布（Distribution）、代謝（Metabolism）、排除（Excretion）四個階段的縮寫。",
+      "level": "入門"
+    },
+    {
+      "term_zh": "治療窗",
+      "term_en": "Therapeutic window",
+      "definition_zh": "藥物有療效又不至於中毒的血中濃度範圍；低於下限沒效，高於上限容易出現毒性。",
+      "level": "入門"
+    },
+    {
+      "term_zh": "窄治療指數藥物",
+      "term_en": "Narrow therapeutic index (NTI) drug",
+      "definition_zh": "劑量或濃度稍有差異就可能造成嚴重失敗或傷害的藥物，如 warfarin、tacrolimus，常需要監測濃度。",
+      "level": "初階"
+    },
+    {
+      "term_zh": "血中濃度—時間曲線",
+      "term_en": "Plasma concentration–time curve",
+      "definition_zh": "服藥後，血漿藥物濃度隨時間變化的曲線；先上升到高峰，再因代謝與排除而下降。",
+      "level": "入門"
+    },
+    {
+      "term_zh": "最高血中濃度",
+      "term_en": "Cmax",
+      "definition_zh": "服藥後血中藥物濃度所達到的最高值。",
+      "level": "初階"
+    },
+    {
+      "term_zh": "濃度—時間曲線下面積",
+      "term_en": "AUC (area under the curve)",
+      "definition_zh": "血中濃度曲線下的面積，代表身體在一段時間內接觸到多少藥物（總暴露量）。",
+      "level": "初階"
+    },
+    {
+      "term_zh": "半衰期",
+      "term_en": "Half-life (t½)",
+      "definition_zh": "血中藥物濃度降為一半所需的時間；多數藥物經過 4 到 5 個半衰期，幾乎已被排除或接近穩定狀態。",
+      "level": "入門"
+    },
+    {
+      "term_zh": "穩定狀態",
+      "term_en": "Steady state",
+      "definition_zh": "重複給藥後，每次進入身體的藥量等於被排除的藥量，血中濃度在固定範圍內波動。",
+      "level": "初階"
+    },
+    {
+      "term_zh": "生體可用率",
+      "term_en": "Bioavailability",
+      "definition_zh": "服下的藥物實際進入全身循環、可發揮作用的比例與速度。",
+      "level": "初階"
+    },
+    {
+      "term_zh": "首渡效應",
+      "term_en": "First-pass effect",
+      "definition_zh": "口服藥物先經過腸道與肝臟，被酵素代謝掉一部分後，剩下的才進入全身循環。",
+      "level": "初階"
+    },
+    {
+      "term_zh": "第一相代謝",
+      "term_en": "Phase I metabolism",
+      "definition_zh": "主要由細胞色素 P450 進行的氧化、還原、水解等反應，常在藥物上加上或暴露出反應基團。",
+      "level": "初階"
+    },
+    {
+      "term_zh": "第二相代謝",
+      "term_en": "Phase II metabolism",
+      "definition_zh": "由轉移酶（如 UGT、SULT、NAT、GST、TPMT）把葡萄糖醛酸、硫酸、乙醯基、甲基等接到藥物上，使其更易排出。",
+      "level": "初階"
+    },
+    {
+      "term_zh": "細胞色素 P450",
+      "term_en": "Cytochrome P450 (CYP450)",
+      "definition_zh": "一大群含血基質（heme）的酵素，人類有 57 個功能基因，是藥物氧化代謝的主力。",
+      "level": "初階"
+    },
+    {
+      "term_zh": "前驅藥",
+      "term_en": "Prodrug",
+      "definition_zh": "本身沒有或只有很弱的活性，需在體內經酵素轉換成活性物質才有療效的藥物，如 clopidogrel、codeine、tamoxifen。",
+      "level": "入門"
+    },
+    {
+      "term_zh": "受質",
+      "term_en": "Substrate",
+      "definition_zh": "被某個酵素或轉運蛋白作用（代謝或運送）的藥物或分子。",
+      "level": "初階"
+    },
+    {
+      "term_zh": "表現型",
+      "term_en": "Phenotype",
+      "definition_zh": "從外觀或功能上能觀察到的特徵；在藥物基因體學中常指『酵素的代謝能力』，如正常代謝者、不良代謝者。",
+      "level": "入門"
+    },
+    {
+      "term_zh": "星號對偶基因",
+      "term_en": "Star (*) allele",
+      "definition_zh": "用星號加編號（如 CYP2C19*2）表示某一組特定變異組合的單倍型命名法，命名由 PharmVar 維護。",
+      "level": "初階"
+    },
+    {
+      "term_zh": "雙倍型",
+      "term_en": "Diplotype",
+      "definition_zh": "個體兩條染色體上的對偶基因組合，例如 CYP2C19 *1/*2。",
+      "level": "初階"
+    },
+    {
+      "term_zh": "超快速／快速／正常／中間／不良代謝者",
+      "term_en": "Ultrarapid / Rapid / Normal / Intermediate / Poor metabolizer",
+      "definition_zh": "CPIC 標準化的酵素活性類別，由超快速（活性最高）到不良（幾乎沒有活性）。",
+      "level": "初階"
+    },
+    {
+      "term_zh": "活性分數",
+      "term_en": "Activity score",
+      "definition_zh": "為每個對偶基因指派活性值並相加的評分方式，再依規則換算成代謝者表現型（CYP2D6、CYP2C9 使用）。",
+      "level": "中階"
+    },
+    {
+      "term_zh": "等位基因功能",
+      "term_en": "Allele function",
+      "definition_zh": "對偶基因對蛋白質功能的影響類別：增加、正常、降低、無功能，或不確定、未知。",
+      "level": "中階"
+    },
+    {
+      "term_zh": "基因拷貝數變異",
+      "term_en": "Copy number variation (CNV)",
+      "definition_zh": "基因被整段刪除或重複的變異；CYP2D6 的完整刪除（*5）與重複（如 *1xN）會直接改變酵素量。",
+      "level": "中階"
+    },
+    {
+      "term_zh": "轉運蛋白",
+      "term_en": "Drug transporter",
+      "definition_zh": "位於細胞膜上、負責把藥物運進（攝入型，如 OATP1B1）或運出（外排型，如 P-gp、BCRP）細胞的蛋白質。",
+      "level": "初階"
+    },
+    {
+      "term_zh": "OATP1B1／SLCO1B1",
+      "term_en": "OATP1B1 (SLCO1B1)",
+      "definition_zh": "肝細胞膜上把 statin 等藥物吸進肝臟的攝入型轉運蛋白，功能降低會使血中 statin 上升。",
+      "level": "中階"
+    },
+    {
+      "term_zh": "P-醣蛋白／ABCB1",
+      "term_en": "P-glycoprotein (P-gp, ABCB1)",
+      "definition_zh": "ATP 驅動的外排幫浦，位於腸道、肝、腎與血腦障壁，把藥物推回腸腔或排出細胞。",
+      "level": "中階"
+    },
+    {
+      "term_zh": "BCRP／ABCG2",
+      "term_en": "Breast cancer resistance protein (BCRP, ABCG2)",
+      "definition_zh": "另一種外排轉運蛋白，影響 rosuvastatin 等藥物的吸收與分布。",
+      "level": "中階"
+    },
+    {
+      "term_zh": "藥物標靶",
+      "term_en": "Drug target",
+      "definition_zh": "藥物作用的分子，如受體或酵素（例：warfarin 的標靶 VKORC1、β 阻斷劑的標靶 ADRB1）。",
+      "level": "初階"
+    },
+    {
+      "term_zh": "磺基轉移酶",
+      "term_en": "Sulfotransferase (SULT)",
+      "definition_zh": "第二相酵素之一，把硫酸基接到藥物或內源性分子上。",
+      "level": "中階"
+    },
+    {
+      "term_zh": "酵素抑制與誘導",
+      "term_en": "Enzyme inhibition / induction",
+      "definition_zh": "抑制是降低酵素活性（可立即發生）；誘導是增加酵素數量（通常需數天到數週）。兩者都會改變同時服用藥物的濃度。",
+      "level": "初階"
+    },
+    {
+      "term_zh": "機轉型抑制",
+      "term_en": "Mechanism-based inhibition",
+      "definition_zh": "抑制劑被酵素轉成反應性產物後，與酵素共價結合而使其不可逆失活，直到細胞新合成酵素才恢復，如葡萄柚呋喃香豆素對 CYP3A4。",
+      "level": "進階"
+    },
+    {
+      "term_zh": "PXR",
+      "term_en": "Pregnane X receptor",
+      "definition_zh": "一種核受體，被 rifampin 等藥物活化後促進 CYP3A4、P-gp 等基因表現，是酵素誘導的主要途徑之一。",
+      "level": "進階"
+    },
+    {
+      "term_zh": "表現型轉換",
+      "term_en": "Phenoconversion",
+      "definition_zh": "因併用藥物、疾病或生活型態，使實際代謝能力偏離基因型預測的現象。",
+      "level": "中階"
+    },
+    {
+      "term_zh": "藥物—藥物—基因交互作用",
+      "term_en": "Drug-drug-gene interaction (DDGI)",
+      "definition_zh": "同時考慮基因型與併用藥物的交互作用，例如 CYP2D6 不良代謝者又併用 CYP2D6 抑制劑。",
+      "level": "進階"
+    },
+    {
+      "term_zh": "CPIC",
+      "term_en": "Clinical Pharmacogenetics Implementation Consortium",
+      "definition_zh": "發布『已知基因型時如何調整用藥』實務指引的國際聯盟，並給予各基因—藥物配對 A 到 D 級證據等級。",
+      "level": "初階"
+    },
+    {
+      "term_zh": "DPWG",
+      "term_en": "Dutch Pharmacogenetics Working Group",
+      "definition_zh": "荷蘭皇家藥學會（KNMP）的藥物基因體學工作小組，發布另一套臨床指引，並與 CPIC 協調 CYP2D6 表現型定義。",
+      "level": "中階"
+    },
+    {
+      "term_zh": "PharmVar",
+      "term_en": "Pharmacogene Variation Consortium",
+      "definition_zh": "負責維護 CYP 等藥物基因星號對偶基因命名與定義的資料庫。",
+      "level": "中階"
+    },
+    {
+      "term_zh": "Hardy-Weinberg 平衡",
+      "term_en": "Hardy-Weinberg equilibrium",
+      "definition_zh": "在理想族群中，可由對偶基因頻率推算基因型頻率的數學關係；CPIC 的族群表現型頻率即是這樣推估的。",
+      "level": "進階"
+    }
+  ],
+  "sources": [
+    {
+      "name": "Zanger & Schwab 2013：Cytochrome P450 enzymes in drug metabolism",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/23333322/",
+      "note_zh": "CYP 在藥物代謝的整體概況：57 個功能基因、約十來個酵素負責 70–80% 藥物、多型性與表現型。"
+    },
+    {
+      "name": "Zanger 等 2008：Functional pharmacogenetics/genomics of human cytochromes P450",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/18695978/",
+      "note_zh": "美國前 200 名處方藥中各 CYP 涉及比例（CYP3A4/5 37%、2C9 17%、2D6 15%…）的原始出處。"
+    },
+    {
+      "name": "Guengerich 2024：Roles of Individual Human Cytochrome P450 Enzymes in Drug Metabolism",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11549934/",
+      "note_zh": "最新的 P450 藥物代謝綜述：約 80% 小分子藥物代謝、反應表型分析、terfenadine 與 codeine 案例。"
+    },
+    {
+      "name": "Ingelman-Sundberg 2004：Human drug metabolising cytochrome P450 enzymes",
+      "url": "https://link.springer.com/article/10.1007/s00210-003-0819-z",
+      "note_zh": "P450 負責約 75% 第一相代謝、約 40% 由多型性酵素催化之說法的出處（摘要）。"
+    },
+    {
+      "name": "Shimada 等 1994：肝臟 P450 含量的族群差異",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/8035341/",
+      "note_zh": "60 個人類肝臟中各 CYP 占總 P450 的比例（3A 約 30%、2D6 約 2%）。"
+    },
+    {
+      "name": "Evans & Relling 1999：Pharmacogenomics: translating functional genomics into rational therapeutics",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/10521338/",
+      "note_zh": "藥物基因體學奠基性文章摘要；其圓餅圖百分比未能於公開資料核實。"
+    },
+    {
+      "name": "Zhao 等 2021：Cytochrome P450 Enzymes and Drug Metabolism in Humans",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8657965/",
+      "note_zh": "CYP 結構、家族數量與各酵素特性的開放取用綜述（不同來源比例的對照）。"
+    },
+    {
+      "name": "Caudle 等 2017：CPIC 標準化用語共識",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5253119/",
+      "note_zh": "超快速／正常／中間／不良代謝者等標準用語的來源與 Delphi 過程。"
+    },
+    {
+      "name": "Caudle 等 2020：CYP2D6 基因型轉表現型共識（CPIC 與 DPWG）",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6951851/",
+      "note_zh": "CYP2D6 活性分數、AS 界線（>2.25、1.25–2.25、<1.25）與新舊制度比較。"
+    },
+    {
+      "name": "CPIC 2019-03 CYP2D6 共識文件（PDF）",
+      "url": "https://cpicpgx.org/wp-content/uploads/2019/03/Final-Consensus-CYP2D6-genotype-to-phenotype-table_-final_Mar2019.pdf",
+      "note_zh": "說明 AS=1 改為 IM、*10 降為 0.25、不設 CYP2D6 快速代謝者的理由。"
+    },
+    {
+      "name": "ClinPGx 部落格：CYP2D6 allele function update（2023-03-20）",
+      "url": "https://blog.clinpgx.org/cyp2d6-allele-function-update/",
+      "note_zh": "*9 與 *41 活性值降為 0.25 的更新公告。"
+    },
+    {
+      "name": "CPIC 資料庫 API：gene_result（各基因表現型與族群頻率）",
+      "url": "https://api.cpicpgx.org/v1/gene_result?genesymbol=eq.CYP2C19",
+      "note_zh": "查詢各基因的 CPIC 表現型定義與九大族群估計頻率（可替換 genesymbol）。"
+    },
+    {
+      "name": "CPIC 資料庫 API：allele／diplotype／pair_view",
+      "url": "https://api.cpicpgx.org/v1/allele?genesymbol=eq.CYP2D6",
+      "note_zh": "對偶基因功能、活性值、雙倍型對應表與基因—藥物配對分級。"
+    },
+    {
+      "name": "Crews 等 2021：CPIC CYP2D6、OPRM1、COMT 與鴉片類指引",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8249478/",
+      "note_zh": "codeine／tramadol 建議、CYP2D6 表現型表與表現型轉換（抑制劑）調整規則。"
+    },
+    {
+      "name": "Goetz 等 2018：CPIC CYP2D6 與 tamoxifen 指引",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5931215/",
+      "note_zh": "tamoxifen 前驅藥機轉、endoxifen 與各表現型建議。"
+    },
+    {
+      "name": "Lee 等 2022：CPIC CYP2C19 與 clopidogrel 指引更新",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9287492/",
+      "note_zh": "clopidogrel 活化比例與各表現型的抗血小板治療建議。"
+    },
+    {
+      "name": "Lima 等 2021：CPIC CYP2C19 與 PPI 指引",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7868475/",
+      "note_zh": "PPI 由 CYP2C19 失活的機轉與各表現型劑量建議。"
+    },
+    {
+      "name": "Johnson 等 2017：CPIC warfarin 指引更新",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5546947/",
+      "note_zh": "CYP2C9 與 VKORC1 對 warfarin 的 PK/PD 影響與劑量建議。"
+    },
+    {
+      "name": "Cooper-DeHoff 等 2022：CPIC SLCO1B1、ABCG2、CYP2C9 與 statin 指引",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9035072/",
+      "note_zh": "轉運蛋白（攝入與外排）基因與 statin 暴露量的教學範例；CYP2C9 活性分數。"
+    },
+    {
+      "name": "Maillard 等 2026：CPIC thiopurine 指引 2025 更新",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12997511/",
+      "note_zh": "TPMT／NUDT15 表現型與 thiopurine 起始劑量建議（另有更正聲明）。"
+    },
+    {
+      "name": "Gammal 等 2016：CPIC UGT1A1 與 atazanavir 指引",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4785051/",
+      "note_zh": "UGT1A1 第二相代謝、*28 與 Gilbert 症候群。"
+    },
+    {
+      "name": "Birdwell 等 2015：CPIC CYP3A5 與 tacrolimus 指引",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4481158/",
+      "note_zh": "CYP3A5 表現者的 tacrolimus 起始劑量調整。"
+    },
+    {
+      "name": "Duarte 等 2024：CPIC β 阻斷劑指引",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11502236/",
+      "note_zh": "PK 基因（CYP2D6）與 PD 基因（ADRB1 等）證據強度對比。"
+    },
+    {
+      "name": "Hodges 等 2011：PharmGKB VIP 摘要 ABCB1",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3098758/",
+      "note_zh": "P-gp 的分布與功能，以及 ABCB1 遺傳關聯不一致、無劑量建議。"
+    },
+    {
+      "name": "Deb 等 2024：FDA 標示與 CPIC 證據等級比較",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10972161/",
+      "note_zh": "CPIC A–D 級定義與 66 組 ADME 配對的 FDA 分類統計。"
+    },
+    {
+      "name": "FDA：Table of Substrates, Inhibitors and Inducers",
+      "url": "https://www.fda.gov/drugs/drug-interactions-labeling/drug-development-and-drug-interactions-table-substrates-inhibitors-and-inducers",
+      "note_zh": "強／中度抑制劑定義與指標抑制劑、誘導劑清單。"
+    },
+    {
+      "name": "FDA：Table of Pharmacogenetic Associations",
+      "url": "https://www.fda.gov/medical-devices/precision-medicine/table-pharmacogenetic-associations",
+      "note_zh": "FDA 依證據把基因—藥物關聯分為三部分；頁面更新至 2026-09-10。"
+    },
+    {
+      "name": "DailyMed：Codeine Sulfate Tablets 仿單",
+      "url": "https://dailymed.nlm.nih.gov/dailymed/services/v2/spls/5819bdf7-300e-45b8-8f3a-447b53656293.xml",
+      "note_zh": "美國仿單的兒童禁忌與 CYP2D6 超快速代謝者盛行率。"
+    },
+    {
+      "name": "DailyMed：Plavix 仿單",
+      "url": "https://dailymed.nlm.nih.gov/dailymed/services/v2/spls/de8b0b67-eb25-4684-83b5-7ad785314227.xml",
+      "note_zh": "CYP2C19 不良代謝者加框警語與避免併用 omeprazole／esomeprazole。"
+    },
+    {
+      "name": "DailyMed：Wellbutrin XL 仿單",
+      "url": "https://dailymed.nlm.nih.gov/dailymed/services/v2/spls/a435da9d-f6e8-4ddc-897d-8cd2bf777b21.xml",
+      "note_zh": "bupropion 抑制 CYP2D6 的臨床交互作用數據（desipramine）。"
+    },
+    {
+      "name": "Bailey 等 2013：Grapefruit-medication interactions",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3589309/",
+      "note_zh": "葡萄柚抑制腸道 CYP3A4 的機轉、劑量、時程與受影響藥物數量。"
+    },
+    {
+      "name": "Niemi 等 2003：Pharmacokinetic interactions with rifampicin",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/12882588/",
+      "note_zh": "rifampin 酵素誘導的時程與臨床後果。"
+    },
+    {
+      "name": "Chen & Raymond 2006：Roles of rifampicin in drug-drug interactions",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC1395332/",
+      "note_zh": "rifampin 經 PXR 誘導 CYP、UGT 與 P-gp 的機轉。"
+    },
+    {
+      "name": "Klomp 等 2020：Phenoconversion of Cytochrome P450 Metabolism",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7565093/",
+      "note_zh": "表現型轉換的成因與方向的系統性回顧。"
+    },
+    {
+      "name": "Lu 等 2022：Comprehensive characterization of pharmacogenes in a Taiwanese Han population",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9452738/",
+      "note_zh": "172,854 位台灣漢人的 14 個藥物基因表現型分佈與 clopidogrel、warfarin 相關推估。"
+    },
+    {
+      "name": "Lin 等 2026：Pharmacogenomic Calling From Whole-Exome Sequencing in the Taiwanese Population",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12819042/",
+      "note_zh": "台灣 3,562 人外顯子資料：平均每人約 2.4 個可行動表現型，CYP2C19、CYP3A5、NUDT15 與東亞人相近。"
+    },
+    {
+      "name": "He 等 2020：CYP2C9、CYP2C19、CYP2D6 in over 3200 Han Chinese",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/32469422/",
+      "note_zh": "中國漢人實測表現型分佈（CYP2C19 PM 13.42%；CYP2D6 分類受系統影響）。"
+    },
+    {
+      "name": "Liou 等 2006：CYP 弱代謝對偶基因在台灣人的高盛行率",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/16924387/",
+      "note_zh": "以 180 位台灣志願者定序 CYP2C9、2C19、2D6、3A4、3A5 高頻變異（摘要未含具體百分比）。"
+    },
+    {
+      "name": "Donnelly 等 2025：Narrow Therapeutic Index Drugs: FDA Experience",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/39529254/",
+      "note_zh": "FDA 對 NTI 藥物的正式定義與數量統計。"
+    },
+    {
+      "name": "StatPearls：Pharmacodynamics／Elimination Half-Life／Steady State Concentration",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/32119385/",
+      "note_zh": "PK/PD 基本觀念與半衰期定義的入門級參考。"
+    },
+    {
+      "name": "Jancova 等 2010：Phase II drug metabolizing enzymes",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/20668491/",
+      "note_zh": "UGT、SULT、NAT、GST、TPMT／COMT 等第二相酵素綜述。"
+    },
+    {
+      "name": "Khan 等 2019：NAT2 多型性與 isoniazid 肝毒性 meta 分析",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/30509962/",
+      "note_zh": "NAT2 與抗結核藥肝毒性關聯（證據不一致）。"
+    },
+    {
+      "name": "台灣藥物基因體學會 Podcast「就是藥基因」（第 3 頁）",
+      "url": "https://www.pgst.org.tw/podcast.php?page=3",
+      "note_zh": "本土學會的中文科普：ep.2 藥物動力學與藥效學、ep.5 膜轉運蛋白藥物基因體學（僅確認標題，未逐集查核內容）。"
+    },
+    {
+      "name": "台灣藥物基因體學會 本會出版品",
+      "url": "https://www.pgst.org.tw/events.php?category=82",
+      "note_zh": "列有《藥物基因體學之臨床藥事服務應用指引》（頁面標示 2025-12-04），可作為臨床藥事實務延伸閱讀（未逐頁查核內容）。"
+    }
+  ],
+  "misconceptions_zh": [
+    "誤解：『不良代謝者一定比較糟、超快速代謝者一定比較好。』正解：要先看藥物是前驅藥還是活性藥。Codeine、clopidogrel、tamoxifen 是前驅藥，不良代謝者是『沒被活化而無效』，超快速代謝者則可能『活化過多而中毒』；warfarin、PPI、metoprolol 是被酵素失活的活性藥，情況正好相反。",
+    "誤解：『CYP2D6 代謝了 25% 的藥物、CYP3A4 代謝 50% 的藥物，這是定論。』正解：各文獻的比例因資料集與定義而異（例如 Zanger 2008 在美國前 200 名處方藥中，CYP2D6 為 15%、CYP3A4/5 為 37%），且比例會重複計算（一個藥可被多個 CYP 代謝）；引用時應標明來源與年份。",
+    "誤解：『酵素在肝臟含量最多，臨床就最重要。』正解：CYP2D6 只占肝臟 P450 約 2%（Shimada 1994），卻因高度多型性與許多常用藥物而在藥物基因體學上特別重要；CYP3A 含量最高（約 30%）且受質最廣、涉及最多藥物，但其功能變異對臨床的預測力相對較低。",
+    "誤解：『基因型就是表現型，測完基因就知道病人現在的代謝能力。』正解：併用抑制劑（fluoxetine、paroxetine、bupropion）可使正常代謝者暫時變得像不良代謝者，誘導劑（rifampin）與吸菸則相反；這就是表現型轉換，基因檢測只是基線。",
+    "誤解：『正常代謝者就不會有問題。』正解：同為正常代謝者，個體間藥物暴露量仍有很大變異（CPIC codeine 指引特別指出），因為還有年齡、肝腎功能、發炎、其他基因等因素。",
+    "誤解：『ultrarapid 或 poor metabolizer 是罕見的異常。』正解：頻率因族群而異。CPIC 估計 CYP2C19 不良代謝者在東亞人約 13%、歐洲人約 2.4%；CYP3A5 不表現者在歐洲人約 86%，反而是『多數』。『不良』是功能分類而不是罕見或疾病。",
+    "誤解：『CYP2D6 活性分數 1.0 就是正常。』正解：2019–2020 年 CPIC 與 DPWG 共識已把 AS=1.0 改列為中間代謝者、AS=2.25 改列為正常代謝者；2023 年又下修 *9 與 *41 的活性值。引用舊文獻時要確認使用哪一版分類。",
+    "誤解：『extensive metabolizer 和 normal metabolizer 是不同的兩類。』正解：extensive 是舊用語，CPIC 2017 起統一改稱 normal metabolizer；舊指引（如 2015 年 tacrolimus 指引）仍可見舊詞。",
+    "誤解：『重要的轉運蛋白基因（如 ABCB1）做基因檢測就能調整劑量。』正解：ABCB1 的遺傳關聯多不一致，CPIC 相關配對為 C 級（無處方行動建議）；相對地，SLCO1B1 與 statin 為 A 級。基因或蛋白重要，不等於檢測有臨床行動價值。",
+    "誤解：『不良代謝者只要把前驅藥（如 codeine）加量就能補救。』正解：CPIC 指出證據不足以支持在不良代謝者提高 codeine 劑量，且部分不良反應在不良與正常代謝者間並無差別，建議改用不依賴 CYP2D6 的止痛藥。",
+    "誤解：『葡萄柚只在大量食用時才有問題，而且只影響帶特定基因的人。』正解：單次 200–250 mL 果汁或一整顆就足以顯著提高 felodipine 等藥物濃度，是不可逆抑制腸道 CYP3A4 的環境因素，與基因型無關；效應可持續 24 小時以上。",
+    "誤解：『台灣人的藥物基因頻率和歐美人差不多。』正解：例如 CYP2C19 不良加中間代謝者在東亞（約 59%）遠高於歐洲（約 28.5%）（CPIC 估計）；台灣漢人研究中約 46% 為 IM、14% 為 PM（clopidogrel 使用者）；但很多族群表現型是以晶片推估，CYP2D6 等結構變異多的基因需另用專門方法。",
+    "誤解：『CPIC 或 FDA 只要列了基因—藥物配對，就代表該基因檢測應常規進行。』正解：CPIC 只有 A、B 級才支持處方行動；FDA 的標示也分『可採取行動』『資訊性』『建議檢測』『要求檢測』等不同強度。"
+  ],
+  "viz_ideas": [
+    "『藥物旅程』3D 人體剖面：以粒子系統表示藥物分子，依序經過口服→胃腸（吸收）→門靜脈→肝臟（首渡代謝）→全身循環（分布）→腎臟／膽汁（排除）；右側同步繪製血中濃度—時間曲線，並把 Cmax、Tmax 與 AUC（曲線下面積擠出成半透明 3D 體積）標示出來。滑桿可調半衰期，展示 4–5 個半衰期後接近穩定狀態的鋸齒狀累積曲線。",
+    "『肝細胞內部』特寫場景：內質網膜上錨定的 CYP 酵素（含血基質與 NADPH-P450 還原酶夥伴）等待受質；使用者拖曳藥物分子進入活性位點，觀看『氧化→產物釋出』動畫；再讓產物進入第二相酵素（UGT、SULT、NAT、TPMT）被『貼上標籤』（葡萄糖醛酸、乙醯基、甲基）而變得親水並被運出。以顏色區分第一相（橘）與第二相（藍）。",
+    "『代謝者工廠』互動：選擇基因（CYP2C19、CYP2D6、CYP2C9）與兩個對偶基因（下拉選單含功能類別與活性值），即時顯示對應數量的『酵素工人』與活性分數量表；量表上標出 CPIC 界線（CYP2D6：0、1.25、2.25）並可切換『2019 年前舊制』與『現行』分類，讓使用者看見 AS=1.0 與 2.25 為何被重新分類。務必標示版本與日期（含 2023 年 *9、*41 更新）。",
+    "『前驅藥 vs 活性藥』雙曲線對照：同一位病人（可切換 UM／NM／IM／PM）同時服用 codeine（前驅藥，看 morphine 曲線）與 omeprazole 或 metoprolol（活性藥，看母藥曲線），把治療窗畫成半透明的水平帶（3D 玻璃板），曲線衝出上界或掉到下界時以顏色警示。曲線僅為示意，並附上 CPIC 的實際數字（如 PM 的 morphine AUC 平均低 96%）作為註解，避免讓使用者誤以為是精確預測。",
+    "『族群長條圖』3D 柱狀比較：以 CPIC 資料庫的東亞與歐洲（可增加其他族群）估計頻率，顯示 CYP2C19、CYP2D6、CYP3A5、ABCG2、SLCO1B1、NUDT15 的表現型比例；點擊柱體顯示原始數字與『Hardy-Weinberg 推估、非實測』的警語，並疊加台灣漢人晶片研究（如 clopidogrel 使用者 IM 46%、PM 14%）作為對照標記。",
+    "『轉運蛋白細胞膜』剖面場景：脂雙層膜上，OATP1B1（攝入）把 statin 吸進肝細胞、P-gp 與 BCRP（外排）把藥物推回腸腔或膽管；滑桿調整 OATP1B1 功能（正常→降低→不良），血液中滯留的 statin 粒子數量增加並流向肌肉，展示暴露量上升與肌肉症狀風險的關係；並提示 ABCB1 的臨床證據薄弱（CPIC C 級）以維持科學誠實。",
+    "『抑制與誘導』時程劇場：兩條時間軸並排。左側：抑制劑（fluoxetine、paroxetine、bupropion）像塞子堵住酵素活性位點，數分鐘到數小時內生效；葡萄柚呋喃香豆素則『焊死』腸道 CYP3A4，需等細胞新合成酵素才恢復（以 24 小時內遞減的效應表示）。右側：rifampin 經 PXR 進入細胞核，使酵素工人數量在約 1 週內逐漸倍增，停藥約 2 週後消退。",
+    "『表現型轉換』桑基（Sankey）圖：使用者先選基因型預測的表現型（如 CYP2D6 NM），再加上併用藥物（強抑制劑 → AS 歸 0；中效抑制劑 → AS×0.5；誘導劑或吸菸 → 向上），畫面中的『酵素工人』隨之消失或增加，最終表現型徽章改變；並顯示這是 CPIC 鴉片類指引的實務規則，且臨床影響仍待更多研究。",
+    "『PK 基因 vs PD 基因』雙面板：左面板為藥物濃度（CYP2C9 影響 S-warfarin 清除），右面板為劑量—反應 Emax 曲線（VKORC1 使曲線左移，即敏感性提高）；使用者調整兩個基因後，同時看到濃度曲線與療效曲線的改變，並對照 ADRB1 這類『理論上合理但臨床證據不足』的 PD 基因（僅顯示 CPIC C 級標籤）。",
+    "『CYP450 家族地圖』星系視覺化：57 個 CYP 基因排成星系，亮度代表其在藥物代謝的角色（僅約十來個為明星）；可切換三種檢視——肝臟含量（Shimada：3A 約 30%、2D6 約 2%）、參與藥物比例（Zanger 2008）、是否高度多型性——讓使用者體會『豐度、藥物份額、多型性』是三件不同的事。",
+    "『藥物基因體報告解讀』闖關：模擬一份包含 CYP2C19、CYP2D6、SLCO1B1、TPMT／NUDT15、CYP3A5 的報告，玩家選擇處方情境（例如 ACS 用 clopidogrel、術後止痛用 codeine、化療用 mercaptopurine），系統對照 CPIC 指引給出『行動、證據等級、版本與日期』；同時要求玩家檢查併用藥物是否造成表現型轉換。"
+  ],
+  "dropped_facts": [],
+  "must_not_say_zh": [
+    "不可說「CYP3A4 代謝 50% 的藥物、CYP2D6 代謝 25% 的藥物」是定論；Zanger 2008 的 37%／17%／15%／10%／9%／6%／4% 是美國處方前 200 名藥物中『涉及』該酵素的藥物比例（七個百分比加總 98%，大於 78%，推測是一藥可涉及多個 CYP 而重複計算，摘要未明說分母），不是『代謝劑量的比例』，也不能代表台灣用藥或現今處方。",
+    "不可說『約 80% 的藥物由 CYP450 代謝』而不加限定；Guengerich 2024 的『約 80%』指小分子藥物代謝，圖表資料為 2015–2020 年 FDA 核准的 245 個新小分子藥物；Zanger & Schwab 2013 為『臨床使用藥物的 70–80%』。兩者定義不同，不可混成同一數字，也不可說成『所有藥物』或延伸到生物製劑。",
+    "不可引用 Evans & Relling 1999 圓餅圖（各 CYP 代謝藥物比例）的具體百分比；本次查證未能在公開摘要中核實。",
+    "不可說 CYP2D6 肝臟含量只占約 2% 所以不重要，也不可說含量最高的酵素臨床就最重要；Shimada 1994 是 60 個肝臟檢體（30 位日本人、30 位白種人）的免疫化學定量，豐度、藥物份額與多型性是三件不同的事。",
+    "不可說 CYP2D6 活性分數 AS=1.0 是正常代謝者；自 2019–2020 年 CPIC／DPWG 共識起 AS=1.0 為中間代謝者、AS=2.25 為正常代謝者（正常為 1.25≤AS≤2.25）。也不可說 CYP2D6 有『快速代謝者』類別（僅超快速、正常、中間、不良四類）。",
+    "不可把『AS=1.0 由正常改為中間、AS=2.25 由超快速改為正常』說成 CPIC 與 DPWG 兩者都如此變動；那是相對於舊 CPIC 制，舊 DPWG 制原本就把 AS 0.5–1 歸為中間、>2.5 才是超快速。",
+    "不可說 CYP2D6*9 與 *41 的活性值 0.25 是 2019–2020 年共識決定的；共識論文當時只將 *10 由 0.5 降為 0.25，*9 與 *41 是 2023 年 3 月（ClinPGx 公告日 2023-03-20）的等位基因功能表更新。引用任何 CYP2D6 活性分數或表現型時必須標示版本與日期，不可把舊文獻範例（如 *1/*41＝1.5）與現行值（1.25）混用。",
+    "不可把 CPIC 的 CYP2C19 東亞／歐洲頻率（PM 12.98%／2.39%、IM 45.93%／26.11%、RM＋UM 約 2.6%／31.8%）說成台灣人的實測值；這些是 CPIC 由文獻對偶基因頻率以 Hardy-Weinberg 公式推估的族群層級數字，並會隨資料庫更新而變。",
+    "不可說『61% 的台灣人』或『全台灣 61% 的 clopidogrel 使用者』需調整治療：Lu 等 2022 的 61%（6,414 人）來自單一醫療體系（中國醫藥大學附設醫院）病歷中有 clopidogrel 處方紀錄者（每種藥物只計第一次處方），是『依 FDA 建議應調整治療的 CYP2C19 表現型』比例，不代表確認實際服用，也不代表這些人實際療效不佳。",
+    "不可說『61% 之中有 46% 是中間代謝者、14% 是不良代謝者』；46% 與 14% 相加約 60–61%，應理解為各自占全部 clopidogrel 處方者的比例（原文 'Among them' 語意含糊，此為算術推論）。",
+    "不可說 codeine『12 歲以下、18 歲以下禁用』；美國仿單是『未滿 12 歲』禁用，以及『未滿 18 歲接受扁桃腺或腺樣體切除術後』禁用；12–18 歲有其他風險因子者是『應避免使用』而不是禁忌。不可把美國仿單（Lannett codeine sulfate tablets，DailyMed SPL 第 29 版）說成台灣 TFDA 核准的內容（未查證）。",
+    "不可說 1–10%（白人）、3–4%（非裔）、1–2%（東亞人）是台灣人的 CYP2D6 超快速代謝者頻率，也不可說這些數字在加框警語本文；它們是美國仿單 5.6 節的族群概估，不是台灣實測。",
+    "不可說 CPIC 建議 CYP2D6 中間代謝者避免 codeine；CPIC 2021 只對超快速與不良代謝者建議避免（Strong），中間代謝者為依仿單劑量、無效時考慮非 tramadol 的替代鴉片類（Moderate）。也不可說不良代謝者把 codeine 加量就能補救（CPIC：證據不足以建議提高劑量）。",
+    "不可把『不良代謝者 morphine AUC 平均低 96%』說成每位不良代謝者的固定值，或與『超快速代謝者 AUC 中位數高約 45%』混為同一統計量；這是 CPIC 引用研究的群體數字（96% 為平均值、相較正常與中間代謝者；45% 為中位數），不能當作個別病人的預測。",
+    "不可說 CYP2C19 中間與不良代謝者都應『完全避免 clopidogrel』；CPIC 2022：不良代謝者為避免 clopidogrel，中間代謝者為避免標準劑量（75 mg），且只有 ACS／PCI 適應症是 Strong；非 ACS／PCI 心血管適應症為中間代謝者無建議、不良代謝者 Moderate，神經血管適應症為 Moderate。也不可說一律改用 prasugrel：有中風或 TIA 病史者禁用 prasugrel。",
+    "不可把 clopidogrel『約 15% 進入活化途徑、約 85% 被 CES1 水解』說成療效百分比或『只有 15% 有效』；那是 CPIC 描述的前驅藥代謝流向，不是療效指標。",
+    "不可說 CYP2D6 基因型已證實能預測 tamoxifen 的乳癌復發或存活；CPIC 2018 指出基因型解釋的是 endoxifen 濃度變異的 34–52%（不是全部），臨床結局研究結果互相衝突。也不可說 tamoxifen 40 mg/天能使不良代謝者的 endoxifen 正常化（只是提高）。",
+    "不可說 CPIC tamoxifen 指引已採用 2019–2020 年 CYP2D6 活性分數的新分界；該指引為 2018 年版、未見更新，對 AS=1.0 的處理與現行 CPIC／DPWG 共識不同，不可直接套用現行 AS 分界。也不可把『4-OH-tamoxifen 與 endoxifen 抗雌激素效力約 100 倍』說成臨床療效比母藥高 100 倍。",
+    "不可說 CYP2C9*2 與 *3 對 S-warfarin 代謝的影響相同；CPIC 2017 為 *2 約降低 30–40%、*3 約降低 80–90%。也不可把 VKORC1 說成 PK 基因：VKORC1 是藥物標靶（PD）基因，CYP2C9 才是代謝（PK）基因。",
+    "不可說 TPMT／NUDT15 不良代謝者『不能使用』thiopurine 或『減半劑量即可』；CPIC 2025 更新對惡性疾病的 mercaptopurine 是起始劑量減為約 1/10 並改為每週三次，非惡性疾病考慮改用非 thiopurine 免疫抑制劑（Strong）。在取得 2026-04-28 更正聲明內容前，不可宣稱這些劑量已與更正版核對。",
+    "不可把歐洲人 TPMT 不良代謝者頻率寫成單一精確值而不註明出處：指引正文為 0.19%，CPIC 線上頻率表為 0.21%（約 0.2%）。不可說 NUDT15 東亞不良代謝者『正好每 100 人 1 位』；CPIC 資料庫為 1.46%（中間代謝者 19.38%）。",
+    "不可說葡萄柚汁的影響『只有大量或長期飲用才會發生』、『每個人都一樣』或『停喝後很快恢復』；Bailey 2013：單次 200–250 mL 或一整顆即可，felodipine 平均濃度為水對照的 3 倍（連續 6 天每日 3 次約 5 倍）是群體平均，個體差異 0–8 倍，24 小時後仍剩約 25% 效應，恢復需等新合成酵素。3 倍與 5 倍是 felodipine 的數字，不可推廣到所有 CYP3A4 受質；『超過 85 種藥物、其中 43 種可致嚴重不良反應』是 2013 年統計，不可當成現況；一般甜橙不含呋喃香豆素。",
+    "不可說 CPIC 對所有指引都以同一規則處理 CYP2D6 抑制劑；CPIC 2021 鴉片類指引為強效抑制劑 AS 歸 0（視為不良代謝者）、中效抑制劑 AS×0.5，而 tamoxifen 指引以避免併用為主。也不可說有藥物會在臨床上顯著誘導 CYP2D6（CPIC：未見具臨床意義的誘導，僅有限資料顯示懷孕時活性上升）。",
+    "不可說『正常代謝者就沒有問題』或『每位正常代謝者的藥物暴露都一樣』；CPIC 指出同為正常代謝者，個體間 morphine 生成量仍差異很大。也不可把『不良代謝者』說成罕見或疾病：CPIC 估計 CYP2C19 不良代謝者在東亞人約 13%。",
+    "不可說表現型轉換（phenoconversion）對療效與毒性的臨床影響已確立；Klomp 2020 明說臨床影響尚不清楚。基因檢測結果只是基線。",
+    "不可說 ABCB1 基因檢測可用來調整劑量（PharmGKB VIP 摘要指出無針對 ABCB1 序列變異建議調整人類用藥劑量，CPIC 相關配對為 C 級）；不可說 ADRB1 等 β 阻斷劑 PD 基因可據以調整用藥（CPIC level C）；也不可宣稱 NAT2 基因檢測可預測 isoniazid 肝毒性（CPIC 僅 C 級，meta 分析屬探索層級）。",
+    "不可說 CPIC 或 FDA 只要列了基因—藥物配對，就代表該基因檢測應常規進行；CPIC 僅 A、B 級支持處方行動，FDA 標示另分『可採取行動』『資訊性』『建議檢測』『要求檢測』。",
+    "不可把美國 DailyMed 仿單（codeine、Plavix、Wellbutrin XL）、CPIC 與 FDA 的建議說成台灣 TFDA 核准仿單或健保給付規定；本次未查證台灣仿單、健保給付與台灣人 CYP2D6 實測頻率。"
+  ],
+  "open_issues": [
+    "pk-pd-enzymes-31（thiopurine）：CPIC 2025 更新另有 2026-04-28 更正聲明（Clin Pharmacol Ther 2026;119(6):1671-1672，doi 10.1002/cpt.70298，PMID 42050374），兩位查核者與編輯者皆無法取得更正內容（付費牆），不知更正了哪一處；劑量文字與 CPIC API 現行建議一致，但上線前應人工核對更正版。信心已由 high 降為 medium。另：歐洲人 TPMT PM 頻率指引正文 0.19% vs CPIC 線上頻率表 0.21%，引用時需標明出處。",
+    "pk-pd-enzymes-21（Lu 2022）：『46% IM、14% PM 為占全部 clopidogrel 處方者』是依算術（46+14≈61）與東亞族群頻率推論，原文 'Among them' 語意含糊；若要更確定，需查原文補充表或詢問作者。資料為單一醫療體系病歷處方紀錄，推論全台需保守。",
+    "summary_zh、misconceptions_zh 第 12 項、viz_ideas 第 5 項仍寫『clopidogrel 使用者』（約 61%／IM 46%、PM 14%），與已更正的 pk-pd-enzymes-21 措辭（『clopidogrel 處方紀錄者』，46%／14% 為占全部處方者）不一致；製作網站時請以已驗證的 fact 21 措辭為準。",
+    "pk-pd-enzymes-15（codeine 仿單）：台灣（TFDA）codeine 仿單未查；DailyMed 版本可能被新版取代（本次為 SPL 第 29 版，DailyMed 發布 2026-02-05、標示修訂 01/2026、effective 2026-01-16），引用時請標明版本日期；盛行率數字位於仿單 5.6 節而非加框警語本文。",
+    "pk-pd-enzymes-10（Zanger 2008）：摘要未寫明百分比的分母與取樣年份，全文未能取得；『加總 98% 大於 78% 是重複計算』屬合理推論而非論文原文，已在 detail_zh 加註『推測』。",
+    "pk-pd-enzymes-25／24（CYP2D6 活性分數）：詳細界線與 2023 年 *9、*41 更新已確認，但 CPIC API 是會持續更新的線上資料庫（本次擷取 2026-09），網站呈現須標示版本與擷取日期；2023-03-20 是 ClinPGx 公告日期，不是指引出版日。",
+    "pk-pd-enzymes-20、26、27（族群頻率與雙倍型對應）：頻率取自 CPIC API 現行快照（2026-09），且為 Hardy-Weinberg 推估；台灣人 CYP2D6 實測頻率未取得。其中 26、27 未經查核者查核（fact 27 信心 medium）。",
+    "pk-pd-enzymes-22（tamoxifen）：CPIC 指引為 2018 年版，早於 2019–2020 年活性分數共識，未見更新版；DPWG 的 tamoxifen 建議與後續臨床結局研究未在本次查核範圍。",
+    "pk-pd-enzymes-13（clopidogrel）：措辭細節——不良代謝者為『避免 clopidogrel』、中間代謝者為『避免標準劑量（75 mg）』；claim_zh 以『避免標準劑量 clopidogrel』概括兩者，網站呈現時應分開寫，並標明適應症（ACS／PCI 為 Strong，其他適應症強度較低）。",
+    "pk-pd-enzymes-41（葡萄柚）：『超過 85 種藥物、43 種可致嚴重不良反應』為 2013 年統計，本次未找到更新版取代，也未檢查後續更新；引用請標年份。",
+    "pk-pd-enzymes-08：其 70–80% 的部分（Zanger & Schwab 2013）被查核者在驗證 fact 09 時順帶看到摘要原文，但『57 個功能基因』『至少 38 個能催化藥物氧化』等細節未逐項查核，仍標為 verified: false。",
+    "未經查核者查核、verified: false 的 critical 事實（保留原信心，網站引用時須依來源分級標示）：02, 03, 05, 08, 11, 12, 17, 18, 19, 23, 26, 27, 28, 29, 30, 32, 33, 34, 35, 36, 37, 38, 39, 40, 42, 43, 45。其中 fact 11（Evans & Relling 1999 圓餅圖數字無法核實，建議不要引用）、27、34、35（信心 medium）與 37（信心 low）風險較高，建議下一輪優先查核。",
+    "本次僅查核 pk-pd-enzymes 主題中 14 個 critical 事實；非 critical 事實除 01、04（編輯者判定為教科書級並驗算）外皆未查核，維持 verified: false。"
+  ]
+}

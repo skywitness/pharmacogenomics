@@ -1,0 +1,1540 @@
+{
+  "topic": "cases-hla-tox",
+  "title": "經典案例(二)：HLA 與嚴重藥物不良反應及代謝毒性",
+  "summary_zh": "本主題涵蓋藥物基因體學最成功的一批「用基因型預防嚴重不良反應」案例：帶有特定 HLA 型別者使用 carbamazepine(HLA-B*15:02)、phenytoin(HLA-B*15:02、CYP2C9)、allopurinol(HLA-B*58:01)、abacavir(HLA-B*57:01)時，可能發生史蒂文生-強生症候群/毒性表皮溶解症(SJS/TEN)或全身過敏反應；另一類是代謝酵素缺陷造成的毒性，包括硫嘌呤類(TPMT、NUDT15)、氟尿嘧啶類(DPYD)、G6PD 缺乏症(rasburicase、primaquine、tafenoquine、dapsone 等)以及 UGT1A1(irinotecan、atazanavir)。台灣是其中多項發現的發源地與實踐地：2004 年 Chung 等人在台灣漢人發現 HLA-B*15:02 與 carbamazepine SJS/TEN 高度相關，2011 年台灣 4,877 人前瞻性篩檢研究顯示 HLA-B*15:02 陰性者未發生 SJS/TEN，衛生署於 2007 年要求仿單加註、2010 年 6 月 1 日起健保給付檢測；allopurinol 的 HLA-B*58:01 亦源自台灣研究(2005)。這些檢測的共同特徵是「陰性預測值極高、陽性預測值偏低」，因此它們的價值在於排除高風險者而非預測誰一定會發病。學習時要特別分清楚：指引「建議」什麼(CPIC、DPWG、FDA 仿單)、證據的設計限制(歷史對照而非隨機試驗)、以及不同來源數字的落差(例如攜帶者比例與等位基因頻率、NUDT15 不良代謝者為 1/50 或 1/100)。本檔資料查核日為 2026-09-29。",
+  "facts": [
+    {
+      "id": "cases-hla-tox-01",
+      "claim_zh": "史蒂文生-強生症候群(SJS)與毒性表皮溶解症(TEN)是同一疾病譜的兩端，依表皮剝離占體表面積的比例分為 SJS(小於 10%)、重疊型(10–30%)與 TEN(大於 30%)。",
+      "detail_zh": "兩者都是藥物引起的嚴重皮膚黏膜反應，臨床特徵為廣泛水泡、非典型靶形斑與黏膜糜爛，屬遲發型(第 IV 型)T 細胞媒介過敏；同一大類還包括 DRESS(藥物疹合併嗜伊紅血球增多及全身症狀)與 AGEP 等，統稱嚴重藥物皮膚不良反應(SCAR)。",
+      "level": "入門",
+      "critical": true,
+      "source_name": "Hung SI et al. Severe cutaneous adverse reactions. Nat Rev Dis Primers 2024",
+      "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13052379/",
+      "confidence": "high",
+      "en_terms": [
+        "Stevens-Johnson syndrome",
+        "toxic epidermal necrolysis",
+        "SCAR",
+        "DRESS",
+        "type IV hypersensitivity"
+      ],
+      "verified": true,
+      "verified_by": [
+        "editor-textbook"
+      ],
+      "verification_note_zh": "編輯確認為標準教科書知識(SJS < 10%、重疊型 10–30%、TEN > 30%；第 IV 型遲發型過敏；SCAR 涵蓋 SJS/TEN、DRESS、AGEP)；未經查核員逐項核對。"
+    },
+    {
+      "id": "cases-hla-tox-02",
+      "claim_zh": "SJS/TEN 罕見但死亡率高：嚴謹的族群登錄資料顯示發生率約每年每百萬人 1–2 例，死亡率從 SJS 的不到 10% 到 TEN 的 40% 以上，整體約 20%。",
+      "detail_zh": "以申報資料(ICD 碼)推估的發生率較高(SJS 每年每百萬人 1–13 例)；不同文獻的死亡率也不完全一致：2010 年 Harr 與 French 的回顧為 SJS 1–5%、TEN 25–35%，CPIC 2017 文中為 SJS 低於 5%、TEN 可高於 30%，2024 年 Nat Rev Dis Primers 為 SJS 低於 10%、TEN 高於 40%。存活者常有長期後遺症，所以「預防」比「治療」重要。",
+      "level": "入門",
+      "critical": true,
+      "source_name": "Hung SI et al. Nat Rev Dis Primers 2024；Harr T, French LE. Orphanet J Rare Dis 2010",
+      "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13052379/",
+      "confidence": "medium",
+      "en_terms": [
+        "incidence",
+        "mortality",
+        "SJS/TEN",
+        "long-term sequelae"
+      ],
+      "verified": false
+    },
+    {
+      "id": "cases-hla-tox-03",
+      "claim_zh": "人類白血球抗原(HLA)分子的功能是把細胞內蛋白質的胜肽片段「展示」給 T 細胞檢查，而 HLA 基因是人類基因體中多型性最高的基因之一，因此不同族群帶有的 HLA 型別差異很大。",
+      "detail_zh": "這解釋了為什麼同一個藥物的風險會因族群而異：例如 HLA-B*15:02 在東亞與東南亞較常見，在歐洲人與非洲人身上幾乎沒有。HLA 命名如 HLA-B*15:02 中，星號後第一組數字代表等位基因群，第二組代表具體的蛋白質型別。",
+      "level": "入門",
+      "critical": false,
+      "source_name": "CPIC Guideline for HLA Genotype and Use of Carbamazepine and Oxcarbazepine: 2017 Update (Phillips 2018)",
+      "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5847474/",
+      "confidence": "high",
+      "en_terms": [
+        "HLA",
+        "human leukocyte antigen",
+        "polymorphism",
+        "peptide presentation",
+        "allele"
+      ],
+      "verified": false,
+      "editor_flag_zh": "編輯提醒(未查核)：『把細胞內蛋白質的胜肽展示給 T 細胞』嚴格說是 HLA class I(HLA-A、B、C)的功能；class II 主要展示來自細胞外的胜肽。寫作時建議明確寫成『HLA class I 分子』，本條因此不標為 verified。"
+    },
+    {
+      "id": "cases-hla-tox-04",
+      "claim_zh": "G6PD 缺乏症(俗稱蠶豆症)是位於 X 染色體(Xq28)的遺傳性酵素缺乏，全球約有近 5% 的人口受影響，遇到氧化壓力(特定藥物、蠶豆、感染)時可誘發急性溶血性貧血。",
+      "detail_zh": "因為是 X 連鎖，男性只要一個缺陷等位基因(半合子)即表現缺乏；女性異型合子因 X 染色體隨機去活化而呈鑲嵌，酵素活性可能正常也可能缺乏，單靠基因型難以預測，CPIC 建議此時必須測酵素活性。瘧疾流行區的盛行率可高達 30% 以上，因為異型合子對瘧疾死亡有保護作用。",
+      "level": "入門",
+      "critical": true,
+      "source_name": "CPIC Expanded Guideline for Medication Use in the Context of G6PD Genotype (Gammal 2022/2023)",
+      "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10281211/",
+      "confidence": "high",
+      "en_terms": [
+        "G6PD deficiency",
+        "X-linked",
+        "hemizygous",
+        "X-inactivation",
+        "acute hemolytic anemia",
+        "oxidative stress"
+      ],
+      "verified": false
+    },
+    {
+      "id": "cases-hla-tox-05",
+      "claim_zh": "台灣自 1984 年起以試辦計畫進行新生兒 G6PD 缺乏症篩檢，1987 年 7 月 1 日起全面實施；1987 年 7 月至 1997 年 12 月共篩檢 2,971,192 名新生兒，估計盛行率約 2.1%(男 3.1%、女 0.9%)。",
+      "detail_zh": "台大醫院單一篩檢中心 1996–2005 年資料為 1.82%(男 2.81%、女 0.70%)，年發生率自 2002 年由 1.94% 降至 1.61%。台灣最常見的突變依序為 c.1376G>T(46.8%)、c.1388G>A(16.2%)、c.95A>G(7.9%)，分別對應 p.R459L、p.R463H、p.H32R。",
+      "level": "入門",
+      "critical": true,
+      "source_name": "Chiang SH et al. Southeast Asian J Trop Med Public Health 1999；Chien YH et al. 2008",
+      "source_url": "https://pubmed.ncbi.nlm.nih.gov/11400791/",
+      "confidence": "high",
+      "en_terms": [
+        "newborn screening",
+        "G6PD deficiency",
+        "Taiwan",
+        "c.1376G>T",
+        "c.1388G>A",
+        "c.95A>G"
+      ],
+      "verified": false
+    },
+    {
+      "id": "cases-hla-tox-06",
+      "claim_zh": "台灣衛生署於 2007 年 9 月要求所有 carbamazepine 藥品仿單加註「可能帶有 HLA-B*1502 基因的亞洲族群，使用前宜考慮檢測」，並自 2010 年 6 月 1 日起將 HLA-B*1502 基因檢測納入全民健保給付。",
+      "detail_zh": "依 2010 年 5 月 20 日衛生署新聞稿，當時的立場是該藥臨床效益仍高於風險，SJS/TEN 依 WHO 頻率定義屬罕見(小於 0.1%)，在醫師嚴密評估監控下仍可使用。健保給付的適用條件與次數限制本次未查到原始公告，請以健保署最新規定為準。",
+      "level": "入門",
+      "critical": true,
+      "source_name": "衛生福利部：含 Carbamazepine 成分藥品的臨床效益仍高於風險，高危險族群宜進行 HLA-B*1502 基因檢測(99-05-20)",
+      "source_url": "https://www.mohw.gov.tw/cp-3161-26506-1.html",
+      "confidence": "high",
+      "en_terms": [
+        "TFDA",
+        "NHI reimbursement",
+        "HLA-B*15:02",
+        "package insert",
+        "carbamazepine"
+      ],
+      "verified": true,
+      "verified_by": [
+        "primary-source",
+        "independent-search"
+      ],
+      "checker_verdicts": {
+        "primary-source": "confirmed",
+        "independent-search": "confirmed"
+      },
+      "verification_urls": [
+        "https://www.mohw.gov.tw/cp-3161-26506-1.html"
+      ],
+      "verification_note_zh": "查核員確認：衛福部(前衛生署) 2010-05-20 新聞稿載明 2007 年 9 月要求所有 carbamazepine 仿單加註、2010 年 6 月 1 日起 HLA-B*1502 檢測納入健保給付，並說明臨床效益仍高於風險、SJS/TEN 依 WHO 定義屬罕見(<0.1%)。Epilepsia 2023 與 Eur J Hum Genet 2026 綜述亦寫 2010 年 6 月納入給付。注意：本條的仿單用語是忠實轉述，不是仿單逐字引文；健保給付的適用條件與次數限制仍未取得原始公告。"
+    },
+    {
+      "id": "cases-hla-tox-07",
+      "claim_zh": "台灣衛生署於 2009 年 7 月 7 日公告(衛署藥字第 0980361467 號)要求 allopurinol 仿單加刊 HLA-B*5801 相關注意事項，當時藥害救濟資料顯示 103 件疑似 allopurinol 案件中有 62 件因 SJS/TEN 獲得救濟。",
+      "detail_zh": "仿單內容指出台灣族群帶有 HLA-B*5801 的盛行率比歐洲與日本族群高，「使用前宜考慮檢測」，但長期使用無不良反應者不建議篩檢，且基因篩檢不能取代臨床監視。新聞稿發布於 2009 年 8 月 28 日，當時核准的 allopurinol 藥品許可證共 63 張。",
+      "level": "初階",
+      "critical": true,
+      "source_name": "衛生福利部：衛生署說明含 Allopurinol 藥品仿單應加刊與藥物基因學相關之注意事項(98-08-28)",
+      "source_url": "https://mohw.gov.tw/fp-3162-27338-1.html",
+      "confidence": "high",
+      "en_terms": [
+        "allopurinol",
+        "HLA-B*58:01",
+        "drug injury relief",
+        "package insert",
+        "TFDA"
+      ],
+      "verified": false
+    },
+    {
+      "id": "cases-hla-tox-08",
+      "claim_zh": "Chung 等人於 2004 年在《Nature》報告，台灣漢人 44 位 carbamazepine 引起 SJS/TEN 的患者 100% 帶有 HLA-B*15:02，而 101 位耐受者只有 3%(3/101)、93 位一般人有 8.6%(8/93)帶有。",
+      "detail_zh": "這是首個被廣泛重現的藥物 HLA 關聯之一，後來在香港、泰國、馬來西亞、越南等地都得到類似結果，但在日本人與韓國人的 SJS/TEN 患者中未觀察到。次級文獻曾報告勝算比約 2,504(95% 信賴區間 126–49,522)，這個數字我們未在原文核對，僅供參考；本表的人數與百分比引自 CPIC 2013 指引對該研究的描述。",
+      "level": "初階",
+      "critical": true,
+      "source_name": "Leckband SG et al. CPIC guidelines for HLA-B genotype and carbamazepine dosing (2013) 對 Chung et al. Nature 2004 的引述",
+      "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3748365/",
+      "confidence": "high",
+      "en_terms": [
+        "Chung 2004",
+        "HLA-B*15:02",
+        "carbamazepine",
+        "case-control",
+        "odds ratio"
+      ],
+      "verified": true,
+      "verified_by": [
+        "primary-source",
+        "independent-search"
+      ],
+      "checker_verdicts": {
+        "primary-source": "confirmed",
+        "independent-search": "confirmed"
+      },
+      "verification_urls": [
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC3748365/",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC4791456/"
+      ],
+      "verification_note_zh": "查核員確認：44/44(100%)、3/101(3%)、8/93(8.6%) 與 CPIC 2013 及 Maggo 2016 綜述(PMC4791456)一致；勝算比 2,504(95% CI 126–49,522)亦見於 PMC2586963、PMC2888890(有一篇綜述印成 49,552，疑為筆誤)。Nature 2004 全文為付費牆，未直接讀到，數字是經次級文獻交叉核對。原論文題名/摘要只寫 SJS，『SJS/TEN』是後續文獻(含 CPIC)的稱法。日本、韓國患者未觀察到此關聯，與 CPIC 2017 一致。"
+    },
+    {
+      "id": "cases-hla-tox-09",
+      "claim_zh": "2011 年 Chen 等人在《NEJM》發表的台灣前瞻性研究，於 23 家醫院招募 4,877 名未曾使用 carbamazepine 者，7.7% 為 HLA-B*15:02 陽性並被建議避免使用該藥，而陰性且使用該藥者沒有任何 SJS/TEN，對照歷史發生率 0.23% 預期約 10 例(P<0.001)。",
+      "detail_zh": "追蹤兩個月，輕微短暫皮疹發生於 4.3% 的受試者，較廣泛的皮疹(需住院)為 0.1%。此研究是前瞻性但單臂設計，以估計的歷史發生率作對照，並非隨機對照試驗，所以結論是「篩檢與 SJS/TEN 減少高度相關」，而不是證明篩檢可將風險降為零。",
+      "level": "初階",
+      "critical": true,
+      "source_name": "Chen P et al. Carbamazepine-induced toxic effects and HLA-B*1502 screening in Taiwan. N Engl J Med 2011;364:1126-33",
+      "source_url": "https://pubmed.ncbi.nlm.nih.gov/21428768/",
+      "confidence": "high",
+      "en_terms": [
+        "prospective screening",
+        "historical control",
+        "HLA-B*15:02",
+        "negative predictive value",
+        "Taiwan"
+      ],
+      "verified": true,
+      "verified_by": [
+        "primary-source",
+        "independent-search"
+      ],
+      "checker_verdicts": {
+        "primary-source": "confirmed",
+        "independent-search": "confirmed"
+      },
+      "verification_urls": [
+        "https://pubmed.ncbi.nlm.nih.gov/21428768/"
+      ],
+      "verification_note_zh": "兩位查核員以 PubMed 摘要逐項核對一致：23 家醫院、4,877 人、陽性 7.7% 被建議避免使用、輕微皮疹 4.3%、較廣泛皮疹 0.1%(住院)、陰性服藥者無 SJS/TEN、歷史發生率 0.23% 預期約 10 例(P<0.001)、追蹤 2 個月。摘要結論措辭為『strongly associated with a decrease』，與本檔的單臂歷史對照解讀一致。"
+    },
+    {
+      "id": "cases-hla-tox-10",
+      "claim_zh": "美國 FDA 核准的 Tegretol 仿單以框內警語指出：SJS/TEN 在以白人為主的國家約為每 10,000 名新使用者 1 至 6 例，部分亞洲國家風險約高 10 倍；具高風險族群血統者應在開始治療前篩檢 HLA-B*1502，陽性者除非效益明顯大於風險，否則不應使用。",
+      "detail_zh": "仿單另說明：超過 90% 的 SJS/TEN 發生在用藥的最初幾個月；HLA-B*1502 無法預測較輕的斑丘疹(MPE)或 DRESS；建議使用高解析度 HLA-B*1502 分型，帶有一個或兩個等位基因即判為陽性；篩檢不可取代臨床警覺，陰性者仍可能發病。",
+      "level": "初階",
+      "critical": true,
+      "source_name": "FDA-approved Tegretol prescribing information (Reference ID 5667657, 2025 version)",
+      "source_url": "https://www.accessdata.fda.gov/drugsatfda_docs/label/2025/018927Orig1s061;016608Orig1s122;020234Orig1s055lbl.pdf",
+      "confidence": "high",
+      "en_terms": [
+        "boxed warning",
+        "Tegretol",
+        "HLA-B*1502",
+        "screening",
+        "FDA label"
+      ],
+      "verified": true,
+      "verified_by": [
+        "primary-source",
+        "independent-search"
+      ],
+      "checker_verdicts": {
+        "primary-source": "confirmed",
+        "independent-search": "confirmed"
+      },
+      "verification_urls": [
+        "https://www.accessdata.fda.gov/drugsatfda_docs/label/2025/018927Orig1s061;016608Orig1s122;020234Orig1s055lbl.pdf"
+      ],
+      "verification_note_zh": "查核員逐項核對 FDA 2025 年 9 月修訂 Tegretol 仿單：框內警語(每 10,000 名新使用者 1–6 例、部分亞洲國家約高 10 倍、有風險血統者應先篩檢、陽性者除非效益明顯大於風險否則不應使用)、超過 90% 發生於最初數月、無法預測 MPE 或 DRESS、高解析度分型且一或兩個等位基因即判陽性、篩檢不可取代臨床警覺，皆吻合。獨立查核另見 DailyMed 現行版(2026 年 7 月修訂)框內警語文字未變。"
+    },
+    {
+      "id": "cases-hla-tox-11",
+      "claim_zh": "HLA-B*15:02 的頻率因族群與地區差異極大：FDA 仿單稱香港、泰國、馬來西亞等地陽性者超過 15%，台灣約 10%，華北約 4%，日本與韓國不到 1%，歐洲人、非洲裔與美洲原住民等幾乎沒有。",
+      "detail_zh": "仿單數字是「帶有者(carrier)」的比例，而 CPIC 2017 以等位基因頻率描述：東亞平均 6.9%、大洋洲 5.4%、中南亞 4.6%，日本小於 1%、韓國小於 2.5%。台灣人體生物資料庫以 HLA 填補推算 59,448 人，帶有者 8.38%(等位基因頻率 4.28%)；Chen 2011 篩檢族群陽性率為 7.7%。比較不同來源時務必分清楚是帶有者還是等位基因頻率，也要留意方法(直接分型或填補推算)不同。",
+      "level": "初階",
+      "critical": true,
+      "source_name": "FDA Tegretol label；CPIC 2017 update；Taiwan Biobank HLA imputation (Biomark Res 2024)",
+      "source_url": "https://www.accessdata.fda.gov/drugsatfda_docs/label/2025/018927Orig1s061;016608Orig1s122;020234Orig1s055lbl.pdf",
+      "confidence": "medium",
+      "en_terms": [
+        "allele frequency",
+        "carrier frequency",
+        "HLA-B*15:02",
+        "Taiwan Biobank",
+        "imputation"
+      ],
+      "verified": false
+    },
+    {
+      "id": "cases-hla-tox-12",
+      "claim_zh": "CPIC(2013 年首版、2017 年更新)建議：carbamazepine 使用前 HLA-B*15:02 陽性者不要使用(強建議)，陰性者依標準劑量使用(強建議)；曾連續使用超過 3 個月而無皮膚反應的陽性者可謹慎考慮繼續使用(選擇性建議)。",
+      "detail_zh": "2017 年更新把範圍擴及 oxcarbazepine(陽性且未曾使用者同樣避免，強建議)與 HLA-A*31:01，但 HLA-B*15:02 的建議未變。CPIC 指出標準劑量下 SJS/TEN 通常在用藥後 4–28 天發生，連續使用超過 3 個月者風險極低但非零。CPIC 也提醒：換成其他芳香族抗癲癇藥(如 phenytoin)不會降低整體 SJS/TEN，且陽性者的替代藥仍需謹慎選擇。",
+      "level": "初階",
+      "critical": true,
+      "source_name": "Phillips EJ et al. CPIC Guideline for HLA Genotype and Use of Carbamazepine and Oxcarbazepine: 2017 Update. Clin Pharmacol Ther 2018;103:574-581",
+      "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5847474/",
+      "confidence": "high",
+      "en_terms": [
+        "CPIC",
+        "HLA-B*15:02",
+        "oxcarbazepine",
+        "strong recommendation",
+        "optional recommendation"
+      ],
+      "verified": true,
+      "verified_by": [
+        "primary-source",
+        "independent-search"
+      ],
+      "checker_verdicts": {
+        "primary-source": "confirmed",
+        "independent-search": "confirmed"
+      },
+      "verification_urls": [
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC5847474/"
+      ],
+      "verification_note_zh": "查核員取 CPIC 2017 更新全文核對：表 2 與表 3 的建議與強度、『HLA-B*15:02 建議與原版相同』、SJS/TEN 多在用藥後 4–28 天、超過 3 個月風險極低但非零、改用 phenytoin 不會降低整體 SJS/TEN 皆有。附註：『2017 更新』實際刊於 Clin Pharmacol Ther 2018;103(4):574-581。獨立搜尋未見 2024–2026 年的修訂版。"
+    },
+    {
+      "id": "cases-hla-tox-13",
+      "claim_zh": "Hung 等人 2005 年在《PNAS》報告，台灣漢人 51 位 allopurinol 嚴重皮膚不良反應(SCAR)患者 100% 帶有 HLA-B*5801，而 135 位耐受者只有 15%、93 位一般人有 20% 帶有，勝算比分別為 580.3 與 393.5。",
+      "detail_zh": "51 位患者包含 SJS 13 例、SJS/TEN 5 例、TEN 3 例與藥物過敏症候群 30 例，症狀都在用藥 3 個月內出現。作者強調 HLA-B*5801 是「必要但不充分」，因為仍有耐受者帶有此等位基因；慢性腎功能不全者的勝算比(OR)為 4.7(95% 信賴區間 2.3–9.3)。",
+      "level": "初階",
+      "critical": true,
+      "source_name": "Hung SI et al. HLA-B*5801 allele as a genetic marker for severe cutaneous adverse reactions caused by allopurinol. PNAS 2005;102:4134-9",
+      "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC554812/",
+      "confidence": "high",
+      "en_terms": [
+        "HLA-B*58:01",
+        "allopurinol",
+        "SCAR",
+        "odds ratio",
+        "renal insufficiency"
+      ],
+      "verified": true,
+      "editor_wording_fix": "detail_zh 中『風險增加 4.7 倍』已改為勝算比(OR) 4.7(95% CI 2.3–9.3)；4.7 是 OR 不是相對風險。",
+      "verified_by": [
+        "primary-source",
+        "independent-search"
+      ],
+      "checker_verdicts": {
+        "primary-source": "confirmed",
+        "independent-search": "confirmed"
+      },
+      "verification_urls": [
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC554812/"
+      ],
+      "verification_note_zh": "查核員確認：51/51(100%)、耐受者 20/135(15%)、一般人 19/93(20%)、勝算比 580.3(34.4–9780.9)與 393.5(23.2–6665.26)、SJS 13 + SJS/TEN 5 + TEN 3 + HSS 30 = 51、3 個月內發病、『必要但不充分』皆吻合。兩位查核員皆提醒 4.7 是勝算比(OR，95% CI 2.3–9.3)而非『風險增加 4.7 倍』，編輯已據此修正 detail_zh 的措辭。"
+    },
+    {
+      "id": "cases-hla-tox-14",
+      "claim_zh": "2015 年 Ko 等人在《BMJ》發表的台灣全國性前瞻世代研究(2009 年 7 月至 2014 年 8 月、15 家醫學中心)中，2,910 人完成 HLA-B*58:01 檢測，19.6%(571 人)陽性並被建議避免 allopurinol；陰性的 2,339 人被建議使用該藥，其中實際服藥並納入分析的 2,173 人(另有 155 人未服藥、11 人失聯)沒有人發生 SCAR，而依歷史發生率(每年 0.30%)預期約 7 例(P=0.0026)。",
+      "detail_zh": "全部受試者中有 97 人(3%)出現輕微短暫的無水泡皮疹(其中 3 位為陽性者，服用替代藥 benzbromarone 後出現)，無人因不良反應住院；陽性者中 354 人改用替代藥、215 人繼續原本用藥(另有 2 人失聯)。作者估計此檢測的敏感度 100%、特異度約 85.2%、陰性預測值 100%、陽性預測值約 2%。與 Chen 2011 相同，這是以歷史發生率作對照的前瞻研究，不是隨機試驗。",
+      "level": "初階",
+      "critical": true,
+      "source_name": "Ko TM et al. Use of HLA-B*58:01 genotyping to prevent allopurinol induced severe cutaneous adverse reactions in Taiwan: national prospective cohort study. BMJ 2015;351:h4848",
+      "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4579807/",
+      "confidence": "high",
+      "en_terms": [
+        "prospective cohort",
+        "HLA-B*58:01 screening",
+        "allopurinol",
+        "SCAR",
+        "positive predictive value"
+      ],
+      "verified": true,
+      "was_corrected": true,
+      "correction_note": "兩位查核員皆判為 corrected。原文『陰性的 2,339 人使用該藥後沒有人發生 SCAR』不精確：BMJ 全文顯示 2,339 位陰性者中，實際服用 allopurinol 並納入分析者為 2,173 人(155 人未服藥、11 人失聯)，預期約 7 例是針對這 2,173 人。編輯另以 PMC 全文核對 2,173/155/11，以及陽性者 354 + 215 = 569(另 2 人失聯)。其餘數字皆已查核吻合：2,910 人完成檢測(2,926 人納入)、571 人 = 19.6% 陽性、97 人(3%)輕微皮疹、敏感度 100%、特異度 85.2%、NPV 100%、PPV 2.0%、歷史發生率 0.30%/年、P=0.0026。",
+      "original_claim_zh": "2015 年 Ko 等人在《BMJ》發表的台灣全國性前瞻世代研究(2009 年 7 月至 2014 年 8 月、15 家醫學中心)中，2,910 人接受 HLA-B*58:01 檢測，19.6%(571 人)陽性並被建議避免 allopurinol，陰性的 2,339 人使用該藥後沒有人發生 SCAR，而依歷史發生率(每年 0.30%)預期約 7 例(P=0.0026)。",
+      "verified_by": [
+        "primary-source",
+        "independent-search"
+      ],
+      "checker_verdicts": {
+        "primary-source": "corrected",
+        "independent-search": "corrected"
+      },
+      "verification_urls": [
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC4579807/"
+      ]
+    },
+    {
+      "id": "cases-hla-tox-15",
+      "claim_zh": "CPIC 對 allopurinol 的建議是：HLA-B*58:01 陽性者禁用 allopurinol，陰性者依標準劑量使用(皆為強建議)；2015 年更新檢視 26 篇原始研究後未改變建議。",
+      "detail_zh": "CPIC 2013 指出 allopurinol 引起 SCAR 的風險估計為 0.1–0.4%，死亡率最高約 25%，並提醒陰性仍不能完全排除 SCAR，歐洲族群尤其如此(歐洲研究中僅 55% 的患者帶有 HLA-B*58:01)。荷蘭 DPWG(2022)也建議陽性者選擇替代藥物；2015 年更新另評估 HLA-A*33:03 與 HLA-C*03:02，但證據強度未達納入標準。",
+      "level": "初階",
+      "critical": true,
+      "source_name": "Hershfield MS et al. CPIC guidelines for HLA-B genotype and allopurinol dosing (2013)；Saito Y et al. 2015 update (Clin Pharmacol Ther 2016;99:36-37)",
+      "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3564416/",
+      "confidence": "high",
+      "en_terms": [
+        "CPIC",
+        "allopurinol",
+        "HLA-B*58:01",
+        "contraindicated",
+        "febuxostat",
+        "DPWG"
+      ],
+      "verified": false
+    },
+    {
+      "id": "cases-hla-tox-16",
+      "claim_zh": "abacavir 的 PREDICT-1 隨機試驗(1,956 位 HIV 患者、19 國)中，HLA-B*5701 盛行率為 5.6%，前瞻篩檢組免疫學確認的過敏反應為 0%，對照組為 2.7%(P<0.001)，陰性預測值 100%、陽性預測值 47.9%。",
+      "detail_zh": "臨床診斷的過敏反應在篩檢組為 3.4%，對照組為 7.8%。研究族群以白人為主(84%)。陽性預測值約 50% 表示約一半的陽性者其實可以使用該藥，但因為過敏可能致命且有替代藥，仍建議陽性者不要使用。",
+      "level": "初階",
+      "critical": true,
+      "source_name": "Mallal S et al. HLA-B*5701 screening for hypersensitivity to abacavir (PREDICT-1). N Engl J Med 2008;358:568-79",
+      "source_url": "https://pubmed.ncbi.nlm.nih.gov/18256392/",
+      "confidence": "high",
+      "en_terms": [
+        "PREDICT-1",
+        "abacavir hypersensitivity",
+        "HLA-B*57:01",
+        "randomized trial",
+        "negative predictive value"
+      ],
+      "verified": true,
+      "verified_by": [
+        "primary-source",
+        "independent-search"
+      ],
+      "checker_verdicts": {
+        "primary-source": "confirmed",
+        "independent-search": "confirmed"
+      },
+      "verification_urls": [
+        "https://pubmed.ncbi.nlm.nih.gov/18256392/"
+      ],
+      "verification_note_zh": "兩位查核員以 PubMed 摘要逐項核對一致：雙盲隨機、1,956 位患者、19 國、HLA-B*5701 盛行率 5.6%、免疫學確認過敏反應 0% 對 2.7%(P<0.001)、NPV 100%、PPV 47.9%、臨床診斷過敏反應 3.4% 對 7.8%、接受 abacavir 者 84% 為白人。獨立搜尋未見取代 2014 版的新 CPIC abacavir 指引。編輯提醒：PPV 47.9% 是針對『免疫學確認』的過敏反應，detail_zh 的『約一半陽性者其實可以使用』屬算術推論，寫作時不宜說成『可安全使用』。"
+    },
+    {
+      "id": "cases-hla-tox-17",
+      "claim_zh": "CPIC 建議 HLA-B*57:01 陽性者不建議使用 abacavir，陰性者依標準劑量使用(皆為強建議)，FDA 仿單也將 HLA-B*5701 陽性列為禁忌，並要求開始或重新開始治療前篩檢。",
+      "detail_zh": "abacavir 過敏多在治療前 6 週內發生(仿單中位發生時間 9 天)。仿單指出未做篩檢的 9 項試驗中約 8%(2,670 人中 206 人)出現過敏，排除 HLA-B*5701 攜帶者後降至約 1%；CPIC 強調陰性者仍可能發生過敏，臨床上懷疑時要立即停藥，且發生過敏後禁止再次投藥。CPIC 2012 版首發、2014 年更新確認建議未變。",
+      "level": "初階",
+      "critical": true,
+      "source_name": "CPIC abacavir guideline (Martin 2012; 2014 update)；FDA Ziagen label",
+      "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3374459/",
+      "confidence": "high",
+      "en_terms": [
+        "abacavir",
+        "HLA-B*57:01",
+        "contraindication",
+        "hypersensitivity reaction",
+        "Ziagen"
+      ],
+      "verified": false
+    },
+    {
+      "id": "cases-hla-tox-18",
+      "claim_zh": "硫嘌呤類藥物(azathioprine、mercaptopurine、thioguanine)的骨髓抑制風險主要由 TPMT 與 NUDT15 兩個基因決定：TPMT 缺乏是歐洲人與非洲人耐受不良的主因，而 NUDT15 變異解釋亞洲人大多數嚴重骨髓抑制。",
+      "detail_zh": "TPMT 把藥物轉為無活性的甲基化產物；NUDT15 則把具細胞毒性的 thioguanine triphosphate(TGTP)水解成無毒的 TGMP，功能喪失時更多 TGTP 併入 DNA，造成骨髓抑制。TPMT 的三個常見變異(*2、*3B、*3C)占低活性表現型的 90% 以上。",
+      "level": "初階",
+      "critical": false,
+      "source_name": "CPIC Guideline for Thiopurine Dosing Based on TPMT and NUDT15 Genotypes: 2018 Update (Relling 2019)",
+      "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6576267/",
+      "confidence": "high",
+      "en_terms": [
+        "TPMT",
+        "NUDT15",
+        "thiopurine",
+        "myelosuppression",
+        "azathioprine",
+        "mercaptopurine"
+      ],
+      "verified": false
+    },
+    {
+      "id": "cases-hla-tox-19",
+      "claim_zh": "美國 FDA 核准的 Xeloda(capecitabine)仿單(2025 年 10 月修訂)已加上框內警語：完全 DPD 缺乏者可發生嚴重不良反應或死亡，開始治療前應檢測 DPYD 基因變異(除非需立即治療)，並避免用於某些純合或複合異型合子變異造成完全 DPD 缺乏者。",
+      "detail_zh": "DPYD 編碼的 DPD 酵素負責代謝超過 80% 的 fluorouracil，缺乏時會出現黏膜炎、腹瀉、嗜中性球低下與神經毒性，可致命。仿單同時指出目前沒有 FDA 授權的 DPYD 檢測，各檢測涵蓋的變異不同，即使未檢出變異仍可能發生嚴重不良反應，也沒有已證實對完全缺乏者安全的劑量。",
+      "level": "初階",
+      "critical": true,
+      "source_name": "FDA-approved Xeloda (capecitabine) prescribing information (revised 10/2025), via DailyMed",
+      "source_url": "https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=e702d84d-7162-4751-bf37-d724cc7e45a5",
+      "confidence": "high",
+      "en_terms": [
+        "DPYD",
+        "DPD deficiency",
+        "boxed warning",
+        "capecitabine",
+        "fluorouracil"
+      ],
+      "verified": true,
+      "verified_by": [
+        "primary-source",
+        "independent-search"
+      ],
+      "checker_verdicts": {
+        "primary-source": "confirmed",
+        "independent-search": "confirmed"
+      },
+      "verification_urls": [
+        "https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=e702d84d-7162-4751-bf37-d724cc7e45a5"
+      ],
+      "verification_note_zh": "查核員逐項核對 DailyMed Xeloda 仿單(內容修訂 10/2025)：框內警語、DPD 代謝超過 80% 的 fluorouracil、沒有 FDA 授權的 DPYD 檢測、各檢測涵蓋變異不同、即使未檢出變異仍可能發生嚴重反應、沒有已證實對完全缺乏者安全的劑量，皆吻合。附註：Xeloda 另有併用維生素 K 拮抗劑出血風險的框內警語；DailyMed 紀錄本身的生效日為 2026-02-05，但標籤內容修訂日為 10/2025。"
+    },
+    {
+      "id": "cases-hla-tox-20",
+      "claim_zh": "UGT1A1 是把膽紅素與 irinotecan 活性代謝物 SN-38 葡萄糖醛酸化的酵素，常見的降低功能等位基因是 UGT1A1*28(啟動子區 TA 重複 7 次)與東亞人常見的 UGT1A1*6(c.211G>A，p.G71R)。",
+      "detail_zh": "UGT1A1*28 是 Gilbert 症候群(輕度非結合型高膽紅素血症)的常見原因，在歐洲族群影響約 3–9%；UGT1A1*6 則幾乎只見於亞洲族群，兩者功能降低的程度相近。這也意味著只檢測 *28 會低估東亞人的風險。",
+      "level": "初階",
+      "critical": false,
+      "source_name": "CPIC Guideline for UGT1A1 and Atazanavir Prescribing (Gammal 2016)；FDA Camptosar label",
+      "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4785051/",
+      "confidence": "high",
+      "en_terms": [
+        "UGT1A1",
+        "UGT1A1*28",
+        "UGT1A1*6",
+        "Gilbert syndrome",
+        "SN-38",
+        "glucuronidation"
+      ],
+      "verified": false
+    },
+    {
+      "id": "cases-hla-tox-21",
+      "claim_zh": "CPIC 2022 年擴充的 G6PD 指引把 rasburicase、pegloticase、dapsone、標準劑量以上的 primaquine(0.25–0.5 mg/kg 每日連續 14 天)與 tafenoquine 列為高風險藥物，G6PD 缺乏者應避免使用(皆為強建議)，methylene blue 為中等強度建議。",
+      "detail_zh": "primaquine 的風險與劑量相關：針對間日瘧的 0.75 mg/kg 每週一次共 8 週(WHO)或 45 mg 每週一次(CDC)可在密切監測下用於缺乏者，針對惡性瘧的單次 0.25 mg/kg 屬低至無風險。CPIC 也提醒缺乏者使用高風險藥物前須權衡風險與效益，例如腫瘤溶解症候群時 rasburicase 的療效優於 allopurinol。",
+      "level": "初階",
+      "critical": true,
+      "source_name": "Gammal RS et al. Expanded CPIC Guideline for Medication Use in the Context of G6PD Genotype. Clin Pharmacol Ther 2023;113:973-985",
+      "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10281211/",
+      "confidence": "high",
+      "en_terms": [
+        "rasburicase",
+        "primaquine",
+        "tafenoquine",
+        "dapsone",
+        "pegloticase",
+        "methylene blue"
+      ],
+      "verified": false
+    },
+    {
+      "id": "cases-hla-tox-22",
+      "claim_zh": "CPIC 2020 年更新的 phenytoin 指引建議：HLA-B*15:02 陽性且未曾使用過 phenytoin/fosphenytoin 者不要使用(強建議)，並避免 carbamazepine 與 oxcarbazepine；若曾連續使用超過 3 個月且無皮膚反應，可謹慎考慮繼續使用(選擇性建議)。",
+      "detail_zh": "CPIC 說明 HLA-B*15:02 與 phenytoin 的關聯證據主要來自亞洲族群，且弱於 carbamazepine，但建議不受年齡、族群影響；陰性並不能排除 phenytoin SJS/TEN。荷蘭 DPWG(2024)指引同樣指出 HLA-B*15:02 攜帶者使用 phenytoin、carbamazepine、oxcarbazepine 與 lamotrigine 的嚴重皮膚反應風險強烈增加，並建議改用替代藥物。",
+      "level": "初階",
+      "critical": true,
+      "source_name": "Karnes JH et al. CPIC Guideline for CYP2C9 and HLA-B Genotypes and Phenytoin Dosing: 2020 Update. Clin Pharmacol Ther 2021;109:302-309；DPWG antiepileptic guideline 2024",
+      "source_url": "https://pubmed.ncbi.nlm.nih.gov/32779747/",
+      "confidence": "high",
+      "en_terms": [
+        "phenytoin",
+        "fosphenytoin",
+        "HLA-B*15:02",
+        "CPIC 2020",
+        "DPWG"
+      ],
+      "verified": false
+    },
+    {
+      "id": "cases-hla-tox-23",
+      "claim_zh": "HLA-B*15:02 對 carbamazepine 引起的 SJS/TEN，在漢人族群的敏感度約 98%、特異度約 97%、陽性預測值約 7.7%、陰性預測值約 100%；亞洲人整合分析的陽性預測值僅 1.8%，需檢測約 461 人才能預防 1 例。",
+      "detail_zh": "這正是「陰性預測值高、陽性預測值低」的典型：多數陽性者其實不會發病，但陰性者幾乎不會發病。Yip 等人的整合分析在亞洲人得到合併勝算比 113.4(95% 信賴區間 51.2–251.0)。對 oxcarbazepine，HLA-B*15:02 的陽性預測值估計僅 0.73%，遠低於 carbamazepine，但陰性預測值仍接近 100%。",
+      "level": "中階",
+      "critical": true,
+      "source_name": "CPIC 2013 與 2017 指引引述之 Yip 等人整合分析",
+      "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3748365/",
+      "confidence": "high",
+      "en_terms": [
+        "sensitivity",
+        "specificity",
+        "positive predictive value",
+        "negative predictive value",
+        "number needed to test"
+      ],
+      "verified": false,
+      "editor_flag_zh": "編輯抽查：CPIC 2013 全文(PMC3748365)確有『敏感度 98%、特異度 97%、PPV 7.7%、NPV 100%(漢人)』、Yip 等人亞洲 PPV 1.8%、需檢測 461 人、合併 OR 113.4。注意 7.7% 與 Chen 2011 篩檢陽性率 7.7% 是兩個不同概念的巧合數字，寫作時勿混用。其餘細節(OR 的信賴區間、oxcarbazepine PPV 0.73%)未查核，故仍為 verified:false。"
+    },
+    {
+      "id": "cases-hla-tox-24",
+      "claim_zh": "在歐洲人身上，HLA-B*15:02 幾乎不存在(頻率小於 1%)，真正與 carbamazepine 過敏相關的是 HLA-A*31:01：北歐人盛行率 2–5%，帶有者的 carbamazepine 過敏反應風險由 5.0% 升至 26.0%，不帶有者降為 3.8%。",
+      "detail_zh": "McCormack 2011 的勝算比：過敏症候群 12.41、斑丘疹 8.33、SJS/TEN 25.93。所以「HLA-B*15:02 對歐洲人無預測力」的主因是這個等位基因太稀少，而不是生物機制不同；CPIC 也指出曾有自認歐洲裔的 SJS/TEN 患者 12 人中 4 人帶有 HLA-B*15:02，後來證實有亞洲血統。CPIC 對 HLA-A*31:01 陽性且未曾使用者的建議是：有替代藥時避免 carbamazepine。",
+      "level": "中階",
+      "critical": true,
+      "source_name": "McCormack M et al. HLA-A*3101 and carbamazepine-induced hypersensitivity reactions in Europeans. N Engl J Med 2011;364:1134-43；CPIC 2013/2017",
+      "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3113609/",
+      "confidence": "high",
+      "en_terms": [
+        "HLA-A*31:01",
+        "Europeans",
+        "hypersensitivity syndrome",
+        "maculopapular exanthema",
+        "odds ratio"
+      ],
+      "verified": false
+    },
+    {
+      "id": "cases-hla-tox-25",
+      "claim_zh": "phenytoin 另有 CYP2C9 的劑量建議：CYP2C9 活性分數 1.0 的中間代謝者，首劑用一般起始或負荷劑量，之後維持劑量約減少 25%(中等建議)；不良代謝者約減少 50%(強建議)，之後依血中濃度與反應調整。",
+      "detail_zh": "phenytoin 治療指數窄且具非線性藥物動力學，CYP2C9 缺乏者暴露量增加而較易中毒。CPIC 指出 CYP2C9*3 與 SJS/TEN 在多項研究中相關，但單靠 *3 不足以預測；活性分數 1.5 以上者不需依基因型調整。CPIC 也承認減量幅度的證據有限，所以建議偏保守。",
+      "level": "中階",
+      "critical": true,
+      "source_name": "Karnes JH et al. CPIC Guideline for CYP2C9 and HLA-B Genotypes and Phenytoin Dosing: 2020 Update",
+      "source_url": "https://files.cpicpgx.org/data/guideline/publication/phenytoin/2020/32779747.pdf",
+      "confidence": "high",
+      "en_terms": [
+        "CYP2C9",
+        "activity score",
+        "phenytoin",
+        "poor metabolizer",
+        "therapeutic drug monitoring"
+      ],
+      "verified": false
+    },
+    {
+      "id": "cases-hla-tox-26",
+      "claim_zh": "2020 年美國風濕病學會(ACR)痛風指引有條件建議東南亞血統(漢人、韓國人、泰國人)與非裔美國人在開始 allopurinol 前檢測 HLA-B*5801，並強烈建議 allopurinol 起始劑量不超過 100 mg/日(慢性腎臟病 3 期以上需更低)。",
+      "detail_zh": "該指引引用的等位基因盛行率為漢人、韓國人與泰國人約 7.4%、非裔美國人 3.8%、白人與西班牙裔各 0.7%，並對其他族群有條件建議不做普遍檢測。注意這是「有條件建議」而非強建議，且不同研究的盛行率定義不同(見台灣人體生物資料庫的數字)。",
+      "level": "中階",
+      "critical": true,
+      "source_name": "Fitzgerald JD et al. 2020 American College of Rheumatology Guideline for the Management of Gout. Arthritis Care Res 2020;72:744-760",
+      "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10563586/",
+      "confidence": "high",
+      "en_terms": [
+        "ACR gout guideline",
+        "HLA-B*58:01 testing",
+        "conditional recommendation",
+        "starting dose",
+        "chronic kidney disease"
+      ],
+      "verified": false
+    },
+    {
+      "id": "cases-hla-tox-27",
+      "claim_zh": "台灣人體生物資料庫(59,448 人，HLA 填補推算)顯示 HLA-B*58:01 帶有者約 20.9%(等位基因頻率 0.111)、HLA-B*15:02 帶有者 8.38%、HLA-A*31:01 帶有者 4.12%，而 HLA-B*57:01 帶有者僅 0.34%(等位基因頻率 0.0017)。",
+      "detail_zh": "這解釋了為什麼台灣特別重視 allopurinol 與 carbamazepine 的檢測，而 abacavir 的 HLA-B*57:01 過敏在台灣人身上相對罕見(但仍非零)。HLA-B*58:01 位於一個延伸單倍型(A*33:03-C*03:02-B*58:01-DRB1*03:01-DQB1*02:01…)上，該單倍型在台灣的頻率為 3.85%，所以早期研究也觀察到這些鄰近等位基因的關聯。Ko 2015 研究族群的陽性率 19.6% 與此相近。",
+      "level": "中階",
+      "critical": true,
+      "source_name": "Phenomic landscape and pharmacogenomic implications for HLA region in a Taiwan Han Chinese population. Biomark Res 2024;12:46",
+      "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11067262/",
+      "confidence": "medium",
+      "en_terms": [
+        "Taiwan Biobank",
+        "HLA imputation",
+        "HLA-B*58:01",
+        "HLA-B*57:01",
+        "haplotype"
+      ],
+      "verified": false
+    },
+    {
+      "id": "cases-hla-tox-28",
+      "claim_zh": "2014 年 Yang 等人在 978 位韓國克隆氏症患者發現 NUDT15 p.R139C 與硫嘌呤引起的早期白血球低下高度相關(勝算比 35.6)，其敏感度 89.4%、特異度 93.2%，遠優於 TPMT 變異的敏感度 12.1%。",
+      "detail_zh": "這解釋了 TPMT 為何不足以預測亞洲人的硫嘌呤毒性。在兒童急性淋巴性白血病中，R139C 同型合子只能耐受標準 mercaptopurine 劑量的 8%，異型合子 63%，野生型 83.5%(CPIC 引述)。R139C 的 dbSNP 編號為 rs116855232(c.415C>T)。",
+      "level": "中階",
+      "critical": true,
+      "source_name": "Yang SK et al. A common missense variant in NUDT15 confers susceptibility to thiopurine-induced leukopenia. Nat Genet 2014;46:1017-20",
+      "source_url": "https://pubmed.ncbi.nlm.nih.gov/25108385/",
+      "confidence": "high",
+      "en_terms": [
+        "NUDT15",
+        "R139C",
+        "rs116855232",
+        "leukopenia",
+        "Crohn's disease",
+        "dose intensity"
+      ],
+      "verified": false
+    },
+    {
+      "id": "cases-hla-tox-29",
+      "claim_zh": "台灣長庚醫院團隊(Wang 等人，2022)在華人(台灣與中國)自體免疫疾病患者中發現 NUDT15 R139C 與 azathioprine 白血球低下相關(勝算比 21.7，敏感度 92.5%)，而 TPMT 無顯著關聯；對 1,013 人前瞻篩檢並讓帶有者改用替代免疫抑制劑後，白血球低下發生率由歷史的 7.6% 降至 0.4%。",
+      "detail_zh": "這是台灣/中國臨床實作的直接證據。與 Chen 2011、Ko 2015 一樣，比較對象是歷史發生率，而非同期隨機對照，解讀時要保留這個限制。",
+      "level": "中階",
+      "critical": true,
+      "source_name": "Wang CW et al. Implementation of NUDT15 Genotyping to Prevent Azathioprine-Induced Leukopenia for Patients With Autoimmune Disorders in Chinese Population. Clin Pharmacol Ther 2022;112:1079-1087",
+      "source_url": "https://pubmed.ncbi.nlm.nih.gov/35869597/",
+      "confidence": "high",
+      "en_terms": [
+        "NUDT15 genotyping",
+        "azathioprine",
+        "leukopenia",
+        "Chang Gung Memorial Hospital",
+        "historical incidence"
+      ],
+      "verified": false
+    },
+    {
+      "id": "cases-hla-tox-30",
+      "claim_zh": "CPIC 2018 年更新的硫嘌呤指引建議：TPMT 或 NUDT15 中間代謝者以標準起始劑量的 30–80% 開始(若標準劑量為 75 mg/m²/日以上；強建議)；不良代謝者在惡性腫瘤時 mercaptopurine 起始劑量約 10 mg/m²/日，非惡性疾病則考慮改用非硫嘌呤免疫抑制劑(強建議)。",
+      "detail_zh": "正常代謝者不需調整起始劑量。CPIC 強調建議主要用於起始劑量，之後仍須依骨髓抑制程度調整；同時指出 NUDT15 不良代謝者發生率在東亞人約每 50 人 1 例(見 2025 年更新的修正)。這些建議大多來自回溯研究與藥物動力學，而非隨機試驗。",
+      "level": "中階",
+      "critical": true,
+      "source_name": "Relling MV et al. CPIC Guideline for Thiopurine Dosing Based on TPMT and NUDT15 Genotypes: 2018 Update. Clin Pharmacol Ther 2019;105:1095-1105",
+      "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6576267/",
+      "confidence": "high",
+      "en_terms": [
+        "mercaptopurine",
+        "starting dose",
+        "intermediate metabolizer",
+        "poor metabolizer",
+        "CPIC 2018"
+      ],
+      "verified": false,
+      "editor_flag_zh": "編輯提醒：本條描述的是 CPIC 2018 版硫嘌呤建議，已被 cases-hla-tox-42(2025 年更新，2026 發表)部分取代(例如複合中間代謝者、不良代謝者 mercaptopurine 改為減 10 倍並每週三次、NUDT15 不良代謝者東亞頻率 1/50 對 1/100)。網站上應標為『2018 版(已更新)』，不可當作現行建議。"
+    },
+    {
+      "id": "cases-hla-tox-31",
+      "claim_zh": "歐洲藥品管理局(EMA)於 2020 年 4 月 30 日建議：使用 fluorouracil(注射或輸注)及其相關藥物 capecitabine、tegafur 治療癌症前，應先檢測 DPD 缺乏(可測血中尿嘧啶濃度或 DPYD 基因變異)，完全缺乏者不得使用，部分缺乏者可考慮較低起始劑量。",
+      "detail_zh": "EMA 註明白人族群中最多約 9% 的人 DPD 活性偏低、最多約 0.5% 完全缺乏；但 FDA 仿單則寫白人族群約 3–5% 部分缺乏、0.2% 完全缺乏，兩者估計不同，反映定義與資料來源差異。Flucytosine 因需迅速治療，不要求事前檢測。",
+      "level": "中階",
+      "critical": true,
+      "source_name": "EMA: EMA recommendations on DPD testing prior to treatment with fluorouracil, capecitabine, tegafur and flucytosine (30 April 2020)",
+      "source_url": "https://www.ema.europa.eu/en/news/ema-recommendations-dpd-testing-prior-treatment-fluorouracil-capecitabine-tegafur-and-flucytosine",
+      "confidence": "high",
+      "en_terms": [
+        "EMA",
+        "DPD testing",
+        "fluorouracil",
+        "tegafur",
+        "uracil",
+        "partial DPD deficiency"
+      ],
+      "verified": false
+    },
+    {
+      "id": "cases-hla-tox-32",
+      "claim_zh": "CPIC 的 DPYD 指引以活性分數(0–2)表示基因型：DPYD*2A(c.1905+1G>A)與 *13(c.1679T>G)為無功能(0 分)，c.2846A>T 與 c.1129-5923C>G(HapB3 的致病候選變異)為功能降低(每個等位基因 0.5 分)；活性分數 1.0–1.5 者(中間代謝者)起始劑量減 50%，0.5 分與 0 分者應避免使用氟尿嘧啶類。",
+      "detail_zh": "2018 年 11 月 CPIC 修訂為所有中間代謝者一律減量 50% 再依毒性或血中濃度調整，且 c.2846A>T 同型合子可能需減量超過 50%；活性分數 0.5 者若無替代藥，可用低於正常起始劑量 25% 的劑量並早期監測血中藥物濃度。活性分數 1.5 的建議強度為「中等」，活性分數 1.0 為「強」。",
+      "level": "中階",
+      "critical": true,
+      "source_name": "Amstutz U et al. CPIC Guideline for DPYD Genotype and Fluoropyrimidine Dosing: 2017 Update (Clin Pharmacol Ther 2018;103:210-216)；CPIC database and ClinPGx guideline page",
+      "source_url": "https://www.clinpgx.org/guideline/PA166251462",
+      "confidence": "high",
+      "en_terms": [
+        "DPYD",
+        "activity score",
+        "DPYD*2A",
+        "c.2846A>T",
+        "HapB3",
+        "dose reduction"
+      ],
+      "verified": true,
+      "verified_by": [
+        "primary-source",
+        "independent-search"
+      ],
+      "checker_verdicts": {
+        "primary-source": "confirmed",
+        "independent-search": "confirmed"
+      },
+      "verification_urls": [
+        "https://www.clinpgx.org/guideline/PA166251462"
+      ],
+      "verification_note_zh": "查核員以 CPIC 資料庫 API 與 ClinPGx 頁面核對：*2A 與 *13 為 0 分，c.2846A>T 與 c.1129-5923C>G 各為 0.5 分；活性分數 1.5 為中等、1.0 為強、0.5 與 0 為避免使用(0.5 分且無替代藥時可用低於正常起始劑量 25% 並早期監測血中濃度)；2018 年 11 月修訂皆吻合。時效性提醒：c.1129-5923C>G 的 0.5 分只反映『目前已發布』的表，2026 年 7 月暫行說明將改為 0.75(見 cases-hla-tox-43)，網頁應標示『指引更新中』。",
+      "time_sensitive_note_zh": "時效性：DPYD 指引更新中(見 cases-hla-tox-43)，c.1129-5923C>G 的 0.5 分與『減量 50%』預計會改變；頁面須標示『指引更新中』。"
+    },
+    {
+      "id": "cases-hla-tox-33",
+      "claim_zh": "荷蘭 Henricks 等人 2018 年的前瞻研究(1,103 位可評估患者)顯示，DPYD 異型合子攜帶者(85 人，占 8%)依基因型減量後，嚴重氟尿嘧啶毒性仍為 39%，高於野生型的 23%(P=0.0013)，但相對風險已明顯低於歷史對照，例如 DPYD*2A 為 1.31 對 2.87。",
+      "detail_zh": "研究對 DPYD*2A 與 c.1679T>G 減量 50%，對 c.2846A>T 與 c.1236G>A(HapB3 標記)減量 25%；作者結論 50% 對前兩者足夠，後兩者是否需要減 50% 有待研究。這份證據也顯示減量不能完全消除風險，所以劑量調整後仍需嚴密監測。",
+      "level": "中階",
+      "critical": true,
+      "source_name": "Henricks LM et al. DPYD genotype-guided dose individualisation of fluoropyrimidine therapy in patients with cancer: a prospective safety analysis. Lancet Oncol 2018;19:1459-1467",
+      "source_url": "https://pubmed.ncbi.nlm.nih.gov/30348537/",
+      "confidence": "high",
+      "en_terms": [
+        "DPYD genotype-guided dosing",
+        "relative risk",
+        "historical cohort",
+        "DPYD*2A",
+        "c.1236G>A"
+      ],
+      "verified": false
+    },
+    {
+      "id": "cases-hla-tox-34",
+      "claim_zh": "Irinotecan(Camptosar)的美國仿單指出：UGT1A1*28 或 *6 同型合子，或 *6/*28 複合異型合子者是 UGT1A1 不良代謝者，發生嚴重或危及生命的嗜中性球低下風險增加，應考慮將起始劑量至少降低一個劑量水準，並可考慮檢測 *28 與 *6。",
+      "detail_zh": "仿單註明精確的減量幅度未知，需依耐受性調整；同型合子 *28 在非裔約 20%、白人約 10%、東亞人約 2%，同型合子 *6 在東亞人約 2–6%。這是 2026 年 5 月版本的內容，明確納入了東亞人常見的 *6；早期版本僅提及 *28，閱讀舊資料時要留意。",
+      "level": "中階",
+      "critical": true,
+      "source_name": "FDA-approved CAMPTOSAR (irinotecan) prescribing information, DailyMed SPL published 2026-05-13",
+      "source_url": "https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=e518dfc6-7e93-4fee-a66c-51e1ab71c056",
+      "confidence": "high",
+      "en_terms": [
+        "irinotecan",
+        "UGT1A1*28",
+        "UGT1A1*6",
+        "neutropenia",
+        "SN-38",
+        "starting dose reduction"
+      ],
+      "verified": true,
+      "verified_by": [
+        "primary-source",
+        "independent-search"
+      ],
+      "checker_verdicts": {
+        "primary-source": "confirmed",
+        "independent-search": "confirmed"
+      },
+      "verification_urls": [
+        "https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=e518dfc6-7e93-4fee-a66c-51e1ab71c056"
+      ],
+      "verification_note_zh": "查核員逐項核對 DailyMed Camptosar 現行版(SPL 生效 2026-05-12)：*28/*28、*6/*6、*6/*28 為 UGT1A1 不良代謝者、嚴重嗜中性球低下風險增加、『考慮』至少降低一個劑量水準、『考慮』檢測 *28 與 *6、精確減量幅度未知、各族群同型合子頻率，皆吻合。detail_zh 中『早期版本僅提及 *28』一句未經核對(DailyMed 歷史版本無法取得)，寫作時請省略或加註未查證。"
+    },
+    {
+      "id": "cases-hla-tox-35",
+      "claim_zh": "CPIC 的 atazanavir 指引指出：UGT1A1 不良代謝者(如 *28/*28)因 atazanavir 抑制 UGT1A1 而易發生黃疸並停藥，建議考慮替代藥物，若仍使用則因黃疸停藥的機率至少 20%、最高 60%；正常與中間代謝者因黃疸停藥的機率低於約 1/20。",
+      "detail_zh": "這類停藥源自 atazanavir 抑制 UGT1A1 所致的間接型(非結合型)高膽紅素血症與黃疸，CPIC 特別提醒黃疸對病人造成困擾時更應考慮替代藥。CPIC 註明目前對 UGT1A1*6/*6(亞洲人常見)是否增加 atazanavir 高膽紅素血症風險尚不清楚。",
+      "level": "中階",
+      "critical": true,
+      "source_name": "Gammal RS et al. CPIC Guidelines for UGT1A1 and Atazanavir Prescribing. Clin Pharmacol Ther 2016;99:363-9；CPIC recommendation database",
+      "source_url": "https://www.clinpgx.org/guideline/PA166251453",
+      "confidence": "high",
+      "en_terms": [
+        "atazanavir",
+        "UGT1A1",
+        "hyperbilirubinemia",
+        "jaundice",
+        "discontinuation"
+      ],
+      "verified": false
+    },
+    {
+      "id": "cases-hla-tox-36",
+      "claim_zh": "Rasburicase(Elitek)的美國仿單以框內警語與禁忌症明示不可用於 G6PD 缺乏者，因其轉化尿酸時產生過氧化氫；tafenoquine(Krintafel)則要求用藥前必須檢測 G6PD，缺乏或狀態未知者為禁忌。",
+      "detail_zh": "Elitek 仿單建議對高風險者(舉例為非洲或地中海血統)先篩檢，但未列華人；台灣人 G6PD 缺乏盛行率約 2%，實務上仍應在使用前確認。Krintafel 的臨床試驗排除 G6PD 活性低於各試驗地點正常者中位數 70% 者。",
+      "level": "中階",
+      "critical": true,
+      "source_name": "FDA-approved Elitek and Krintafel prescribing information via DailyMed",
+      "source_url": "https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=0ae10bc4-6b65-402f-9db5-2d7753054922",
+      "confidence": "high",
+      "en_terms": [
+        "rasburicase",
+        "Elitek",
+        "tafenoquine",
+        "Krintafel",
+        "G6PD testing",
+        "contraindication"
+      ],
+      "verified": false
+    },
+    {
+      "id": "cases-hla-tox-37",
+      "claim_zh": "台灣自 2022 年 6 月 1 日起將 HLA-B*5801 基因檢測納入全民健保給付；依醫院公告，適用於開始使用 allopurinol 前且符合特定適應症者，每人終生給付一次，連續使用一個月以上或累計使用滿三個月者不給付，陰性者一個月內未開藥亦不給付。",
+      "detail_zh": "此資訊來自 2022 年 5 月 31 日的新聞報導與醫院檢驗部公告，我們未能取得健保署原始公告全文，因此信心度為中等；實際給付條件請以健保署最新「醫療服務給付項目及支付標準」為準。作為對照，HLA-B*1502 的給付自 2010 年 6 月 1 日起。",
+      "level": "中階",
+      "critical": true,
+      "source_name": "工商時報 2022-05-31 報導；義大醫院醫學檢驗部 HLA-B 5801 檢驗說明",
+      "source_url": "https://www.ctee.com.tw/news/20220531700857-439803",
+      "confidence": "medium",
+      "en_terms": [
+        "NHI reimbursement",
+        "HLA-B*58:01",
+        "allopurinol",
+        "once per lifetime",
+        "National Health Insurance Administration"
+      ],
+      "verified": true,
+      "verified_by": [
+        "primary-source",
+        "independent-search"
+      ],
+      "checker_verdicts": {
+        "primary-source": "confirmed",
+        "independent-search": "confirmed"
+      },
+      "verification_urls": [
+        "https://www.nhi.gov.tw/ch/dl-79349-75e78aa13f6d4236ba4587b3dbb5a7f7-1.pdf",
+        "https://exdep.edah.org.tw/cp/index.php/2017-06-26-08-19-55/2017-06-28-09-06-14/468-hla-b-5801"
+      ],
+      "verification_note_zh": "查核員確認給付項目與條件：健保署 2022 年共擬會議文件與義大醫院檢驗頁載明 12213B『HLA-B*5801 基因檢測』2,343 點、新使用 allopurinol 前且符合特定適應症、連續使用滿一個月或累計滿三個月者不給付、每人終生一次、陰性且一個月內未開藥者不給付；衛福部健保會 2022 年報將其列為 2022 年新增項目。限制：2022-06-01 生效日只來自 2022-05-31 世基生醫新聞稿(工商時報、TechNews)，健保署原始公告未取得，應視為新聞稿來源；實際規則請以健保署最新支付標準為準。"
+    },
+    {
+      "id": "cases-hla-tox-38",
+      "claim_zh": "目前關於 carbamazepine 如何透過 HLA-B*15:02 觸發 T 細胞攻擊，學界主要有三種並存的模型：hapten/pro-hapten(共價修飾)、p-i 概念(藥物直接非共價結合 HLA 或 TCR)與改變胜肽庫(altered peptide repertoire)，尚無單一定論。",
+      "detail_zh": "已較確定的是：這是由帶有特定 TCR 的細胞毒性 T 細胞(Tc1)辨識 HLA 上的藥物抗原並釋放 granulysin 等細胞毒性蛋白所致。仍屬假說或未定的是：患者體內以哪個模型為主、藥物本體或代謝物 carbamazepine-10,11-epoxide 何者才是關鍵、以及為何只有少數陽性者發病。教學動畫應避免把單一模型畫成定論。",
+      "level": "進階",
+      "critical": false,
+      "source_name": "Hung SI et al. Severe cutaneous adverse reactions. Nat Rev Dis Primers 2024 (Table 1, Fig. 3)",
+      "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13052379/",
+      "confidence": "medium",
+      "en_terms": [
+        "p-i concept",
+        "hapten",
+        "pro-hapten",
+        "altered peptide repertoire",
+        "Tc1 cell",
+        "granulysin"
+      ],
+      "verified": false
+    },
+    {
+      "id": "cases-hla-tox-39",
+      "claim_zh": "Wei 等人 2012 年在《J Allergy Clin Immunol》顯示，從 carbamazepine SJS/TEN 患者體外擴增的細胞毒性 T 細胞，可被載有內源性胜肽的 HLA-B*15:02 直接呈現 carbamazepine 而活化，不需細胞內藥物代謝或抗原處理，且胜肽結合溝內的 Asn63、Ile95、Leu156 三個殘基參與，其中 Asn63(B75 家族共有)是關鍵。",
+      "detail_zh": "此結果支持「藥物直接嵌入 HLA-胜肽複合物」的 p-i 型模型，也與其他 B75 家族成員(如 HLA-B*15:08、*15:11、*15:21)曾被報告有關聯的觀察相容(CPIC 2017 亦提到這些等位基因)。但這是體外細胞實驗，尚不能說明所有患者的機制。",
+      "level": "進階",
+      "critical": true,
+      "source_name": "Wei CY et al. Direct interaction between HLA-B and carbamazepine activates T cells in patients with Stevens-Johnson syndrome. J Allergy Clin Immunol 2012",
+      "source_url": "https://pubmed.ncbi.nlm.nih.gov/22322005/",
+      "confidence": "medium",
+      "en_terms": [
+        "p-i concept",
+        "HLA-B*15:02",
+        "Asn63",
+        "B75 serotype",
+        "cytotoxic T lymphocyte"
+      ],
+      "verified": false
+    },
+    {
+      "id": "cases-hla-tox-40",
+      "claim_zh": "Pan 等人 2019 年在《Nature Communications》報告，亞洲與歐洲 carbamazepine SJS/TEN 患者的水泡細胞中存在共同的「公共」TCR(TRAV12-1/TRBV12-4；CDR3 序列 VFDNTDKLI 與 ASSLAGELF)，可辨識 carbamazepine、其代謝物 carbamazepine-10,11-epoxide 與 oxcarbazepine，且偏好 HLA-B*15:02。",
+      "detail_zh": "把此 TCR 轉染的 T 細胞送入 HLA-B*15:02 基因轉殖小鼠並口服 carbamazepine，小鼠出現症狀，支持其致病關聯。這類公共 TCR 也提供了未來以 TCR 序列作為診斷或預測生物標記的可能，但仍屬研究階段。",
+      "level": "進階",
+      "critical": true,
+      "source_name": "Pan RY et al. Identification of drug-specific public TCR driving severe cutaneous adverse reactions. Nat Commun 2019;10:3569 (as summarized in Hung 2024 review)",
+      "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13052379/",
+      "confidence": "medium",
+      "en_terms": [
+        "public TCR",
+        "TRAV12-1",
+        "TRBV12-4",
+        "carbamazepine-10,11-epoxide",
+        "HLA-B*15:02 transgenic mice"
+      ],
+      "verified": false
+    },
+    {
+      "id": "cases-hla-tox-41",
+      "claim_zh": "Illing 等人 2012 年在《Nature》以結構與胜肽體學證明，abacavir 非共價地嵌在 HLA-B*57:01 的 F 口袋，改變抗原結合溝的形狀，使 HLA 呈現的內源性胜肽庫改變，產生「改變的自我」而活化 CD8 T 細胞；這是 altered peptide repertoire 模型最完整的實例。",
+      "detail_zh": "abacavir 過敏只發生在帶有 HLA-B*57:01 者，相對風險超過 1,000。同一篇論文也顯示 carbamazepine 結合 HLA-B*15:02 並改變其呈現的胜肽庫。2023 年 Scientific Reports 的一項晶體結構研究顯示 allopurinol 可非共價促使 Lamin A/C 胜肽 KAGQVVTI 以非典型構形結合 HLA-B*58:01，oxypurinol 程度較低，顯示 allopurinol 也可能透過類似機制作用。",
+      "level": "進階",
+      "critical": true,
+      "source_name": "Illing PT et al. Immune self-reactivity triggered by drug-modified HLA-peptide repertoire. Nature 2012;486:554-558；Sci Rep 2023 (doi:10.1038/s41598-023-36293-z)",
+      "source_url": "https://www.nature.com/articles/nature11147",
+      "confidence": "high",
+      "en_terms": [
+        "abacavir",
+        "HLA-B*57:01",
+        "F-pocket",
+        "altered self",
+        "peptide repertoire",
+        "crystal structure"
+      ],
+      "verified": false,
+      "editor_flag_zh": "編輯提醒(未查核)：detail_zh 寫『abacavir 過敏只發生在帶有 HLA-B*57:01 者』，與 cases-hla-tox-17(CPIC：陰性者仍可能發生過敏)及 cases-hla-tox-16(篩檢組臨床診斷過敏反應仍有 3.4%)看似矛盾。較穩妥的說法是『免疫學確認的 abacavir 過敏幾乎只發生在 HLA-B*57:01 陽性者』。使用前請對照 Illing 2012 原文。"
+    },
+    {
+      "id": "cases-hla-tox-42",
+      "claim_zh": "CPIC 在 2025 年更新(Maillard 等人，2026 年 1 月於《Clin Pharmacol Ther》線上發表)硫嘌呤指引，改為依藥物整併建議、首度提出 TPMT/NUDT15 複合中間代謝者的建議(起始劑量為標準的 20–50%)，並把 NUDT15 *4 與 *9 重新列為具臨床意義的等位基因。",
+      "detail_zh": "新版對任一基因為不良代謝者的 mercaptopurine 建議是起始劑量減 10 倍並改為每週三次(如 10 mg/m²/日、每週 3 天)。同一份更新把東亞人 NUDT15 不良代謝者頻率寫成「約每 100 人 1 例」，2018 年版本為「約每 50 人 1 例」，兩版不一致；CPIC 資料庫的等位基因頻率則為 NUDT15 *3(R139C)在東亞約 6.05%、在歐洲約 0.2%，*2 在東亞約 3.5%。",
+      "level": "進階",
+      "critical": true,
+      "source_name": "Maillard M et al. CPIC Guideline for Thiopurine Dosing Based on TPMT and NUDT15 Genotypes: 2025 Update. Clin Pharmacol Ther 2026 (doi:10.1002/cpt.70209)",
+      "source_url": "https://files.cpicpgx.org/data/guideline/publication/thiopurines/2026/41618934.pdf",
+      "confidence": "high",
+      "en_terms": [
+        "CPIC 2025 update",
+        "compound intermediate metabolizer",
+        "NUDT15*4",
+        "NUDT15*9",
+        "thrice weekly",
+        "allele frequency"
+      ],
+      "verified": true,
+      "verified_by": [
+        "primary-source",
+        "independent-search"
+      ],
+      "checker_verdicts": {
+        "primary-source": "confirmed",
+        "independent-search": "confirmed"
+      },
+      "verification_urls": [
+        "https://files.cpicpgx.org/data/guideline/publication/thiopurines/2026/41618934.pdf",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC12997511/"
+      ],
+      "verification_note_zh": "查核員核對全文：Maillard 等，Clin Pharmacol Ther 2026;119(4):916–927(PMID 41618934)，2026-01-31 線上發表；依藥物整併建議、新增 TPMT/NUDT15 複合中間代謝者(起始劑量 20–50%)、NUDT15 *4 與 *9 重新列為具臨床意義、任一基因不良代謝者的 mercaptopurine 起始劑量減 10 倍並改為每週三次；東亞 NUDT15 不良代謝者頻率 2025 版寫約 1/100、2018 版寫約 1/50(兩版不一致)；CPIC 資料庫頻率(*3 東亞 6.05%、歐洲 0.2%；*2 東亞 3.5%)皆吻合。待決事項：此文另有勘誤(Clin Pharmacol Ther 2026;119(6):1671-2, doi 10.1002/cpt.70298)，一位查核員讀不到內容，另一位指其為 TPMT 表 1 的更正(一個無功能加一個功能降低對應中間代謝者而非 Possible IM)，不影響本條敘述。"
+    },
+    {
+      "id": "cases-hla-tox-43",
+      "claim_zh": "CPIC 在 2026 年 7 月發布暫行說明：DPYD 指引正在更新，HapB3 的致病候選變異 c.1129-5923C>G 將被指定等位基因值 0.75(異型合子活性分數 1.75)，建議第一週期以預定劑量的 75% 開始，之後評估往上加量；完整指引預計 2026 年秋季完成，目前尚未反映在網站與資料庫。",
+      "detail_zh": "這與資料庫目前的 0.5 分/減量 50% 不同，是進行中的變動。2024 年 1 月 CPIC 已先將 HapB3 單倍型與 c.1129-5923C>G 單一位點分開定義，並評估一篇 HapB3 劑量證據後認為仍需更多研究，同時強調初始減量後的劑量往上滴定十分重要。教學時應標示「指引更新中」，避免當成最終規則。",
+      "level": "進階",
+      "critical": true,
+      "source_name": "ClinPGx / CPIC Guideline for DPYD and Fluoropyrimidines — online updates (Jan 2024, Nov 2018, July 2026 notes)",
+      "source_url": "https://www.clinpgx.org/guideline/PA166251462",
+      "confidence": "high",
+      "en_terms": [
+        "HapB3",
+        "c.1129-5923C>G",
+        "allele function value",
+        "dose escalation",
+        "guideline update in progress"
+      ],
+      "verified": true,
+      "verified_by": [
+        "primary-source",
+        "independent-search"
+      ],
+      "checker_verdicts": {
+        "primary-source": "confirmed",
+        "independent-search": "confirmed"
+      },
+      "verification_urls": [
+        "https://www.clinpgx.org/guideline/PA166251462"
+      ],
+      "verification_note_zh": "查核員核對 ClinPGx 的 CPIC DPYD 指引紀錄(標記『Update In Progress』，歷史條目 2026-07-09)：2026 年 7 月暫行說明原文為 c.1129-5923C>G 將指定等位基因值 0.75、異型合子活性分數 1.75、第一週期以預定劑量 75% 開始並評估往上加量、完整指引預計 2026 年秋季完成、在指引發布前不會更動網站與資料庫；2024 年 1 月與 2018 年 11 月註記也在同頁。時效性提醒：截至 2026-09-29 查核，未見最終指引發表；上線前請再確認。",
+      "time_sensitive_note_zh": "時效性：完整指引預計 2026 年秋季完成；截至 2026-09-29 查核未見發表。上線前須重新確認 ClinPGx/CPIC 頁面。"
+    },
+    {
+      "id": "cases-hla-tox-44",
+      "claim_zh": "CPIC 2017 年指引指出歐洲人約 7% 至少帶有 DPYD 四個核心變異之一(HapB3 的 c.1129-5923C>G 帶有者 4.1–4.8%、c.1905+1G>A 1–1.2%、c.2846A>T 0.8–1.4%)；但在 CPIC 頻率表中，這些變異在東亞人的頻率為 0。",
+      "detail_zh": "因此在台灣/東亞人，基因型檢測若只涵蓋這四個歐洲常見變異，陰性結果的保證有限，需靠臨床監測或其他檢測；仿單也說「即使未檢出變異仍可能發生嚴重不良反應」。我們未找到台灣族群 DPYD 變異頻率或健保給付 DPYD 檢測的原始資料，此處標為證據不足。",
+      "level": "進階",
+      "critical": true,
+      "source_name": "Amstutz U et al. CPIC DPYD 2017 Update；CPIC allele frequency data (api.cpicpgx.org population_frequency_view)",
+      "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5760397/",
+      "confidence": "low",
+      "en_terms": [
+        "DPYD allele frequency",
+        "East Asian",
+        "HapB3",
+        "population differences",
+        "genotype coverage"
+      ],
+      "verified": false,
+      "editor_flag_zh": "低信賴度原本即已標示：台灣族群 DPYD 變異頻率與健保給付 DPYD 檢測皆未找到原始資料，寫作時務必保留『證據不足』的措辭。"
+    },
+    {
+      "id": "cases-hla-tox-45",
+      "claim_zh": "CPIC 資料庫的等位基因頻率顯示，UGT1A1*28 在東亞人加權平均約 14.8%、*6 約 14.6%，而歐洲人 *28 約 31.6%、*6 約 0.8%，因此東亞人的 UGT1A1 風險有近半來自 *6。",
+      "detail_zh": "同型合子的預期比例約為頻率平方，與 irinotecan 仿單所述東亞人 *28 同型合子約 2%、*6 同型合子約 2–6% 大致吻合。這些頻率為不同研究的加權平均，範圍很寬(東亞 *28 最高達 25%)，僅供教學與趨勢說明。",
+      "level": "進階",
+      "critical": true,
+      "source_name": "CPIC allele frequency data (api.cpicpgx.org population_frequency_view for UGT1A1)；FDA Camptosar label",
+      "source_url": "https://api.cpicpgx.org/v1/population_frequency_view?genesymbol=eq.UGT1A1&name=in.(*28,*6)",
+      "confidence": "medium",
+      "en_terms": [
+        "UGT1A1*6",
+        "UGT1A1*28",
+        "weighted average frequency",
+        "East Asian",
+        "homozygous"
+      ],
+      "verified": false
+    },
+    {
+      "id": "cases-hla-tox-46",
+      "claim_zh": "台灣精準醫療計畫(TPMI，486,956 位漢人)在 2025 年《Nature Communications》的回溯分析指出：azathioprine(NUDT15/TPMT)、clopidogrel、他汀類與 NSAIDs 的藥物基因風險變異雖與不良事件顯著相關，但相對於無變異者的額外風險很小，多數帶有變異者並未發生不良事件。",
+      "detail_zh": "這提醒我們：真實世界大型資料中，藥物基因變異的效應量可能比單純病例對照研究小，且受劑量、共病與監測影響。它並不否定 HLA 相關嚴重過敏的高陰性預測值價值，而是說明不同藥物基因配對的臨床效用要個別評估。",
+      "level": "進階",
+      "critical": true,
+      "source_name": "Wei CY et al. Clinical impact of pharmacogenetic risk variants in a large Chinese cohort. Nat Commun 2025;16:6344",
+      "source_url": "https://pubmed.ncbi.nlm.nih.gov/40634300/",
+      "confidence": "medium",
+      "en_terms": [
+        "Taiwan Precision Medicine Initiative",
+        "real-world evidence",
+        "effect size",
+        "azathioprine",
+        "NUDT15"
+      ],
+      "verified": false
+    }
+  ],
+  "glossary": [
+    {
+      "term_zh": "人類白血球抗原",
+      "term_en": "Human leukocyte antigen (HLA)",
+      "definition_zh": "位於第 6 對染色體上的一組基因所編碼的蛋白質，負責把細胞內的胜肽片段展示給 T 細胞檢查；多型性極高，不同族群的型別分布差異很大。",
+      "level": "入門"
+    },
+    {
+      "term_zh": "等位基因與星號命名",
+      "term_en": "Allele / star allele nomenclature",
+      "definition_zh": "同一個基因位置的不同版本稱為等位基因；如 HLA-B*15:02 或 UGT1A1*28 這種帶星號的名稱是標準化的等位基因命名。",
+      "level": "入門"
+    },
+    {
+      "term_zh": "帶有者比例與等位基因頻率",
+      "term_en": "Carrier frequency vs allele frequency",
+      "definition_zh": "帶有者比例是「至少帶有一個該等位基因的人」占比，等位基因頻率是「所有染色體中該等位基因」占比；數值上前者約為後者的兩倍(低頻時)，比較文獻時不能混用。",
+      "level": "初階"
+    },
+    {
+      "term_zh": "史蒂文生-強生症候群與毒性表皮溶解症",
+      "term_en": "Stevens-Johnson syndrome / toxic epidermal necrolysis (SJS/TEN)",
+      "definition_zh": "藥物引起的嚴重皮膚黏膜反應，表皮大面積剝離；SJS 剝離小於體表 10%，TEN 大於 30%，介於之間為重疊型。",
+      "level": "入門"
+    },
+    {
+      "term_zh": "嚴重藥物皮膚不良反應",
+      "term_en": "Severe cutaneous adverse reactions (SCAR)",
+      "definition_zh": "藥物引起的 T 細胞媒介嚴重皮膚反應的總稱，包括 SJS/TEN、DRESS、AGEP 等。",
+      "level": "初階"
+    },
+    {
+      "term_zh": "藥物疹合併嗜伊紅血球增多及全身症狀",
+      "term_en": "Drug reaction with eosinophilia and systemic symptoms (DRESS)",
+      "definition_zh": "延遲數週才出現的嚴重藥物過敏，特徵為發燒、皮疹、嗜伊紅血球增多與器官受累，可能與病毒再活化有關。",
+      "level": "初階"
+    },
+    {
+      "term_zh": "斑丘疹",
+      "term_en": "Maculopapular exanthema (MPE)",
+      "definition_zh": "較輕的藥物皮疹，僅有皮疹而沒有黏膜或器官受累。",
+      "level": "初階"
+    },
+    {
+      "term_zh": "遲發型(第 IV 型)過敏",
+      "term_en": "Type IV (delayed-type) hypersensitivity",
+      "definition_zh": "由 T 細胞而非抗體媒介的過敏反應，通常在用藥後數天到數週才出現。",
+      "level": "初階"
+    },
+    {
+      "term_zh": "敏感度與特異度",
+      "term_en": "Sensitivity / specificity",
+      "definition_zh": "敏感度是有病者被檢出的比例，特異度是沒病者被正確排除的比例。",
+      "level": "初階"
+    },
+    {
+      "term_zh": "陽性預測值與陰性預測值",
+      "term_en": "Positive / negative predictive value (PPV / NPV)",
+      "definition_zh": "陽性預測值是檢測陽性者真的會發病的比例，陰性預測值是檢測陰性者不會發病的比例；這類 HLA 檢測 NPV 接近 100% 但 PPV 偏低。",
+      "level": "初階"
+    },
+    {
+      "term_zh": "需檢測人數",
+      "term_en": "Number needed to test (NNT)",
+      "definition_zh": "為預防 1 例不良事件平均需要檢測多少人。",
+      "level": "中階"
+    },
+    {
+      "term_zh": "歷史對照",
+      "term_en": "Historical control",
+      "definition_zh": "用過去估計的發生率當作比較對象，而不是同期設立對照組；證據強度低於隨機對照試驗。",
+      "level": "中階"
+    },
+    {
+      "term_zh": "藥物代謝表現型與活性分數",
+      "term_en": "Metabolizer phenotype / activity score",
+      "definition_zh": "把兩個等位基因的功能值相加成活性分數(如 DPYD 的 0–2)，再對應到正常、中間、不良代謝者等表現型。",
+      "level": "初階"
+    },
+    {
+      "term_zh": "細胞毒性 T 細胞",
+      "term_en": "Cytotoxic T lymphocyte (CTL, CD8+ T cell)",
+      "definition_zh": "能辨識 HLA class I 上的抗原並釋放 perforin、granzyme B、granulysin 殺死目標細胞的 T 細胞。",
+      "level": "中階"
+    },
+    {
+      "term_zh": "T 細胞受體",
+      "term_en": "T-cell receptor (TCR)",
+      "definition_zh": "T 細胞表面辨識 HLA-胜肽(或 HLA-藥物)複合物的受體，其 CDR3 序列決定辨識特異性。",
+      "level": "中階"
+    },
+    {
+      "term_zh": "p-i 概念",
+      "term_en": "Pharmacological interaction with immune receptors (p-i) concept",
+      "definition_zh": "認為藥物本身不需共價修飾蛋白，而是直接以非共價方式結合 HLA 或 TCR 而活化 T 細胞的模型。",
+      "level": "進階"
+    },
+    {
+      "term_zh": "改變的胜肽庫",
+      "term_en": "Altered peptide repertoire",
+      "definition_zh": "藥物結合 HLA 後改變抗原結合溝的形狀，使 HLA 改而呈現原本不呈現的自體胜肽，引起自體反應。",
+      "level": "進階"
+    },
+    {
+      "term_zh": "半抗原",
+      "term_en": "Hapten / pro-hapten",
+      "definition_zh": "藥物或其反應性代謝物與蛋白質共價結合而形成新抗原的機制(如 penicillin)。",
+      "level": "進階"
+    },
+    {
+      "term_zh": "連鎖不平衡與單倍型",
+      "term_en": "Linkage disequilibrium / haplotype",
+      "definition_zh": "相鄰的變異常一起遺傳，形成單倍型；HLA-B*58:01 常與 HLA-A*33:03、C*03:02 一起遺傳。",
+      "level": "進階"
+    },
+    {
+      "term_zh": "半合子與 X 染色體去活化",
+      "term_en": "Hemizygous / X-chromosome inactivation",
+      "definition_zh": "男性只有一條 X 染色體所以是半合子；女性細胞隨機關閉其中一條 X，導致 G6PD 異型合子女性呈鑲嵌表現。",
+      "level": "初階"
+    },
+    {
+      "term_zh": "溶血",
+      "term_en": "Hemolysis",
+      "definition_zh": "紅血球被破壞，可造成貧血、黃疸與深色尿；G6PD 缺乏者在氧化壓力下的典型併發症。",
+      "level": "初階"
+    },
+    {
+      "term_zh": "骨髓抑制與白血球低下",
+      "term_en": "Myelosuppression / leukopenia / neutropenia",
+      "definition_zh": "骨髓造血功能下降，白血球或嗜中性球數量降低，增加感染風險。",
+      "level": "初階"
+    },
+    {
+      "term_zh": "二氫嘧啶去氫酶",
+      "term_en": "Dihydropyrimidine dehydrogenase (DPD, DPYD)",
+      "definition_zh": "分解氟尿嘧啶類藥物的第一步限速酵素，缺乏時藥物蓄積造成嚴重毒性。",
+      "level": "初階"
+    },
+    {
+      "term_zh": "葡萄糖醛酸化",
+      "term_en": "Glucuronidation",
+      "definition_zh": "UGT 酵素把藥物或膽紅素接上葡萄糖醛酸而使其易於排出的第二相代謝反應。",
+      "level": "中階"
+    },
+    {
+      "term_zh": "Gilbert 症候群",
+      "term_en": "Gilbert syndrome",
+      "definition_zh": "UGT1A1 活性降低所致的輕度非結合型高膽紅素血症，通常良性。",
+      "level": "中階"
+    },
+    {
+      "term_zh": "治療藥物監測",
+      "term_en": "Therapeutic drug monitoring (TDM)",
+      "definition_zh": "測血中藥物濃度以調整劑量，特別用於治療指數窄的藥物(如 phenytoin)。",
+      "level": "中階"
+    },
+    {
+      "term_zh": "臨床藥物基因體實施聯盟",
+      "term_en": "Clinical Pharmacogenetics Implementation Consortium (CPIC)",
+      "definition_zh": "發布基因型導向用藥指引的國際聯盟，建議分為強、中等、選擇性等強度。",
+      "level": "初階"
+    },
+    {
+      "term_zh": "荷蘭藥物基因體學工作小組",
+      "term_en": "Dutch Pharmacogenetics Working Group (DPWG)",
+      "definition_zh": "荷蘭皇家藥師協會轄下發布基因-藥物交互作用建議的專家小組，與 CPIC 並列為主要指引來源。",
+      "level": "中階"
+    },
+    {
+      "term_zh": "全民健康保險給付",
+      "term_en": "National Health Insurance (NHI) reimbursement",
+      "definition_zh": "健保署決定哪些檢驗可以被給付及其適用條件，例如 HLA-B*1502(2010 年起)與 HLA-B*5801(2022 年起)檢測。",
+      "level": "入門"
+    }
+  ],
+  "sources": [
+    {
+      "name": "Chen P et al. NEJM 2011 — Carbamazepine-induced toxic effects and HLA-B*1502 screening in Taiwan (PubMed)",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/21428768/",
+      "note_zh": "台灣 4,877 人前瞻篩檢研究的摘要與關鍵數字。"
+    },
+    {
+      "name": "Chung WH et al. Nature 2004 — A marker for Stevens-Johnson syndrome",
+      "url": "https://www.nature.com/articles/428486a",
+      "note_zh": "HLA-B*15:02 與 carbamazepine SJS 關聯的首篇報告(全文需訂閱)。"
+    },
+    {
+      "name": "CPIC 2013：HLA-B and carbamazepine (Leckband)",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3748365/",
+      "note_zh": "包含對 Chung 2004 的數字引述、敏感度/特異度/預測值與 Yip 整合分析。"
+    },
+    {
+      "name": "CPIC 2017 更新：HLA-A、HLA-B 與 carbamazepine/oxcarbazepine (Phillips 2018)",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5847474/",
+      "note_zh": "建議強度、族群頻率、HLA-A*31:01 與 oxcarbazepine 擴充。"
+    },
+    {
+      "name": "CPIC 2020 更新：CYP2C9、HLA-B 與 phenytoin",
+      "url": "https://files.cpicpgx.org/data/guideline/publication/phenytoin/2020/32779747.pdf",
+      "note_zh": "phenytoin 的 HLA-B*15:02 與 CYP2C9 劑量建議表。"
+    },
+    {
+      "name": "FDA Tegretol 仿單(2025 版)",
+      "url": "https://www.accessdata.fda.gov/drugsatfda_docs/label/2025/018927Orig1s061;016608Orig1s122;020234Orig1s055lbl.pdf",
+      "note_zh": "框內警語、各國 HLA-B*1502 盛行率與 HLA-A*3101 說明。"
+    },
+    {
+      "name": "衛福部：Carbamazepine 藥品臨床效益及 HLA-B*1502 檢測(2010-05-20)",
+      "url": "https://www.mohw.gov.tw/cp-3161-26506-1.html",
+      "note_zh": "台灣仿單加註(2007-09)與健保給付(2010-06-01)的官方說明。"
+    },
+    {
+      "name": "衛福部：Allopurinol 仿單應加刊藥物基因學注意事項(2009-08-28)",
+      "url": "https://mohw.gov.tw/fp-3162-27338-1.html",
+      "note_zh": "台灣 allopurinol 仿單修訂公告與藥害救濟件數。"
+    },
+    {
+      "name": "Hung SI et al. PNAS 2005 — HLA-B*5801 and allopurinol SCAR",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC554812/",
+      "note_zh": "台灣漢人 allopurinol SCAR 病例對照研究全文。"
+    },
+    {
+      "name": "Ko TM et al. BMJ 2015 — HLA-B*58:01 screening in Taiwan",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4579807/",
+      "note_zh": "台灣全國前瞻世代研究全文。"
+    },
+    {
+      "name": "CPIC 2013 allopurinol 指引 (Hershfield) 與 2015 更新 (Saito)",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3564416/",
+      "note_zh": "建議、風險估計與各族群關聯強度。"
+    },
+    {
+      "name": "2020 ACR Guideline for the Management of Gout",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10563586/",
+      "note_zh": "HLA-B*5801 檢測的有條件建議與 allopurinol 起始劑量。"
+    },
+    {
+      "name": "DPWG allopurinol / HLA-B 指引 (Eur J Hum Genet 2022)",
+      "url": "https://www.nature.com/articles/s41431-022-01180-0",
+      "note_zh": "荷蘭指引摘要(全文需訂閱)。"
+    },
+    {
+      "name": "DPWG 抗癲癇藥指引：CYP2C9、HLA-A、HLA-B (Eur J Hum Genet 2024)",
+      "url": "https://www.nature.com/articles/s41431-024-01572-4",
+      "note_zh": "phenytoin、carbamazepine、oxcarbazepine、lamotrigine 的 HLA 與 CYP2C9 建議摘要。"
+    },
+    {
+      "name": "台灣人體生物資料庫 HLA 分析 (Biomark Res 2024)",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11067262/",
+      "note_zh": "台灣漢人 HLA-B*15:02、B*58:01、B*57:01、A*31:01 帶有者與等位基因頻率。"
+    },
+    {
+      "name": "Mallal S et al. PREDICT-1, NEJM 2008 (PubMed)",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/18256392/",
+      "note_zh": "abacavir HLA-B*5701 篩檢隨機試驗摘要。"
+    },
+    {
+      "name": "CPIC 2012 abacavir 指引 (Martin) 與 2014 更新",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3374459/",
+      "note_zh": "建議強度、族群頻率與預測值。"
+    },
+    {
+      "name": "FDA Ziagen 仿單 (DailyMed)",
+      "url": "https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=ca73b519-015a-436d-aa3c-af53492825a1",
+      "note_zh": "HLA-B*5701 禁忌與篩檢要求、過敏發生率。"
+    },
+    {
+      "name": "McCormack M et al. NEJM 2011 — HLA-A*3101 in Europeans",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3113609/",
+      "note_zh": "歐洲人 carbamazepine 過敏與 HLA-A*31:01。"
+    },
+    {
+      "name": "Illing PT et al. Nature 2012 — drug-modified HLA-peptide repertoire",
+      "url": "https://www.nature.com/articles/nature11147",
+      "note_zh": "abacavir 與 HLA-B*57:01 的 altered self 機制。"
+    },
+    {
+      "name": "Wei CY et al. JACI 2012 — direct interaction between HLA-B and carbamazepine",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/22322005/",
+      "note_zh": "HLA-B*15:02 直接呈現 carbamazepine 的體外證據。"
+    },
+    {
+      "name": "Hung SI et al. Nat Rev Dis Primers 2024 — Severe cutaneous adverse reactions",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13052379/",
+      "note_zh": "SCAR 流行病學、機制模型、公共 TCR 與篩檢概況的最新綜論。"
+    },
+    {
+      "name": "Harr T, French LE. Orphanet J Rare Dis 2010 — TEN and SJS",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3018455/",
+      "note_zh": "SJS/TEN 發生率與死亡率的較早回顧。"
+    },
+    {
+      "name": "CPIC 2018 硫嘌呤指引 (Relling 2019)",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6576267/",
+      "note_zh": "TPMT/NUDT15 劑量建議與機制。"
+    },
+    {
+      "name": "CPIC 2025 硫嘌呤更新 (Maillard 2026)",
+      "url": "https://files.cpicpgx.org/data/guideline/publication/thiopurines/2026/41618934.pdf",
+      "note_zh": "最新版本，含複合中間代謝者與整併後的建議。"
+    },
+    {
+      "name": "Yang SK et al. Nat Genet 2014 — NUDT15 and thiopurine leukopenia",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/25108385/",
+      "note_zh": "NUDT15 R139C 的發現研究。"
+    },
+    {
+      "name": "Wang CW et al. Clin Pharmacol Ther 2022 — NUDT15 genotyping implementation",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/35869597/",
+      "note_zh": "台灣長庚團隊的 NUDT15 前瞻篩檢研究。"
+    },
+    {
+      "name": "CPIC DPYD 2017 更新 (Amstutz 2018)",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5760397/",
+      "note_zh": "DPYD 活性分數與劑量建議的正式論文。"
+    },
+    {
+      "name": "ClinPGx：CPIC Guideline for DPYD and Fluoropyrimidines",
+      "url": "https://www.clinpgx.org/guideline/PA166251462",
+      "note_zh": "含 2018、2024、2026 年的線上更新註記。"
+    },
+    {
+      "name": "EMA：DPD 檢測建議 (2020-04-30)",
+      "url": "https://www.ema.europa.eu/en/news/ema-recommendations-dpd-testing-prior-treatment-fluorouracil-capecitabine-tegafur-and-flucytosine",
+      "note_zh": "歐盟對氟尿嘧啶類用藥前檢測的建議。"
+    },
+    {
+      "name": "FDA Xeloda 仿單 (DailyMed)",
+      "url": "https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=e702d84d-7162-4751-bf37-d724cc7e45a5",
+      "note_zh": "DPD 缺乏框內警語與 DPYD 檢測要求。"
+    },
+    {
+      "name": "Henricks LM et al. Lancet Oncol 2018 — DPYD genotype-guided dosing",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/30348537/",
+      "note_zh": "1,103 人前瞻安全性分析。"
+    },
+    {
+      "name": "CPIC 2022 G6PD 擴充指引 (Gammal)",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10281211/",
+      "note_zh": "高風險藥物清單、表現型與建議。"
+    },
+    {
+      "name": "Chiang SH et al. 1999 — Neonatal screening for G6PD deficiency in Taiwan",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/11400791/",
+      "note_zh": "台灣新生兒 G6PD 篩檢歷史與盛行率。"
+    },
+    {
+      "name": "FDA Elitek 與 Krintafel 仿單 (DailyMed)",
+      "url": "https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=5cf989d5-36f5-4561-a30b-9fcb9deb6b6a",
+      "note_zh": "tafenoquine 的 G6PD 檢測要求；rasburicase 可由 Elitek 仿單查詢。"
+    },
+    {
+      "name": "FDA Camptosar 仿單 (DailyMed)",
+      "url": "https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=e518dfc6-7e93-4fee-a66c-51e1ab71c056",
+      "note_zh": "UGT1A1*28 與 *6 的減量與頻率說明。"
+    },
+    {
+      "name": "CPIC UGT1A1 與 atazanavir 指引 (Gammal 2016)",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4785051/",
+      "note_zh": "Gilbert 症候群、UGT1A1*6 與 atazanavir 建議。"
+    },
+    {
+      "name": "CPIC API (api.cpicpgx.org)",
+      "url": "https://api.cpicpgx.org/v1/",
+      "note_zh": "CPIC 官方資料庫，可查建議、等位基因功能與頻率。"
+    },
+    {
+      "name": "FDA Table of Pharmacogenomic Biomarkers in Drug Labeling",
+      "url": "https://www.fda.gov/drugs/science-and-research-drugs/table-pharmacogenomic-biomarkers-drug-labeling",
+      "note_zh": "列出 abacavir、carbamazepine、capecitabine、rasburicase 等藥的基因生物標記與仿單章節。"
+    },
+    {
+      "name": "台灣藥物基因體學會 (PGST)",
+      "url": "https://www.pgst.org.tw/index.php",
+      "note_zh": "台灣學會的教育資源與活動；本主題事實主要引自原始文獻與官方來源。"
+    },
+    {
+      "name": "Wei CY et al. Nat Commun 2025 — Clinical impact of PGx risk variants in a large Chinese cohort",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/40634300/",
+      "note_zh": "台灣精準醫療計畫 486,956 人的真實世界分析。"
+    },
+    {
+      "name": "健保署共擬會議文件(2022)：新增診療項目 12213B HLA-B*5801 基因檢測",
+      "url": "https://www.nhi.gov.tw/ch/dl-79349-75e78aa13f6d4236ba4587b3dbb5a7f7-1.pdf",
+      "note_zh": "HLA-B*5801 檢測給付點數與備註條件的健保署文件(查核用)。"
+    },
+    {
+      "name": "義大醫院檢驗頁：HLA-B*5801",
+      "url": "https://exdep.edah.org.tw/cp/index.php/2017-06-26-08-19-55/2017-06-28-09-06-14/468-hla-b-5801",
+      "note_zh": "健保代碼 12213B 與給付條件的醫院公告(查核用)。"
+    },
+    {
+      "name": "Maggo 2016 綜述：HLA-B*15:02 與 carbamazepine",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4791456/",
+      "note_zh": "交叉核對 Chung 2004 的 44/44、3/101、8/93 與 OR(查核用)。"
+    },
+    {
+      "name": "CPIC 硫嘌呤 2025 更新 PMC 版",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12997511/",
+      "note_zh": "Maillard 2026 全文 PMC 版(查核用)。"
+    }
+  ],
+  "misconceptions_zh": [
+    "迷思：「帶有 HLA-B*15:02 就一定會得 SJS/TEN」。正解：漢人族群中 HLA-B*15:02 對 carbamazepine SJS/TEN 的陽性預測值約 7.7%(亞洲整體約 1.8%)，多數陽性者不會發病；但陰性預測值接近 100%，篩檢的價值在於排除高風險者。",
+    "迷思：「HLA-B*15:02 陰性就絕對安全」。正解：陰性者仍需監測皮疹；HLA-B*15:02 對 carbamazepine 的斑丘疹與 DRESS 沒有預測力，其他 B75 家族等位基因(如 B*15:08、B*15:11、B*15:21)與 HLA-A*31:01 也有關聯；若陰性者仍發病，CPIC 建議重複分型以排除檢驗誤差。",
+    "迷思：「只要換成別的抗癲癇藥就不會 SJS/TEN」。正解：phenytoin 等其他芳香族抗癲癇藥也與 HLA-B*15:02 相關(證據較弱)，CPIC 指出若篩檢後改用 phenytoin，整體 SJS/TEN 不會下降，替代藥要謹慎選擇。",
+    "迷思：「HLA-B*15:02 檢測適用於所有人種」。正解：這個等位基因主要見於亞洲(日本、韓國很低)，歐洲人的主要風險等位基因是 HLA-A*31:01；但自述族群不等於實際血統(曾有自認歐洲裔的患者帶有 HLA-B*15:02)。",
+    "迷思：「已經吃了好幾年的人也要立刻補驗」。正解：carbamazepine、phenytoin 的 SJS/TEN 多在起始後 4–28 天出現，超過 3 個月無反應者風險極低但非零；台灣 allopurinol 仿單也不建議長期使用者篩檢，健保給付亦限制於開始使用前。",
+    "迷思：「台灣的前瞻篩檢研究(Chen 2011、Ko 2015)證明篩檢能把風險降到零」。正解：兩者都是以歷史發生率作對照的單臂前瞻研究，結論是篩檢與發生率降低高度相關；並非隨機對照試驗，也不是零風險。",
+    "迷思：「G6PD 缺乏只是吃蠶豆的問題」。正解：藥物(rasburicase、primaquine、tafenoquine、dapsone 等)與感染同樣可誘發溶血；且台灣男性盛行率約 3%，用藥前應確認 G6PD 狀態。",
+    "迷思：「G6PD 是男生的病，女生不用擔心」。正解：女性異型合子因 X 染色體去活化呈鑲嵌，可能表現為正常或缺乏，只看基因型無法預測，須測酵素活性。",
+    "迷思：「DPYD 檢測陰性就不會有嚴重氟尿嘧啶毒性」。正解：仿單明確指出即使未檢出變異仍可能發生嚴重不良反應；且 CPIC 核心的四個變異在東亞人幾乎不存在，陰性的保證有限。",
+    "迷思：「TPMT 檢測足以預防亞洲人的硫嘌呤骨髓抑制」。正解：亞洲人的主要決定因子是 NUDT15；在韓國克隆氏症研究中，NUDT15 R139C 的敏感度 89.4%，TPMT 變異僅 12.1%。",
+    "迷思：「東亞人只要檢測 UGT1A1*28 就夠了」。正解：UGT1A1*6(c.211G>A)在東亞人頻率與 *28 相近，而在歐洲人與非洲人幾乎沒有；irinotecan 仿單現在同時列出 *28 與 *6。",
+    "迷思：「指引說陽性就一律禁止，沒有例外」。正解：不同藥物的措辭與強度不同：abacavir 為「不建議」(僅在極特殊情況權衡)、allopurinol 為「禁用」、carbamazepine 對未曾使用者不要使用但對長期耐受者為選擇性建議、rasburicase 為權衡腫瘤溶解風險後避免；閱讀指引時要看建議強度與適用條件。"
+  ],
+  "viz_ideas": [
+    "HLA 溝槽與藥物的 3D 互動模型：以示意造型(非精確晶體結構)呈現 HLA-B 的抗原結合溝、F 口袋與胜肽鏈；使用者切換『無藥物』『abacavir 嵌入 HLA-B*57:01』『carbamazepine 嵌入 HLA-B*15:02』，看到被呈現的胜肽種類如何改變(altered repertoire)，並可切換為 p-i 模型(藥物露在溝外被 TCR 辨識)；畫面明確標註這是『學界並存的模型，非單一定論』，可高亮 Asn63、Ile95、Leu156 殘基(Wei 2012)。若要精確結構，可載入 RCSB PDB 公開結構，但須自行核對 ID。",
+    "T 細胞攻擊角質細胞場景：3D 表皮切面，CD8+ T 細胞的 TCR 對接 HLA-藥物-胜肽複合物，釋放 granulysin、perforin、granzyme B 使角質細胞凋亡，配合表皮剝離體表面積滑桿(小於 10%、10–30%、大於 30% 對應 SJS、重疊型、TEN)；旁邊標示 4–28 天的風險窗與 3 個月門檻的時間軸。",
+    "族群 HLA 頻率地球儀：以 3D 地球與柱狀高度顯示 HLA-B*15:02、HLA-B*58:01、HLA-B*57:01、HLA-A*31:01 的地區頻率，並提供『帶有者比例／等位基因頻率』切換，避免混用；放大到台灣時顯示台灣人體生物資料庫數字(B*15:02 帶有者 8.38%、B*58:01 帶有者 20.9%、B*57:01 帶有者 0.34%)。",
+    "篩檢模擬器(Chen 2011 風格)：用 4,877 個 instanced mesh 小球代表受試者，7.7% 標為 HLA-B*15:02 陽性；兩種情境並排『不篩檢』對『篩檢後陰性者用藥』，動畫顯示預期約 10 例 SJS/TEN 對觀察到 0 例；另設敏感度/特異度/盛行率滑桿，讓學習者親手看到為何 NPV 接近 100% 而 PPV 只有個位數，並在畫面註明歷史對照的限制。",
+    "硫嘌呤代謝管線：3D 細胞內管線顯示 mercaptopurine、TPMT 甲基化與 NUDT15 將 TGTP 水解為 TGMP，滑桿調整 TPMT 與 NUDT15 活性(正常、中間、不良)，觀察 DNA-TG 蓄積與骨髓抑制風險；側邊長條顯示 R139C 的耐受劑量強度 83.5%、63%、8%，並可切換 CPIC 2018 與 2025 更新的建議以對照差異。",
+    "DPYD 與氟尿嘧啶：肝細胞 3D 場景，DPD 分解 5-FU 的流量隨活性分數(0–2)改變，未被分解的藥物在血液槽中累積；使用者選擇 DPYD*2A、c.2846A>T、HapB3 等變異組合，即時顯示活性分數與 CPIC 建議劑量(50%、避免使用)，並以『指引更新中』標籤標示 HapB3 的 2026 年暫行變動。",
+    "G6PD 與紅血球：3D 紅血球內部顯示 NADPH、還原型麩胱甘肽與活性氧的平衡；加入氧化壓力來源(rasburicase 產生過氧化氫、primaquine、蠶豆)，G6PD 正常者維持形狀、缺乏者出現 Heinz 小體並溶血；旁附 X 染色體遺傳與女性鑲嵌(X 去活化)的補丁拼布視覺化，並顯示台灣男性盛行率約 3%、女性約 0.9% 的統計。",
+    "UGT1A1 與 irinotecan/atazanavir：肝細胞 3D 通路顯示膽紅素與 SN-38 經 UGT1A1 葡萄糖醛酸化，選擇 *1、*28、*6 基因型改變流量；atazanavir 作為抑制劑堵住通道，出現黃疸警示，並在東亞與歐洲人群間切換 *28 與 *6 頻率長條。",
+    "台灣政策時間軸(3D 卷軸)：標示 2004 Nature 發現、2007-09 carbamazepine 仿單加註、2009-07-07 allopurinol 仿單、2010-06-01 HLA-B*1502 健保給付、2011 NEJM 前瞻研究、2015 BMJ allopurinol 研究、2022-06-01 HLA-B*5801 健保給付；每個節點可點開看來源與信心度標籤。",
+    "指引比較牆：把 CPIC、DPWG、FDA 仿單、EMA 的建議並排成三維方塊，可按藥物篩選，方塊高度代表建議強度(強、中等、選擇性)，讓學習者理解『建議』與『法規要求』的差別，以及各來源數字(如 DPD 缺乏盛行率、NUDT15 不良代謝者 1/50 對 1/100)不一致時如何呈現不確定性。"
+  ],
+  "must_not_say_zh": [
+    "不可說「帶有 HLA-B*15:02 就一定會得 SJS/TEN」或「陽性等於會發病」：漢人族群的陽性預測值約 7.7%、亞洲整合分析約 1.8%，多數陽性者不會發病；篩檢的價值在於排除高風險者(cases-hla-tox-23，經編輯抽查 CPIC 2013 全文；cases-hla-tox-09 為篩檢族群 7.7% 陽性率，兩者是不同概念)。",
+    "不可說「HLA-B*15:02 陰性就絕對安全」或「篩檢能預防 carbamazepine 的所有皮膚反應」：FDA 仿單載明 HLA-B*1502 無法預測斑丘疹(MPE)或 DRESS，篩檢不可取代臨床警覺，陰性者仍可能發病(cases-hla-tox-10)。",
+    "不可說「Chen 2011(NEJM)、Ko 2015(BMJ)或 Wang 2022(NUDT15)證明篩檢能把風險降到零」或「隨機對照試驗證實篩檢有效」：三者都是以歷史發生率為對照的單臂前瞻研究，結論只能是『篩檢與發生率降低高度相關』(cases-hla-tox-09、-14；-29 未經查核員核對但本檔亦註明為歷史對照)。",
+    "不可說「Chen 2011 的 4,877 人全部服用了 carbamazepine」：HLA-B*1502 陽性者(7.7%)被建議避免使用，『沒有 SJS/TEN』指的是陰性且服藥者(cases-hla-tox-09)。",
+    "不可說「衛生署/仿單規定使用 carbamazepine 前『必須』檢測 HLA-B*1502」或「衛生署禁止陽性者使用」：2007 年台灣仿單的措辭是亞洲族群『宜考慮檢測』，2010 年衛生署立場是臨床效益仍高於風險、在密切評估監控下仍可使用；FDA 仿單則是有風險血統者『應篩檢』、陽性者『除非效益明顯大於風險，否則不應使用』(cases-hla-tox-06、-10)。",
+    "不可把 cases-hla-tox-06 中的仿單用語當成仿單逐字引文，也不可說出 HLA-B*1502 健保給付的適用條件與次數限制：查核員確認 2010 年 6 月 1 日起納入給付，但條件未取得原始公告(cases-hla-tox-06)。",
+    "不可說「勝算比 2,504 是我們從 Nature 2004 原文核對的數字」：全文為付費牆，人數(44/44、3/101、8/93)與 OR 2,504(95% CI 126–49,522)只經 CPIC 2013 與次級文獻交叉核對(cases-hla-tox-08)。",
+    "不可說「Chung 2004 的原始論文明確納入 TEN 病例」：原論文題名/摘要只寫 SJS，『SJS/TEN』是後續文獻(含 CPIC)的稱法(cases-hla-tox-08)。",
+    "不可說「HLA-B*15:02 關聯在所有東亞人(含日本人、韓國人)都成立」：日本與韓國的 SJS/TEN 患者未觀察到此關聯，等位基因頻率也低(cases-hla-tox-08、-11)。",
+    "不可說「HLA-B*15:02 檢測適用於所有人種」或「對歐洲人無效是因為生物機制不同」：主因是該等位基因在歐洲人幾乎不存在，歐洲人的相關等位基因是 HLA-A*31:01；且自述族群不等於實際血統(cases-hla-tox-24、-11，尚未經查核員核對)。",
+    "不可說「換成 phenytoin 等其他芳香族抗癲癇藥就能避免 SJS/TEN」：CPIC 指出篩檢後改用 phenytoin 不會降低整體 SJS/TEN，HLA-B*15:02 陽性者對 phenytoin 也有風險(證據較弱)(cases-hla-tox-12、-22)。",
+    "不可說「已連續服用 carbamazepine 多年者必須立刻補驗」或「HLA-B*15:02 陽性者絕對不能繼續使用」：CPIC 對曾連續使用超過 3 個月且無皮膚反應者為『可謹慎考慮繼續使用』(選擇性建議)，風險極低但非零(cases-hla-tox-12)。",
+    "不可說「HLA-B*58:01 陽性一定會發生 allopurinol SCAR」或「陰性即可完全排除」：PNAS 2005 作者稱其『必要但不充分』(耐受者中仍有 15% 帶有)，Ko 2015 的陽性預測值僅約 2%；歐洲研究中僅約 55% 患者帶有該等位基因(cases-hla-tox-13、-14；後者見 -15，未經查核員核對)。",
+    "不可說「慢性腎功能不全使 allopurinol SCAR 風險增加 4.7 倍」：4.7 是勝算比(OR，95% CI 2.3–9.3)，不是相對風險的倍數(cases-hla-tox-13)。",
+    "不可說「Ko 2015 的 2,339 位陰性者全部服用 allopurinol 且無人發生 SCAR」：實際服藥並納入分析者為 2,173 人(155 人未服藥、11 人失聯)(cases-hla-tox-14)。",
+    "不可說「PREDICT-1 顯示約一半 HLA-B*5701 陽性者可以安全使用 abacavir」：47.9% 是對『免疫學確認』過敏反應的陽性預測值，臨床診斷的過敏反應在對照組達 7.8%，且指引仍建議陽性者不要使用(cases-hla-tox-16、-17)。",
+    "不可說「abacavir 過敏只發生在 HLA-B*57:01 陽性者」：免疫學確認的過敏幾乎只見於陽性者，但篩檢組臨床診斷的過敏反應仍有 3.4%，CPIC 也提醒陰性者仍可能發生(cases-hla-tox-16、-17；與 -41 的措辭衝突，見 open_issues)。",
+    "不可說「PREDICT-1 已證明篩檢在亞洲人(含台灣人)同樣有效」：該試驗接受 abacavir 者 84% 為白人(cases-hla-tox-16)。",
+    "不可說「FDA 要求所有 capecitabine 使用者都必須先做 DPYD 檢測」：框內警語是『開始治療前應檢測 DPYD 變異，除非需立即治療』，且仿單註明目前沒有 FDA 授權的 DPYD 檢測、各檢測涵蓋變異不同(cases-hla-tox-19)。",
+    "不可說「DPYD 檢測陰性就不會發生嚴重氟尿嘧啶毒性」：仿單明載即使未檢出變異仍可能發生嚴重不良反應；CPIC 核心四個變異在東亞人的頻率表中為 0，陰性的保證有限(cases-hla-tox-19、-44)。",
+    "不可說「有已證實對完全 DPD 缺乏者安全的 capecitabine 劑量」：仿單指出沒有任何劑量被證實安全(cases-hla-tox-19)。",
+    "不可說「CPIC 對 DPYD 活性分數 0.5 者一律禁用氟尿嘧啶類」：建議是避免使用，若無替代藥才考慮低於正常起始劑量 25% 並早期監測血中濃度(強建議)；活性分數 1.5 為中等建議、1.0 為強建議(cases-hla-tox-32)。",
+    "不可說「CPIC 已把 c.1129-5923C>G(HapB3)改為 0.75 分/起始 75% 劑量」或「DPYD 指引 2026 年更新已定案」：目前只是 2026 年 7 月暫行說明，完整指引預計 2026 年秋季，官網與資料庫仍為 0.5 分/減量 50%；頁面須標示『指引更新中』(cases-hla-tox-32、-43)。",
+    "不可說「Camptosar 仿單強制要求 UGT1A1 檢測」或「仿單規定明確的減量百分比」：仿單為『考慮檢測 *28 與 *6』、『考慮至少降低一個劑量水準』，精確減量幅度未知；也不可說『早期版本僅提及 *28』(該句未查證)(cases-hla-tox-34)。",
+    "不可說「HLA-B*5801 健保給付適用於所有 allopurinol 使用者」或「可重複給付」：依醫院公告，僅限開始使用前且符合特定適應症、每人終生一次；已連續使用滿一個月或累計滿三個月者不給付；陰性且一個月內未開藥者亦不給付(cases-hla-tox-37)。",
+    "不可說「HLA-B*5801 於 2022-06-01 納入給付已由健保署公告確認」：生效日只來自 2022-05-31 廠商新聞稿與衛福部健保會年報，健保署原始公告未取得(cases-hla-tox-37)。",
+    "不可說「NUDT15 不良代謝者在東亞人約 1/50」或「約 1/100」為定論：CPIC 2018 版寫約 1/50，2025 版寫約 1/100，兩版不一致，需並列標示或避免採用單一數字(cases-hla-tox-42、-30)。",
+    "不可把 CPIC 2018 版硫嘌呤建議(cases-hla-tox-30)當成現行規則：2025 年更新(2026 年發表)已依藥物整併，新增複合中間代謝者並調整不良代謝者的 mercaptopurine 建議(cases-hla-tox-42)。",
+    "不可說「只檢測 TPMT 就足以預防亞洲人的硫嘌呤骨髓抑制」：NUDT15 R139C 在韓國克隆氏症研究中敏感度 89.4%，TPMT 變異僅 12.1%(cases-hla-tox-28、-29，未經查核員核對)。",
+    "不可說「東亞人只要檢測 UGT1A1*28 就夠了」：*6 在東亞人頻率與 *28 相近而歐洲人幾乎沒有，Camptosar 仿單已同時列出 *28 與 *6(cases-hla-tox-34、-20、-45)。",
+    "不可說「carbamazepine 觸發 SJS/TEN 的機制已被證實是某單一模型(p-i、hapten 或改變胜肽庫)」或「Wei 2012 的體外結果代表所有患者」：學界並存多種模型，尚無定論，教學動畫不應把單一模型畫成定論(cases-hla-tox-38、-39、-40、-41，均未經查核員核對)。",
+    "不可說「SJS/TEN 的死亡率是單一固定數字」：各文獻不一(SJS 低於 5% 或 10%、TEN 高於 30% 或 40%，整體約 20%)，發生率也因資料來源(登錄或申報資料)而異(cases-hla-tox-02，未經查核員核對)。",
+    "不可說「DPYD 依基因型減量後，嚴重毒性風險已降到與野生型相同」：Henricks 2018 中攜帶者嚴重毒性為 39%，仍高於野生型的 23%，減量不能完全消除風險(cases-hla-tox-33，未經查核員核對)。",
+    "不可說「已有台灣人 DPYD 變異頻率或健保給付 DPYD 檢測的資料」：本次未找到原始資料，證據不足(cases-hla-tox-44)。",
+    "不可說「TPMI 大型研究(Wei 2025)證明藥物基因檢測沒有臨床價值」：該研究只顯示部分藥物基因配對的額外風險很小，並不否定 HLA 相關嚴重過敏的高陰性預測值，各配對須個別評估(cases-hla-tox-46，未經查核員核對)。",
+    "不可說「ACR 強烈建議所有人在 allopurinol 前檢測 HLA-B*5801」：2020 ACR 指引僅對東南亞血統與非裔美國人做『有條件建議』(cases-hla-tox-26，未經查核員核對)。",
+    "不可說「G6PD 缺乏只跟蠶豆有關」或「G6PD 缺乏只是男生的問題」：藥物與感染同樣可誘發溶血，女性異型合子因 X 染色體去活化呈鑲嵌、需測酵素活性(cases-hla-tox-04、-21、-36，未經查核員核對)。",
+    "不可混用「帶有者比例」與「等位基因頻率」：例如台灣人體生物資料庫的 HLA-B*15:02 帶有者 8.38% 不是等位基因頻率(4.28%)，FDA 仿單的『陽性者比例』與 CPIC 的等位基因頻率也不可直接比較(cases-hla-tox-11、-27)。",
+    "不可說「指引對陽性者一律『禁止』、各藥標準相同」：abacavir 為『不建議』、allopurinol 為『禁用』、carbamazepine 對未曾使用者不要使用但對長期耐受者為選擇性建議，寫作時須保留原措辭與建議強度(cases-hla-tox-12、-15、-17)。"
+  ],
+  "open_issues": [
+    "統計說明：本檔共 46 條事實，兩位查核員共檢查 14 條(全數兩位都檢查)：13 條 confirmed 保留、1 條(cases-hla-tox-14)corrected 並改寫、0 條 refuted 被移除、0 條 unverifiable；另有 1 條(cases-hla-tox-01)由編輯依教科書標準知識標為 verified。verified:true 共 15 條。",
+    "尚有 27 條 critical 事實未經任何查核員核對、維持 verified:false(編號：02、04、05、07、11、15、17、21、22、23、24、25、26、27、28、29、30、31、33、35、36、39、40、41、44、45、46)；上線前須以原始來源逐條確認，或以較保守措辭呈現。",
+    "另有非 critical 的未查核事實(03、18、20、38)維持 verified:false；其中 cases-hla-tox-03 因『HLA 展示細胞內胜肽』實為 class I 的功能而未標為 verified，建議寫作時明確寫 HLA class I。",
+    "cases-hla-tox-06：HLA-B*1502 健保給付(2010-06-01)的適用條件與次數限制仍未取得健保署原始公告；本條的仿單用語是忠實轉述而非逐字引文。",
+    "cases-hla-tox-37：HLA-B*5801 健保給付起始日 2022-06-01 只來自世基生醫新聞稿(2022-05-31)與衛福部健保會年報，健保署原始公告因網站擋爬取未能取得；給付條件來自 2022 年共擬會議文件與醫院公告，應以健保署最新支付標準為準。",
+    "cases-hla-tox-08：Nature 2004 全文為付費牆，人數與 OR 2,504 只經次級文獻交叉核對(其中一篇綜述將 CI 上限印成 49,552，疑筆誤)；原論文只寫 SJS，『SJS/TEN』為後續文獻稱法。",
+    "cases-hla-tox-14：已依兩位查核員改寫(2,173 人實際服藥、155 人未服藥、11 人失聯)；陽性者 354 + 215 = 569，另 2 人失聯，已補入 detail_zh。",
+    "cases-hla-tox-16 / -41 / -17 措辭衝突：cases-hla-tox-41 的 detail_zh 寫『abacavir 過敏只發生在帶有 HLA-B*57:01 者』，但 cases-hla-tox-17(CPIC)與 -16(篩檢組臨床診斷過敏 3.4%)顯示陰性者仍可能發生臨床診斷的過敏；須對照 Illing 2012 原文，改寫成『免疫學確認的過敏幾乎只見於陽性者』。",
+    "cases-hla-tox-16：PPV 47.9% 是對『免疫學確認』過敏反應的預測值；『約一半陽性者其實可以使用』為編輯認為過度推論的算術詮釋，未改動原文，但寫作時不宜寫成『可安全使用』。",
+    "cases-hla-tox-42：CPIC 2025 硫嘌呤更新已有勘誤(Clin Pharmacol Ther 2026;119(6):1671-2, doi 10.1002/cpt.70298)；兩位查核員對內容說法不一(一位讀不到，一位指為 TPMT 表 1 的更正且不影響本條)，需讀原文勘誤確認；東亞 NUDT15 不良代謝者頻率(2018 版約 1/50、2025 版約 1/100)兩版不一致，仍未解決。",
+    "cases-hla-tox-30：描述的是 CPIC 2018 版硫嘌呤建議，已被 cases-hla-tox-42 的 2025 年更新部分取代；網站須標明版本，勿當現行建議呈現。",
+    "cases-hla-tox-32 / -43：DPYD 指引更新中(2026 年 7 月暫行說明)；截至 2026-09-29 未見最終指引，上線前須重查 ClinPGx/CPIC；c.1129-5923C>G 的 0.5 分/減量 50% 預計會改為 0.75 分/起始 75% 劑量。",
+    "cases-hla-tox-34：detail_zh 中『早期版本僅提及 *28』未經核對(DailyMed 歷史版本無法取得)，建議刪除或標為未查證。",
+    "cases-hla-tox-19：仿單另有併用維生素 K 拮抗劑出血風險的框內警語，寫作時勿讓人以為 DPYD 是唯一框內警語；DailyMed 紀錄生效日(2026-02-05)與標籤內容修訂日(10/2025)不同，引用時說明清楚。",
+    "cases-hla-tox-23：編輯抽查 CPIC 2013 全文確認敏感度 98%、特異度 97%、PPV 7.7%(漢人)、亞洲 PPV 1.8%、需檢測 461 人、OR 113.4，但其餘細節(OR 信賴區間 51.2–251.0、oxcarbazepine PPV 0.73%)尚未核對；且 7.7% 與 Chen 2011 篩檢陽性率 7.7% 為兩個不同概念，勿混淆。",
+    "cases-hla-tox-44：低信賴度，台灣族群 DPYD 變異頻率與健保 DPYD 檢測給付皆無原始資料；寫作時保留『證據不足』。",
+    "cases-hla-tox-11 / -27：帶有者比例與等位基因頻率、直接分型與填補推算的差異仍需在頁面上明確標示；FDA 仿單各國數字未由查核員重驗。",
+    "cases-hla-tox-38 至 -41：機制模型與體外/結構研究均未經查核員核對，且屬並存假說；3D 互動場景須標示『學界並存的模型，非單一定論』，殘基名稱(Asn63、Ile95、Leu156)與 TCR 序列使用前須對照原文。",
+    "查核員提及：CPIC 的 HLA-carbamazepine 與 abacavir 指引最新版仍為 2017/2018 與 2014(獨立搜尋未見 2024–2026 修訂)；此為『未找到』而非『確定沒有』，上線前可再查一次。"
+  ],
+  "dropped_facts": [],
+  "verification_meta": {
+    "verified_on": "2026-09-29",
+    "checkers": [
+      "primary-source",
+      "independent-search"
+    ],
+    "facts_total": 46,
+    "facts_checked_by_checkers": 14,
+    "confirmed_kept": 13,
+    "corrected": 1,
+    "dropped": 0,
+    "hedged_unverifiable": 0,
+    "verified_true_total": 15,
+    "low_confidence_total": 1
+  }
+}

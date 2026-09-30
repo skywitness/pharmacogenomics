@@ -1,0 +1,20 @@
+// ch04 術語：藥物在身體裡的旅程
+export default [
+  { key: 'adme', zh: 'ADME', en: 'Absorption, Distribution, Metabolism, Excretion', level: 1, aliases: ['吸收分布代謝排除'], def: '藥物在體內旅程的四個階段：吸收（進入血液）、分布（被帶到各組織）、代謝（被酵素改造）、排除（離開身體）。' },
+  { key: 'bioavailability', zh: '生體可用率', en: 'Bioavailability', level: 2, aliases: ['生物可用率'], def: '服下的藥物實際進入全身循環、可以發揮作用的比例（與速度）。口服藥因為要先過腸壁與肝臟，生體可用率常小於吸收率。' },
+  { key: 'portal-vein', zh: '門靜脈', en: 'Portal vein', level: 2, def: '把腸道吸收後的血液集中送往肝臟的血管。口服藥吸收後先走這條路，所以會先遇到肝臟的酵素。' },
+  { key: 'first-pass', zh: '首渡效應', en: 'First-pass effect', level: 2, aliases: ['首渡代謝', '首過效應'], def: '口服藥物先經腸道與肝臟，被酵素代謝掉一部分後，剩下的才進入全身循環。靜脈注射不經過這一關。' },
+  { key: 'phase-ii', zh: '第二相代謝', en: 'Phase II metabolism', level: 2, aliases: ['第二相', 'Phase 2', 'phase-2'], def: '由 UGT、NAT、TPMT 等「轉移」類的酵素，把葡萄糖醛酸、乙醯基、甲基等小分子基團接到藥物或其代謝物上，通常使其更易溶於水、更容易排出；但並非一律「解毒」。' },
+  { key: 'half-life', zh: '半衰期', en: 'Half-life (t½)', level: 1, aliases: ['t1/2'], def: '血中藥物濃度降為一半所需的時間。多數藥物遵循一階排除，經過 4 到 5 個半衰期，約 94% 到 97% 已被排除。' },
+  { key: 'first-order', zh: '一階排除', en: 'First-order elimination', level: 2, aliases: ['一階動力學'], def: '單位時間被排除的「比例」固定（而不是固定的量）。因此濃度每隔一個半衰期就減半。乙醇等少數藥物屬零階排除。' },
+  { key: 'steady-state', zh: '穩定狀態', en: 'Steady state', level: 2, aliases: ['穩態'], def: '重複給藥後，每次進入身體的藥量等於被排除的藥量，血中濃度在固定範圍內起伏。' },
+  { key: 'pk-curve', zh: '血中濃度—時間曲線', en: 'Plasma concentration–time curve', level: 1, aliases: ['濃度時間曲線', '血中濃度曲線'], def: '服藥後，血漿藥物濃度隨時間變化的曲線：先因吸收而上升到高峰，再因代謝與排除而下降。' },
+  { key: 'cmax', zh: '最高血中濃度', en: 'Cmax', level: 2, aliases: ['Cmax', '峰值濃度'], def: '服藥後血中藥物濃度所達到的最高值。' },
+  { key: 'tmax', zh: '達峰時間', en: 'Tmax', level: 2, aliases: ['Tmax', '到達峰值時間'], def: '血中藥物濃度到達最高值（Cmax）所花的時間。' },
+  { key: 'auc', zh: '曲線下面積', en: 'Area under the curve (AUC)', level: 2, aliases: ['AUC', '藥物暴露量', '暴露量'], def: '血中濃度—時間曲線下的面積，代表身體在一段時間內接觸到多少藥物（總暴露量）。' },
+  { key: 'therapeutic-window', zh: '治療窗', en: 'Therapeutic window', level: 1, aliases: ['治療範圍'], def: '藥物「有效又不至於中毒」的血中濃度範圍。低於下緣可能無效，高於上緣不良反應的風險上升；窗口越窄，酵素活性的個體差異越容易讓人掉出窗外。' },
+  { key: 'nti', zh: '窄治療指數藥物', en: 'Narrow therapeutic index (NTI) drug', level: 2, aliases: ['NTI', '窄治療指數', '治療指數窄', 'Narrow therapeutic index'], def: '劑量或血中濃度的小差異，就可能造成嚴重治療失敗或危及生命的不良反應的藥物（FDA 的定義）。也就是有效劑量與中毒劑量很接近，例如華法林、tacrolimus。' },
+  { key: 'drug-target', zh: '藥物標靶', en: 'Drug target', level: 2, aliases: ['藥物作用標的', '標靶', '作用標的'], def: '藥物真正作用的分子，例如受體或酵素（warfarin 的標靶是 VKORC1）。標靶的個體差異屬於藥效學（PD）的範圍。' },
+  { key: 'prodrug', zh: '前驅藥', en: 'Prodrug', level: 2, aliases: ['前驅藥物', '前藥'], def: '本身沒有或只有很弱的活性，必須在體內被酵素轉換成活性物質才有療效的藥物，例如可待因（codeine）、氯吡格雷（clopidogrel）、泰莫西芬（tamoxifen）。酵素活性不足時，轉換出的活性物就不足，藥可能沒效。' },
+  { key: 'one-compartment', zh: '一室模型', en: 'One-compartment model', level: 3, aliases: ['一室藥動學模型'], def: '把身體簡化成一個均勻的「水槽」來描述藥物濃度變化的最簡單模型。優點是好算，限制是忽略了組織間的分布差異。' },
+]

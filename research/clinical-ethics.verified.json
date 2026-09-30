@@ -1,0 +1,1457 @@
+{
+  "topic": "clinical-ethics",
+  "title": "臨床實務、檢測技術與倫理法規",
+  "summary_zh": "本主題整理藥物基因體學從「檢測結果」走到「臨床決策」的實務面：各指引與法規機構（CPIC、DPWG、FDA、EMA、CPNDS/RNPGx）的分級與定位差異、標準檢測流程與技術（SNV 陣列、點測、定序）及其對 CYP2D6 結構變異等的限制，以及預先檢測計畫（PREDICT、PG4KDS、Mayo RIGHT、eMERGE-PGx、U-PGx PREPARE）與成本效益證據。證據面呈現「有益但並非一面倒」：PREPARE 常被引用的「降低 30%」其實是勝算比（OR）0.70，且受試者 97.7% 自述為歐洲、地中海或中東族裔；TAILOR-PCI 的主要終點則未達統計顯著。倫理法規面整理美國 GINA 的範圍與缺口，以及台灣個人資料保護法、人體研究法、人體生物資料庫管理條例；並特別釐清台灣的實驗室開發檢測（LDT）實際上受《特定醫療技術檢查檢驗醫療儀器施行或使用管理辦法》規範，並不存在名為「醫療機構實驗室 LDT 管理辦法」的單獨法規。另一項常見誤解是：「Testing required／recommended／Actionable PGx」是 PharmGKB（ClinPGx）對仿單的分級，並非 FDA 官方分類。本次未找到台灣一般 SNV／單基因藥物基因檢測的權威自費價格與典型報告天數，僅取得臺大醫院 23 基因 NGS（NT$19,000、約 8–12 週）這一個機構的公告。",
+  "facts": [
+    {
+      "id": "clinical-ethics-01",
+      "claim_zh": "美國 FDA 在其《藥物基因關聯表》中明確表示，病人不應在未諮詢處方者的情況下自行調整藥物，該表主要是提供處方者參考。",
+      "detail_zh": "FDA 指出，每位病人的基因組成只是影響藥物濃度與反應的眾多因素之一，且表中多數關聯尚未評估「做了基因檢測是否真的改善臨床結果」。因此看到自己的基因報告與某藥物有關時，正確做法是把報告帶給醫師或藥師討論，而不是自行停藥或換藥。",
+      "level": "入門",
+      "critical": true,
+      "source_name": "FDA Table of Pharmacogenetic Associations（頁面標示更新至 2026-09-10）",
+      "source_url": "https://www.fda.gov/medical-devices/precision-medicine/table-pharmacogenetic-associations",
+      "confidence": "high",
+      "en_terms": [
+        "Table of Pharmacogenetic Associations",
+        "prescriber",
+        "medication adjustment"
+      ],
+      "verified": false
+    },
+    {
+      "id": "clinical-ethics-02",
+      "claim_zh": "一次臨床藥物基因體檢測的標準流程是：依用藥適應症開立醫囑、檢測基因型、把星號對偶基因（star allele）組合成雙套基因型（diplotype）、轉譯為表現型（例如中間代謝者），最後由電子病歷的臨床決策支援（CDS）在開藥時提示調整處方。",
+      "detail_zh": "CPIC 以 Delphi 共識法統一了對偶基因功能與推論表現型的用語，目的是讓不同實驗室與不同電子病歷系統之間能交換並正確解讀藥物基因體結果。這裡的步驟名稱是本網站依文獻歸納的教學用簡化，實際流程會因機構而異。",
+      "level": "入門",
+      "critical": false,
+      "source_name": "Caudle 等人 2017, Genetics in Medicine（CPIC 標準化用語共識）",
+      "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5253119/",
+      "confidence": "high",
+      "en_terms": [
+        "star allele",
+        "diplotype",
+        "phenotype translation",
+        "clinical decision support",
+        "Delphi method"
+      ],
+      "verified": false
+    },
+    {
+      "id": "clinical-ethics-03",
+      "claim_zh": "「預先（pre-emptive）檢測」是在開藥之前就一次分析多個基因並把結果存入病歷，「反應式（reactive）檢測」則是等醫師要開某個特定藥時才針對單一基因檢測；預先檢測的主要論據是多數人在數年內都會用到相關藥物。",
+      "detail_zh": "Vanderbilt 分析 52,942 位病人發現，5 年內約 64.8%（95% CI 64.4–65.2%）的人會被開立至少一種已有藥物基因關聯的藥物（共追蹤 56 種藥物）。",
+      "level": "入門",
+      "critical": true,
+      "source_name": "Schildcrout 等人 2012, Clinical Pharmacology & Therapeutics",
+      "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3785311/",
+      "confidence": "high",
+      "en_terms": [
+        "pre-emptive genotyping",
+        "reactive testing",
+        "preemptive testing",
+        "multiplexed panel"
+      ],
+      "verified": false
+    },
+    {
+      "id": "clinical-ethics-04",
+      "claim_zh": "台灣自 2010 年 6 月 1 日起，把使用 carbamazepine 前的 HLA-B*15:02 基因檢測納入全民健保給付。",
+      "detail_zh": "衛福部網站所載、2010 年 5 月 20 日建檔的說明指出，此舉是為了加強監測可能發生的 Stevens-Johnson 症候群／毒性表皮壞死溶解症（SJS/TEN），該類反應屬罕見（小於 0.1%）；並建議可能帶有 HLA-B*15:02 的亞洲族群在用藥前宜考慮檢測，同時認為含 carbamazepine 藥品的臨床效益仍高於風險。",
+      "level": "入門",
+      "critical": true,
+      "source_name": "衛生福利部：含 Carbamazepine 成分藥品的臨床效益仍高於風險，高危險族群宜進行 HLA-B*1502 基因檢測",
+      "source_url": "https://www.mohw.gov.tw/cp-3161-26506-1.html",
+      "confidence": "high",
+      "en_terms": [
+        "HLA-B*15:02",
+        "carbamazepine",
+        "SJS/TEN",
+        "National Health Insurance"
+      ],
+      "verified": true,
+      "evidence_url": "https://www.mohw.gov.tw/cp-3161-26506-1.html",
+      "verification_note": "衛福部頁面（建檔 99-05-20）載明自 99 年 6 月 1 日納入健保給付；另有 Epilepsia 2023 全國研究亦稱 2010 年 6 月納入給付。"
+    },
+    {
+      "id": "clinical-ethics-05",
+      "claim_zh": "台灣健保自 2022 年 6 月 1 日起給付新使用 allopurinol 前的 HLA-B*58:01 基因檢測（醫令代碼 12213B，支付 2,343 點），每人終身限給付一次。",
+      "detail_zh": "依行政院公報刊載的支付標準修正內容，僅適用於符合特定適應症（例如尿酸製造過多之痛風）的新使用者；已連續用藥滿 1 個月或累計滿 3 個月者不給付；檢測陰性卻在 1 個月內未開立 allopurinol、或檢測後 1 個月內未上傳結果者不給付；並規定以 LDT 執行須具衛福部核准的施行計畫。給付條件可能再修訂，請以健保署最新支付標準為準。",
+      "level": "入門",
+      "critical": true,
+      "source_name": "行政院公報：全民健康保險醫療服務給付項目及支付標準部分診療項目修正（111 年第二次修正）",
+      "source_url": "https://gazette.nat.gov.tw/EG_FileManager/eguploadpub/eg028093/ch08/type1/gov70/num29/images/AA.pdf",
+      "confidence": "high",
+      "en_terms": [
+        "HLA-B*58:01",
+        "allopurinol",
+        "NHI payment standard",
+        "laboratory developed test"
+      ],
+      "verified": true,
+      "evidence_url": "https://gazette.nat.gov.tw/EG_FileManager/eguploadpub/eg028093/ch08/type1/gov70/num29/images/AA.pdf",
+      "verification_note": "行政院公報為衛福部 2022-05-20 令，111 年 6 月 1 日生效，12213B、2,343 點與各給付限制皆吻合。健保署自 2022 年後是否再修訂 12213B 未能查證，網站須標示『以健保署最新支付標準為準』。"
+    },
+    {
+      "id": "clinical-ethics-06",
+      "claim_zh": "台灣《個人資料保護法》把「基因」與病歷、醫療、健康檢查等並列為受特別限制的個人資料，第 6 條原則上禁止蒐集、處理或利用，僅在法律明文規定、經當事人書面同意等例外情形才可進行。",
+      "detail_zh": "該法最近一次修正公布於 2025 年 11 月 11 日（含由個人資料保護委員會擔任主管機關的第 1-1 條等），但全國法規資料庫標示部分條文的施行日期由行政院另定，尚未全部生效。第 6 條例外之一是：公務機關或學術研究機構基於醫療、衛生或犯罪預防之目的，為統計或學術研究而有必要，且資料經提供者處理後，或經蒐集者依其揭露方式，無從識別特定當事人。",
+      "level": "入門",
+      "critical": true,
+      "source_name": "全國法規資料庫：個人資料保護法",
+      "source_url": "https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=I0050021",
+      "confidence": "high",
+      "en_terms": [
+        "Personal Data Protection Act",
+        "sensitive personal data",
+        "genetic data",
+        "written consent"
+      ],
+      "verified": true,
+      "evidence_url": "https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=I0050021",
+      "verification_note": "全國法規資料庫核對第 6 條原文與 114-11-11 修正資訊無誤（部分條文施行日期由行政院另定）。編輯精修：detail_zh 原稿引述的例外條款漏掉法條中的『或犯罪預防』與『經提供者處理後或經蒐集者依其揭露方式』，已改為與法條一致的完整敘述（實質意思未變）。"
+    },
+    {
+      "id": "clinical-ethics-07",
+      "claim_zh": "台灣多中心前瞻研究（NEJM 2011）在 4,877 位候選者中先篩檢 HLA-B*15:02，讓陽性者（7.7%）避開 carbamazepine，結果陰性者服藥後無人發生 SJS/TEN，而以歷史發生率 0.23% 推估原本約會有 10 例。",
+      "detail_zh": "此研究以估計的歷史發生率作為對照，並非隨機分派對照試驗；輕微短暫皮疹發生於 4.3% 受試者，需住院的較廣泛皮疹為 0.1%。這是台灣「以基因篩檢預防藥物嚴重過敏」最具代表性的證據。",
+      "level": "入門",
+      "critical": true,
+      "source_name": "Chen 等人 2011, New England Journal of Medicine",
+      "source_url": "https://doi.org/10.1056/NEJMoa1009717",
+      "confidence": "high",
+      "en_terms": [
+        "HLA-B*15:02 screening",
+        "carbamazepine",
+        "Stevens-Johnson syndrome",
+        "historical control"
+      ],
+      "verified": true,
+      "evidence_url": "https://doi.org/10.1056/NEJMoa1009717",
+      "verification_note": "NEJM 2011;364:1126-33 摘要核對：4,877 人、23 家醫院、7.7%／92.3%、皮疹 4.3%／0.1%、歷史發生率 0.23% 約 10 例，全數吻合；對照為估計的歷史發生率，非隨機對照。"
+    },
+    {
+      "id": "clinical-ethics-08",
+      "claim_zh": "CPIC 與 DPWG 的核心都是依基因型或預測表現型提供用藥調整建議，而 DPWG、加拿大 CPNDS 與法國 RNPGx 另會建議是否應執行基因檢測，RNPGx 甚至指明適用的臨床情境。",
+      "detail_zh": "比較研究指出各委員會的方法學相似，但起始目標不同因而各有專長，建議差異也部分來自方法（例如三環抗憂鬱劑劑量調整的評估方式）。跨機構協調的成果包括把「extensive metabolizer」改稱 normal metabolizer，並約定 CYP2D6 活性分數 1.0 的基因型預測為中間代謝者。",
+      "level": "初階",
+      "critical": true,
+      "source_name": "Abdullah-Koolmees 等人 2020, Frontiers in Pharmacology",
+      "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7868558/",
+      "confidence": "high",
+      "en_terms": [
+        "CPIC",
+        "DPWG",
+        "CPNDS",
+        "RNPGx",
+        "guideline harmonization",
+        "normal metabolizer"
+      ],
+      "verified": false
+    },
+    {
+      "id": "clinical-ethics-09",
+      "claim_zh": "CPIC 對每個基因-藥物配對指派 A 到 D 等級：A 表示應依基因資訊改變處方，B 表示可以改變（因替代方案幾乎同樣有效且安全），C 與 D 則沒有建議改變處方。",
+      "detail_zh": "A 級需至少有一項強或中等強度的建議，B 級至少有一項「選擇性」建議；C 表示已有研究，但基因導引的劑量沒有差異，或替代藥物不明、較不有效、毒性較高或不切實際；D 表示研究少、臨床行動不明、機制基礎少、證據多屬薄弱，或資料互相衝突。A 與 B 通常視為可行動（actionable），C 與 D 則否；只有 A/B 配對具足以支持處方行動的證據。配對在通過 CPIC 指引審查前的等級屬暫定（provisional，另有 A/B、B/C、C/D 中間等級），審查後才為最終（final）。",
+      "level": "初階",
+      "critical": true,
+      "source_name": "CPIC 等級定義表（Table 2）；ClinPGx CPIC 分級頁；CPIC 定義修訂備忘（2016）；ClinPGx 部落格說明 provisional/final",
+      "source_url": "https://cpicpgx.org/wp-content/uploads/2015/12/CPIC-definitions-revision-acc.pdf",
+      "confidence": "high",
+      "en_terms": [
+        "CPIC level A",
+        "CPIC level B",
+        "CPIC level C",
+        "CPIC level D",
+        "actionable",
+        "provisional"
+      ],
+      "verified": true,
+      "evidence_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5117674/",
+      "verification_note": "兩位查核者對照 CPIC 等級定義表（Table 2）與 ClinPGx 現行頁面：A/B/C/D 定義（含 D）已逐字核實，原先『D 的定義未逐字核對』的警語已解除，信心由 medium 調為 high。只有 A/B 配對具足以支持處方行動的證據；等級在指引發表前為暫定（含 A/B、B/C、C/D 中間等級）、發表後為最終。編輯精修：C 級原稿寫『證據薄弱』，CPIC 原文為『替代藥物不明、較不有效、毒性較高或不切實際』，已據此改寫。"
+    },
+    {
+      "id": "clinical-ethics-10",
+      "claim_zh": "CPIC 的處方建議強度分為強（strong）、中（moderate）、選擇性（optional）與無建議（no recommendation）四種。",
+      "detail_zh": "強：證據品質高且利明顯大於弊；中：利弊接近或不確定；選擇性：利弊接近，或證據薄弱／屬外推，專家意見可有分歧；無建議：證據、信心或共識不足以指引臨床。「無建議」是 2016 年提案新增的類別，現行 CPIC 資料庫的建議資料表已使用此類別；CPIC 的設計假設是基因檢測結果已在手，重點是教臨床「怎麼用」，即使證據薄弱也盡量給出可行建議。",
+      "level": "初階",
+      "critical": true,
+      "source_name": "CPIC 定義修訂備忘（2016）",
+      "source_url": "https://cpicpgx.org/wp-content/uploads/2015/12/CPIC-definitions-revision-acc.pdf",
+      "confidence": "high",
+      "en_terms": [
+        "strong recommendation",
+        "moderate recommendation",
+        "optional recommendation",
+        "no recommendation"
+      ],
+      "verified": true,
+      "evidence_url": "https://cpicpgx.org/wp-content/uploads/2015/12/CPIC-definitions-revision-acc.pdf",
+      "verification_note": "2016 文件為提案；獨立查核者確認 CPIC API 現行的建議資料表確實使用 Strong、Moderate、Optional、No Recommendation 四類。『無建議』類別的正式採行日期未查得。"
+    },
+    {
+      "id": "clinical-ethics-11",
+      "claim_zh": "FDA 的《藥物基因關聯表》分三個區段：支持治療處置建議、對安全性或療效有潛在影響、僅顯示對藥動學有潛在影響；FDA 並強調列入該表不代表 FDA 主張處方前必須做基因檢測（除非該檢測是伴隨式診斷）。",
+      "detail_zh": "頁面標示更新至 2026-09-10；本次自行計數三區段分別約 82、25、40 列。FDA 另維護一張較大的《Table of Pharmacogenomic Biomarkers in Drug Labeling》（仿單提及基因生物標記的藥品清單，頁面標示更新至 2026-08-12，本次自行計數約 692 列），其中只有部分仿單載明具體行動。",
+      "level": "初階",
+      "critical": true,
+      "source_name": "FDA Table of Pharmacogenetic Associations；FDA Table of Pharmacogenomic Biomarkers in Drug Labeling",
+      "source_url": "https://www.fda.gov/medical-devices/precision-medicine/table-pharmacogenetic-associations",
+      "confidence": "high",
+      "en_terms": [
+        "companion diagnostic",
+        "therapeutic management recommendations",
+        "pharmacokinetic properties",
+        "drug labeling biomarkers"
+      ],
+      "verified": false
+    },
+    {
+      "id": "clinical-ethics-12",
+      "claim_zh": "「Testing required／Testing recommended／Actionable PGx／Informative PGx」（另有 Criteria not met 與 No Clinical PGx）是 PharmGKB（現 ClinPGx）自行對藥品仿單標註的 PGx level，並不是 FDA 官方的分類。PharmGKB 逐一標註 FDA 生物標記表上的仿單，也標註 EMA 與加拿大衛生部（HCSC）的仿單，同一藥品在不同機構的等級可以不同，且定義會隨時間調整（2023 年 12 月部落格公告修訂標籤與準則，ClinPGx 現行說明另載 2024 年 8 月的準則修訂）。",
+      "detail_zh": "FDA 自己的關聯表只用三個證據區段，不使用 Testing required 或 Actionable PGx 這類標籤。ClinPGx 的大意定義：Testing required＝仿單要求用藥前做檢測；Testing recommended＝仿單建議但不強制檢測；Actionable PGx＝仿單針對特定基因型或表現型有具體處方行動（劑量、禁忌、替代藥）；Informative PGx＝僅載有基因資訊而無處方行動；No Clinical PGx＝仿單指出基因變異不影響療效、劑量、代謝或毒性；Criteria not met＝不符合其他等級（常見於 FDA 生物標記表上僅提到基因、卻缺乏藥物基因體內容的仿單）。2024 年 8 月的準則修訂使 FDA、EMA、HCSC 仿單中原標 Actionable 卻沒有處方資訊者改列 Informative，原 Informative 者改列 No Clinical PGx。例：mavacamten 在 2023 年 12 月的部落格中，FDA 與加拿大仿單被描述為 actionable、EMA 仿單則要求 CYP2C19 基因分型；依 ClinPGx 2026 年 9 月查得的資料，FDA 與加拿大仿單目前為 Informative PGx，EMA 仿單為 Testing Required。因此網站不宜把某藥品的等級寫死，應標示查詢日期。",
+      "level": "初階",
+      "critical": true,
+      "source_name": "PharmGKB 部落格（2023-12-20）；ClinPGx Drug Label Legend（含 2024-08 準則修訂）",
+      "source_url": "https://pharmgkb.blogspot.com/2023/12/updates-to-drug-label-annotation-tags.html",
+      "confidence": "high",
+      "en_terms": [
+        "PGx level",
+        "Testing required",
+        "Testing recommended",
+        "Actionable PGx",
+        "Informative PGx",
+        "Criteria not met",
+        "No Clinical PGx"
+      ],
+      "verified": true,
+      "was_corrected": true,
+      "correction_note": "獨立查核者判定 corrected，經本編輯以 ClinPGx Drug Label Legend 與 mavacamten 仿單資料親自核對後採納。核心主張（這些分級是 PharmGKB／ClinPGx 所創、非 FDA 官方分類）兩位查核者皆確認。修正兩處過時細節：(1) ClinPGx 現行說明載有 2024 年 8 月修訂 Actionable／Informative 準則，並有 No Clinical PGx 等級；(2) mavacamten 例子已過時，FDA 與加拿大仿單現為 Informative PGx（2023-12 部落格曾描述為 actionable），EMA 仿單為 Testing Required。",
+      "evidence_url": "https://api.clinpgx.org/v1/data/page/drugLabelLegend",
+      "verification_note": "Criteria not met 的首次出現時間有出入：2023-12 部落格已描述為新增，ClinPGx 現行說明則把它列在 2024 年 8 月修訂；網站不要斷言精確的首次引入日期。"
+    },
+    {
+      "id": "clinical-ethics-13",
+      "claim_zh": "FDA 關聯表區段一（支持治療處置建議）中，abacavir 對 HLA-B*57:01 陽性者是「不要使用」，carbamazepine 對 HLA-B*15:02 陽性者是「除非效益大於風險否則避免使用」，codeine 對 CYP2D6 超快速代謝者則因呼吸抑制風險並註明 12 歲以下兒童禁用。",
+      "detail_zh": "相對地，allopurinol–HLA-B*58:01 被列在區段二（潛在影響安全性或療效），tamoxifen–CYP2D6 被列在區段三（僅藥動學）並註明對療效的影響尚未確立，顯示同樣是「基因-藥物配對」，證據強度與 FDA 的表述力道並不一致。",
+      "level": "初階",
+      "critical": true,
+      "source_name": "FDA Table of Pharmacogenetic Associations",
+      "source_url": "https://www.fda.gov/medical-devices/precision-medicine/table-pharmacogenetic-associations",
+      "confidence": "high",
+      "en_terms": [
+        "HLA-B*57:01",
+        "abacavir",
+        "codeine",
+        "ultrarapid metabolizer",
+        "tamoxifen"
+      ],
+      "verified": false
+    },
+    {
+      "id": "clinical-ethics-14",
+      "claim_zh": "DPWG 由荷蘭皇家藥師公會（KNMP）於 2005 年設立；至 2020 年已系統性完成 90 項基因-藥物風險分析並產出 49 份含治療建議的指引，且獲歐洲臨床藥理學與治療學會及歐洲醫院藥師協會背書。",
+      "detail_zh": "DPWG 是由藥師、醫師、臨床藥理學家、臨床化學家與流行病學家組成的多專業團隊，目標包括以系統性文獻回顧產出建議，並把建議整合到處方、調劑與用藥監測的電腦系統。上述數字是 2020 年論文發表當時的統計，之後仍持續增加。",
+      "level": "初階",
+      "critical": true,
+      "source_name": "Lunenburg 等人 2020, European Journal of Human Genetics（DPWG：DPYD 與氟尿嘧啶類）",
+      "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7080718/",
+      "confidence": "high",
+      "en_terms": [
+        "DPWG",
+        "KNMP",
+        "risk analysis",
+        "clinical decision support"
+      ],
+      "verified": false
+    },
+    {
+      "id": "clinical-ethics-15",
+      "claim_zh": "DPWG 為每個基因-藥物配對給出「臨床意義評分」，分為 essential（必要）、beneficial（有益）、potentially beneficial（可能有益）與 not required（不需要），用來指引開藥前是否應先做基因檢測。",
+      "detail_zh": "評分依四項標準：基因-藥物交互作用的臨床效應、支持證據強度、介入預防該效應的有效性（含需檢測人數 number needed to genotype），以及仿單中的藥物基因資訊；DPYD 與氟尿嘧啶類被評為 essential，即用藥前必須先做 DPYD 基因分型。",
+      "level": "初階",
+      "critical": true,
+      "source_name": "Lunenburg 等人 2020, European Journal of Human Genetics",
+      "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7080718/",
+      "confidence": "high",
+      "en_terms": [
+        "clinical implication score",
+        "essential",
+        "beneficial",
+        "number needed to genotype"
+      ],
+      "verified": false
+    },
+    {
+      "id": "clinical-ethics-16",
+      "claim_zh": "歐洲藥品管理局（EMA）於 2020 年 4 月 30 日建議，使用 fluorouracil（注射或輸注）、capecitabine 與 tegafur 治療癌症前，應先檢測是否缺乏 DPD 酵素。",
+      "detail_zh": "EMA 註明高加索人口約有高達 9% 的 DPD 活性偏低、最多約 0.5% 完全缺乏；可用血中 uracil 濃度（表現型）或 DPYD 基因變異檢測。治療嚴重黴菌感染的 flucytosine 因不應延誤治療而不要求先檢測，外用 fluorouracil 亦不適用。完全缺乏者不得使用，部分缺乏者可考慮以較低劑量起始。",
+      "level": "初階",
+      "critical": true,
+      "source_name": "EMA 新聞稿 EMA/229267/2020（2020-04-30）",
+      "source_url": "https://www.ema.europa.eu/en/documents/press-release/ema-recommendations-dpd-testing-prior-treatment-fluorouracil-capecitabine-tegafur-and-flucytosine_en.pdf",
+      "confidence": "high",
+      "en_terms": [
+        "DPD deficiency",
+        "DPYD",
+        "fluorouracil",
+        "capecitabine",
+        "tegafur",
+        "uracil"
+      ],
+      "verified": true,
+      "evidence_url": "https://www.ema.europa.eu/en/documents/press-release/ema-recommendations-dpd-testing-prior-treatment-fluorouracil-capecitabine-tegafur-and-flucytosine_en.pdf",
+      "verification_note": "細節（日期、9%／0.5%、flucytosine 與外用 fluorouracil 除外、完全缺乏不得使用）皆吻合。此為 EMA 人用藥委員會（CHMP）意見，再交歐盟執委會作具法律效力的決定；未發現後續 EMA 變更推翻此建議。"
+    },
+    {
+      "id": "clinical-ethics-17",
+      "claim_zh": "EMA 於 2026 年 9 月 4 日首次公布「集中審查藥品的藥物基因體資訊表」，並強調列入該表不代表每位病人都需要或適合做基因檢測。",
+      "detail_zh": "此表列出藥品仿單（SmPC）中含藥物基因體資訊的藥品、基因名稱與 HGNC 符號及所在章節，不含未涉及基因變異的藥物交互作用；EMA 提醒病人若對用藥或基因檢測有疑問應詢問醫療專業人員。EMA 早在 2015 年通過《藥物基因體學在藥物安全監視之關鍵面向指引》（EMA/CHMP/281371/2013），自 2016 年 4 月 1 日生效。",
+      "level": "初階",
+      "critical": true,
+      "source_name": "EMA：Pharmacogenomics（頁面首次發布 2026-09-04）",
+      "source_url": "https://www.ema.europa.eu/en/human-regulatory-overview/post-authorisation/pharmacogenomics",
+      "confidence": "high",
+      "en_terms": [
+        "SmPC",
+        "centrally authorised medicines",
+        "pharmacogenomic information table",
+        "pharmacovigilance guideline"
+      ],
+      "verified": false
+    },
+    {
+      "id": "clinical-ethics-18",
+      "claim_zh": "FDA 於 2026 年 2 月 5 日更新（頁面標示「內容更新至」該日）之安全標示頁面指出，capecitabine（Xeloda）與 5-FU 的仿單經核准修訂，Boxed Warning 現已強調 DPD 完全缺乏可能導致嚴重不良反應或死亡的風險（Xeloda 原有的 Boxed Warning 為併用維生素 K 拮抗劑之出血風險，此次擴增納入 DPD 內容；5-FU 注射劑的 Boxed Warning 則專為 DPD 缺乏），並建議開始治療前先做 DPYD 基因檢測（除非需立即治療），且避免用於帶有造成完全 DPD 缺乏之特定純合或複合雜合 DPYD 變異者。",
+      "detail_zh": "對部分 DPD 缺乏者則需個別化劑量。FDA 說明 DPYD 編碼的酵素負責分解超過 80% 的 fluorouracil。這是監管機構從「僅列出關聯」走向「在仿單中建議事前檢測」的明確例子。FDA 頁面標示的「內容更新 2026-02-05」是頁面日期，並非各仿單的核准日期；現行 Xeloda 仿單的 Boxed Warning 標題同時涵蓋「DPD 完全缺乏的嚴重不良反應或死亡」與「併用維生素 K 拮抗劑的出血風險」。",
+      "level": "初階",
+      "critical": true,
+      "source_name": "FDA：Safety Labeling Update for Capecitabine and Fluorouracil (5-FU) — DPD deficiency（內容更新 2026-02-05）",
+      "source_url": "https://www.fda.gov/drugs/resources-information-approved-drugs/safety-labeling-update-capecitabine-and-fluorouracil-5-fu-risks-associated-dihydropyrimidine",
+      "confidence": "high",
+      "en_terms": [
+        "Boxed Warning",
+        "DPYD testing",
+        "capecitabine",
+        "fluorouracil",
+        "DPD deficiency"
+      ],
+      "verified": true,
+      "was_corrected": true,
+      "correction_note": "原稿『新增 Boxed Warning』不精確：FDA 頁面原文為 “The Boxed Warning now highlights…”，是修訂／擴增。Xeloda 先前已有 Boxed Warning（併用維生素 K 拮抗劑之出血風險），此次擴增納入 DPD 完全缺乏的內容；5-FU 注射劑的 Boxed Warning 則專為 DPD 缺乏（此點為查核者查 DailyMed 所得，本編輯未獨立複核）。另釐清 2026-02-05 是 FDA 頁面的『內容更新』日期，並非仿單核准日。",
+      "evidence_url": "https://www.fda.gov/drugs/resources-information-approved-drugs/safety-labeling-update-capecitabine-and-fluorouracil-5-fu-risks-associated-dihydropyrimidine",
+      "verification_note": "FDA 頁面日期、DPYD 檢測建議（除非需立即治療）、避免用於完全 DPD 缺乏基因型、部分缺乏者個別化劑量、>80% 的 fluorouracil 由 DPD 分解，兩位查核者皆確認。本編輯另於 DailyMed 核對 Xeloda Boxed Warning 標題同時涵蓋 DPD 缺乏與維生素 K 拮抗劑出血風險。"
+    },
+    {
+      "id": "clinical-ethics-19",
+      "claim_zh": "「表現型轉換（phenoconversion）」是指基因預測的代謝能力與實際代謝能力不一致，可由併用的 CYP 抑制劑或誘導劑、年齡、癌症、發炎、吸菸等非基因因素造成。",
+      "detail_zh": "系統性回顧納入 27 項研究，其中 14 項顯示特定基因型組出現表現型轉換；另有研究讓 CYP2C19 基因分型過的健康受試者服用 fluvoxamine 或 voriconazole，超過 80% 出現表現型轉換，中間代謝者甚至完全轉為不良代謝者。換言之，基因報告是基準線，還需搭配當下的用藥清單判讀。",
+      "level": "初階",
+      "critical": true,
+      "source_name": "Klomp 等人 2020, Journal of Clinical Medicine；Abouir 等人 2024, Clinical Pharmacology & Therapeutics",
+      "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7565093/",
+      "confidence": "high",
+      "en_terms": [
+        "phenoconversion",
+        "CYP inhibitor",
+        "CYP inducer",
+        "drug-drug-gene interaction",
+        "fluvoxamine"
+      ],
+      "verified": false
+    },
+    {
+      "id": "clinical-ethics-20",
+      "claim_zh": "目前臨床最常用的是預先選定變異的單核苷酸變異（SNV）檢測 panel，優點是報告快、判讀直接，但難以偵測罕見變異與結構變異。",
+      "detail_zh": "商用 panel 規模差異很大：Illumina VeraCode ADME core 含 184 個變異／34 個基因，Agena VeriDose core 含 68 個變異／20 個基因外加 5 個 CYP2D6 拷貝數標的，TaqMan OpenArray 可客製 12–240 個變異。Thermo Fisher 的 PharmacoScan，廠商官網現稱「超過 4,500 個標記、近 800 個基因、可報告 66 個基因區域的 946 個星號對偶基因／單倍型」，但 2020 年綜述記載為 4,627 個變異／1,191 個基因，兩者不一致，應以廠商最新規格為準。",
+      "level": "中階",
+      "critical": true,
+      "source_name": "van der Lee 等人 2020, Genes（Technologies for Pharmacogenomics: A Review）；Thermo Fisher PharmacoScan 產品頁",
+      "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7761897/",
+      "confidence": "medium",
+      "en_terms": [
+        "SNV panel",
+        "TaqMan OpenArray",
+        "PharmacoScan",
+        "VeraCode ADME",
+        "Sanger sequencing"
+      ],
+      "verified": false
+    },
+    {
+      "id": "clinical-ethics-21",
+      "claim_zh": "點測（point-of-care）CYP2C19 基因分型可在約 1.5 小時內出報告，而一般送實驗室的方式可能需要數小時到數天。",
+      "detail_zh": "佛羅里達大學 Jacksonville 院區以 Spartan RX 系統，中位報告時間為 96 分鐘，99% 的 PCI 病人在出院前拿到結果；同體系另一院區採實驗室方式，結果約在 PCI 後 3 天。中國 CHANCE-2 試驗使用的 GMEX 系統平均 85 分鐘，對照實驗室套組中位 1,630 分鐘（IQR 354–7,594）。",
+      "level": "中階",
+      "critical": true,
+      "source_name": "Cavallari 等人 2018, Journal of Translational Medicine；Meng 等人 2021, Stroke and Vascular Neurology",
+      "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5896099/",
+      "confidence": "high",
+      "en_terms": [
+        "point-of-care genotyping",
+        "Spartan RX",
+        "turnaround time",
+        "CYP2C19",
+        "PCI"
+      ],
+      "verified": false
+    },
+    {
+      "id": "clinical-ethics-22",
+      "claim_zh": "臺大醫院於 2026 年 9 月 9 日公告，其藥物基因體次世代定序檢測（涵蓋 23 個藥物基因）已正式提供臨床服務並完成衛福部 LDT 相關核准，自費價格為新臺幣 19,000 元，報告時程約為收件後 8–12 週。",
+      "detail_zh": "涵蓋基因包括 CYP2C19、CYP2D6、CYP2C9、DPYD、HLA-A、HLA-B、NUDT15、TPMT、UGT1A1、VKORC1 等，以血液檢體進行 NGS。這只是單一醫院的價格與時程，不代表全台；一般 SNV 陣列或單基因檢測的價格區間與典型天數，本次未找到權威來源。",
+      "level": "中階",
+      "critical": true,
+      "source_name": "臺大醫院藥物基因體與智慧用藥網：藥物基因體檢測正式提供臨床服務（2026-09-09）",
+      "source_url": "https://ntuhpgx.ntuh.gov.tw/newsOne?pk=6",
+      "confidence": "high",
+      "en_terms": [
+        "NGS pharmacogenomic panel",
+        "self-pay",
+        "turnaround time",
+        "laboratory developed test"
+      ],
+      "verified": false
+    },
+    {
+      "id": "clinical-ethics-23",
+      "claim_zh": "Vanderbilt 的 PREDICT 計畫自 2010 年 9 月起對病人做預先多基因檢測；分析前 9,589 人發現，以 5 個已實施的藥物-基因交互作用計，91% 帶有至少一個可行動變異（非裔美國人為 96%）。",
+      "detail_zh": "若改用反應式（開藥時才逐一檢測）策略，同一群病人會產生 14,656 次基因檢測，預先多基因檢測可大幅降低檢測負擔。PREDICT 的設計論文（Pulley 等人 2012）記載第一年約 3,000 位病人（多為心導管病人）完成基因分型，並在開立 clopidogrel 時提供 CYP2C19 決策支援。",
+      "level": "中階",
+      "critical": true,
+      "source_name": "Van Driest 等人 2014, Clinical Pharmacology & Therapeutics",
+      "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3961508/",
+      "confidence": "high",
+      "en_terms": [
+        "Vanderbilt PREDICT",
+        "preemptive genotyping",
+        "actionable variant",
+        "clinical decision support"
+      ],
+      "verified": false
+    },
+    {
+      "id": "clinical-ethics-24",
+      "claim_zh": "St. Jude 的 PG4KDS 以 Affymetrix DMET Plus 陣列加 CYP2D6 拷貝數檢測，預先對病童檢測 230 個基因；截至 2013 年 8 月已收案 1,559 人，並把 TPMT、CYP2D6、SLCO1B1、CYP2C19 四個基因的結果放入病歷，連結 12 種高風險藥物。",
+      "detail_zh": "在 1,016 位已有結果者中，78% 至少帶有一個高風險（可行動）基因型；系統建有 55 個中斷式 CDS 警示，每份 diplotype 結果附標準化解釋，病人與家屬另收到說明信，並設有處理次要（附帶）發現的流程。",
+      "level": "中階",
+      "critical": true,
+      "source_name": "Hoffman 等人 2014, American Journal of Medical Genetics Part C",
+      "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4056586/",
+      "confidence": "high",
+      "en_terms": [
+        "PG4KDS",
+        "DMET Plus",
+        "interruptive CDS alert",
+        "incidental findings",
+        "St. Jude"
+      ],
+      "verified": false
+    },
+    {
+      "id": "clinical-ethics-25",
+      "claim_zh": "Mayo Clinic 的 RIGHT 計畫（2012 年 10 月至 2013 年 3 月招募）在受邀的 2,000 位生物資料庫參與者中有 1,013 人（51%）提供血液，進行 CYP2D6 基因分型與 84 個藥物基因的目標定序，並把即時 CDS 整合進電子病歷。",
+      "detail_zh": "另一項多中心計畫 eMERGE-PGx 則規劃以 PGRNseq（涵蓋 84 個候選藥物基因）對近 9,000 位病人定序，同時建立「意義未明變異」與臨床表現型的資料庫供後續研究（Rasmussen-Torvik 等人 2014）。這兩者都屬於以定序而非單純 SNV 陣列的預先檢測，也因此更需要處理次要發現與變異解讀。",
+      "level": "中階",
+      "critical": true,
+      "source_name": "Bielinski 等人 2014, Mayo Clinic Proceedings（RIGHT 設計）；Rasmussen-Torvik 等人 2014（eMERGE-PGx）",
+      "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3932754/",
+      "confidence": "high",
+      "en_terms": [
+        "Mayo RIGHT",
+        "eMERGE-PGx",
+        "PGRNseq",
+        "variants of unknown significance",
+        "biobank"
+      ],
+      "verified": false
+    },
+    {
+      "id": "clinical-ethics-26",
+      "claim_zh": "歐洲 U-PGx 的 PREPARE 試驗（7 國、18 家醫院、9 個社區健康中心、28 間社區藥局，共 6,944 人）顯示，依 12 基因、50 個變異的 panel 進行基因型導引用藥，臨床相關藥物不良反應的勝算比（OR）為 0.70（95% CI 0.61–0.79）。",
+      "detail_zh": "全體病人不良反應發生率為 21.5%（628/2,923）對 28.6%（934/3,270）；有可行動結果的 1,558 人為 21.0%（152/725）對 27.7%（231/833），OR 0.70（95% CI 0.54–0.91；p=0.0075）。媒體常說的「降低 30%」是 OR 0.70，不是絕對風險下降 30%；絕對差約 7 個百分點。研究刊登於 Lancet 2023;401:347–356。",
+      "level": "中階",
+      "critical": true,
+      "source_name": "Swen 等人 2023, The Lancet（PREPARE）",
+      "source_url": "https://pubmed.ncbi.nlm.nih.gov/36739136/",
+      "confidence": "high",
+      "en_terms": [
+        "PREPARE study",
+        "U-PGx",
+        "odds ratio",
+        "cluster-randomised crossover",
+        "12-gene panel",
+        "DPWG"
+      ],
+      "verified": true,
+      "evidence_url": "https://pubmed.ncbi.nlm.nih.gov/36739136/",
+      "verification_note": "兩位查核者皆對照 Lancet 2023;401:347-356 摘要，數字全部吻合。注意：研究的主要（守門）分析是「有可行動結果」子群，全體病人分析是因子群達顯著才進行；全體分析實際納入約 6,193 人（2,923+3,270），6,944 為收案人數。設計為群集隨機交叉實作研究，絕對差約 7 個百分點。未發現後續取代的資料。"
+    },
+    {
+      "id": "clinical-ethics-27",
+      "claim_zh": "PREPARE 是開放標示（open-label）的群集隨機交叉實作研究，97.7% 受試者自述為歐洲、地中海或中東族裔，且研究組失去追蹤的比例（11.0%）高於對照組（7.9%），因此結果不宜直接推論到台灣人群。",
+      "detail_zh": "研究共有 652 人失去追蹤；主要終點是 12 週內臨床相關不良反應。Lancet 同期刊出質疑其效益「不明確」的通訊（The PREPARE study: benefits of pharmacogenetic testing are unclear）並附作者回覆；後續的更正啟事（Department of Error）僅修正 U-PGx 聯盟名單。",
+      "level": "中階",
+      "critical": true,
+      "source_name": "Swen 等人 2023, The Lancet；Lancet 通訊與作者回覆（2023）",
+      "source_url": "https://pubmed.ncbi.nlm.nih.gov/36739136/",
+      "confidence": "high",
+      "en_terms": [
+        "open-label",
+        "loss to follow-up",
+        "generalizability",
+        "ancestry",
+        "Lancet correspondence"
+      ],
+      "verified": false
+    },
+    {
+      "id": "clinical-ethics-28",
+      "claim_zh": "針對有 CPIC 指引的藥物，一項系統性回顧納入 108 項研究（涵蓋 39 種藥物），其中 77 項（71%）顯示藥物基因檢測具成本效益（48 項）或節省成本（29 項），21 項（20%）不具成本效益，10 項（9%）不確定。",
+      "detail_zh": "clopidogrel 的 23 篇中有 22 篇顯示具成本效益或節省成本，warfarin 的 16 篇中僅 7 篇；HLA 檢測（abacavir、allopurinol、carbamazepine/phenytoin）26 篇中有 15 篇。研究品質中位數高（QHES 91），但作者指出關於預先檢測與多基因檢測的成本效益資料仍有限。",
+      "level": "中階",
+      "critical": true,
+      "source_name": "Morris 等人 2022, Clinical Pharmacology & Therapeutics",
+      "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9828439/",
+      "confidence": "high",
+      "en_terms": [
+        "cost-effectiveness",
+        "cost-saving",
+        "systematic review",
+        "QHES",
+        "preemptive multigene testing"
+      ],
+      "verified": true,
+      "evidence_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9828439/",
+      "verification_note": "108 項研究、39 種藥物、77/21/10 項分布、clopidogrel 22/23、warfarin 7/16、HLA 15/26、QHES 中位 91 皆吻合。該回顧文獻檢索截至 2021 年 6 月，較新研究未納入，網站須註明。"
+    },
+    {
+      "id": "clinical-ethics-29",
+      "claim_zh": "PREPARE 的成本效用分析（6,930 人）中，12 基因 panel 的平均檢測成本為 €124，基因導引組每人平均總成本僅多 €21.40（校正後 95% CI −€130 至 €173，p=0.770），增量成本效果比（ICER）為每 QALY €12,020。",
+      "detail_zh": "QALY 差異極小（校正後約 0.003，95% CI −0.007 至 0.013）。作者主張若把「預先一次檢測」的檢測成本排除，基因導引治療每人約可省 €103.6，但摘要對「是否具成本效益」的門檻敘述（€11,000/QALY 下「邊際上具成本效益」）與 ICER 數字並不完全一致，宜審慎解讀。",
+      "level": "中階",
+      "critical": true,
+      "source_name": "Fragoulakis 等人 2026, eClinicalMedicine",
+      "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12768869/",
+      "confidence": "medium",
+      "en_terms": [
+        "cost-utility analysis",
+        "ICER",
+        "QALY",
+        "test cost",
+        "PREPARE"
+      ],
+      "verified": false
+    },
+    {
+      "id": "clinical-ethics-30",
+      "claim_zh": "GIFT 隨機對照試驗（1,650 位 65 歲以上接受髖或膝關節置換者）顯示，warfarin 基因導引起始劑量使「大出血、INR ≥4、靜脈血栓或死亡」的複合終點由 14.7% 降到 10.8%（RR 0.73，95% CI 0.56–0.95，p=0.02）。",
+      "detail_zh": "個別事件中，大出血為 2 對 8 例（RR 0.24，95% CI 0.05–1.15，單獨看未達顯著），INR ≥4 為 56 對 77 例（RR 0.71）；受試者 91.0% 為白人，且作者表示成本效益仍需研究。",
+      "level": "中階",
+      "critical": true,
+      "source_name": "Gage 等人 2017, JAMA（GIFT）",
+      "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5818817/",
+      "confidence": "high",
+      "en_terms": [
+        "GIFT trial",
+        "warfarin",
+        "CYP2C9",
+        "VKORC1",
+        "CYP4F2",
+        "composite endpoint"
+      ],
+      "verified": false
+    },
+    {
+      "id": "clinical-ethics-31",
+      "claim_zh": "TAILOR-PCI（5,302 位接受經皮冠狀動脈介入治療者）中，CYP2C19 功能喪失變異攜帶者接受基因導引 P2Y12 抑制劑選擇，12 個月主要終點為 4.0% 對 5.9%（HR 0.66，95% CI 0.43–1.02，p=0.06），未達統計顯著。",
+      "detail_zh": "全體隨機病人為 4.4% 對 5.3%（HR 0.84，p=0.16），11 項預先設定的次要終點均無顯著差異。試驗設計在 85% 檢定力下可偵測的最小 HR 為 0.50，實際觀察到的效應較小且信賴區間跨過 1，提醒不能只依機制推論臨床獲益。",
+      "level": "中階",
+      "critical": true,
+      "source_name": "Pereira 等人 2020, JAMA（TAILOR-PCI）",
+      "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7448831/",
+      "confidence": "high",
+      "en_terms": [
+        "TAILOR-PCI",
+        "CYP2C19 loss-of-function",
+        "ticagrelor",
+        "clopidogrel",
+        "hazard ratio"
+      ],
+      "verified": false
+    },
+    {
+      "id": "clinical-ethics-32",
+      "claim_zh": "PRIME Care 實用性隨機試驗（1,944 位憂鬱症病人）顯示，提供藥物基因體檢測結果能減少開立具預測基因-藥物交互作用的抗憂鬱劑，但對症狀緩解僅有小且不持久的效果。",
+      "detail_zh": "使用檢測導引者被開立「無／中度／顯著交互作用」藥物的比例為 59.3%／30.0%／10.7%，對照組為 25.7%／54.6%／19.7%（避開交互作用的 OR 4.32）。另一項 2022 年統合分析（13 項試驗、4,767 人）得到緩解 RR 1.41（95% CI 1.15–1.74），但各試驗的 panel 與建議不一致，證據異質性高。",
+      "level": "中階",
+      "critical": true,
+      "source_name": "Oslin 等人 2022, JAMA（PRIME Care）；Brown 等人 2022, Clinical Pharmacology & Therapeutics",
+      "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9277497/",
+      "confidence": "high",
+      "en_terms": [
+        "PRIME Care",
+        "major depressive disorder",
+        "drug-gene interaction",
+        "remission",
+        "meta-analysis"
+      ],
+      "verified": false
+    },
+    {
+      "id": "clinical-ethics-33",
+      "claim_zh": "荷蘭 17 家醫院的前瞻性研究顯示，對 1,103 位可評估病人做 DPYD 基因導引劑量調整後，DPYD*2A 攜帶者發生嚴重毒性的相對風險為 1.31（95% CI 0.63–2.73），低於歷史對照的 2.87（95% CI 2.14–3.86）。",
+      "detail_zh": "雜合變異攜帶者（8%）起始劑量依變異調降：DPYD*2A 與 c.1679T>G 調降 50%，c.2846A>T 與 c.1236G>A 調降 25%；整體嚴重毒性在攜帶者為 39%（33/85）、野生型為 23%（231/1,018）。此研究與歷史對照組比較，並非隨機對照試驗；作者也指出 c.2846A>T 與 c.1236G>A 攜帶者可能需要更大幅度的減量。",
+      "level": "中階",
+      "critical": true,
+      "source_name": "Henricks 等人 2018, The Lancet Oncology",
+      "source_url": "https://doi.org/10.1016/S1470-2045(18)30686-7",
+      "confidence": "high",
+      "en_terms": [
+        "DPYD*2A",
+        "genotype-guided dosing",
+        "fluoropyrimidine",
+        "historical cohort",
+        "severe toxicity"
+      ],
+      "verified": false
+    },
+    {
+      "id": "clinical-ethics-34",
+      "claim_zh": "台灣精準醫療計畫（TPMI）以 486,956 位漢人的大型世代回溯分析發現，幾乎所有人至少帶有一個可能影響藥物反應的基因變異，但攜帶者相較非攜帶者的額外不良事件或無效風險其實不大，且多數攜帶者並未發生不良事件。",
+      "detail_zh": "研究針對 azathioprine（NUDT15/TPMT）、clopidogrel（CYP2C19）、statin（ABCG2/CYP2C9/SLCO1B1）與 NSAIDs（CYP2C9）四組配對，證實風險變異與不良事件或無效有顯著關聯，但作者強調此結果凸顯臨床落實藥物基因體學的複雜性，需要整合式作法。",
+      "level": "中階",
+      "critical": true,
+      "source_name": "Wei 等人 2025, Nature Communications",
+      "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12241563/",
+      "confidence": "high",
+      "en_terms": [
+        "Taiwan Precision Medicine Initiative",
+        "TPMI",
+        "NUDT15",
+        "excess risk",
+        "Han Chinese"
+      ],
+      "verified": false
+    },
+    {
+      "id": "clinical-ethics-35",
+      "claim_zh": "美國《基因資訊平等法》（GINA，2008）禁止健康保險公司與雇主使用基因資訊做歧視性決定，但不涵蓋人壽、失能與長照保險，也不適用於少於 15 名員工的雇主，軍方另有例外。",
+      "detail_zh": "NHGRI 說明 GINA 的 Title I（健康保險）與 Title II（就業）分別由多個聯邦部門（IRS、勞工部、HHS）與 EEOC 執行；部分州另訂法律擴大對其他保險類型的保護。這意味著即使有 GINA，基因檢測結果在人壽或失能保險的核保上仍可能被使用。",
+      "level": "中階",
+      "critical": true,
+      "source_name": "NHGRI：Genetic Discrimination",
+      "source_url": "https://www.genome.gov/about-genomics/policy-issues/Genetic-Discrimination",
+      "confidence": "high",
+      "en_terms": [
+        "GINA",
+        "genetic discrimination",
+        "life insurance",
+        "long-term care insurance",
+        "EEOC"
+      ],
+      "verified": true,
+      "evidence_url": "https://www.genome.gov/about-genomics/policy-issues/Genetic-Discrimination",
+      "verification_note": "NHGRI 核對無誤（不含人壽／失能／長照保險、少於 15 名員工雇主不適用、軍方例外、EEOC 與 IRS/DOL/HHS 分工）。編輯精修：GINA 的 Title I／II 原稿譯為『第一章／第二章』，已改為 Title I／Title II。"
+    },
+    {
+      "id": "clinical-ethics-36",
+      "claim_zh": "本次檢索未發現台灣有等同美國 GINA 的專門反基因歧視法；《就業服務法》第 5 條列舉的禁止歧視事由（如種族、性別、年齡、身心障礙等）並未明列「基因」。",
+      "detail_zh": "同條另規定雇主不得要求提供非屬就業所需之隱私資料。《個人資料保護法》第 6 條能限制基因資料的蒐集與利用，但它是資料保護法，並非禁止基於基因差別待遇的反歧視法。保險核保如何使用基因資訊，本次未找到明確的專法規範，屬待補資料。",
+      "level": "中階",
+      "critical": true,
+      "source_name": "全國法規資料庫：就業服務法（2025-01-20 修正版）",
+      "source_url": "https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=N0090001",
+      "confidence": "low",
+      "en_terms": [
+        "Employment Service Act",
+        "genetic discrimination",
+        "anti-discrimination law",
+        "underwriting"
+      ],
+      "verified": false
+    },
+    {
+      "id": "clinical-ethics-37",
+      "claim_zh": "台灣《人體研究法》（2011 年 12 月 28 日公布，最近修正 2019 年 1 月 2 日）規定研究須先經倫理審查委員會審查，取得同意前須告知包含隨時撤回同意的權利，研究原住民族需另行諮詢並取得該族同意。",
+      "detail_zh": "第 5 條要求研究計畫經審查會通過始得實施；第 12、14 條規範同意與告知事項（含研究材料保存期限、可能衍生的商業利益）；第 15 條規定原住民族研究需諮詢並取得同意；第 19 條規定未去連結的研究材料提供國外特定研究，須告知並取得書面同意，且經審查會與主管機關核准。",
+      "level": "中階",
+      "critical": true,
+      "source_name": "全國法規資料庫：人體研究法",
+      "source_url": "https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=L0020176",
+      "confidence": "high",
+      "en_terms": [
+        "Human Subjects Research Act",
+        "IRB",
+        "informed consent",
+        "indigenous peoples",
+        "de-identification"
+      ],
+      "verified": false
+    },
+    {
+      "id": "clinical-ethics-38",
+      "claim_zh": "台灣《人體生物資料庫管理條例》（2010 年 2 月 3 日公布，最近修正 2021 年 1 月 20 日）規定採集檢體須取得書面同意，參與者得隨時要求停止提供、退出或變更同意範圍，設置者不得拒絕，退出時須銷毀已提供之檢體與資料（已去連結等情形除外）。",
+      "detail_zh": "第 7 條列出 17 項告知事項，含基因資料對參與者及其親屬或族群可能造成的影響；第 15 條規定檢體（衍生物除外）不得輸出境外，資料國際傳輸須經主管機關核准；第 18 條要求編碼、加密或去連結；第 20 條限定僅供生物醫學研究；第 23 條對未經許可擅自設置者處新臺幣 200 萬至 1,000 萬元罰鍰。臺灣人體生物資料庫官網顯示截至 2026-08-31 已有 203,147 人參與。",
+      "level": "中階",
+      "critical": true,
+      "source_name": "全國法規資料庫：人體生物資料庫管理條例",
+      "source_url": "https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=L0020164",
+      "confidence": "high",
+      "en_terms": [
+        "Human Biobank Management Act",
+        "Taiwan Biobank",
+        "withdrawal",
+        "unlinking",
+        "ethics committee"
+      ],
+      "verified": true,
+      "evidence_url": "https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=L0020164",
+      "verification_note": "公布日、修正日、第 6、7（17 項告知事項）、8、15、18、20、23 條皆吻合。臺灣人體生物資料庫參與人數（203,147，截至 2026-08-31）會隨時間增加，引用時須標示日期。"
+    },
+    {
+      "id": "clinical-ethics-39",
+      "claim_zh": "台灣的實驗室開發檢測（LDT）並非由名為「醫療機構實驗室 LDT 管理辦法」的單獨法規管理，而是規範在《特定醫療技術檢查檢驗醫療儀器施行或使用管理辦法》（依《醫療法》第 62 條第 2 項訂定，最近修正 2025 年 12 月 31 日），其附表四明列「藥物不良反應或藥物代謝之基因檢測」。",
+      "detail_zh": "醫療機構施行附表四項目，須先向中央主管機關申請核准並經地方主管機關登記（第 7 條），施行計畫須載明費用與同意書範本（第 36 條），並由認證實驗室執行（第 37 條）；實驗室的檢測紀錄與報告至少保存 7 年（第 39 條），報告須併入病歷（第 40 條）。因此病人應向醫院索取並自留一份報告。該辦法 2025-12-31 修正之條文自 2026-01-01 施行。",
+      "level": "中階",
+      "critical": true,
+      "source_name": "全國法規資料庫：特定醫療技術檢查檢驗醫療儀器施行或使用管理辦法（含附表四）",
+      "source_url": "https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=L0020075",
+      "confidence": "high",
+      "en_terms": [
+        "laboratory developed test",
+        "LDT",
+        "accredited laboratory",
+        "medical record",
+        "Article 37"
+      ],
+      "verified": true,
+      "evidence_url": "https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=L0020075",
+      "verification_note": "第 1、7、36、37、39、40、44 條與附表四第四項核對無誤。『不存在名為「醫療機構實驗室 LDT 管理辦法」的單獨法規』是否定性主張，目前僅由全國法規資料庫關鍵字檢索支持（只找到 LDT 認證收費標準），網站宜寫『本次檢索未發現』而非斷言絕對不存在。"
+    },
+    {
+      "id": "clinical-ethics-40",
+      "claim_zh": "依衛福部 2026 年 3 月公告，執行 LDT 的實驗室可經六種途徑之一取得認證資格：食藥署精準醫療分子檢驗實驗室列冊登錄、食藥署精準醫療分子檢驗實驗室認證、國健署遺傳性及罕見疾病指定檢驗機構、CAP 認證、ISO 15189 認證，或台灣病理學會分子病理實驗室認證。",
+      "detail_zh": "食藥署另於 2026 年 4 月 21 日廢止《精準醫療分子檢測實驗室列冊登錄管理要點》，並於 2026 年 8 月 10 日上線「精準醫療分子檢測實驗室認證管理系統」。列冊登錄途徑與最新認證規定可能仍在調整，此條資訊轉載自台灣藥物基因體學會（PGST）網站的公文轉知，請以衛福部與食藥署公告為準。",
+      "level": "中階",
+      "critical": true,
+      "source_name": "台灣藥物基因體學會 PGST：LDTs 實驗室公文（衛部醫字第 1151661926A 號）",
+      "source_url": "https://www.pgst.org.tw/news_detail?id=603",
+      "confidence": "medium",
+      "en_terms": [
+        "laboratory accreditation",
+        "CAP",
+        "ISO 15189",
+        "TFDA",
+        "precision medicine molecular testing laboratory"
+      ],
+      "verified": false
+    },
+    {
+      "id": "clinical-ethics-41",
+      "claim_zh": "在 293 位美國 NIH 臨床中心病人的比較中，基因體定序（GS）解決了 5% 案例中陣列無法判定或模糊的對偶基因型，準確度基準約 99%，並發現陣列與外顯子定序都漏掉的重要變異。",
+      "detail_zh": "這是單一機構的前瞻性世代（GS 120 人、外顯子定序 185 人），作者認為 GS 的成本與陣列相當或更佳。NGS 與長讀長定序雖能提供單倍型定相與結構變異資訊，但資料處理時間與成本、判讀複雜度仍高於 SNV panel，並非所有定序資料都能直接用於臨床。",
+      "level": "進階",
+      "critical": true,
+      "source_name": "Numanagić 等人 2026, Journal of Clinical Pharmacology",
+      "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13496236/",
+      "confidence": "medium",
+      "en_terms": [
+        "genome sequencing",
+        "exome sequencing",
+        "genotyping array",
+        "concordance",
+        "haplotype phasing"
+      ],
+      "verified": false
+    },
+    {
+      "id": "clinical-ethics-42",
+      "claim_zh": "以陣列資料推論的藥物基因對偶基因與 PCR 驗證結果一致率超過 92%，但無法辨識依賴結構變異的對偶基因（如 CYP2D6*5 缺失）；以機器學習補上後準確度超過 99%，並把約 7% 的非裔美國人與約 4% 的白人重新歸類為較低活性的代謝者。",
+      "detail_zh": "CYP2D6 因與偽基因 CYP2D7 高度相似，並有缺失、重複與混合基因等結構變異，是 SNV panel 最難處理的基因；這篇研究提醒，忽略結構變異會系統性高估代謝能力，而不同人群受影響程度不同。",
+      "level": "進階",
+      "critical": true,
+      "source_name": "Vanderwerff 等人 2025, Genetics",
+      "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13031175/",
+      "confidence": "high",
+      "en_terms": [
+        "CYP2D6*5",
+        "structural variation",
+        "copy number variation",
+        "support vector machine",
+        "PyPGx"
+      ],
+      "verified": false
+    },
+    {
+      "id": "clinical-ethics-43",
+      "claim_zh": "AMP、CAP、DPWG 與歐洲藥物基因體暨個人化治療學會的聯合共識，把臨床 CYP2D6 檢測的對偶基因分為 Tier 1（最小必檢集合）與 Tier 2（延伸集合），供實驗室設計與更新檢測平台。",
+      "detail_zh": "選擇依據包括變異的功能影響、多族群的對偶基因頻率、參考物質的可取得性與其他技術考量，目標是讓各實驗室的 PGx 檢測標準化，也提醒「檢測只涵蓋所列變異」：報告中的「正常」可能只是「沒有找到所檢測的變異」。",
+      "level": "進階",
+      "critical": true,
+      "source_name": "Pratt 等人 2021, Journal of Molecular Diagnostics",
+      "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8579245/",
+      "confidence": "high",
+      "en_terms": [
+        "Tier 1 alleles",
+        "Tier 2 alleles",
+        "AMP",
+        "CAP",
+        "minimal allele panel",
+        "reference materials"
+      ],
+      "verified": false
+    },
+    {
+      "id": "clinical-ethics-44",
+      "claim_zh": "全球基因研究長期偏重歐洲族群（全基因組關聯研究受試者在 2009 年約 96% 為歐洲裔，2016 年非歐洲裔比例才增至近 20%），而藥物基因變異頻率跨族群差異很大，例如 VKORC1 rs9923231 在台灣可達 89.2%，俄羅斯歐裔次族群僅 20–25%。",
+      "detail_zh": "Popejoy 與 Fullerton 的統計針對一般 GWAS，並非專指藥物基因體研究；VKORC1 的頻率數字來自 2026 年亞非國家基因體計畫綜述。兩者合起來說明：以歐洲族群為主建立的 panel、證據與劑量演算法，套用到其他族群時可能漏掉當地重要變異或高估／低估效應。",
+      "level": "進階",
+      "critical": true,
+      "source_name": "Popejoy & Fullerton 2016, Nature；Alsuwaidi 等人 2026, Human Genomics",
+      "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5089703/",
+      "confidence": "medium",
+      "en_terms": [
+        "ancestry bias",
+        "GWAS diversity",
+        "VKORC1 rs9923231",
+        "population-specific alleles",
+        "equity"
+      ],
+      "verified": false
+    },
+    {
+      "id": "clinical-ethics-45",
+      "claim_zh": "商業藥物基因體 panel 常含無藥物基因體註解的基因或變異：一項橫斷面研究檢視 44 個檢測單位的 125 個基因／對偶基因／變異，只有 26.4%（33/125）有 ClinPGx 註解，其餘 73.6% 沒有，且 CACNA1S、CFTR、G6PD、LDLR、MT-RNR1、RYR1 同時涉及 CPIC 與 ACMG 的可行動建議。",
+      "detail_zh": "這代表 PGx 檢測可能產生與藥物無關、需要遺傳諮詢的次要發現。eMERGE-PGx 的 2,022 位參與者研究也顯示，對 SCN5A 與 KCNH2 罕見變異，各實驗室判定為致病的一致性低，且推定致病變異在一般族群中與異常表現型無關，作者因此質疑是否應通知病人這類附帶發現。",
+      "level": "進階",
+      "critical": true,
+      "source_name": "Lee 等人 2026, Journal of Personalized Medicine；Van Driest 等人 2016, JAMA（eMERGE-PGx）",
+      "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13412467/",
+      "confidence": "medium",
+      "en_terms": [
+        "secondary findings",
+        "incidental findings",
+        "ACMG SF",
+        "ClinGen",
+        "variants of uncertain significance"
+      ],
+      "verified": false
+    }
+  ],
+  "glossary": [
+    {
+      "term_zh": "藥物基因體學",
+      "term_en": "Pharmacogenomics (PGx)",
+      "definition_zh": "研究一個人的基因如何影響他對藥物的吸收、代謝、療效與副作用，並把這些資訊用於選藥與調整劑量。",
+      "level": "入門"
+    },
+    {
+      "term_zh": "基因型",
+      "term_en": "Genotype",
+      "definition_zh": "一個人在某個基因上實際帶有的 DNA 組合，例如 CYP2C19*1/*2。",
+      "level": "入門"
+    },
+    {
+      "term_zh": "表現型",
+      "term_en": "Phenotype",
+      "definition_zh": "由基因型推論出來的藥物代謝能力或反應傾向，例如正常代謝者或不良代謝者。",
+      "level": "入門"
+    },
+    {
+      "term_zh": "代謝者類型（超快速、快速、正常、中間、不良代謝者）",
+      "term_en": "Ultrarapid / rapid / normal / intermediate / poor metabolizer",
+      "definition_zh": "依酵素活性高低對病人的分類：超快速代謝者藥物分解特別快，不良代謝者幾乎不能分解；中間代謝者介於其間。",
+      "level": "入門"
+    },
+    {
+      "term_zh": "預先檢測",
+      "term_en": "Pre-emptive testing",
+      "definition_zh": "在需要用藥之前就先一次檢測多個藥物基因並存入病歷，日後開藥時可直接查詢。",
+      "level": "入門"
+    },
+    {
+      "term_zh": "反應式檢測",
+      "term_en": "Reactive testing",
+      "definition_zh": "等醫師要開某個特定藥物時，才針對相關的單一基因檢測。",
+      "level": "入門"
+    },
+    {
+      "term_zh": "臨床決策支援",
+      "term_en": "Clinical decision support (CDS)",
+      "definition_zh": "電子病歷中的提示系統，在醫師開藥時，依病人的基因結果自動跳出警示或建議。",
+      "level": "初階"
+    },
+    {
+      "term_zh": "星號對偶基因",
+      "term_en": "Star (*) allele",
+      "definition_zh": "用星號加數字命名的基因變體（例如 CYP2C19*2），每個星號代表一組特定的變異與其功能。",
+      "level": "初階"
+    },
+    {
+      "term_zh": "雙套基因型",
+      "term_en": "Diplotype",
+      "definition_zh": "一個人兩條染色體上該基因的兩個對偶基因組合，例如 *1/*17，是轉譯成表現型的依據。",
+      "level": "初階"
+    },
+    {
+      "term_zh": "活性分數",
+      "term_en": "Activity score",
+      "definition_zh": "為每個對偶基因給一個活性數值再相加，用總分判斷代謝者類型的方法，常用於 CYP2D6 與 DPYD。",
+      "level": "中階"
+    },
+    {
+      "term_zh": "CPIC",
+      "term_en": "Clinical Pharmacogenetics Implementation Consortium",
+      "definition_zh": "美國的國際性專家組織，為已有基因結果的病人發表依基因型調整用藥的實務指引，並對基因-藥物配對評 A 到 D 級。",
+      "level": "初階"
+    },
+    {
+      "term_zh": "DPWG 臨床意義評分",
+      "term_en": "DPWG clinical implication score",
+      "definition_zh": "荷蘭 DPWG 對每個基因-藥物配對給出的評分（必要、有益、可能有益、不需要），用來指引開藥前是否應先做基因檢測。",
+      "level": "中階"
+    },
+    {
+      "term_zh": "伴隨式診斷",
+      "term_en": "Companion diagnostic",
+      "definition_zh": "對某藥物的安全有效使用不可或缺的檢測，例如確認腫瘤是否帶有特定突變才能使用標靶藥。",
+      "level": "初階"
+    },
+    {
+      "term_zh": "實驗室開發檢測",
+      "term_en": "Laboratory developed test (LDT)",
+      "definition_zh": "由實驗室自行建立並使用的檢測；在台灣，依《特管辦法》由認證實驗室為診察、診斷或治療特定病人或疾病而自行建立。",
+      "level": "中階"
+    },
+    {
+      "term_zh": "TaqMan 即時聚合酶連鎖反應",
+      "term_en": "TaqMan real-time PCR",
+      "definition_zh": "用帶螢光探針的即時 PCR 判斷樣本在特定位點是哪一種鹼基，速度快，適合檢測少數已知變異。",
+      "level": "中階"
+    },
+    {
+      "term_zh": "對偶基因專一性 PCR",
+      "term_en": "Allele-specific PCR",
+      "definition_zh": "設計只會擴增某一種對偶基因的引子，有沒有產物就能判斷樣本是否帶有該變異。",
+      "level": "中階"
+    },
+    {
+      "term_zh": "PCR-限制酶片段長度多型性",
+      "term_en": "PCR-RFLP",
+      "definition_zh": "先用 PCR 放大目標片段，再用限制酶切割；變異若改變切位，片段長度就不同，可在電泳上分辨。",
+      "level": "中階"
+    },
+    {
+      "term_zh": "Sanger 定序",
+      "term_en": "Sanger sequencing",
+      "definition_zh": "傳統的 DNA 定序方法，準確度高，常用來驗證其他方法的結果，但一次只能看少量片段。",
+      "level": "中階"
+    },
+    {
+      "term_zh": "結構變異與拷貝數變異",
+      "term_en": "Structural variant / Copy number variation (CNV)",
+      "definition_zh": "基因整段的缺失、重複或與鄰近基因融合成混合基因；CYP2D6 特別常見，是 SNV panel 難以正確判讀的原因。",
+      "level": "進階"
+    },
+    {
+      "term_zh": "單倍型定相",
+      "term_en": "Haplotype phasing",
+      "definition_zh": "判斷多個變異是在同一條染色體上（順式）還是分在兩條染色體（反式），對於有重複或混合基因時的正確判讀很重要。",
+      "level": "進階"
+    },
+    {
+      "term_zh": "長讀長定序",
+      "term_en": "Long-read sequencing",
+      "definition_zh": "一次讀取很長的 DNA 片段（數千到數萬鹼基），較容易直接解析結構變異與單倍型，目前多用於研究，臨床應用仍在發展。",
+      "level": "進階"
+    },
+    {
+      "term_zh": "表現型轉換",
+      "term_en": "Phenoconversion",
+      "definition_zh": "因併用藥物、發炎、年齡等非基因因素，使實際代謝能力和基因預測不同的現象。",
+      "level": "中階"
+    },
+    {
+      "term_zh": "次要（附帶）發現",
+      "term_en": "Secondary / incidental findings",
+      "definition_zh": "檢測過程中意外得到、與原本檢測目的無關的基因結果，例如與疾病風險有關的變異，需事前規劃是否及如何告知。",
+      "level": "中階"
+    },
+    {
+      "term_zh": "特種個資",
+      "term_en": "Sensitive personal data",
+      "definition_zh": "台灣個資法第 6 條列出的病歷、醫療、基因、性生活、健康檢查與犯罪前科等資料，原則上不得蒐集、處理或利用，僅在法定例外情形下可進行。",
+      "level": "初階"
+    },
+    {
+      "term_zh": "去連結",
+      "term_en": "De-identification (unlinking)",
+      "definition_zh": "台灣法規用語：將資料編碼或處理後，使其與可辨識個人的資料永久無法以任何方式連結或比對。",
+      "level": "中階"
+    },
+    {
+      "term_zh": "基因歧視",
+      "term_en": "Genetic discrimination",
+      "definition_zh": "因為一個人的基因資訊而在保險、就業等方面受到不公平對待。",
+      "level": "初階"
+    },
+    {
+      "term_zh": "勝算比",
+      "term_en": "Odds ratio (OR)",
+      "definition_zh": "比較兩組發生某事件的勝算，OR 0.70 表示一組的勝算是另一組的 0.7 倍，並不等於絕對風險下降 30%。",
+      "level": "中階"
+    },
+    {
+      "term_zh": "增量成本效果比",
+      "term_en": "Incremental cost-effectiveness ratio (ICER)",
+      "definition_zh": "多花的成本除以多得到的健康效益（常以品質調整生命年 QALY 計），用來判斷新做法是否值得。",
+      "level": "進階"
+    },
+    {
+      "term_zh": "人體生物資料庫",
+      "term_en": "Biobank",
+      "definition_zh": "為醫學研究長期保存參與者的檢體與相關健康資料的機構，例如台灣的臺灣人體生物資料庫，須依《人體生物資料庫管理條例》設置與運作。",
+      "level": "初階"
+    }
+  ],
+  "sources": [
+    {
+      "name": "CPIC 定義修訂備忘（2016）",
+      "url": "https://cpicpgx.org/wp-content/uploads/2015/12/CPIC-definitions-revision-acc.pdf",
+      "note_zh": "CPIC strong/moderate/optional/no recommendation 強度的 2016 年提案原文定義（A–D 等級定義另見 CPIC 等級定義表與 ClinPGx 現行頁面）。"
+    },
+    {
+      "name": "CPIC API（PostgREST）",
+      "url": "https://api.cpicpgx.org/v1/",
+      "note_zh": "CPIC 資料庫的公開 API，可查詢即時的基因-藥物配對、等級與指引清單；數字隨時間變動，引用時務必標示查詢日期。"
+    },
+    {
+      "name": "ClinPGx：CPIC 指引頁",
+      "url": "https://www.clinpgx.org/cpic/guidelines",
+      "note_zh": "CPIC 指引的官方入口（需啟用 JavaScript 才能瀏覽）。"
+    },
+    {
+      "name": "ClinPGx 部落格：CPIC releases updated Genes-Drugs list",
+      "url": "https://blog.clinpgx.org/cpic-releases-updated-genes-drugs-list/",
+      "note_zh": "說明 CPIC 等級的 provisional／final 狀態，以及 A/B、B/C、C/D 中間等級。"
+    },
+    {
+      "name": "PharmGKB 部落格：Updates to Drug Label Annotation Tags and Criteria for PGx levels",
+      "url": "https://pharmgkb.blogspot.com/2023/12/updates-to-drug-label-annotation-tags.html",
+      "note_zh": "釐清 Testing required／recommended／Actionable／Informative／Criteria not met 是 PharmGKB 的分級；部分定義已在 2024 年 8 月修訂，請併看 ClinPGx Drug Label Legend。"
+    },
+    {
+      "name": "ClinPGx 部落格：Update to FDA-approved drug label annotations",
+      "url": "https://blog.clinpgx.org/update-to-fda-approved-drug-label/",
+      "note_zh": "說明 FDA 兩張表與 PharmGKB 仿單標註之間的關係。"
+    },
+    {
+      "name": "FDA：Table of Pharmacogenetic Associations",
+      "url": "https://www.fda.gov/medical-devices/precision-medicine/table-pharmacogenetic-associations",
+      "note_zh": "FDA 評估後證據足夠的基因-藥物關聯，分三區段；含「列入不代表主張檢測」與「病人勿自行調藥」聲明。"
+    },
+    {
+      "name": "FDA：Table of Pharmacogenomic Biomarkers in Drug Labeling",
+      "url": "https://www.fda.gov/drugs/science-and-research-drugs/table-pharmacogenomic-biomarkers-drug-labeling",
+      "note_zh": "仿單提及基因生物標記的藥品清單，標示仿單章節；並非所有項目都有具體行動。"
+    },
+    {
+      "name": "FDA：Safety Labeling Update for Capecitabine and 5-FU (DPD deficiency)",
+      "url": "https://www.fda.gov/drugs/resources-information-approved-drugs/safety-labeling-update-capecitabine-and-fluorouracil-5-fu-risks-associated-dihydropyrimidine",
+      "note_zh": "capecitabine 與 5-FU 仿單 Boxed Warning 擴增 DPD 缺乏內容、建議治療前 DPYD 檢測的官方說明（頁面日期 2026-02-05，非仿單核准日）。"
+    },
+    {
+      "name": "FDA：Laboratory Developed Tests",
+      "url": "https://www.fda.gov/medical-devices/in-vitro-diagnostics/laboratory-developed-tests",
+      "note_zh": "美國 LDT 監管現況：2024 年最終規則於 2025-03-31 被聯邦地方法院撤銷，FDA 於 2025-09-19 發布規則回復舊文字，可與台灣制度對照。"
+    },
+    {
+      "name": "EMA：Pharmacogenomics",
+      "url": "https://www.ema.europa.eu/en/human-regulatory-overview/post-authorisation/pharmacogenomics",
+      "note_zh": "EMA 2026-09 首次公布的藥物基因體資訊表與說明。"
+    },
+    {
+      "name": "EMA 新聞稿：DPD testing recommendations（EMA/229267/2020）",
+      "url": "https://www.ema.europa.eu/en/documents/press-release/ema-recommendations-dpd-testing-prior-treatment-fluorouracil-capecitabine-tegafur-and-flucytosine_en.pdf",
+      "note_zh": "2020-04-30 EMA 建議 fluoropyrimidine 治療前檢測 DPD 缺乏。"
+    },
+    {
+      "name": "EMA：Guideline on key aspects for the use of pharmacogenomics in the pharmacovigilance of medicinal products",
+      "url": "https://www.ema.europa.eu/en/documents/scientific-guideline/guideline-key-aspects-use-pharmacogenomics-pharmacovigilance-medicinal-products_en.pdf",
+      "note_zh": "EMA/CHMP/281371/2013，2016-04-01 生效，說明藥物安全監視如何納入藥物基因體資訊。"
+    },
+    {
+      "name": "Lunenburg 等人 2020：DPWG 指引（DPYD 與氟尿嘧啶類）",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7080718/",
+      "note_zh": "DPWG 沿革、臨床意義評分定義與 CPIC 比較。"
+    },
+    {
+      "name": "Abdullah-Koolmees 等人 2020：DPWG、CPIC、CPNDS、RNPGx 比較",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7868558/",
+      "note_zh": "四個指引委員會的方法學與建議差異比較。"
+    },
+    {
+      "name": "Caudle 等人 2014：CPIC 指引制定流程",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3977533/",
+      "note_zh": "CPIC 標準化格式、證據分級與建議強度，並與美國醫學院指引標準比較。"
+    },
+    {
+      "name": "Caudle 等人 2017：CPIC 標準化檢測用語",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5253119/",
+      "note_zh": "對偶基因功能與表現型用語的 Delphi 共識。"
+    },
+    {
+      "name": "van der Lee 等人 2020：Technologies for Pharmacogenomics",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7761897/",
+      "note_zh": "SNV panel、短讀長與長讀長定序的優缺點與商用陣列規格比較。"
+    },
+    {
+      "name": "Thermo Fisher：PharmacoScan 產品頁",
+      "url": "https://www.thermofisher.com/us/en/home/life-science/microarray-analysis/applications/predictive-genomics/preemptive-pharmacogenomics/arrays.html",
+      "note_zh": "PharmacoScan 陣列現行規格（標記數、基因數與可報告星號對偶基因數）。"
+    },
+    {
+      "name": "Cavallari 等人 2018：快速 CYP2C19 基因分型實作",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5896099/",
+      "note_zh": "Spartan RX 點測中位報告時間 96 分鐘與實作指標。"
+    },
+    {
+      "name": "Meng 等人 2021：GMEX 快速 CYP2C19 系統",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8258065/",
+      "note_zh": "點測系統與實驗室套組報告時間比較。"
+    },
+    {
+      "name": "臺大醫院藥物基因體與智慧用藥網",
+      "url": "https://ntuhpgx.ntuh.gov.tw/newsOne?pk=6",
+      "note_zh": "台灣醫院 PGx NGS 檢測的基因範圍、自費價格與報告時程。"
+    },
+    {
+      "name": "Schildcrout 等人 2012：預先基因分型的論證",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3785311/",
+      "note_zh": "5 年內約 64.8% 的病人會用到有藥物基因關聯的藥物。"
+    },
+    {
+      "name": "Pulley 等人 2012：Vanderbilt PREDICT 設計",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3581305/",
+      "note_zh": "PREDICT 計畫的運作方式與第一年規模。"
+    },
+    {
+      "name": "Van Driest 等人 2014：1 萬人預先檢測的可行動基因型",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3961508/",
+      "note_zh": "PREDICT 的可行動比例與預先／反應式檢測次數比較。"
+    },
+    {
+      "name": "Hoffman 等人 2014：PG4KDS",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4056586/",
+      "note_zh": "St. Jude 預先檢測模型：基因數、CDS 警示數與次要發現處理。"
+    },
+    {
+      "name": "Bielinski 等人 2014：Mayo RIGHT 設計",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3932754/",
+      "note_zh": "Mayo 預先定序與 CDS 整合的設計與招募結果。"
+    },
+    {
+      "name": "Rasmussen-Torvik 等人 2014：eMERGE-PGx 設計",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4169732/",
+      "note_zh": "多中心 PGRNseq 預先定序計畫的目標與規模。"
+    },
+    {
+      "name": "Dunnenberger 等人 2015：五個美國醫學中心的預先檢測計畫",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4607278/",
+      "note_zh": "預先檢測計畫的共通要素與關鍵流程。"
+    },
+    {
+      "name": "Swen 等人 2023：PREPARE（Lancet）",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/36739136/",
+      "note_zh": "12 基因 panel 導引用藥降低臨床相關不良反應（OR 0.70）的主要文獻。"
+    },
+    {
+      "name": "Lancet 通訊：The PREPARE study: benefits of pharmacogenetic testing are unclear",
+      "url": "https://www.thelancet.com/journals/lancet/article/PIIS0140-6736(23)00855-3/fulltext",
+      "note_zh": "對 PREPARE 效益提出質疑的通訊；作者回覆見 PIIS0140-6736(23)00852-8。"
+    },
+    {
+      "name": "Lancet 更正啟事（Department of Error）",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10510570/",
+      "note_zh": "說明對 PREPARE 論文的更正僅涉及 U-PGx 聯盟名單。"
+    },
+    {
+      "name": "Fragoulakis 等人 2026：PREPARE 成本效用分析",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12768869/",
+      "note_zh": "檢測成本 €124、ICER 與不確定性。"
+    },
+    {
+      "name": "Morris 等人 2022：CPIC 藥物基因檢測成本效益系統性回顧",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9828439/",
+      "note_zh": "108 項研究中 71% 顯示具成本效益或節省成本。"
+    },
+    {
+      "name": "Gage 等人 2017：GIFT 試驗",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5818817/",
+      "note_zh": "warfarin 基因導引劑量的隨機對照試驗。"
+    },
+    {
+      "name": "Pereira 等人 2020：TAILOR-PCI",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7448831/",
+      "note_zh": "CYP2C19 基因導引抗血小板治療的隨機對照試驗（主要終點未達顯著）。"
+    },
+    {
+      "name": "Oslin 等人 2022：PRIME Care",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9277497/",
+      "note_zh": "憂鬱症藥物基因體檢測的實用性隨機試驗。"
+    },
+    {
+      "name": "Brown 等人 2022：憂鬱症 PGx 檢測統合分析",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9827897/",
+      "note_zh": "13 項試驗、4,767 人，緩解 RR 1.41，但異質性高。"
+    },
+    {
+      "name": "Henricks 等人 2018：DPYD 基因導引劑量前瞻性安全分析",
+      "url": "https://doi.org/10.1016/S1470-2045(18)30686-7",
+      "note_zh": "DPYD 基因導引劑量調整對嚴重毒性的影響（與歷史對照比較）。"
+    },
+    {
+      "name": "Chen 等人 2011：台灣 HLA-B*1502 篩檢（NEJM）",
+      "url": "https://doi.org/10.1056/NEJMoa1009717",
+      "note_zh": "台灣 4,877 人前瞻篩檢預防 carbamazepine 引起 SJS/TEN。"
+    },
+    {
+      "name": "Wei 等人 2025：TPMI 藥物基因變異臨床影響",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12241563/",
+      "note_zh": "台灣 486,956 人世代的真實世界分析，提醒風險變異的實際超額風險有限。"
+    },
+    {
+      "name": "Klomp 等人 2020：表現型轉換系統性回顧",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7565093/",
+      "note_zh": "非基因因素造成 CYP450 表現型轉換的整理。"
+    },
+    {
+      "name": "Abouir 等人 2024：健康受試者 CYP2C19 藥物交互作用造成的表現型轉換",
+      "url": "https://doi.org/10.1002/cpt.3378",
+      "note_zh": "fluvoxamine 與 voriconazole 使超過 80% 的 CYP2C19 基因分型受試者發生表現型轉換。"
+    },
+    {
+      "name": "Numanagić 等人 2026：基因體定序 vs 陣列",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13496236/",
+      "note_zh": "NIH 臨床中心比較定序與陣列的藥物基因判讀準確度。"
+    },
+    {
+      "name": "Vanderwerff 等人 2025：陣列資料與 CYP2D6 結構變異",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13031175/",
+      "note_zh": "說明陣列無法辨識 CYP2D6*5 與機器學習補救方法。"
+    },
+    {
+      "name": "Halman 等人 2024：PGx 基因分型工具基準測試",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11315677/",
+      "note_zh": "全基因體定序 PGx 工具在 CYP2D6 上差異最大，Cyrius 表現最穩健。"
+    },
+    {
+      "name": "Petit 等人 2026：NGS 對 tamoxifen 病人基因型-表現型一致性",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13339340/",
+      "note_zh": "在不一致的 68 位病人中，全基因 NGS 使 41% 的基因型被修正。"
+    },
+    {
+      "name": "Boonyuen 等人 2026：長讀長定序解析 CYP2D6 結構複雜性",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13339112/",
+      "note_zh": "泰國 492 位乳癌病人以 Nanopore 長讀長定序，找到 82 種 diplotype。"
+    },
+    {
+      "name": "Pratt 等人 2021：臨床 CYP2D6 基因分型對偶基因選擇共識",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8579245/",
+      "note_zh": "Tier 1／Tier 2 對偶基因集合建議。"
+    },
+    {
+      "name": "Popejoy & Fullerton 2016：Genomics is failing on diversity",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5089703/",
+      "note_zh": "GWAS 受試者族群組成的統計與公平性討論。"
+    },
+    {
+      "name": "Alsuwaidi 等人 2026：亞洲與非洲國家基因體計畫回顧",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13543545/",
+      "note_zh": "含 VKORC1 rs9923231 在台灣與歐裔族群的頻率對比。"
+    },
+    {
+      "name": "Lee 等人 2026：PGx 檢測的次要發現管理",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13412467/",
+      "note_zh": "商業 PGx panel 內容中有無 PGx 註解及與 ACMG 次要發現的重疊。"
+    },
+    {
+      "name": "Van Driest 等人 2016：eMERGE-PGx 心律不整變異與表現型",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4758131/",
+      "note_zh": "說明附帶發現的致病性判讀一致性低、通知病人的疑慮。"
+    },
+    {
+      "name": "NHGRI：Genetic Discrimination",
+      "url": "https://www.genome.gov/about-genomics/policy-issues/Genetic-Discrimination",
+      "note_zh": "GINA 的涵蓋範圍與限制。"
+    },
+    {
+      "name": "全國法規資料庫：個人資料保護法",
+      "url": "https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=I0050021",
+      "note_zh": "第 6 條特種個資、第 7–8 條同意與告知；含 2025-11-11 修正資訊。"
+    },
+    {
+      "name": "全國法規資料庫：人體研究法",
+      "url": "https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=L0020176",
+      "note_zh": "倫理審查、知情同意、原住民族研究與國外提供研究材料的規定。"
+    },
+    {
+      "name": "全國法規資料庫：人體生物資料庫管理條例",
+      "url": "https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=L0020164",
+      "note_zh": "生物資料庫設置、同意、退出、資料輸出與罰則。"
+    },
+    {
+      "name": "全國法規資料庫：特定醫療技術檢查檢驗醫療儀器施行或使用管理辦法",
+      "url": "https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=L0020075",
+      "note_zh": "台灣 LDT 的法規依據；附表四列出藥物不良反應或藥物代謝之基因檢測。"
+    },
+    {
+      "name": "全國法規資料庫：就業服務法",
+      "url": "https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=N0090001",
+      "note_zh": "第 5 條禁止就業歧視事由與隱私資料限制。"
+    },
+    {
+      "name": "衛生福利部：Carbamazepine 與 HLA-B*1502 說明（2010）",
+      "url": "https://www.mohw.gov.tw/cp-3161-26506-1.html",
+      "note_zh": "台灣 HLA-B*15:02 納入健保的日期與建議。"
+    },
+    {
+      "name": "衛生署：含 allopurinol 藥品仿單加刊藥物基因學注意事項（2009-08-28）",
+      "url": "https://www.mohw.gov.tw/fp-3162-27338-1.html",
+      "note_zh": "說明 allopurinol 用藥前宜考慮檢測 HLA-B*58:01，且篩檢不能取代臨床安全監視，帶有基因者多數不會發生 SJS/TEN、未帶有者仍可能發生。"
+    },
+    {
+      "name": "行政院公報：健保支付標準修正（含 HLA-B*5801 基因檢測 12213B）",
+      "url": "https://gazette.nat.gov.tw/EG_FileManager/eguploadpub/eg028093/ch08/type1/gov70/num29/images/AA.pdf",
+      "note_zh": "HLA-B*58:01 檢測納入健保的一手文件與給付條件。"
+    },
+    {
+      "name": "衛福部醫事司：實驗室開發檢測",
+      "url": "https://dep.mohw.gov.tw/DOMA/lp-5177-106.html",
+      "note_zh": "台灣 LDT 申請與註冊管理的官方入口。"
+    },
+    {
+      "name": "台灣藥物基因體學會 PGST",
+      "url": "https://www.pgst.org.tw/index.php",
+      "note_zh": "學會官網：LDTs 實驗室與健保署公文轉知、出版品（《藥物基因體學之臨床藥事服務應用指引》《健保伴隨式基因檢測抗癌藥物指引》）。"
+    },
+    {
+      "name": "PGST：LDT 實驗室認證資格公文轉知",
+      "url": "https://www.pgst.org.tw/news_detail?id=603",
+      "note_zh": "衛福部 2026 年 3 月公告的六種認證資格。"
+    },
+    {
+      "name": "PGST：精準醫療分子檢測實驗室認證管理系統上線公文",
+      "url": "https://www.pgst.org.tw/news_detail?id=708",
+      "note_zh": "食藥署 2026-08-10 認證管理系統上線的公文轉知。"
+    },
+    {
+      "name": "臺灣人體生物資料庫",
+      "url": "https://www.twbiobank.org.tw/",
+      "note_zh": "官網顯示截至 2026-08-31 已有 203,147 人參與，可作為台灣本土研究資源與資料共享的範例。"
+    },
+    {
+      "name": "ClinPGx：Drug Label Legend（PGx level 定義與修訂紀錄）",
+      "url": "https://api.clinpgx.org/v1/data/page/drugLabelLegend",
+      "note_zh": "ClinPGx 現行的仿單 PGx level 定義（含 No Clinical PGx、Criteria not met）與 2024 年 8 月準則修訂紀錄。"
+    },
+    {
+      "name": "ClinPGx：CPIC 基因-藥物配對分級頁",
+      "url": "https://www.clinpgx.org/page/cpicPrioritization",
+      "note_zh": "CPIC A/B/C/D 等級與 provisional／final 狀態的現行說明；D 級定義已據此逐字核實。"
+    },
+    {
+      "name": "CPIC 基因-藥物配對等級定義表（Table 2）",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5117674/",
+      "note_zh": "CPIC A/B/C/D 等級的原始定義表。"
+    }
+  ],
+  "misconceptions_zh": [
+    "誤解：「FDA 把藥物分成『必須檢測』『建議檢測』『可行動』幾類。」正確：這些是 PharmGKB（ClinPGx）對仿單自行做的 PGx 分級；FDA 的關聯表只分三個證據區段，且明說列入不代表主張處方前必須檢測（除非是伴隨式診斷）。",
+    "誤解：「PREPARE 證明基因導引用藥可把副作用降低 30%。」正確：30% 指的是勝算比 0.70（95% CI 0.61–0.79），不是絕對風險下降；不良反應發生率是 28.6% 降到 21.5%，且研究為開放標示、97.7% 為歐洲／地中海／中東族裔。",
+    "誤解：「CPIC 的 A 級就代表用藥前一定要先做基因檢測。」正確：CPIC 等級描述的是「已有基因結果時是否該據以改變處方」的證據與行動力，指引設計上假設結果已在手；是否應事前檢測，要看 DPWG 臨床意義評分、仿單與各國法規（例如 DPYD 已被 EMA 與 FDA 建議治療前檢測）。",
+    "誤解：「基因檢測報告顯示沒有風險基因，就代表這個藥一定安全。」正確：panel 只檢測所列出的變異、罕見或結構變異可能漏掉，且併用藥物會造成表現型轉換；衛生署 2009 年公告也指出，未帶有 HLA-B*58:01 者仍可能發生 SJS/TEN，基因篩檢不能取代臨床安全監視。",
+    "誤解：「帶有風險基因型就一定會出事。」正確：多數風險變異攜帶者並不會發生不良事件（TPMI 48 萬人分析、衛生署對 HLA-B*58:01 與 SJS/TEN 的說明都提醒這點）；基因是機率，不是宿命。",
+    "誤解：「一次檢測終身有效，之後不用再管。」正確：種系基因型終身不變，但指引與表現型判讀會更新，也會因併用藥物而轉換；應保存原始報告，就醫時主動提供並請醫師依最新指引重新判讀。",
+    "誤解：「台灣有專門禁止基因歧視的法律，像美國 GINA 一樣。」正確：本次檢索未發現台灣有等同 GINA 的專法；個資法第 6 條限制基因資料的蒐集利用，但那是資料保護而非反歧視。連 GINA 也不涵蓋人壽、失能與長照保險。",
+    "誤解：「LDT 就是不受管理的自費檢測。」正確：台灣的 LDT 受《特定醫療技術檢查檢驗醫療儀器施行或使用管理辦法》管理，須由認證實驗室執行、醫院須先取得核准施行計畫；附表四明列「藥物不良反應或藥物代謝之基因檢測」。台灣並沒有名為「醫療機構實驗室 LDT 管理辦法」的單獨法規。",
+    "誤解：「成本效益研究一致證明 PGx 划算。」正確：系統性回顧中 71% 的研究顯示具成本效益或節省成本，但關於預先與多基因檢測的資料有限；PREPARE 的成本差異校正後不顯著（p=0.770），不同藥物（如 warfarin 16 篇僅 7 篇）差異很大。",
+    "誤解：「收到基因報告後可以自己停藥或改藥。」正確：FDA 與 EMA 都明確提醒，病人應與處方者或醫療專業人員討論，不要自行調整；同時請保存報告，醫院依台灣 LDT 規定須將報告併入病歷，實驗室紀錄至少保存 7 年。"
+  ],
+  "viz_ideas": [
+    "「從抽血到處方」互動流水線：3D 場景由病人手臂抽血開始，試管進入檢測儀，依序長出星號對偶基因積木、雙套基因型卡片、活性分數天平、表現型標籤，最後在電子病歷面板跳出 CDS 警示並改變處方；可切換技術（TaqMan／陣列／NGS／長讀長），看到 CYP2D6 缺失或重複時 SNV 探針讀不到而流水線卡住。",
+    "CYP2D6 結構變異對照場景：在同一條染色體上畫出 CYP2D6 與偽基因 CYP2D7 的相似序列，讓使用者選擇拷貝數 0、1、2、3 以上與混合基因（如 *36+*10）；SNV 探針只點亮少數位點，長讀長定序則沿整段光束掃過，比較兩者判讀的活性分數與代謝者類型差異。",
+    "指引機構比較「證據金字塔」：CPIC 的 A–D 分層搭配強／中／選擇性／無建議的色階，DPWG 的四項臨床意義評分旋鈕，FDA 關聯表的三個區段，並以另一種色系標示 PharmGKB 的 Testing required／recommended／Actionable／Informative；使用者拖曳一組配對（如 clopidogrel–CYP2C19、DPYD–capecitabine）看各機構如何呈現，避免混淆 PharmGKB 與 FDA。",
+    "預先 vs 反應式檢測模擬：一萬個粒子代表病人，隨時間被開藥；反應式模式每次開藥觸發一次單基因檢測並累計次數（對照 Vanderbilt 的 14,656 次），預先模式一次面板檢測即持續可查；同時用色點呈現 91% 帶有至少一個可行動變異。",
+    "PREPARE 結果 3D 視覺化：左右兩群小人分別代表基因導引組與對照組，紅點為不良反應（28.6% 對 21.5%），另提供「可行動子群」切換；旁邊用環形圖顯示 97.7% 受試者的族裔組成，並以滑桿說明勝算比 0.70 與絕對風險差異的不同，避免誤讀為「降低 30%」。",
+    "表現型轉換藥櫃：病人基因型固定為 CYP2C19 *1/*1，使用者把 fluvoxamine、voriconazole 或誘導劑拖入藥櫃，酵素模型的亮度與轉動速度隨之下降或上升，表現型標籤即時由正常代謝者變成中間或不良代謝者，並顯示藥物濃度曲線的變化。",
+    "同意與資料旅程管線：以 3D 管線呈現從採集檢體、簽署同意書、編碼、加密、去連結到研究使用的過程，對應《人體生物資料庫管理條例》第 6、8、15、18、20 條；使用者按下「退出」時，管線內非去連結的資料被銷毀，去連結部分留下，並顯示檢體不得輸出境外的閘門。",
+    "台灣法規與給付地圖：在台灣地形上放置節點（個資法、人體研究法、人體生物資料庫管理條例、特管辦法 LDT、HLA-B*15:02 與 HLA-B*58:01 的健保給付），點擊節點展開重點條文、適用情境與最近修正日期，並用連線顯示它們如何串起一次檢測從門診到實驗室到病歷。",
+    "族群頻率與研究代表性地球：以地球柱狀圖顯示同一變異在不同族群的頻率（如 VKORC1 rs9923231 在台灣 89.2%、歐裔次族群 20–25%），並疊加 GWAS 受試者歐洲裔占比由約 96%（2009）降到約 80%（2016）的動畫，說明為何 panel 與劑量演算法要在本地人群驗證。",
+    "成本效益天平：一端放檢測成本（PREPARE 平均 €124），另一端放避免的不良反應與住院日；使用者拖動願付價格門檻與檢測成本，觀察 ICER 與 95% 信賴區間如何跨過門檻，呈現「校正後成本差異不顯著」的不確定性。"
+  ],
+  "dropped_facts": [],
+  "must_not_say_zh": [
+    "不可說「FDA 把藥物基因檢測分成『必須檢測』『建議檢測』『可行動』『資訊性』幾級」：這些是 PharmGKB／ClinPGx 自訂的仿單 PGx level，FDA 關聯表只有三個證據區段。〔clinical-ethics-12〕",
+    "不可說 Testing required／Actionable PGx 等標籤是固定不變的官方分類或某藥品的永久等級：定義在 2023 年 12 月與 2024 年 8 月調整過，同一藥品在 FDA、EMA、加拿大的等級可以不同。〔clinical-ethics-12〕",
+    "不可說「mavacamten 在 FDA 與加拿大仿單屬 Actionable PGx」：2023 年 12 月曾如此描述，但依 ClinPGx 2026 年 9 月資料，兩者現為 Informative PGx；EMA 仿單為 Testing Required。〔clinical-ethics-12〕",
+    "不可說「藥物列在 FDA 藥物基因關聯表或 EMA 藥物基因體資訊表，就表示主管機關要求處方前必須做基因檢測」：FDA 明說列入不代表主張檢測（除非是伴隨式診斷），EMA 也說不代表每位病人都需要檢測。〔clinical-ethics-11, 17〕",
+    "不可說「PREPARE 證明基因導引用藥可把副作用降低 30%」：30% 是勝算比 0.70（95% CI 0.61–0.79），不是絕對風險下降；發生率是 28.6% 降到 21.5%，絕對差約 7 個百分點。〔clinical-ethics-26〕",
+    "不可說「PREPARE 的 OR 0.70 是分析了 6,944 人」：6,944 是收案人數，全體病人分析為 2,923 加 3,270 人（約 6,193 人）。〔clinical-ethics-26〕",
+    "不可把全體病人的 OR 0.70 說成 PREPARE 唯一或預先設定的主要分析：依 Lancet 摘要，主要（守門）分析是有可行動結果的子群，全體分析在子群達顯著後才進行。〔clinical-ethics-26〕",
+    "不可說「PREPARE 的結果已證明對台灣人或所有族群同樣有效」：研究為開放標示，97.7% 受試者自述為歐洲、地中海或中東族裔，且兩組失去追蹤比例不同。〔clinical-ethics-26, 27〕",
+    "不可說「PREPARE 證明基因導引用藥能省錢」：成本差異校正後不顯著（p=0.770），成本效益結論受 QALY 差異極小與門檻設定影響。〔clinical-ethics-29〕",
+    "不可說「CPIC A 級就代表用藥前一定要先做基因檢測」：CPIC 等級描述的是已有基因結果時是否應據以改變處方，設計上假設結果已在手。〔clinical-ethics-09〕",
+    "不可說「CPIC C 級或 D 級代表該基因與藥物無關」：C 級是已有研究但沒有建議改變處方（基因導引劑量無差異，或替代藥物不明、較不有效、毒性較高、不切實際），D 級是研究少、機制基礎少、證據弱或互相衝突；兩者都不是『證明無關』。〔clinical-ethics-09〕",
+    "不可說「CPIC 的 A–D 等級都是最終定案」：通過 CPIC 指引審查前為暫定（provisional），含 A/B、B/C、C/D 中間等級，審查後才為最終（final）。〔clinical-ethics-09〕",
+    "不可說「CPIC 每條建議都有高品質證據」：建議強度分強、中、選擇性、無建議四類，選擇性建議可能只有薄弱或外推的證據。〔clinical-ethics-10〕",
+    "不可說「FDA 在 2026 年 2 月 5 日『新增』了 Xeloda 的 Boxed Warning」：Xeloda 先前已有 Boxed Warning（維生素 K 拮抗劑出血風險），此次是擴增納入 DPD 完全缺乏；2026-02-05 是 FDA 頁面更新日，不是仿單核准日。〔clinical-ethics-18〕",
+    "不可說「FDA 規定所有使用 capecitabine 或 5-FU 的病人一律必須先做 DPYD 檢測、沒有例外」：Boxed Warning 的說法是治療前檢測，除非需立即治療；且 Xeloda 仿單註明目前沒有 FDA 核准的 DPYD 檢測（此點為查核者所述，發布前應再核對）。〔clinical-ethics-18〕",
+    "不可說「EMA 建議所有含氟尿嘧啶成分的藥品都要先檢測 DPD」：flucytosine 因不應延誤治療而除外，外用 fluorouracil 不適用。〔clinical-ethics-16〕",
+    "不可說「約 9% 的人完全缺乏 DPD」：EMA 註明高加索人口約高達 9% 是活性偏低（多為部分缺乏），完全缺乏最多約 0.5%；這是高加索人口數字，不可直接套用到台灣。〔clinical-ethics-16〕",
+    "不可說「台灣衛福部要求所有人用 carbamazepine 前都必須先驗 HLA-B*15:02」：衛福部的說法是可能帶有該基因的亞洲族群『宜考慮』檢測，且認為含 carbamazepine 藥品臨床效益仍高於風險；納入健保給付是提供檢測的給付，不等於強制。〔clinical-ethics-04〕",
+    "不可說「台灣 NEJM 2011 研究是隨機對照試驗，證明篩檢使 SJS/TEN 降為零」：該研究以估計的歷史發生率（0.23%）為對照，篩檢後陰性者無人發生 SJS/TEN，但這不等於篩檢後風險為零，也不是隨機分派。〔clinical-ethics-07〕",
+    "不可說「台灣健保給付所有 allopurinol 使用者的 HLA-B*58:01 檢測」：12213B 僅給付符合特定適應症的新使用者，已連續用藥滿 1 個月或累計滿 3 個月者不給付，每人終身限一次，並有結果上傳與 LDT 施行計畫等要求；給付條件可能再修訂。〔clinical-ethics-05〕",
+    "不可說「個資法絕對禁止蒐集或利用基因資料」：第 6 條是原則禁止但有例外（法律明文規定、當事人書面同意、學術研究且去識別化等）。〔clinical-ethics-06〕",
+    "不可說「個資法 2025 年 11 月的修正已全面生效」：部分條文的施行日期由行政院另定，全國法規資料庫標示尚未全部生效。〔clinical-ethics-06〕",
+    "不可說「台灣有專門禁止基因歧視的法律，像美國 GINA」：本次檢索未發現；個資法第 6 條是資料保護而非反歧視，就業服務法第 5 條列舉的禁止歧視事由未明列基因；保險核保如何使用基因資訊未查得明確專法。〔clinical-ethics-36〕",
+    "不可說「GINA 保護所有保險與所有雇主」：GINA 不涵蓋人壽、失能與長照保險，不適用於少於 15 名員工的雇主，軍方另有例外。〔clinical-ethics-35〕",
+    "不可說「參與人體生物資料庫後退出，所有資料一律銷毀」：已去連結的部分、經書面同意繼續使用的部分、以及經倫理審查會核准保留的同意書等情形除外；檢體（衍生物除外）不得輸出境外。〔clinical-ethics-38〕",
+    "不可說「台灣的 LDT 不受管理」或「台灣有名為『醫療機構實驗室 LDT 管理辦法』的專法」：LDT 受《特定醫療技術檢查檢驗醫療儀器施行或使用管理辦法》規範；網站宜寫『本次檢索未發現另有單獨辦法』，避免斷言絕對不存在。〔clinical-ethics-39〕",
+    "不可說「成本效益研究一致證明藥物基因檢測划算」：系統性回顧中 71% 顯示具成本效益或節省成本，21 項（20%）不具成本效益、10 項（9%）不確定；warfarin 16 篇僅 7 篇；預先與多基因檢測資料有限；該回顧文獻檢索只到 2021 年 6 月。〔clinical-ethics-28〕",
+    "不可說「TAILOR-PCI 證實 CYP2C19 基因導引抗血小板治療顯著降低心血管事件」：12 個月主要終點 HR 0.66（95% CI 0.43–1.02，p=0.06）未達統計顯著。〔clinical-ethics-31〕",
+    "不可說「基因檢測報告顯示沒有風險基因，就代表這個藥一定安全」：panel 只檢測所列出的變異，罕見或結構變異可能漏掉，併用藥物會造成表現型轉換；未帶有 HLA-B*58:01 者仍可能發生 SJS/TEN。〔misconceptions_zh〕",
+    "不可說「帶有風險基因型就一定會出事」：多數風險變異攜帶者不會發生不良事件，基因是機率不是宿命。〔misconceptions_zh, clinical-ethics-34〕",
+    "不可說「一次檢測終身有效，之後不用再管」：種系基因型不變，但指引與表現型判讀會更新，也會因併用藥物而轉換。〔misconceptions_zh, clinical-ethics-19〕",
+    "不可說或暗示「收到基因報告後可以自己停藥或改藥」：FDA 與 EMA 都提醒病人應與處方者或醫療專業人員討論。〔clinical-ethics-01〕"
+  ],
+  "open_issues": [
+    "查核範圍：本檔 45 條 facts 中僅 14 條（clinical-ethics-04、05、06、07、09、10、12、16、18、26、28、35、38、39）經兩位查核者核對；其餘 31 條維持 verified:false 與原信心等級，尚未被獨立核對。其中最需優先複核的有：36（信心 low，屬否定性主張）、22（臺大醫院價格與時程，時效性強）、17（EMA 頁面 2026-09-04 才首次發布）、29（摘要與 ICER 數字不一致）、40（medium，轉載公文）、20、41、44、45（medium）。",
+    "clinical-ethics-18：Xeloda 仿單修訂日期來源不一致——查核者 A 於 Drugs@FDA 見 2025-10-03 核准修訂，查核者 B 與本編輯於 DailyMed 見標示日期 2026-02-05（可能為不同版本或包裝標示），FDA 頁面本身未載核准日。網站只引用『FDA 頁面內容更新 2026-02-05』，不要寫仿單核准日。5-FU 注射劑 Boxed Warning 專為 DPD 缺乏，以及 Xeloda 仿單註明『目前無 FDA 核准的 DPYD 檢測』兩點，僅為單一查核者所述，本編輯未獨立複核。",
+    "clinical-ethics-12：ClinPGx 的 PGx level 定義與各仿單等級會持續變動，mavacamten 例子取自 2026-09 的查詢，發布前應重新查詢並標註日期。『Criteria not met』首次引入時間有出入（2023-12 部落格 vs ClinPGx 現行說明列於 2024-08 修訂）。ClinPGx 上 mavacamten FDA 仿單的歷史紀錄最後一筆寫 2023-12-20 改為 Actionable，但現行等級為 Informative，中間的改列紀錄未見於歷史欄，屬資料庫內部不一致，尚未釐清。",
+    "clinical-ethics-26：Lancet 摘要的主要（守門）分析為可行動子群，全體病人分析為後續分析；6,944（收案）與約 6,193（全體分析）的差距，以及 clinical-ethics-27 所述 652 人失去追蹤（6,944 減 6,193 為 751）是否一致，未逐項核對，clinical-ethics-27 需另行複核數字。",
+    "clinical-ethics-05：健保署自 2022-06-01 之後是否再修訂 12213B 的給付條件，兩位查核者皆未能查證；網站須標註『以健保署最新支付標準為準』。",
+    "clinical-ethics-06：個資法 114-11-11 修正的施行日期由行政院另定，發布前應再查全國法規資料庫的生效狀態。",
+    "clinical-ethics-39：『台灣沒有名為「醫療機構實驗室 LDT 管理辦法」的單獨法規』是否定性主張，僅由全國法規資料庫關鍵字檢索支持，無正式公告可直接佐證；建議措辭保持『本次檢索未發現』。",
+    "clinical-ethics-10：『無建議（No recommendation）』類別的正式採行日期未查得；目前只確認 2016 年提案，以及 CPIC API 現行資料表已使用四類。",
+    "clinical-ethics-28：該系統性回顧的文獻檢索截至 2021 年 6 月，之後的成本效益研究（含 PREPARE 成本分析）未納入。",
+    "clinical-ethics-09：本次依查核結果將信心由 medium 調為 high，並改寫 C 級描述、移除『D 定義未逐字核對』警語；此為編輯決定，非查核者的直接要求。",
+    "clinical-ethics-06、35：detail_zh 有編輯精修（例外條款引述與法條一致；GINA 的 Title I／II 用語），兩者皆非實質更正，claim_zh 未變。",
+    "clinical-ethics-38：臺灣人體生物資料庫參與人數 203,147（截至 2026-08-31）會隨時間增加，引用須標示日期。"
+  ],
+  "verification_summary": {
+    "verified_on": "2026-09-29",
+    "checkers": [
+      "primary-source",
+      "independent-search"
+    ],
+    "facts_total": 45,
+    "facts_checked": 14,
+    "confirmed": 12,
+    "corrected": 2,
+    "dropped": 0,
+    "hedged_low_confidence": 0,
+    "unchecked_verified_false": 31
+  }
+}
