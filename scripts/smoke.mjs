@@ -412,6 +412,15 @@ async function main() {
 
       // ── 文字步驟同步 ──
       if (withSteps || id !== 'hero') {
+        // 手機:先把控制抽屜收好。抽屜展開時捲動超過約 260px 會自動收起,舞台變矮、觸發位置跟著上移,會讓測試偶發性地錯過區塊
+        try {
+          const open = await page.$(`${sel}.controls-open`)
+          const tg2 = await page.$(`${sel} .stage-controls-toggle`)
+          if (open && tg2) {
+            await tg2.click()
+            await sleep(500)
+          }
+        } catch {}
         const stepEls = await page.$$(`#${id} .prose [data-step]`)
         const seen = []
         const scrollToBand = (el) => {
@@ -420,10 +429,12 @@ async function main() {
           const stage = el.closest('.chapter').querySelector('.stage')
           const r = el.getBoundingClientRect()
           const center = m ? Math.min(innerHeight * 0.7, 60 + 6 + stage.offsetHeight + 14) + 40 : innerHeight / 2
-          window.scrollTo({ top: window.scrollY + (r.top + r.height / 2) - center, behavior: 'instant' })
+          const want = window.scrollY + (r.top + r.height / 2) - center
+          window.scrollTo({ top: want, behavior: 'instant' })
+          return want >= -1 // 頁面頂端附近的區塊捲不到觸發位置(捲動被夾在 0),此時不能拿來驗證同步
         }
         for (let i = 0; i < stepEls.length; i++) {
-          await stepEls[i].evaluate(scrollToBand)
+          const reachable = await stepEls[i].evaluate(scrollToBand)
           const want = await stepEls[i].evaluate((el) => Number(el.dataset.step))
           // 軟體 WebGL 很慢,IntersectionObserver 回呼可能延遲數秒:輪詢最多 6 秒
           let info = await stageInfo(id)
@@ -433,7 +444,7 @@ async function main() {
           }
           seen.push([want, info && info.step])
           // step 0 是初始狀態:頁面太短、無法把它捲到觸發帶時,舞台 step 仍為 null 是正常的
-          if (info && info.step !== want && !(want === 0 && info.step === null)) res.notes.push(`步驟同步: 文字 step=${want} 但舞台 step=${info.step}`)
+          if (reachable && info && info.step !== want && !(want === 0 && info.step === null)) res.notes.push(`步驟同步: 文字 step=${want} 但舞台 step=${info.step}`)
           if (withSteps && i < 16) {
             await sleep(1500)
             await shot(view, `step${String(i).padStart(2, '0')}-s${want}`, res)

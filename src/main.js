@@ -8,6 +8,7 @@ import { initTerms } from './core/terms.js'
 import { quizProgress } from './core/quiz.js'
 import { h, inline } from './core/markup.js'
 import { LEVELS } from './core/palette.js'
+import { readingMode } from './core/readingMode.js'
 
 const sceneLoaders = import.meta.glob('./scenes/*.js')
 const loaderFor = (name) => sceneLoaders[`./scenes/${name}.js`] || (() => Promise.reject(new Error(`找不到場景模組 scenes/${name}.js`)))
@@ -24,6 +25,9 @@ function buildNav() {
   const menuBtn = h('button', { type: 'button', class: 'nav-menu-btn', 'aria-expanded': 'false', 'aria-controls': 'nav-menu', text: '☰ 目錄' })
   const menu = h('div', { class: 'nav-menu', id: 'nav-menu', hidden: true, role: 'navigation', 'aria-label': '章節目錄' })
   const quizLine = h('div', { class: 'ctl-note', style: 'padding:6px 10px' })
+  const readBtn = h('button', { type: 'button', class: 'menu-switch', role: 'switch', 'aria-checked': String(readingMode.get()) }, h('span', { class: 'ctl-switch', 'aria-hidden': 'true' }), h('span', { text: '閱讀模式：隱藏 3D 動畫' }))
+  readBtn.addEventListener('click', () => readingMode.toggle())
+  readingMode.subscribe((on) => readBtn.setAttribute('aria-checked', String(on)))
 
   const fillMenu = () => {
     menu.replaceChildren()
@@ -33,7 +37,7 @@ function buildNav() {
         menu.append(h('a', { href: only ? `?only=${c.id}#${c.id}` : `#${c.id}`, 'data-target': c.id }, h('span', { class: 'no', text: String(c.no).padStart(2, '0') }), h('span', { html: inline(c.title) })))
       }
     }
-    menu.append(h('h4', { text: '更多' }), h('a', { href: '#glossary' }, h('span', { class: 'no', text: '≡' }), '術語表'), h('a', { href: '#resources' }, h('span', { class: 'no', text: '↗' }), '資源與延伸閱讀'), quizLine)
+    menu.append(h('h4', { text: '更多' }), h('a', { href: '#glossary' }, h('span', { class: 'no', text: '≡' }), '術語表'), h('a', { href: '#resources' }, h('span', { class: 'no', text: '↗' }), '資源與延伸閱讀'), quizLine, readBtn)
     updateQuizLine()
   }
   const updateQuizLine = () => {
@@ -272,9 +276,14 @@ function init() {
   initTerms()
 
   // 建立 3D 舞台（此時元素都已進入 DOM）
-  if (heroObj) new Stage(heroObj.stage, 'hero', loaderFor('hero'))
+  const heroStage = heroObj ? new Stage(heroObj.stage, 'hero', loaderFor('hero')) : null
   const stageMap = {}
   for (const s of stages) stageMap[s.ch.id] = new Stage(s.stageEl, s.ch.id, loaderFor(s.ch.scene || s.ch.id))
+
+  // 閱讀模式（手機/平板）：一開始就收起的話，場景根本不會被載入
+  const allStages = [...(heroStage ? [heroStage] : []), ...Object.values(stageMap)]
+  const isCompact = matchMedia('(max-width: 1100px)')
+  allStages.forEach((s) => s.setCollapsed(readingMode.get() && isCompact.matches))
 
   // 文字 → 場景步驟同步（scrollytelling）
   // 以「觸發帶」判斷讀者目前讀到哪個步驟區塊：桌機是視窗正中央的一條窄帶；
@@ -312,7 +321,7 @@ function init() {
     lastActive.clear()
     let rootMargin = '-42% 0px -42% 0px'
     bandCenter = innerHeight / 2
-    if (mqMobile.matches && stages.length) {
+    if (mqMobile.matches && stages.length && !readingMode.get()) {
       const navH = 60
       const stageH = stages[0].stageEl.offsetHeight || 340
       const top = Math.min(innerHeight * 0.7, navH + 6 + stageH + 14)
@@ -337,6 +346,25 @@ function init() {
     for (const g of stepGroups) g.stepEls.forEach((el) => stepIO.observe(el))
   }
   setupStepObserver()
+
+  // 切換閱讀模式（或跨過手機/桌機斷點）時：收合/展開所有舞台，並讓目前讀到的那一段文字留在原位（否則版面高度改變會讓內容跳走）
+  const applyReading = () => {
+    const on = readingMode.get() && isCompact.matches
+    allStages.forEach((s) => s.setCollapsed(on))
+    setupStepObserver()
+  }
+  readingMode.subscribe(() => {
+    const el = document.elementFromPoint(innerWidth / 2, innerHeight * 0.6)
+    const anchor = el && el.closest ? el.closest('.prose > *, .chapter-foot > *') : null
+    const before = anchor ? anchor.getBoundingClientRect().top : 0
+    applyReading()
+    requestAnimationFrame(() => {
+      if (!anchor || !document.contains(anchor)) return
+      const d = anchor.getBoundingClientRect().top - before
+      if (Math.abs(d) > 1) window.scrollBy({ top: d, behavior: 'instant' })
+    })
+  })
+  isCompact.addEventListener('change', applyReading)
   let resizeTimer = 0
   addEventListener('resize', () => {
     clearTimeout(resizeTimer)

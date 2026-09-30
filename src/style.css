@@ -1272,6 +1272,9 @@ code {
 .stage-controls:empty {
   display: none;
 }
+.stage-bar {
+  display: none;
+}
 .stage-controls-toggle {
   display: none;
   width: 100%;
@@ -1285,8 +1288,54 @@ code {
   min-height: 44px;
   cursor: pointer;
 }
-.stage-controls-toggle:hover {
+.stage-controls-toggle:hover,
+.stage-collapse-btn:hover {
   background: rgba(130, 165, 255, 0.2);
+}
+.stage-collapse-btn {
+  font: inherit;
+  font-weight: 700;
+  color: var(--text);
+  background: rgba(130, 165, 255, 0.06);
+  border: 0;
+  border-top: 1px solid var(--line);
+  border-left: 1px solid var(--line);
+  padding: 10px 14px;
+  min-height: 44px;
+  cursor: pointer;
+  white-space: nowrap;
+}
+.menu-switch {
+  display: none;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  font: inherit;
+  color: var(--text);
+  background: rgba(130, 165, 255, 0.08);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 10px 12px;
+  margin-top: 8px;
+  cursor: pointer;
+  text-align: left;
+}
+.menu-switch[aria-checked='true'] .ctl-switch {
+  background: var(--cyan);
+}
+.menu-switch[aria-checked='true'] .ctl-switch::after {
+  transform: translateX(18px);
+}
+.hero .hero-stage.is-collapsed {
+  display: none;
+}
+/* 閱讀模式下 Hero 沒有 3D 背景,不需要撐滿一整屏 */
+.hero:has(> .hero-stage.is-collapsed) {
+  min-height: auto;
+  align-items: flex-start;
+}
+.hero:has(> .hero-stage.is-collapsed) .hero-copy {
+  padding-bottom: 48px;
 }
 .stage-figcap {
   flex: none;
@@ -1779,11 +1828,38 @@ code {
     max-height: none;
     min-height: min(250px, 32svh);
   }
+  .stage-bar {
+    display: flex;
+    align-items: stretch;
+  }
   .stage-controls-toggle {
     display: flex;
+    flex: 1 1 auto;
+    width: auto;
     align-items: center;
     justify-content: center;
     gap: 8px;
+    border-top: 1px solid var(--line);
+  }
+  .menu-switch {
+    display: flex;
+  }
+  /* 閱讀模式:動畫區收成一條「顯示 3D 動畫」的細列,不再黏頂,文字佔滿畫面 */
+  .stage.is-collapsed {
+    position: static;
+    box-shadow: none;
+  }
+  .stage.is-collapsed .stage-view,
+  .stage.is-collapsed .stage-controls,
+  .stage.is-collapsed .stage-figcap,
+  .stage.is-collapsed .stage-controls-toggle {
+    display: none !important;
+  }
+  .stage.is-collapsed .stage-collapse-btn {
+    flex: 1 1 auto;
+    border-left: 0;
+    border-top: 0;
+    color: var(--cyan);
   }
   .stage-controls {
     display: none;

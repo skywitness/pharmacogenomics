@@ -881,7 +881,7 @@ export default function create(ctx) {
       }
       measureSoon = true
     },
-    // 鍵盤:方向鍵旋轉地球(核心在 OrbitControls 關閉時把方向鍵轉交過來;弧度 → 度)
+    // 鍵盤：方向鍵旋轉地球（核心在 OrbitControls 關閉時把方向鍵轉交過來；弧度 → 度）
     onKeyRotate(dAz, dEl) {
       const deg = 180 / Math.PI
       cam.lon -= dAz * deg

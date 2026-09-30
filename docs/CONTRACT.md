@@ -73,6 +73,8 @@ export default async function create(ctx) {   // 可 async
 - `setFrame(center, radius, {azimuth, elevation})`：「重設視角」的方向只在第一次呼叫或明確給角度時記錄。
 - `ui.readout` 預設不朗讀（aria-live off）；變動不頻繁、需要即時告知者才傳 `live: true`。`ui.segmented` 已支援方向鍵。
 
+- **閱讀模式**：手機/平板使用者可收起動畫區（`Stage.setCollapsed`）。收起時 `create(ctx)` 可能**根本不會被呼叫**，展開時才載入；`update` 不會執行，所以場景不要假設「一定持續被 tick」，也不要在 create 之外保留需要 renderer 的狀態。
+
 ### 排版（繁體中文）
 - **中文旁一律使用全形標點**：，。：；！？（）。英文/數字之間維持半形（如 `HLA-B*15:02`、`4,877`、`0.23%`）。
 - 寫完後執行 `node scripts/normalize-punct.mjs --write` 自動修正（只會動「緊鄰中文字」的標點），再跑 `node scripts/check-content.mjs`（檢查術語連結、step 連號、測驗、簡體字與中國用語；有 ERROR 必須修）。

@@ -27,6 +27,7 @@
 import { h, inline } from './markup.js'
 import { LEVELS, hex } from './palette.js'
 import { renderQuiz } from './quiz.js'
+import { readingMode } from './readingMode.js'
 
 const pad = (n) => String(n).padStart(2, '0')
 
@@ -172,7 +173,12 @@ export function buildStageFigure(id, cfg = {}) {
       h('div', { class: 'stage-loading', text: '載入 3D 場景…' })
     ),
     // 手機版：舞台黏在頂端，控制項收在這個開關裡（桌機版隱藏，見 style.css）
-    h('button', { type: 'button', class: 'stage-controls-toggle', 'aria-expanded': 'false', 'aria-controls': `controls-${id}`, hidden: true, text: '⚙ 互動控制項' }),
+    h(
+      'div',
+      { class: 'stage-bar' },
+      h('button', { type: 'button', class: 'stage-controls-toggle', 'aria-expanded': 'false', 'aria-controls': `controls-${id}`, hidden: true, text: '⚙ 互動控制項' }),
+      h('button', { type: 'button', class: 'stage-collapse-btn', 'aria-pressed': 'false', text: '📖 隱藏動畫' })
+    ),
     h('div', { class: 'stage-controls', id: `controls-${id}` }),
     h('figcaption', { class: 'stage-figcap', id: `figcap-${id}`, html: inline((cfg.caption || '拖曳可旋轉視角 · 用下方控制項互動') + ' · 鍵盤：聚焦後用方向鍵旋轉、Home 重設') })
   )
@@ -182,6 +188,17 @@ export function buildStageFigure(id, cfg = {}) {
     toggle.setAttribute('aria-expanded', String(open))
     toggle.textContent = open ? '⚙ 收起控制項' : '⚙ 互動控制項'
   })
+  // 閱讀模式：全站共用的偏好，收起 3D 動畫讓文字佔滿畫面（實際收合由 main.js 對 Stage 套用）
+  const collapseBtn = fig.querySelector('.stage-collapse-btn')
+  const paint = (on) => {
+    collapseBtn.setAttribute('aria-pressed', String(on))
+    collapseBtn.textContent = on ? '▶ 顯示 3D 動畫' : '📖 隱藏動畫'
+    collapseBtn.setAttribute('aria-label', on ? '顯示 3D 互動動畫' : '隱藏 3D 動畫（閱讀模式）')
+    collapseBtn.title = on ? '把 3D 互動動畫顯示回來' : '隱藏 3D 動畫，讓文字更好閱讀'
+  }
+  collapseBtn.addEventListener('click', () => readingMode.toggle())
+  readingMode.subscribe(paint)
+  paint(readingMode.get())
   return fig
 }
 

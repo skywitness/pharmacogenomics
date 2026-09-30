@@ -70,6 +70,7 @@ export class Stage {
     this.visible = false
     this.near = false
     this.paused = false
+    this.collapsed = false // 閱讀模式收起：不載入場景、不建立 renderer、不繪製
     this.t = 0
     this.frames = 0
     this.lastVisibleAt = 0
@@ -235,7 +236,7 @@ export class Stage {
       const dAz = e.key === 'ArrowLeft' ? -STEP : e.key === 'ArrowRight' ? STEP : 0
       const dEl = e.key === 'ArrowUp' ? -STEP : e.key === 'ArrowDown' ? STEP : 0
       if (!dAz && !dEl) return
-      // 場景自己處理旋轉(關閉 OrbitControls,如 ch08 的地球):把方向鍵轉交給 instance.onKeyRotate(dAzimuthRad, dElevationRad)
+      // 場景自己處理旋轉（關閉 OrbitControls，如 ch08 的地球）：把方向鍵轉交給 instance.onKeyRotate(dAzimuthRad, dElevationRad)
       if (!this.controls.enabled) {
         if (this.instance && this.instance.onKeyRotate) {
           e.preventDefault()
@@ -310,8 +311,26 @@ export class Stage {
   }
 
   // ───────────────────────── 載入場景 ─────────────────────────
+  /** 閱讀模式：收起/展開。收起時釋放 renderer（省電、省 GPU），並且尚未載入的場景不會被載入。*/
+  setCollapsed(v) {
+    v = !!v
+    if (v === this.collapsed) return
+    this.collapsed = v
+    this.el.classList.toggle('is-collapsed', v)
+    if (v) {
+      this._releaseRenderer()
+    } else if (this.near) {
+      if (this.state === 'idle') this._load()
+      else if (this.state === 'ready') {
+        this._ensureRenderer()
+        this.resize()
+      }
+    }
+  }
+
   _setNear(near) {
     this.near = near
+    if (this.collapsed) return
     if (near) {
       if (this.state === 'idle') this._load()
       else if (this.state === 'ready') this._ensureRenderer()
@@ -564,6 +583,7 @@ export class Stage {
 
   // ───────────────────────── 每幀 ─────────────────────────
   tick(dt) {
+    if (this.collapsed) return
     if (this.state !== 'ready' || !this.renderer || this.error) return
     const step = this.paused ? 0 : dt
     this.t += step
